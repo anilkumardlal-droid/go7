@@ -199,8 +199,17 @@ transition:0.3s;
   color:#1a73e8; /* 👈 hover color */
   transform:translateY(-2px);
 }
-  .nav a{
-  color:#0d0d0d; /* 👈 default black */
+ .nav a{
+  color:#0d0d0d;        /* normal black */
+  text-decoration:none;
+}
+
+.nav a:visited{
+  color:#0d0d0d;        /* 👈 purple (visited) remove */
+}
+
+.nav a:hover{
+  color:#1a73e8;        /* hover blue */
 }
 </style>
 </head>
