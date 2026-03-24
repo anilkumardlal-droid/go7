@@ -1,0 +1,112 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#fff;
+color:#202124;
+}
+
+/* HEADER */
+.header{
+max-width:1200px;
+margin:auto;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo svg{
+height:60px;
+}
+
+.nav a{
+text-decoration:none;
+color:#0d0d0d;
+font-weight:400;
+}
+
+/* ABOUT SECTION */
+.about{
+max-width:1200px;
+margin:80px auto;
+padding:0 20px;
+}
+
+/* Title */
+.about h1{
+font-size:32px;
+margin-bottom:20px;
+background: linear-gradient(90deg, #1a73e8, #ea4335, #34a853);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* Description */
+.about p{
+font-size:16px;
+color:#0d0d0d;
+line-height:1.8;
+max-width:700px;
+margin-bottom:20px;
+}
+
+/* Cards */
+.cards{
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+gap:20px;
+}
+
+.card{ 
+background:#f8f9fa; 
+padding:25px; 
+border-radius:12px; 
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+.card h3{
+margin-bottom:10px;
+font-size:18px;
+}
+
+.card p{
+font-size:14px;
+}
+
+/* Signature */
+.signature{
+margin-top:60px;
+font-size:32px;
+font-family:'Great Vibes', cursive;
+}
+
+.name{
+font-size:14px;
+color:#0d0d0d;
+}
+
+/* Footer */
+footer{
+text-align:center;
+font-size:13px;
+color:#5f6368;
+margin:40px 0;
+}
+
+/* Mobile */
+@media(max-width:768px){
+.about h1{
+font-size:28px;
+}
+}
