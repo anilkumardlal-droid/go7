@@ -6,14 +6,6 @@
 
 <title>Redirecting...</title>
 
-<!-- instant redirect -->
-<meta http-equiv="refresh" content="2; url=/" />
-
-<script>
-  // fallback JS redirect
-  window.location.href = "/";
-</script>
-
 <style>
 body{
 font-family: Arial, sans-serif;
@@ -24,11 +16,29 @@ height:100vh;
 margin:0;
 background:#fff;
 color:#111;
+font-size:18px;
 }
 </style>
 </head>
 
 <body>
-<p>Redirecting to Go7.in...</p>
+
+<p>Redirecting to Go7.in in <span id="count">3</span>...</p>
+
+<script>
+let time = 3;
+let counter = document.getElementById("count");
+
+let interval = setInterval(function(){
+  time--;
+  counter.textContent = time;
+
+  if(time <= 0){
+    clearInterval(interval);
+    window.location.href = "/";
+  }
+}, 1000);
+</script>
+
 </body>
 </html>
