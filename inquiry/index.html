@@ -1,53 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Inquiry - Go7.in</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#ffffff;color:#0d0d0d;}
+
+/* HEADER */
+.header{
+max-width:1200px;
+margin:auto;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo svg{
+height:60px;
+width:auto;
+display:block;
+}
+
+.nav a{
+margin-left:20px;
+text-decoration:none;
+color:#0d0d0d;
+font-size:14px;
+}
+.nav a:hover{color:#1a73e8;}
+
+/* FORM */
+.container{
+max-width:1200px;
+margin:40px auto;
+background:#ffffff;
+padding:30px;
+border-radius:12px;
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+background:linear-gradient(90deg,#a855f7,#3b82f6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
+
+.field{display:flex;flex-direction:column;}
+label{font-size:13px;margin-bottom:6px;}
+
+input,select,textarea{
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:14px;
+background:#fff;
+}
+
+textarea{height:120px;resize:none;}
+.full{grid-column:span 2;}
+
+.radio{display:flex;gap:15px;margin-top:8px;flex-wrap:wrap;}
+
+button{
+margin-top:20px;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#6366f1,#7c3aed);
+color:#fff;
+font-weight:500;
+cursor:pointer;
+transition:transform .2s ease, opacity .2s ease;
+}
+button:hover{transform:translateY(-2px);}
+button:disabled{opacity:.7;cursor:not-allowed;}
+
+.note{font-size:12px;color:#888;margin-top:4px;}
+
+/* SUCCESS */
+.success{
+display:none;
+text-align:center;
+padding:40px;
+}
+
+.timer{
+font-size:22px;
+color:#ff4d4f;
+font-weight:600;
+margin-top:10px;
+}
+
+/* SVG ANIMATION */
+.icon-part {
+opacity: 0;
+transform: translateY(10px);
+animation: iconIn 0.6s ease forwards;
+}
+.icon-part:nth-child(1){ animation-delay:0.1s; }
+.icon-part:nth-child(2){ animation-delay:0.2s; }
+.icon-part:nth-child(3){ animation-delay:0.3s; }
+.icon-part:nth-child(4){ animation-delay:0.4s; }
+
+.logo-text {
+opacity: 0;
+transform: translateX(20px);
+animation: textIn 0.8s ease forwards;
+animation-delay:0.5s;
+}
+
+@keyframes iconIn {
+to {opacity: 1; transform: translateY(0);}
+}
+@keyframes textIn {
+to {opacity: 1; transform: translateX(0);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.grid{grid-template-columns:1fr;}
+.full{grid-column:span 1;}
+.header{padding:16px;}
+.container{margin:20px auto;padding:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+
+<div class="logo">
+<svg viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg">
+
+<g transform="translate(40,50) rotate(-12)">
+  <polygon class="icon-part" points="0,40 18,22 18,58" fill="#111"/>
+  <polygon class="icon-part" points="28,22 54,0 54,80 28,58" fill="#111"/>
+  <polygon class="icon-part" points="64,22 90,0 90,80 64,58" fill="#111"/>
+  <polygon class="icon-part" points="100,22 126,0 126,80 100,58" fill="#111"/>
+</g>
+
+<text class="logo-text"
+      x="200" y="105"
+      font-family="Inter, sans-serif"
+      font-size="68"
+      fill="#111">
+  go7
+</text>
+
+</svg>
+</div>
+
+<div class="nav">
+<a href="/">Home</a>
+<a href="/about">About</a>
+</div>
+
+</div>
+
+<!-- FORM -->
+<div class="container">
+
+<h2>Send your inquiry regarding this domain</h2>
+
+<form id="form" onsubmit="sendMail(event)">
+
+<div class="grid">
+
+<div class="field">
+<label>First Name *</label>
+<input id="fname" required>
+</div>
+
+<div class="field">
+<label>Last Name *</label>
+<input id="lname" required>
+</div>
+
+<div class="field">
+<label>Email Address *</label>
+<input type="email" id="email" required>
+</div>
+
+<div class="field">
+<label>Country Code *</label>
+<input value="+91" id="code" required>
+</div>
+
+<div class="field">
+<label>Telephone Number *</label>
+<input id="phone" required>
+</div>
+
+<div class="field">
+<label>Offer *</label>
+<input type="number" id="offer" min="50" required>
+<span class="note">Minimum: $50.00 (fixed)</span>
+</div>
+
+<div class="field">
+<label>Currency *</label>
+<select id="currency" required>
+<option value="" disabled selected>Select</option>
+<option value="USD">USD</option>
+<option value="INR">INR</option>
+</select>
+</div>
+
+<div class="field">
+<label>Domain</label>
+<input value="Go7.in" readonly>
+</div>
+
+<div class="field full">
+<label>Do you represent a company? *</label>
+<div class="radio">
+<label><input type="radio" name="rep" value="Yes" required> Yes</label>
+<label><input type="radio" name="rep" value="No" checked required> No</label>
+</div>
+</div>
+
+<div class="field full">
+<label>Message *</label>
+<textarea id="message" required></textarea>
+</div>
+
+<div class="cf-turnstile full" data-sitekey="YOUR_SITE_KEY"></div>
+
+</div>
+
+<button type="submit" id="submitBtn">Send Inquiry</button>
+</form>
+
+<!-- SUCCESS -->
+<div class="success" id="successBox">
+<h2>Thank you! 🎉</h2>
+<p>Your inquiry has been sent successfully.</p>
+<p>Redirecting to homepage in</p>
+<div class="timer" id="timer">5</div>
+</div>
+
+</div>
+
 <script>
 (function(){
-emailjs.init("RA7Yehviqu_UNulcU");
+  emailjs.init("RA7Yehviqu_UNulcU");
 })();
 
 function sendMail(e){
-e.preventDefault();
+  e.preventDefault();
 
-// Turnstile check
-let token = document.querySelector('[name="cf-turnstile-response"]').value;
-if(!token){
-alert("Please verify you are human");
-return;
-}
+  const submitBtn = document.getElementById("submitBtn");
+  const tokenInput = document.querySelector('[name="cf-turnstile-response"]');
 
-// Params
-let params = {
-fname: document.getElementById("fname").value,
-lname: document.getElementById("lname").value,
-email: document.getElementById("email").value,
-phone: document.getElementById("phone").value,
-offer: document.getElementById("offer").value,
-currency: document.getElementById("currency").value,
-message: document.getElementById("message").value
-};
+  if(!tokenInput || !tokenInput.value){
+    alert("Please verify you are human");
+    return;
+  }
 
-// Send Email
-emailjs.send("service_y231ani","PASTE_TEMPLATE_ID_HERE",params)
-.then(function(response) {
+  const offerValue = parseFloat(document.getElementById("offer").value);
+  if (isNaN(offerValue) || offerValue < 50) {
+    alert("Minimum offer is $50.00");
+    return;
+  }
 
-  // SUCCESS UI
-  document.getElementById("form").style.display="none";
-  document.getElementById("successBox").style.display="block";
+  const repValue = document.querySelector('input[name="rep"]:checked')?.value || "";
 
-  // TIMER
-  let time = 5;
-  let timer = document.getElementById("timer");
+  const params = {
+    fname: document.getElementById("fname").value.trim(),
+    lname: document.getElementById("lname").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    code: document.getElementById("code").value.trim(),
+    phone: document.getElementById("phone").value.trim(),
+    offer: document.getElementById("offer").value.trim(),
+    currency: document.getElementById("currency").value,
+    rep: repValue,
+    message: document.getElementById("message").value.trim(),
+    domain: "Go7.in"
+  };
 
-  let countdown = setInterval(()=>{
-    time--;
-    timer.innerText = time;
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
 
-    if(time<=0){
-      clearInterval(countdown);
-      window.location.href = "/";
-    }
-  },1000);
+  emailjs.send("service_y231ani","YOUR_TEMPLATE_ID",params)
+  .then(function() {
+    document.getElementById("form").style.display = "none";
+    document.getElementById("successBox").style.display = "block";
 
-}, function(error) {
-  alert("Failed to send. Try again.");
-});
+    let time = 5;
+    const timer = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+      time--;
+      timer.innerText = time;
+
+      if(time <= 0){
+        clearInterval(countdown);
+        window.location.href = "/";
+      }
+    }, 1000);
+  })
+  .catch(function(error) {
+    console.error("Email send failed:", error);
+    alert("Failed to send. Please try again.");
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Inquiry";
+  });
 }
 </script>
+
+</body>
+</html>
