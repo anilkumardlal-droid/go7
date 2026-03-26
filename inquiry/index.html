@@ -210,7 +210,7 @@ GO7
 <textarea id="message" required></textarea>
 </div>
 
-<div class="cf-turnstile full" data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"></div>
+<div class="cf-turnstile full" id="captchaBox" style="display:none;" data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"></div>
 
 </div>
 
@@ -226,6 +226,27 @@ GO7
 </div>
 
 <script>
+  const inputs = document.querySelectorAll("#form input, #form textarea, #form select");
+
+inputs.forEach(input => {
+  input.addEventListener("input", checkForm);
+});
+
+function checkForm(){
+  let count = 0;
+
+  if(fname.value.trim()) count++;
+  if(lname.value.trim()) count++;
+  if(email.value.trim()) count++;
+  if(iti.isValidNumber()) count++;
+  if(offer.value.trim()) count++;
+  if(currency.value) count++;
+  if(message.value.trim()) count++;
+
+  if(count >= 4){
+    document.getElementById("captchaBox").style.display = "block";
+  }
+}
 (function(){
 emailjs.init("RA7Yehviqu_UNulcU");
 })();
