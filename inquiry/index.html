@@ -6,11 +6,8 @@
 
 <title>Inquiry - Go7.in</title>
 
-<meta name="description" content="Buy Go7.in premium domain directly from owner. Fast transfer, secure deal, and quick response within 24 hours. Serious buyers only.">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -19,32 +16,6 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 body{background:#ffffff;color:#0d0d0d;}
 
-/* HEADER */
-.header{
-max-width:1200px;
-margin:auto;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo svg{
-height:60px;
-width:auto;
-display:block;
-}
-
-.nav a{
-margin-left:20px;
-text-decoration:none;
-color:#0d0d0d;
-font-size:14px;
-  font-weight: 500;
-}
-.nav a:hover{color:#1a73e8;}
-
-/* FORM */
 .container{
 max-width:980px;
 margin:40px auto;
@@ -70,6 +41,10 @@ gap:16px;
 .field{display:flex;flex-direction:column;}
 label{font-size:13px;margin-bottom:6px;}
 
+label span{
+color:#ff4d4f;
+}
+
 input,select,textarea{
 padding:12px;
 border:1px solid #d8dae0;
@@ -78,10 +53,8 @@ font-size:14px;
 background:#F9F9F9;
 }
 
-textarea{height:120px;resize:none;}
+textarea{height:120px;}
 .full{grid-column:span 2;}
-
-.radio{display:flex;gap:15px;margin-top:8px;flex-wrap:wrap;}
 
 button{
 margin-top:20px;
@@ -90,16 +63,11 @@ border:none;
 border-radius:30px;
 background:linear-gradient(135deg,#6366f1,#7c3aed);
 color:#fff;
-font-weight:500;
 cursor:pointer;
-transition:transform .2s ease, opacity .2s ease;
 }
-button:hover{transform:translateY(-2px);}
-button:disabled{opacity:.7;cursor:not-allowed;}
 
 .note{font-size:12px;color:#888;margin-top:4px;}
 
-/* SUCCESS */
 .success{
 display:none;
 text-align:center;
@@ -109,124 +77,59 @@ padding:40px;
 .timer{
 font-size:22px;
 color:#ff4d4f;
-font-weight:600;
 margin-top:10px;
 }
 
-/* SVG ANIMATION */
-.icon-part {
-opacity: 0;
-transform: translateY(10px);
-animation: iconIn 0.6s ease forwards;
-}
-.icon-part:nth-child(1){ animation-delay:0.1s; }
-.icon-part:nth-child(2){ animation-delay:0.2s; }
-.icon-part:nth-child(3){ animation-delay:0.3s; }
-.icon-part:nth-child(4){ animation-delay:0.4s; }
-
-.logo-text {
-opacity: 0;
-transform: translateX(20px);
-animation: textIn 0.8s ease forwards;
-animation-delay:0.5s;
+/* phone input fix */
+.iti{width:100%;}
+.iti input{
+width:100%!important;
+padding-left:50px!important;
 }
 
-@keyframes iconIn {
-to {opacity: 1; transform: translateY(0);}
-}
-@keyframes textIn {
-to {opacity: 1; transform: translateX(0);}
-}
-
-/* MOBILE */
 @media(max-width:768px){
 .grid{grid-template-columns:1fr;}
 .full{grid-column:span 1;}
-.header{padding:16px;}
-.container{margin:20px auto;padding:20px;}
-}
-
-  .iti {
-  width: 100%;
-}
-
-.iti input {
-  width: 100% !important;
-  padding-left: 50px !important;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-
-<div class="logo">
-<svg viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg">
-
-<g transform="translate(40,50) rotate(-12)">
-  <polygon class="icon-part" points="0,40 18,22 18,58" fill="#111"/>
-  <polygon class="icon-part" points="28,22 54,0 54,80 28,58" fill="#111"/>
-  <polygon class="icon-part" points="64,22 90,0 90,80 64,58" fill="#111"/>
-  <polygon class="icon-part" points="100,22 126,0 126,80 100,58" fill="#111"/>
-</g>
-
-<text class="logo-text"
-      x="200" y="105"
-      font-family="Inter, sans-serif"
-      font-size="68"
-      fill="#111">
-  go7
-</text>
-
-</svg>
-</div>
-
-<div class="nav">
-<a href="/">Home</a>
-<a href="/about">About</a>
-</div>
-
-</div>
-
-<!-- FORM -->
 <div class="container">
-
 <h2>Send your inquiry regarding this domain</h2>
 
 <form id="form" onsubmit="sendMail(event)">
-
 <div class="grid">
 
 <div class="field">
-<label>First Name *</label>
+<label>First Name <span>*</span></label>
 <input id="fname" required>
 </div>
 
 <div class="field">
-<label>Last Name *</label>
+<label>Last Name <span>*</span></label>
 <input id="lname" required>
 </div>
 
 <div class="field">
-<label>Email Address *</label>
+<label>Email Address <span>*</span></label>
 <input type="email" id="email" required>
 </div>
 
 <div class="field">
-<label>Telephone Number *</label>
+<label>Telephone Number <span>*</span></label>
 <input id="phone" type="tel" required>
 </div>
 
 <div class="field">
-<label>Offer *</label>
+<label>Offer <span>*</span></label>
 <input type="number" id="offer" min="50" required>
-<span class="note">Minimum: $50.00 (fixed)</span>
+<span class="note">Minimum: $50.00</span>
 </div>
 
 <div class="field">
-<label>Currency *</label>
+<label>Currency <span>*</span></label>
 <select id="currency" required>
 <option value="" disabled selected>Select</option>
 <option value="USD">USD</option>
@@ -240,7 +143,7 @@ to {opacity: 1; transform: translateX(0);}
 </div>
 
 <div class="field full">
-<label>Message *</label>
+<label>Message <span>*</span></label>
 <textarea id="message" required></textarea>
 </div>
 
@@ -251,11 +154,9 @@ to {opacity: 1; transform: translateX(0);}
 <button type="submit" id="submitBtn">Send Inquiry</button>
 </form>
 
-<!-- SUCCESS -->
 <div class="success" id="successBox">
 <h2>Thank you! 🎉</h2>
 <p>Your inquiry has been sent successfully.</p>
-<p>Redirecting to homepage in</p>
 <div class="timer" id="timer">5</div>
 </div>
 
@@ -273,37 +174,29 @@ function sendMail(e){
   const tokenInput = document.querySelector('[name="cf-turnstile-response"]');
 
   if(!tokenInput || !tokenInput.value){
-    alert("Please verify you are human");
+    alert("Verify you are human");
+    return;
+  }
+
+  if(!iti.isValidNumber()){
+    alert("Enter valid phone number");
     return;
   }
 
   const offerValue = parseFloat(document.getElementById("offer").value);
-  if (isNaN(offerValue) || offerValue < 50) {
-    alert("Minimum offer is $50.00");
+  if (offerValue < 50) {
+    alert("Minimum offer is $50");
     return;
   }
 
-  const codeValue = document.getElementById("code").value.trim();
-
-if(!/^\+\d{1,4}$/.test(codeValue)){
-  alert("Enter valid country code (e.g. +91)");
-  return;
-}
-
-  if(!iti.isValidNumber()){
-  alert("Enter valid phone number");
-  return;
-}
-  
   const params = {
-    fname: document.getElementById("fname").value.trim(),
-    lname: document.getElementById("lname").value.trim(),
-    email: document.getElementById("email").value.trim(),
-    code: document.getElementById("code").value.trim(),
+    fname: fname.value,
+    lname: lname.value,
+    email: email.value,
     phone: iti.getNumber(),
-    offer: document.getElementById("offer").value.trim(),
-    currency: document.getElementById("currency").value,
-    message: document.getElementById("message").value.trim(),
+    offer: offer.value,
+    currency: currency.value,
+    message: message.value,
     domain: "Go7.in"
   };
 
@@ -311,48 +204,35 @@ if(!/^\+\d{1,4}$/.test(codeValue)){
   submitBtn.textContent = "Sending...";
 
   emailjs.send("service_y231ani","template_fin8z5k",params)
-  .then(function() {
-    document.getElementById("form").style.display = "none";
-    document.getElementById("successBox").style.display = "block";
+  .then(()=>{
+    form.style.display="none";
+    successBox.style.display="block";
 
-    let time = 5;
-    const timer = document.getElementById("timer");
-
-    const countdown = setInterval(() => {
-      time--;
-      timer.innerText = time;
-
-      if(time <= 0){
-        clearInterval(countdown);
-        window.location.href = "/";
+    let t=5;
+    const timer=setInterval(()=>{
+      document.getElementById("timer").innerText=--t;
+      if(t<=0){
+        clearInterval(timer);
+        window.location="/";
       }
-    }, 1000);
+    },1000);
   })
-  .catch(function(error) {
-    console.error("Email send failed:", error);
-    alert("Failed to send. Please try again.");
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Send Inquiry";
+  .catch(()=>{
+    alert("Failed to send");
+    submitBtn.disabled=false;
+    submitBtn.textContent="Send Inquiry";
   });
 }
 </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 
 <script>
-const phoneInput = document.querySelector("#phone");
-
-const iti = window.intlTelInput(phoneInput, {
-  initialCountry: "auto",
-  geoIpLookup: function(callback) {
-    fetch("https://ipapi.co/json")
-      .then(res => res.json())
-      .then(data => callback(data.country_code))
-      .catch(() => callback("IN"));
-  },
-  utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+const iti = window.intlTelInput(document.querySelector("#phone"), {
+  initialCountry:"IN",
+  utilsScript:"https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
 });
 </script>
-  
+
 </body>
 </html>
