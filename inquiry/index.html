@@ -192,17 +192,19 @@ grid-template-columns:1fr;
 position:static;
 }
 
+.sidebar{
+padding:0;
+border-left:none;   /* 👈 ये add करो */
+}
+}
 
- .sidebar{
-background: #fff0e6;
-
-border: 1px solid #ff8434;
-border-left: 6px solid #ff8434;
-
-border-radius: 4px;
-padding:20px;
-
-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  .sidebar{
+padding-left:20px;
+border-left:1px solid #d8dae0;
+}
+  .sidebar{
+position:sticky;
+top:30px;
 }
 </style>
 </head>
