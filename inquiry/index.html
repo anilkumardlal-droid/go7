@@ -56,10 +56,11 @@ border-radius:12px;
 }
 
 .top-info{
-border-left:6px solid #999;
+border-left:6px solid #7c3bed;
 border-radius:8px;
 padding:20px;
 margin-bottom:25px;
+background: #faf7ff;
 }
 
 .grid{
@@ -77,7 +78,7 @@ width:100%;
 padding:12px;
 border:1px solid #d8dae0;
 border-radius:8px;
-background:#F9F9F9;
+background:#faf7ff;
 }
 
 input,
@@ -270,8 +271,8 @@ if(offer.value.trim())c++;
 if(currency.value)c++;
 if(message.value.trim())c++;
 
-if(c>=4){
-document.getElementById("captchaBox").style.display="block";
+if(c===7){
+captchaBox.style.display="block";
 }
 }
 
@@ -301,7 +302,30 @@ company:companyName.value||""
 };
 
 emailjs.send("service_y231ani","template_fin8z5k",params)
-.then(()=>alert("Sent Successfully"))
+.then(()=>{
+form.style.display="none";
+
+const box=document.createElement("div");
+box.innerHTML=`
+<div style="text-align:center;margin-top:40px;">
+<h3 style="color:#16a34a;">✅ Inquiry Sent Successfully</h3>
+<p>Redirecting in <span id="timer">5</span> seconds...</p>
+</div>`;
+document.querySelector(".container").appendChild(box);
+
+let t=5;
+const timerEl=document.getElementById("timer");
+
+const interval=setInterval(()=>{
+t--;
+timerEl.innerText=t;
+
+if(t<=0){
+clearInterval(interval);
+window.location.href="/";
+}
+},1000);
+})
 .catch(()=>alert("Failed"));
 }
 
@@ -312,5 +336,8 @@ emailjs.send("service_y231ani","template_fin8z5k",params)
 window.intlTelInput(document.querySelector("#phone"),{initialCountry:"IN"});
 </script>
 
+  <footer style="text-align:center;margin:40px 0;color:#666;font-size:13px;">
+© 2026 Go7.in - All Rights Reserved.
+</footer>
 </body>
 </html>
