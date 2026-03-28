@@ -282,7 +282,7 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 
 <div class="field" id="companyField" style="display:none; margin-top:10px;">
   <label>Company Name <span>*</span></label>
-  <input type="text" id="companyName" placeholder="Enter company name">
+  <input type="text" id="companyName">
 </div>
 
 <div class="field full">
@@ -313,21 +313,16 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 </div>
 
 </div>
-
-<script>
-<script>
+  
+  <script>
 function toggleCompanyField() {
   const selected = document.querySelector('input[name="isCompany"]:checked').value;
   const companyField = document.getElementById("companyField");
-  const companyInput = document.getElementById("companyName");
 
   if (selected === "yes") {
     companyField.style.display = "block";
-    companyInput.setAttribute("required", "required");
   } else {
     companyField.style.display = "none";
-    companyInput.removeAttribute("required");
-    companyInput.value = "";
   }
 }
 </script>
@@ -374,8 +369,7 @@ phone:iti.getNumber(),
 offer:offer.value,
 currency:currency.value,
 message:message.value,
-domain:"Go7.in",
-company: document.getElementById("companyName")?.value || ""
+domain:"Go7.in"
 };
 
 emailjs.send("service_y231ani","template_fin8z5k",params)
