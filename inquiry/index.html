@@ -244,15 +244,6 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 </div>
 
 <div class="field">
-  <label>Do you represent a company? *</label>
-  <select id="isCompany" onchange="toggleCompanyField()" required>
-    <option value="">Select</option>
-    <option value="yes">Yes</option>
-    <option value="no">No</option>
-  </select>
-</div>
-
-<div class="field">
 <label>Telephone Number <span>*</span></label>
 <input id="phone" type="tel" required>
 </div>
@@ -263,29 +254,37 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 <span class="note">Minimum: $50.00</span>
 </div>
 
-<div class="field">
-<label>Currency <span>*</span></label>
-<select id="currency" required>
-<option value="" disabled selected>Select</option>
-<option value="USD">USD</option>
-<option value="INR">INR</option>
-</select>
-</div>
-
 <div style="display:flex; gap:16px; flex-wrap:wrap;">
 
-  <!-- Domain -->
+  <!-- Currency -->
   <div class="field" style="flex:1;">
-    <label>Domain</label>
-    <input type="text" value="Go7.in">
+    <label>Currency <span>*</span></label>
+    <select id="currency" required>
+      <option value="" disabled selected>Select</option>
+      <option value="USD">USD</option>
+      <option value="INR">INR</option>
+    </select>
   </div>
 
-  <!-- Company (hidden by default) -->
+  <!-- Company Name (hidden) -->
   <div class="field" id="companyField" style="flex:1; display:none;">
-    <label>Company Name *</label>
+    <label>Company Name <span>*</span></label>
     <input type="text" id="companyName" placeholder="Enter company name">
   </div>
 
+</div>
+
+<div class="field">
+<label>Domain</label>
+<input value="Go7.in" readonly>
+</div>
+
+<div class="field">
+  <label>Do you represent a company? <span>*</span></label>
+  <select id="isCompany" onchange="toggleCompanyField()" required>
+    <option value="no" selected>No</option>
+    <option value="yes">Yes</option>
+  </select>
 </div>
 
 <div class="field full">
