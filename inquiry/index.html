@@ -6,6 +6,10 @@
 
 <title>Make an Offer or Inquiry for Go7.in Domain</title>
 
+<meta name="description" content="Make an offer or inquiry for Go7.in domain. Buy directly from owner with fast, secure transfer. Serious buyers only.">
+
+<link rel="icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.ico">  
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 
@@ -44,12 +48,11 @@ background:#fff;
 border-radius:12px;
 }
 
-h2{
-text-align:center;
-margin-bottom:30px;
-background: linear-gradient(90deg, #1dbafa, #f9b606);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+.top-info{
+border-left:6px solid #999;
+border-radius:8px;
+padding:20px;
+margin-bottom:25px;
 }
 
 .grid{
@@ -83,6 +86,14 @@ color:#fff;
 cursor:pointer;
 }
 
+.inline{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:6px;
+font-size:13px;
+}
+
 @media(max-width:768px){
 .grid{grid-template-columns:1fr;}
 }
@@ -93,7 +104,6 @@ cursor:pointer;
 
 <!-- HEADER -->
 <div class="header">
-
 <div class="logo">
 <svg viewBox="0 0 520 180" height="60">
 <g transform="translate(40,50) rotate(-12)">
@@ -110,13 +120,21 @@ cursor:pointer;
 <a href="/">Home</a>
 <a href="/about">About</a>
 </div>
-
 </div>
 
 <!-- FORM -->
 <div class="container">
 
-<h2>Make an offer or inquiry for this domain</h2>
+<div class="top-info">
+<h3>Premium Domain Opportunity</h3>
+<p>
+Go7.in is a short, memorable, and brandable domain ideal for startups and digital businesses. Easy to recall and market, it offers strong branding potential. Direct owner sale with fast, secure transfer for serious buyers.
+</p>
+</div>
+
+<h2 style="text-align:center;margin-bottom:20px;">
+Make an offer or inquiry for this domain
+</h2>
 
 <form id="form" onsubmit="sendMail(event)">
 <div class="grid">
@@ -160,15 +178,15 @@ cursor:pointer;
 <input value="Go7.in" readonly>
 </div>
 
-<!-- QUESTION -->
-<div id="companyQuestion" style="font-size:13px;">
+<!-- YES NO -->
+<div id="companyQuestion" class="inline">
 <span>Do you represent a company? <span style="color:red;">*</span></span>
 
-<label style="margin-left:10px;">
+<label>
 <input type="radio" name="isCompany" value="no" checked onclick="hideCompany()"> No
 </label>
 
-<label style="margin-left:10px;">
+<label>
 <input type="radio" name="isCompany" value="yes" onclick="showCompany()"> Yes
 </label>
 </div>
@@ -184,7 +202,13 @@ cursor:pointer;
 <textarea id="message" required></textarea>
 </div>
 
-<div class="cf-turnstile full" data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"></div>
+<!-- CAPTCHA -->
+<div 
+  class="cf-turnstile full" 
+  id="captchaBox"
+  data-sitekey="0x4AAAAAACv6bw4Unpy1xqim"
+  style="display:none;">
+</div>
 
 </div>
 
@@ -202,7 +226,30 @@ document.getElementById("companyField").style.display="block";
 
 function hideCompany(){
 document.getElementById("companyField").style.display="none";
-document.getElementById("companyQuestion").style.display="block";
+document.getElementById("companyQuestion").style.display="flex";
+}
+
+// CAPTCHA SHOW AFTER FORM FILL
+const inputs = document.querySelectorAll("#form input, #form textarea, #form select");
+
+inputs.forEach(input => {
+  input.addEventListener("input", checkForm);
+});
+
+function checkForm(){
+  let count = 0;
+
+  if(fname.value.trim()) count++;
+  if(lname.value.trim()) count++;
+  if(email.value.trim()) count++;
+  if(phone.value.trim()) count++;
+  if(offer.value.trim()) count++;
+  if(currency.value) count++;
+  if(message.value.trim()) count++;
+
+  if(count >= 4){
+    document.getElementById("captchaBox").style.display = "block";
+  }
 }
 
 (function(){
@@ -211,6 +258,9 @@ emailjs.init("RA7Yehviqu_UNulcU");
 
 function sendMail(e){
 e.preventDefault();
+
+const tokenInput=document.querySelector('[name="cf-turnstile-response"]');
+if(!tokenInput||!tokenInput.value){alert("Verify you are human");return;}
 
 const isCompany=document.querySelector('input[name="isCompany"]:checked').value;
 
