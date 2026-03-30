@@ -259,8 +259,8 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 
 <div class="field">
 <label>Offer <span>*</span></label>
-<input type="number" id="offer" min="50" required>
-<span class="note">Minimum: $50.00</span>
+<input type="number" id="offer" min="300" required>
+<span class="note" id="minNote">Loading...</span>
 </div>
 
 <div class="field">
@@ -356,6 +356,30 @@ function checkForm(){
 emailjs.init("RA7Yehviqu_UNulcU");
 })();
 
+let minINR = 28000; // fallback
+
+async function getRate(){
+  try{
+    const res = await fetch("https://api.frankfurter.app/latest?from=USD&to=INR");
+    const data = await res.json();
+
+    const usdToInr = data.rates.INR;
+
+    const minUSD = 300;
+    minINR = Math.round(minUSD * usdToInr);
+
+    // UI update
+    document.getElementById("minNote").innerText =
+      "Minimum: $" + minUSD + " (≈ ₹" + minINR + ")";
+  }catch{
+    document.getElementById("minNote").innerText =
+      "Minimum: $300 (≈ ₹" + minINR + ")";
+  }
+}
+
+// 🔥 call function
+getRate();
+  
 function sendMail(e){
 e.preventDefault();
 
@@ -364,7 +388,27 @@ if(!tokenInput||!tokenInput.value){alert("Verify you are human");return;}
 
 if(!iti.isValidNumber()){alert("Enter valid phone number");return;}
 
-if(parseFloat(offer.value)<50){alert("Minimum $50");return;}
+// 🔥 INR check (300 USD ≈ 28300 INR)
+const offerValue = parseFloat(offer.value);
+const currencyValue = currency.value;
+
+const minUSD = 300;
+
+// ✅ USD check
+if(currencyValue === "USD"){
+  if(offerValue < minUSD){
+    alert("Minimum $" + minUSD);
+    return;
+  }
+}
+
+// ✅ INR check (API वाला minINR)
+if(currencyValue === "INR"){
+  if(offerValue < minINR){
+    alert("Minimum ₹" + minINR);
+    return;
+  }
+}
 
 const isCompanyYes = document.querySelector('input[name="company"]:checked').value === "yes";
 
@@ -401,6 +445,7 @@ if(t<=0){clearInterval(i);window.location="/";}
 })
 .catch(()=>alert("Failed"));
 }
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
