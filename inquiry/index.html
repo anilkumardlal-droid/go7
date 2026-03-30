@@ -379,6 +379,26 @@ async function getRate(){
 
 // 🔥 call function
 getRate();
+
+async function setCurrencyByCountry(){
+  try{
+    const res = await fetch("https://ipapi.co/json/");
+    const data = await res.json();
+
+    const country = data.country_code;
+
+    if(country === "IN"){
+      currency.value = "INR";
+    }else{
+      currency.value = "USD";
+    }
+
+  }catch{
+    currency.value = "USD";
+  }
+}
+
+setCurrencyByCountry();
   
 function sendMail(e){
 e.preventDefault();
