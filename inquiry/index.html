@@ -294,6 +294,9 @@ Go7.in is a short, memorable, and brandable domain ideal for startups and digita
 <div id="companyFields" style="display:none;">
 <label>Company Name <span style="color:red">*</span></label>
 <input id="companyName" style="width:100%;">
+<span id="companyError" style="color:#ff4d4f; font-size:12px; display:none; margin-top:4px;">
+Company Name is required
+</span>
 </div>
 
 </div>
@@ -367,8 +370,15 @@ const isCompanyYes = document.querySelector('input[name="company"]:checked').val
 
 if(isCompanyYes){
   if(!companyName.value.trim()){
-    alert("Please enter Company Name");
+    if(isCompanyYes){
+  if(!companyName.value.trim()){
+    document.getElementById("companyError").style.display = "block";
+    companyName.focus();
     return;
+  }else{
+    document.getElementById("companyError").style.display = "none";
+  }
+}
   }
 }
 
