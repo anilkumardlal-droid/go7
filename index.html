@@ -142,9 +142,11 @@ color:#202122;
 }
 
 .right{
-flex:1;
-position:relative;
-height:500px;
+  flex:1;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .block{
@@ -189,11 +191,10 @@ transition:0.3s;
 .right{
   position:static;
   display:grid;
-  grid-template-columns: repeat(4, 60px); /* 👈 4 letters = SALE */
-  justify-content:center;
+  grid-template-columns: repeat(4, 1fr); /* 👈 flexible */
+  max-width:260px; /* 👈 control width */
+  margin:40px auto 0;
   gap:16px;
-  height:auto;
-  margin-top:40px;
 }
 
 .block{
