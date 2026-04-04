@@ -299,60 +299,10 @@ color:#5a19da;
   border-bottom-right-radius:30px;
   overflow:hidden; /* 👈 IMPORTANT */
 }
-
-/* PRELOADER */
-#preloader{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-
-/* LOGO STYLE */
-.logo-loader{
-  font-size:50px;
-  font-weight:700;
-  letter-spacing:5px;
-  display:flex;
-  gap:10px;
-}
-
-/* ANIMATION */
-.logo-loader span{
-  color:#7c3bed;
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeUp 0.6s ease forwards;
-}
-
-.logo-loader span:nth-child(1){animation-delay:0.1s;}
-.logo-loader span:nth-child(2){animation-delay:0.3s;}
-.logo-loader span:nth-child(3){animation-delay:0.5s;}
-
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
 </style>
 </head>
 
 <body>
-
-<div id="preloader">
-  <div class="logo-loader">
-    <span>G</span>
-    <span>o</span>
-    <span>7</span>
-  </div>
-</div>
 
 <div class="top-bg">
 
@@ -472,20 +422,6 @@ color:#5a19da;
 
 </div> <!-- 👈 ADD THIS (top-bg close) -->
 
-<script>
-window.addEventListener("load", function(){
-  setTimeout(function(){
-    document.getElementById("preloader").style.opacity = "0";
-    document.getElementById("preloader").style.transition = "0.5s";
-    
-    setTimeout(()=>{
-      document.getElementById("preloader").style.display = "none";
-    },500);
-    
-  }, 3000);
-});
-</script>
-  
 <script>
 if (window.location.pathname === "/index" || window.location.pathname === "/index.html") {
   window.location.replace("/");
