@@ -25,8 +25,3 @@
 #blog{
     display: none !important;
 }
-
-/* Blog Menu Link */
-.navbar-nav li:nth-child(4){
-    display: none !important;
-}
