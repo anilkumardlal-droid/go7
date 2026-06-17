@@ -59,20 +59,7 @@
     padding:0;
 }
 
-body{
-    font-family: -apple-system-body, ui-sans-serif, -apple-system,
-    system-ui, "Segoe UI", Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-    font-weight:600 !important;
-}
 
 .home-name{
     background: linear-gradient(
@@ -83,4 +70,26 @@ h6{
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
+}
+
+body{
+    font-family: -apple-system-body, ui-sans-serif, -apple-system,
+    system-ui, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    font-weight: 400;
+}
+
+.home-name{
+    font-family: utopia-std-caption, serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight: 600 !important;
 }
