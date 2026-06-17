@@ -6,3 +6,27 @@
   * Version: v2.0.0
   * License: Themeforest Standard Licenses: https://themeforest.net/licenses
   */
+
+/* ==========================================
+   Hide Unwanted Template Sections
+========================================== */
+
+/* Testimonials */
+.testimonials-section{
+    display: none !important;
+}
+
+/* Pricing / Choose a Plan */
+.pricing-section{
+    display: none !important;
+}
+
+/* Blog Section */
+#blog{
+    display: none !important;
+}
+
+/* Blog Menu Link */
+.navbar-nav li:nth-child(4){
+    display: none !important;
+}
