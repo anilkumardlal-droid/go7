@@ -65,11 +65,23 @@ body{
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
 
-h1,
 h2,
 h3,
 h4,
 h5,
 h6{
     font-weight:600 !important;
+}
+
+.home-name{
+    font-weight:700 !important;
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #d1d5db,
+        #ffffff
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
 }
