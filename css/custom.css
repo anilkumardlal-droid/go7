@@ -25,3 +25,7 @@
 #blog{
     display: none !important;
 }
+
+.languages-list{
+    display:none !important;
+}
