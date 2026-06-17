@@ -53,3 +53,9 @@
 #portfolio{
     display:none !important;
 }
+
+.navbar-brand img{
+    height:45px;
+    width:auto;
+    display:block;
+}
