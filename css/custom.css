@@ -73,9 +73,3 @@ h5,
 h6{
     font-weight:600 !important;
 }
-
-.home-name span{
-    background:linear-gradient(90deg,#22c55e,#86efac);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
