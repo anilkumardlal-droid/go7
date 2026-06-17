@@ -55,7 +55,10 @@
 }
 
 .navbar-brand img{
-    height:45px;
+    height:40px;
     width:auto;
-    display:block;
+}
+
+.navbar-brand{
+    padding:0;
 }
