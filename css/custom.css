@@ -30,6 +30,14 @@
     display:none !important;
 }
 
+/* Hide Video Section */
+#resume .video-section,
+.video-section.single-section,
 .video-section{
-    display: none !important;
+    display:none !important;
+    visibility:hidden !important;
+    height:0 !important;
+    overflow:hidden !important;
+    margin:0 !important;
+    padding:0 !important;
 }
