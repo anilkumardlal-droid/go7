@@ -73,7 +73,8 @@
 }
 
 body{
-    font-family:'Manrope',sans-serif !important;
+    font-family: -apple-system-body, ui-sans-serif, -apple-system,
+    system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 h1,
