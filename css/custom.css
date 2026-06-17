@@ -73,15 +73,18 @@
 }
 
 body{
-    font-family: -apple-system-body, ui-sans-serif, -apple-system,
-    system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family:'Inter',sans-serif;
 }
 
-h1,
 h2,
 h3,
 h4,
 h5,
 h6{
     font-weight: 600 !important;
+}
+
+.home-name{
+    font-family:'DM Serif Display',serif;
+    font-weight:400;
 }
