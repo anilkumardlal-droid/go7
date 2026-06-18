@@ -72,14 +72,18 @@
     background-clip:text;
 }
 
-.home-name{
-    font-weight:600 !important;
+body{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight:400;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6{
+.home-name{
+    font-family: inherit;
+    font-weight:600 !important;
+    letter-spacing:-0.03em;
+}
+
+h2,h3,h4,h5,h6{
     font-weight:500 !important;
 }
