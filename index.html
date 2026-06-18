@@ -755,13 +755,17 @@ document.getElementById("contact-form").addEventListener("submit", function(e){
         }
     )
     .then(function () {
-        alert("Inquiry Sent Successfully!");
-        document.getElementById("contact-form").reset();
-    })
+    document.querySelector(".contact-feedback").innerHTML =
+    "Thank you for your inquiry. I will get back to you shortly.";
+
+    document.getElementById("contact-form").reset();
+})
     .catch(function (error) {
-        alert("Failed to send inquiry.");
-        console.log(error);
-    });
+    document.querySelector(".contact-feedback").innerHTML =
+    "Something went wrong. Please try again.";
+
+    console.log(error);
+})
 
 });
 </script>
