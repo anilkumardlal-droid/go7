@@ -733,6 +733,38 @@
   <!-- removeIf(customizerDist)-->
   
   <!-- endremoveIf(customizerDist)-->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init({
+    publicKey: "RA7Yehviqu_UNulcU"
+});
+
+document.getElementById("contact-form").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    emailjs.send(
+        "service_y231ani",
+        "template_fin8z5k",
+        {
+            name: document.getElementById("contact-name").value,
+            email: document.getElementById("contact-email").value,
+            subject: document.getElementById("contact-subject").value,
+            message: document.getElementById("contact-message").value
+        }
+    )
+    .then(function () {
+        alert("Inquiry Sent Successfully!");
+        document.getElementById("contact-form").reset();
+    })
+    .catch(function (error) {
+        alert("Failed to send inquiry.");
+        console.log(error);
+    });
+
+});
+</script>
 </body>
 
 
