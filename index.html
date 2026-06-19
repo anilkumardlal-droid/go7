@@ -750,8 +750,10 @@ if (!token) {
     "Please complete the security check.";
     return;
 }
-document.getElementById("contact-submit").innerHTML =
-"Wait...";
+const btn = document.getElementById("contact-submit");
+
+btn.innerHTML = "Sending...";
+btn.disabled = true;
     emailjs.send(
     "service_y231ani",
     "template_fin8z5k",
@@ -769,8 +771,10 @@ document.getElementById("contact-submit").innerHTML =
 
     document.getElementById("contact-form").reset();
 
-    document.getElementById("contact-submit").innerHTML =
-    "Send Domain Inquiry";
+    const btn = document.getElementById("contact-submit");
+
+btn.innerHTML = "Send Domain Inquiry";
+btn.disabled = false;
 
     if (typeof turnstile !== "undefined") {
         turnstile.reset();
@@ -782,8 +786,10 @@ document.getElementById("contact-submit").innerHTML =
     document.querySelector(".contact-feedback").innerHTML =
     "✗ Something went wrong. Please try again.";
 
-    document.getElementById("contact-submit").innerHTML =
-    "Send Domain Inquiry";
+    const btn = document.getElementById("contact-submit");
+
+btn.innerHTML = "Send Domain Inquiry";
+btn.disabled = false;
 
     console.log(error);
 
