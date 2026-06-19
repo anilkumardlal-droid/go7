@@ -34,6 +34,7 @@
   <!-- removeIf(customizerDist)-->
   
   <!-- endremoveIf(customizerDist)-->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
@@ -663,7 +664,7 @@
                       <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-email" type="email" name="email" placeholder="Email" required=""></div>
                       <div class="col-12 form-group"><input class="form-control" id="contact-subject" type="text" name="subject" placeholder="Subject" required=""></div>
                       <div class="col-12 form-group form-message"><textarea class="form-control" id="contact-message" name="message" placeholder="Message" rows="5" required=""></textarea></div>
-                      <div class="col-12 form-submit"><button class="btn button-main button-scheme" id="contact-submit" type="submit">Send Domain Inquiry</button>
+                      <div class="col-12 form-submit"><div class="cf-turnstile" data-sitekey="0x4AAAAAADnxzvJGSfHstKEu"></div><button class="btn button-main button-scheme" id="contact-submit" type="submit">Send Domain Inquiry</button>
                         <p class="contact-feedback"></p>
                       </div>
                     </div>
@@ -743,6 +744,13 @@ emailjs.init({
 document.getElementById("contact-form").addEventListener("submit", function(e){
 
     e.preventDefault();
+  const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
+
+if (!token) {
+    document.querySelector(".contact-feedback").innerHTML =
+    "Please complete the security check.";
+    return;
+}
 
     emailjs.send(
         "service_y231ani",
