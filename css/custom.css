@@ -108,3 +108,8 @@ h2,h3,h4,h5,h6{
 .contact-info .list-info li:nth-child(3){
     display:none !important;
 }
+
+.fixed-block.block-right,
+.content-follow{
+    display:none !important;
+}
