@@ -767,18 +767,22 @@ btn.disabled = true;
 .then(function () {
 
     document.querySelector(".contact-feedback").innerHTML =
-"✓ Inquiry sent successfully. I will get back to you shortly.";
+    "✓ Inquiry sent successfully. I will get back to you shortly.";
 
     document.getElementById("contact-form").reset();
 
     const btn = document.getElementById("contact-submit");
 
-btn.innerHTML = "Send Domain Inquiry";
-btn.disabled = false;
+    btn.innerHTML = "Send Domain Inquiry";
+    btn.disabled = false;
 
     if (typeof turnstile !== "undefined") {
         turnstile.reset();
     }
+
+    setTimeout(() => {
+        location.reload();
+    }, 5000);
 
 })
     .catch(function (error) {
