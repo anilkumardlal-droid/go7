@@ -734,7 +734,6 @@
   <!-- removeIf(customizerDist)-->
   
   <!-- endremoveIf(customizerDist)-->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
 emailjs.init({
@@ -751,20 +750,42 @@ if (!token) {
     "Please complete the security check.";
     return;
 }
-
+document.getElementById("contact-submit").innerHTML =
+"Wait...";
     emailjs.send(
-        "service_y231ani",
-        "template_fin8z5k",
-        {
-            name: document.getElementById("contact-name").value,
-            email: document.getElementById("contact-email").value,
-            subject: document.getElementById("contact-subject").value,
-            message: document.getElementById("contact-message").value
-        }
-    )
-    .then(function () {
-    alert("Inquiry Sent Successfully!");
+    "service_y231ani",
+    "template_fin8z5k",
+    {
+        name: document.getElementById("contact-name").value,
+        email: document.getElementById("contact-email").value,
+        subject: document.getElementById("contact-subject").value,
+        message: document.getElementById("contact-message").value
+    }
+)
+.then(function () {
+
+    alert("Thank you for your inquiry. I will get back to you shortly.");
+
     document.getElementById("contact-form").reset();
+
+    let count = 8;
+
+    const btn = document.getElementById("contact-submit");
+
+    const timer = setInterval(() => {
+
+        btn.innerHTML = `Sent ✓ ${count}s`;
+
+        count--;
+
+        if (count < 0) {
+            clearInterval(timer);
+            btn.innerHTML = "Send Domain Inquiry";
+            turnstile.reset();
+        }
+
+    }, 1000);
+
 })
     .catch(function (error) {
     document.querySelector(".contact-feedback").innerHTML =
