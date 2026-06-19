@@ -93,9 +93,10 @@ h2,h3,h4,h5,h6{
 }
 
 .contact-feedback{
-    display:block;
+    display:block !important;
     margin-top:15px;
-    font-size:14px;
+    color:#00d084 !important;
+    font-size:15px;
     font-weight:500;
-    color:#28a745;
+    min-height:24px;
 }
