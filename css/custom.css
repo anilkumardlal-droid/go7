@@ -26,10 +26,6 @@
     display: none !important;
 }
 
-.languages-list{
-    display:none !important;
-}
-
 /* Hide Video Section */
 #resume .video-section,
 .video-section.single-section,
