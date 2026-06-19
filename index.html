@@ -768,24 +768,6 @@ document.getElementById("contact-submit").innerHTML =
 
     document.getElementById("contact-form").reset();
 
-    let count = 8;
-
-    const btn = document.getElementById("contact-submit");
-
-    const timer = setInterval(() => {
-
-        btn.innerHTML = `Sent ✓ ${count}s`;
-
-        count--;
-
-        if (count < 0) {
-            clearInterval(timer);
-            btn.innerHTML = "Send Domain Inquiry";
-            turnstile.reset();
-        }
-
-    }, 1000);
-
 })
     .catch(function (error) {
     document.querySelector(".contact-feedback").innerHTML =
