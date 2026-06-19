@@ -764,16 +764,29 @@ document.getElementById("contact-submit").innerHTML =
 )
 .then(function () {
 
-    alert("Thank you for your inquiry. I will get back to you shortly.");
+    document.querySelector(".contact-feedback").innerHTML =
+    "✓ Thank you for your inquiry. I will get back to you shortly.";
 
     document.getElementById("contact-form").reset();
 
+    document.getElementById("contact-submit").innerHTML =
+    "Send Domain Inquiry";
+
+    if (typeof turnstile !== "undefined") {
+        turnstile.reset();
+    }
+
 })
     .catch(function (error) {
+
     document.querySelector(".contact-feedback").innerHTML =
-    "Something went wrong. Please try again.";
+    "✗ Something went wrong. Please try again.";
+
+    document.getElementById("contact-submit").innerHTML =
+    "Send Domain Inquiry";
 
     console.log(error);
+
 })
 
 });
