@@ -46,11 +46,6 @@
     display:none !important;
 }
 
-.navbar-brand img{
-    height:40px;
-    width:auto;
-}
-
 .navbar-brand{
     padding:0;
 }
