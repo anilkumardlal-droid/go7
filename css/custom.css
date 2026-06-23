@@ -100,3 +100,8 @@ h2,h3,h4,h5,h6{
 .content-follow{
     display:none !important;
 }
+
+.navbar-brand img{
+    height:35px;
+    width:auto !important;
+}
