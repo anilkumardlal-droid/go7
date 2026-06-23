@@ -137,6 +137,9 @@
         </ul>
       </div>
     </div>
+    <div class="home-copyright">
+    © <span id="year"></span> GO7.IN. All Rights Reserved.
+</div>
   </section>
   <!-- About lightbox-->
   <div class="lightbox-wrapper" id="about" data-simplebar>
@@ -843,9 +846,9 @@ btn.disabled = false;
 });
 </script>
   
-  <script>
-document.getElementById("copyright").innerHTML =
-`© ${new Date().getFullYear()} GO7.IN. All Rights Reserved.`;
+ <script>
+document.getElementById("year").textContent =
+new Date().getFullYear();
 </script>
 </body>
 
