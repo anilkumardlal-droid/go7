@@ -44,7 +44,6 @@
   
   <!-- endremoveIf(customizerDist)-->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -777,69 +776,60 @@
   <!-- endremoveIf(customizerDist)-->
 
 <script>
-emailjs.init({
-    publicKey: "RA7Yehviqu_UNulcU"
-});
-
-document.getElementById("contact-form").addEventListener("submit", function(e){
-
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
     e.preventDefault();
-  const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
 
-if (!token) {
-    document.querySelector(".contact-feedback").innerHTML =
-    "Please complete the security check.";
-    return;
-}
-const btn = document.getElementById("contact-submit");
+    const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
 
-btn.innerHTML = "Sending...";
-btn.disabled = true;
-    emailjs.send(
-    "service_y231ani",
-    "template_fin8z5k",
-    {
-        name: document.getElementById("contact-name").value,
-        email: document.getElementById("contact-email").value,
-        subject: document.getElementById("contact-subject").value,
-        message: document.getElementById("contact-message").value
+    if (!token) {
+        document.querySelector(".contact-feedback").innerHTML =
+        "Please complete the security check.";
+        return;
     }
-)
-.then(function () {
-
-    document.querySelector(".contact-feedback").innerHTML =
-    "✓ Inquiry sent successfully. I will get back to you shortly.";
-
-    document.getElementById("contact-form").reset();
 
     const btn = document.getElementById("contact-submit");
+    btn.disabled = true;
+    btn.innerHTML = "Sending...";
 
-    btn.innerHTML = "Send Domain Inquiry";
+    try {
+        const res = await fetch("https://info.anilsrivastav561.workers.dev/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: document.getElementById("contact-name").value,
+                email: document.getElementById("contact-email").value,
+                subject: document.getElementById("contact-subject").value,
+                message: document.getElementById("contact-message").value,
+                token: token
+            })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+            document.querySelector(".contact-feedback").innerHTML =
+            "✓ Inquiry sent successfully. I will get back to you shortly.";
+
+            document.getElementById("contact-form").reset();
+
+            if (typeof turnstile !== "undefined") {
+                turnstile.reset();
+            }
+
+            setTimeout(() => location.reload(), 5000);
+        } else {
+            throw new Error();
+        }
+
+    } catch (err) {
+        document.querySelector(".contact-feedback").innerHTML =
+        "✗ Something went wrong. Please try again.";
+    }
+
     btn.disabled = false;
-
-    if (typeof turnstile !== "undefined") {
-        turnstile.reset();
-    }
-
-    setTimeout(() => {
-        location.reload();
-    }, 5000);
-
-})
-    .catch(function (error) {
-
-    document.querySelector(".contact-feedback").innerHTML =
-    "✗ Something went wrong. Please try again.";
-
-    const btn = document.getElementById("contact-submit");
-
-btn.innerHTML = "Send Domain Inquiry";
-btn.disabled = false;
-
-    console.log(error);
-
-})
-
+    btn.innerHTML = "Send Domain Inquiry";
 });
 </script>
 </body>
