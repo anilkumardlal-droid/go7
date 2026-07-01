@@ -819,18 +819,18 @@ document.getElementById("contact-form").addEventListener("submit", async functio
             }
 
             setTimeout(() => location.reload(), 5000);
-        } else {
-    console.log(data);
-    document.querySelector(".contact-feedback").innerHTML =
-    "✗ " + (data.error || data.message || "Unknown Error");
-}
+               } else {
+            console.log(data);
+            document.querySelector(".contact-feedback").innerHTML =
+                "✗ " + (data.error || data.message || "Unknown Error");
+        }
 
-   catch (err) {
-    console.error(err);
+    } catch (err) {
+        console.error(err);
 
-    document.querySelector(".contact-feedback").innerHTML =
-    "✗ " + err.message;
-}
+        document.querySelector(".contact-feedback").innerHTML =
+            "✗ " + err.message;
+    }
 
     btn.disabled = false;
     btn.innerHTML = "Send Domain Inquiry";
