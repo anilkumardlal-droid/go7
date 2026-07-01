@@ -820,13 +820,17 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
             setTimeout(() => location.reload(), 5000);
         } else {
-            throw new Error();
-        }
+    console.log(data);
+    document.querySelector(".contact-feedback").innerHTML =
+    "✗ " + (data.error || data.message || "Unknown Error");
+}
 
-    } catch (err) {
-        document.querySelector(".contact-feedback").innerHTML =
-        "✗ Something went wrong. Please try again.";
-    }
+   catch (err) {
+    console.error(err);
+
+    document.querySelector(".contact-feedback").innerHTML =
+    "✗ " + err.message;
+}
 
     btn.disabled = false;
     btn.innerHTML = "Send Domain Inquiry";
