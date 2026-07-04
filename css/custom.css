@@ -160,15 +160,15 @@ h2,h3,h4,h5,h6{
 
 @media (min-width:992px){
 
-.home-content{
+.home-area .home-content{
     text-align:left !important;
 }
 
-.hero-description{
+.home-area .hero-description{
     margin:24px 0 34px;
 }
 
-.hero-buttons{
+.home-area .hero-buttons{
     justify-content:flex-start;
 }
 
