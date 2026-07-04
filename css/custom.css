@@ -105,3 +105,95 @@ h2,h3,h4,h5,h6{
     height:35px;
     width:auto !important;
 }
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-description{
+    max-width:650px;
+    margin:24px auto 34px;
+    font-size:18px;
+    line-height:1.8;
+    color:#bdbdbd;
+    font-weight:400;
+}
+
+.hero-description strong{
+    color:#ffffff;
+    font-weight:600;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.hero-buttons .btn{
+    min-width:220px;
+}
+
+.button-outline{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    padding:12px 30px;
+    border:2px solid rgba(255,255,255,.25);
+    border-radius:30px;
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:500;
+    transition:all .3s ease;
+}
+
+.button-outline:hover{
+    background:#ffffff;
+    color:#111;
+    border-color:#ffffff;
+    text-decoration:none;
+}
+
+/* Desktop */
+
+@media (min-width:992px){
+
+.home-content{
+    text-align:left !important;
+}
+
+.hero-description{
+    margin:24px 0 34px;
+}
+
+.hero-buttons{
+    justify-content:flex-start;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:991px){
+
+.home-content{
+    text-align:center !important;
+}
+
+.hero-description{
+    font-size:16px;
+    margin:20px auto 30px;
+}
+
+.hero-buttons .btn{
+    width:100%;
+    max-width:280px;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+}
