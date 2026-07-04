@@ -112,39 +112,21 @@ h2,h3,h4,h5,h6{
 
 .hero-description{
     max-width:780px;
-    width:100%;
     margin:22px auto 32px;
-    padding:0 15px;
-    font-size:17px;
-    line-height:1.75;
-    font-weight:400;
-    color:#bdbdbd;
-}
-
-/* Tablet */
-
-@media (max-width:991px){
-
-.hero-description{
-    max-width:680px;
-    margin:20px auto 28px;
     padding:0 15px;
     font-size:16px;
     line-height:1.7;
+    color:#bdbdbd;
+    font-weight:400;
 }
-
-}
-
-/* Mobile */
 
 @media (max-width:576px){
 
 .hero-description{
-    max-width:100%;
     margin:18px auto 24px;
     padding:0 12px;
     font-size:15px;
-    line-height:1.65;
+    line-height:1.6;
 }
 
 }
