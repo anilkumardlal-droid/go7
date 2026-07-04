@@ -132,10 +132,12 @@ h2,h3,h4,h5,h6{
 }
 
 @media (min-width:992px){
+    .home-content{
+        text-align:left !important;
+    }
 
-.home-content{
-    position: relative;
-    left: -80px;
-}
-
+    .hero-description{
+        margin-left:0;
+        margin-right:0;
+    }
 }
