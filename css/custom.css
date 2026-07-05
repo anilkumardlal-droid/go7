@@ -140,3 +140,14 @@ h2,h3,h4,h5,h6{
         margin-right:0;
     }
 }
+
+.contact-highlights{
+    margin-top:25px;
+}
+
+.contact-highlights p{
+    margin-bottom:10px;
+    color:#bdbdbd;
+    font-size:15px;
+    line-height:1.7;
+}
