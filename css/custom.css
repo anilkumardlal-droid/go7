@@ -151,3 +151,21 @@ h2,h3,h4,h5,h6{
     font-size:15px;
     line-height:1.7;
 }
+
+.hero-description{
+    font-size:16px;
+    line-height:1.8;
+    font-weight:400;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #d9d9d9 40%,
+        #bdbdbd 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    color:transparent;
+}
