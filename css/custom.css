@@ -21,11 +21,6 @@
     display: none !important;
 }
 
-/* Blog Section */
-#blog{
-    display: none !important;
-}
-
 /* Hide Video Section */
 #resume .video-section,
 .video-section.single-section,
