@@ -846,7 +846,8 @@ HOME NAME
     background: linear-gradient(180deg, #fff 22.5%, rgba(255, 255, 255, .7) 100%);
     background-clip:text !important;
     -webkit-text-fill-color:transparent !important;
-     webkit-background-clip:text !important;    
+     webkit-background-clip:text !important;
+   color:transparent !important;
 }
     
 
