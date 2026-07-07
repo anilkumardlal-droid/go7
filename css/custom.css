@@ -837,14 +837,14 @@ margin-bottom: 30px !important;
 HOME NAME
 ================================ */
   .home-name{
-    font-family:inherit !important;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif !important; 
     font-size:70px !important;
     font-weight:600 !important;
     letter-spacing:-0.03em !important;
 
     background: linear-gradient(180deg, #fff 22.5%, rgba(255, 255, 255, .7) 100%);
     background-clip:text !important;
-    color:transparent !important;
     -webkit-text-fill-color:transparent !important;
      webkit-background-clip:text !important;    
 }
