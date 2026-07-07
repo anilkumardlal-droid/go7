@@ -165,38 +165,6 @@ h2,h3,h4,h5,h6{
     color:transparent;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*==================================================
 GO7.IN Secure Domain Transactions
 Part 1 - Hero & Transaction Cards
@@ -833,4 +801,18 @@ Part 4 - Responsive + Final Polish
 
 #blog .button-main:hover{
     transform:translateY(-2px);
+}
+
+/* Learn More Button Fix */
+
+#blog .button-outline{
+    color:#ffffff !important;
+    border:1px solid #00d084;
+    background:transparent;
+}
+
+#blog .button-outline:hover{
+    background:#00d084;
+    color:#111111 !important;
+    border-color:#00d084;
 }
