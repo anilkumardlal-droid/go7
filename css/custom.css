@@ -489,8 +489,8 @@ Buttons
 
 #transactions .transaction-buttons .btn{
     margin:8px;
-    border-radius:6px;
-    padding:12px 28px !important;
+    border-radius:50px;
+    padding:10px 35px !important;
 min-width:auto !important;
 }
 
@@ -853,4 +853,6 @@ HOME NAME
    color:transparent !important;
 }
     
-
+.btn.button-scheme {
+ border-radius: 50px !important;
+}
