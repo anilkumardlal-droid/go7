@@ -856,12 +856,36 @@ HOME NAME
 .btn.button-scheme {
  border-radius: 50px !important;
 }
+/* Hide Social Icons */
 
-h2,
-h3,
-h4,
-h5,
-h6{
+.fixed-wrapper .social-icons,
+.content-follow{
+    display:none !important;
+}
+
+#about h2,
+#about h3,
+#about h4,
+#about h5,
+#about h6,
+
+#resume h2,
+#resume h3,
+#resume h4,
+#resume h5,
+#resume h6,
+
+#transactions h2,
+#transactions h3,
+#transactions h4,
+#transactions h5,
+#transactions h6,
+
+#contact h2,
+#contact h3,
+#contact h4,
+#contact h5,
+#contact h6{
 
     background:linear-gradient(
         180deg,
@@ -875,11 +899,4 @@ h6{
     -webkit-text-fill-color:transparent !important;
     color:transparent !important;
 
-}
-
-/* Hide Social Icons */
-
-.fixed-wrapper .social-icons,
-.content-follow{
-    display:none !important;
 }
