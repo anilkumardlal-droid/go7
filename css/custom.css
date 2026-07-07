@@ -805,14 +805,16 @@ Part 4 - Responsive + Final Polish
 
 /* Learn More Button Fix */
 
-#blog .button-outline{
+/* Learn More Button */
+
+#blog .btn.button-outline{
     color:#ffffff !important;
-    border:1px solid #00d084;
     background:transparent;
+    border:2px solid #00d084;
 }
 
-#blog .button-outline:hover{
-    background:#00d084;
+#blog .btn.button-outline:hover{
     color:#111111 !important;
+    background:#00d084;
     border-color:#00d084;
 }
