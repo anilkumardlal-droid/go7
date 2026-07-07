@@ -714,37 +714,37 @@ Transactions Typography
 
 #transactions h1{
     font-size:52px !important;
-    font-weight:700 !important;
+    font-weight:600 !important;
     line-height:1.2 !important;
 }
 
 #transactions h2{
     font-size:40px !important;
-    font-weight:700 !important;
+    font-weight:600 !important;
     line-height:1.25 !important;
 }
 
 #transactions h3{
     font-size:32px !important;
-    font-weight:600 !important;
+    font-weight:500 !important;
     line-height:1.35 !important;
 }
 
 #transactions h4{
     font-size:26px !important;
-    font-weight:600 !important;
+    font-weight:500 !important;
     line-height:1.4 !important;
 }
 
 #transactions h5{
     font-size:22px !important;
-    font-weight:600 !important;
+    font-weight:500 !important;
     line-height:1.45 !important;
 }
 
 #transactions h6{
     font-size:18px !important;
-    font-weight:600 !important;
+    font-weight:500 !important;
     line-height:1.5 !important;
 }
 
