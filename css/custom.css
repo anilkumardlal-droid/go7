@@ -858,3 +858,7 @@ Mobile & Tablet
     box-shadow:0 0 0 3px rgba(0,208,132,.15);
     outline:none;
 }
+
+.services-section .single-service {
+margin-bottom: 30px !important;
+}
