@@ -842,21 +842,8 @@ Mobile & Tablet
 
 }
 
-.contact-form .form-control{
-    background:#1b1b1b;
-    color:#fff;
-    border:1px solid #2d2d2d;
-    transition:.3s ease;
-}
-
-.contact-form .form-control:hover{
-    border-color:#3a3a3a;
-}
-
-.contact-form .form-control:focus{
-    border-color:#00d084;
-    box-shadow:0 0 0 3px rgba(0,208,132,.15);
-    outline:none;
+.contact-section .contact-form .form-group .form-control {
+ border:1px solid #2b2b2b !important;
 }
 
 .services-section .single-service {
