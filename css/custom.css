@@ -834,41 +834,29 @@ margin-bottom: 30px !important;
 }
 
 /* ===============================
-HOME NAME SVG
+HOME NAME
 ================================ */
-
-.home-name{
-    display:inline-block !important;
-    width:100% !important;
-    max-width:900px !important;
-    margin:0 !important;
-    line-height:1 !important;
-}
-
-.home-name svg{
-    display:block !important;
-    width:100% !important;
-    height:auto !important;
-}
-
-.home-name text{
+  .home-name{
     font-family:inherit !important;
-    font-weight:700 !important;
-    dominant-baseline:middle !important;
+    font-size:clamp(52px,7vw,88px) !important;
+    font-weight:600 !important;
+    line-height:1.1 !important;
+    letter-spacing:-0.03em !important;
+
+    background:linear-gradient(
+        90deg,
+        #7C3AED 0%,
+        #EC4899 50%,
+        #F59E0B 100%
+    ) !important;
+
+    -webkit-background-clip:text !important;
+    background-clip:text !important;
+
+    -webkit-text-fill-color:transparent !important;
+    color:transparent !important;
+
+    display:inline-block !important;
 }
+    
 
-@media (max-width:991px){
-
-.home-name{
-    max-width:700px !important;
-}
-
-}
-
-@media (max-width:767px){
-
-.home-name{
-    max-width:100% !important;
-}
-
-}
