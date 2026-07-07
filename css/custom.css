@@ -826,7 +826,7 @@ Mobile & Tablet
 }
 
 .contact-section .contact-form .form-group .form-control {
- border-bottom: 1px solid #2b2b2b;
+ border-bottom: 1px solid #2b2b2b !important;
 }
 
 .services-section .single-service {
