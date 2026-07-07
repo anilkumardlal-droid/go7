@@ -849,3 +849,19 @@ Mobile & Tablet
 .services-section .single-service {
 margin-bottom: 30px !important;
 }
+
+h1{
+    background:linear-gradient(
+        90deg,
+        #8115ff 0%,
+        #ff2ad0 52%,
+        #ff8f2a 100%
+    );
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+
+    display:inline-block;
+    padding:0.065em;
+}
