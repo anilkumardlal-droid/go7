@@ -45,8 +45,6 @@
     padding:0;
 }
 
-
-
 .home-name{
     background: linear-gradient(
         180deg,
@@ -204,105 +202,62 @@ Part 1 - Hero & Transaction Cards
 /* Cards */
 
 #transactions .transaction-card{
-
     background:#1b1b1b;
-
     border:1px solid #2a2a2a;
-
     border-radius:18px;
-
     padding:35px;
-
     height:100%;
-
     transition:.35s;
-
 }
 
 #transactions .transaction-card:hover{
-
     transform:translateY(-8px);
-
     border-color:#00d084;
-
     box-shadow:0 18px 45px rgba(0,0,0,.35);
-
 }
 
 #transactions .transaction-icon{
-
     width:64px;
-
     height:64px;
-
     border-radius:50%;
-
     background:#242424;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     font-size:26px;
-
     color:#00d084;
-
     margin-bottom:25px;
-
 }
 
 #transactions .transaction-badge{
-
     display:inline-block;
-
     padding:6px 14px;
-
     font-size:11px;
-
     letter-spacing:1px;
-
     text-transform:uppercase;
-
     border-radius:40px;
-
     background:#252525;
-
     color:#cfcfcf;
-
     margin-bottom:18px;
-
 }
 
 #transactions .transaction-card h4{
-
     margin-bottom:18px;
-
 }
 
 #transactions .transaction-card p{
-
     color:#b7b7b7;
-
     line-height:1.8;
-
 }
 
 #transactions .transaction-list{
-
     margin:22px 0 0;
-
     padding-left:18px;
-
 }
 
 #transactions .transaction-list li{
-
     margin-bottom:12px;
-
     color:#d3d3d3;
-
 }
 
 #transactions .transaction-highlight{
@@ -315,19 +270,13 @@ Part 1 - Hero & Transaction Cards
 }
 
 #transactions .transaction-highlight h5{
-
     margin-bottom:12px;
-
 }
 
 #transactions .transaction-highlight p{
-
     margin:0;
-
     color:#bcbcbc;
-
     line-height:1.8;
-
 }
 
 /*==================================================
@@ -487,59 +436,35 @@ CTA BOX
 ========================= */
 
 #transactions .transaction-cta{
-
     background:#181818;
-
     border:1px solid #2b2b2b;
-
     border-radius:22px;
-
     padding:55px;
-
     text-align:center;
-
     overflow:hidden;
-
     position:relative;
-
 }
 
 #transactions .transaction-cta::before{
-
     content:"";
-
     position:absolute;
-
     top:0;
-
     left:0;
-
     width:100%;
-
     height:4px;
-
     background:linear-gradient(90deg,#00d084,#00a86b);
-
 }
 
 #transactions .transaction-cta h3{
-
     font-size:36px;
-
     margin-bottom:22px;
-
 }
 
 #transactions .transaction-cta p{
-
     max-width:760px;
-
     margin:0 auto 18px;
-
     color:#bdbdbd;
-
     line-height:1.9;
-
 }
 
 /* =========================
@@ -547,43 +472,27 @@ Buttons
 ========================= */
 
 #transactions .transaction-buttons{
-
     margin-top:35px;
-
 }
 
 #transactions .transaction-buttons .btn{
-
     min-width:210px;
-
     margin:8px;
-
     border-radius:40px;
-
     padding:14px 32px;
-
 }
 
 #transactions .button-outline{
-
     color:#fff;
-
     border:1px solid #444;
-
     background:transparent;
-
     transition:.35s;
-
 }
 
 #transactions .button-outline:hover{
-
     background:#00d084;
-
     border-color:#00d084;
-
     color:#111;
-
 }
 
 /* =========================
@@ -591,41 +500,26 @@ Stats
 ========================= */
 
 #transactions .transaction-stats{
-
     display:flex;
-
     justify-content:center;
-
     gap:45px;
-
     margin-top:45px;
-
     flex-wrap:wrap;
-
 }
 
 #transactions .stat-item{
-
     min-width:150px;
-
 }
 
 #transactions .stat-item h4{
-
     font-size:34px;
-
     color:#00d084;
-
     margin-bottom:8px;
-
 }
 
 #transactions .stat-item span{
-
     color:#bdbdbd;
-
     font-size:15px;
-
 }
 
 /*==================================================
