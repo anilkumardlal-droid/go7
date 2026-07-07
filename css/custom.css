@@ -838,25 +838,15 @@ HOME NAME
 ================================ */
   .home-name{
     font-family:inherit !important;
-    font-size:clamp(52px,7vw,88px) !important;
+    font-size:70px !important;
     font-weight:600 !important;
-    line-height:1.1 !important;
     letter-spacing:-0.03em !important;
 
-    background:linear-gradient(
-        90deg,
-        #7C3AED 0%,
-        #EC4899 50%,
-        #F59E0B 100%
-    ) !important;
-
-    -webkit-background-clip:text !important;
+    background: linear-gradient(180deg, #fff 22.5%, rgba(255, 255, 255, .7) 100%);
     background-clip:text !important;
-
-    -webkit-text-fill-color:transparent !important;
     color:transparent !important;
-
-    display:inline-block !important;
+    -webkit-text-fill-color:transparent !important;
+     webkit-background-clip:text !important;    
 }
     
 
