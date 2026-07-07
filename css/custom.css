@@ -306,17 +306,12 @@ Part 1 - Hero & Transaction Cards
 }
 
 #transactions .transaction-highlight{
-
-    margin-top:45px;
-
+   margin-top:45px;
+   margin-bottom: 45px;
     padding:28px 32px;
-
     background:#181818;
-
     border-left:4px solid #00d084;
-
     border-radius:12px;
-
 }
 
 #transactions .transaction-highlight h5{
