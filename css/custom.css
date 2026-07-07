@@ -488,10 +488,10 @@ Buttons
 }
 
 #transactions .transaction-buttons .btn{
-    min-width:210px;
     margin:8px;
-    border-radius:40px;
-    padding:14px 32px;
+    border-radius:6px;
+    padding:12px 28px !important;
+min-width:auto !important;
 }
 
 #transactions .button-outline{
@@ -653,13 +653,16 @@ Part 4 - Responsive + Final Polish
     font-size:28px;
 }
 
-#transactions .transaction-buttons .btn{
-    width:100%;
-    margin:10px 0;
+#transactions .transaction-buttons{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
 }
 
-#transactions .transaction-buttons{
-    display:block;
+#transactions .transaction-buttons .btn{
+    width:auto !important;
+    min-width:180px !important;
+    margin:10px 0 !important;
 }
 
 }
