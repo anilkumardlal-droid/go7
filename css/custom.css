@@ -876,3 +876,10 @@ h6{
     color:transparent !important;
 
 }
+
+/* Hide Social Icons */
+
+.fixed-wrapper .social-icons,
+.content-follow{
+    display:none !important;
+}
