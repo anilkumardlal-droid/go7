@@ -14,11 +14,14 @@ $(function () {
 
         e.preventDefault();
 
-        $("#transactions .close-btn").trigger("click");
+        // Close current modal
+        $('#transactions [data-modal-close]').click();
 
+        // Open About
         setTimeout(function () {
-            $('.nav-link[href="#about"]').trigger("click");
-        }, 600);
+            window.location.hash = "about";
+            $('.navbar .nav-link[href="#about"]').click();
+        }, 700);
 
     });
 
