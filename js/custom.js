@@ -7,3 +7,19 @@
  * License: Themeforest Standard Licenses: https://themeforest.net/licenses
  */
 !function(n){"use strict";n((function(){})),n(window).on("load",(function(){}))}(jQuery);
+
+$(function () {
+
+    $(".goto-about").on("click", function (e) {
+
+        e.preventDefault();
+
+        $("#transactions .close-btn").trigger("click");
+
+        setTimeout(function () {
+            $('.nav-link[href="#about"]').trigger("click");
+        }, 600);
+
+    });
+
+});
