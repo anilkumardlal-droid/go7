@@ -170,12 +170,12 @@ GO7.IN Secure Domain Transactions
 Part 1 - Hero & Transaction Cards
 ==================================================*/
 
-#blog .transaction-hero{
+#transactions .transaction-hero{
     max-width:850px;
     margin:0 auto 70px;
 }
 
-#blog .transaction-tag{
+#transactions .transaction-tag{
     display:inline-block;
     padding:8px 18px;
     font-size:12px;
@@ -189,13 +189,13 @@ Part 1 - Hero & Transaction Cards
     font-weight:600;
 }
 
-#blog .transaction-hero h3{
+#transactions .transaction-hero h3{
     font-size:38px;
     line-height:1.3;
     margin-bottom:25px;
 }
 
-#blog .transaction-hero p{
+#transactions .transaction-hero p{
     color:#bcbcbc;
     line-height:1.9;
     margin-bottom:18px;
@@ -203,7 +203,7 @@ Part 1 - Hero & Transaction Cards
 
 /* Cards */
 
-#blog .transaction-card{
+#transactions .transaction-card{
 
     background:#1b1b1b;
 
@@ -219,7 +219,7 @@ Part 1 - Hero & Transaction Cards
 
 }
 
-#blog .transaction-card:hover{
+#transactions .transaction-card:hover{
 
     transform:translateY(-8px);
 
@@ -229,7 +229,7 @@ Part 1 - Hero & Transaction Cards
 
 }
 
-#blog .transaction-icon{
+#transactions .transaction-icon{
 
     width:64px;
 
@@ -253,7 +253,7 @@ Part 1 - Hero & Transaction Cards
 
 }
 
-#blog .transaction-badge{
+#transactions .transaction-badge{
 
     display:inline-block;
 
@@ -275,13 +275,13 @@ Part 1 - Hero & Transaction Cards
 
 }
 
-#blog .transaction-card h4{
+#transactions .transaction-card h4{
 
     margin-bottom:18px;
 
 }
 
-#blog .transaction-card p{
+#transactions .transaction-card p{
 
     color:#b7b7b7;
 
@@ -289,7 +289,7 @@ Part 1 - Hero & Transaction Cards
 
 }
 
-#blog .transaction-list{
+#transactions .transaction-list{
 
     margin:22px 0 0;
 
@@ -297,7 +297,7 @@ Part 1 - Hero & Transaction Cards
 
 }
 
-#blog .transaction-list li{
+#transactions .transaction-list li{
 
     margin-bottom:12px;
 
@@ -305,7 +305,7 @@ Part 1 - Hero & Transaction Cards
 
 }
 
-#blog .transaction-highlight{
+#transactions .transaction-highlight{
 
     margin-top:45px;
 
@@ -319,13 +319,13 @@ Part 1 - Hero & Transaction Cards
 
 }
 
-#blog .transaction-highlight h5{
+#transactions .transaction-highlight h5{
 
     margin-bottom:12px;
 
 }
 
-#blog .transaction-highlight p{
+#transactions .transaction-highlight p{
 
     margin:0;
 
@@ -342,7 +342,7 @@ Part 2 - Process & Feature Cards
 
 /* ===== Process Section ===== */
 
-#blog .process-card{
+#transactions .process-card{
     background:#1b1b1b;
     border:1px solid #2b2b2b;
     border-radius:18px;
@@ -354,13 +354,13 @@ Part 2 - Process & Feature Cards
     overflow:hidden;
 }
 
-#blog .process-card:hover{
+#transactions .process-card:hover{
     transform:translateY(-8px);
     border-color:#00d084;
     box-shadow:0 18px 40px rgba(0,0,0,.35);
 }
 
-#blog .process-number{
+#transactions .process-number{
     width:72px;
     height:72px;
     margin:0 auto 25px;
@@ -375,12 +375,12 @@ Part 2 - Process & Feature Cards
     box-shadow:0 8px 25px rgba(0,208,132,.25);
 }
 
-#blog .process-card h5{
+#transactions .process-card h5{
     margin-bottom:15px;
     font-size:20px;
 }
 
-#blog .process-card p{
+#transactions .process-card p{
     color:#bdbdbd;
     line-height:1.8;
     margin:0;
@@ -388,7 +388,7 @@ Part 2 - Process & Feature Cards
 
 /* ===== Feature Cards ===== */
 
-#blog .feature-card{
+#transactions .feature-card{
     background:#1b1b1b;
     border:1px solid #2b2b2b;
     border-radius:18px;
@@ -397,24 +397,24 @@ Part 2 - Process & Feature Cards
     transition:.35s ease;
 }
 
-#blog .feature-card:hover{
+#transactions .feature-card:hover{
     transform:translateY(-8px);
     border-color:#00d084;
     box-shadow:0 18px 40px rgba(0,0,0,.35);
 }
 
-#blog .feature-card .service-icon{
+#transactions .feature-card .service-icon{
     font-size:42px;
     color:#00d084;
     margin-bottom:20px;
 }
 
-#blog .feature-card h5{
+#transactions .feature-card h5{
     margin-bottom:15px;
     font-size:21px;
 }
 
-#blog .feature-card p{
+#transactions .feature-card p{
     color:#bdbdbd;
     line-height:1.8;
     margin:0;
@@ -422,27 +422,27 @@ Part 2 - Process & Feature Cards
 
 /* ===== Section Spacing ===== */
 
-#blog .single-section{
+#transactions .single-section{
     margin-bottom:90px;
 }
 
-#blog .section-heading{
+#transactions .section-heading{
     margin-bottom:55px;
 }
 
-#blog .section-heading .section-title{
+#transactions .section-heading .section-title{
     margin-top:10px;
 }
 
-#blog .section-description{
+#transactions .section-description{
     letter-spacing:1px;
 }
 
 /* ===== Better Animation ===== */
 
-#blog .transaction-card,
-#blog .process-card,
-#blog .feature-card{
+#transactions .transaction-card,
+#transactions .process-card,
+#transactions .feature-card{
     will-change:transform;
 }
 
@@ -455,12 +455,12 @@ Part 3 - FAQ + CTA + Buttons + Stats
 FAQ
 ========================= */
 
-#blog .faq-wrapper{
+#transactions .faq-wrapper{
     max-width:900px;
     margin:0 auto;
 }
 
-#blog .faq-item{
+#transactions .faq-item{
     background:#1b1b1b;
     border:1px solid #2b2b2b;
     border-radius:16px;
@@ -469,19 +469,19 @@ FAQ
     transition:.35s ease;
 }
 
-#blog .faq-item:hover{
+#transactions .faq-item:hover{
     border-color:#00d084;
     transform:translateY(-4px);
     box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
-#blog .faq-item h5{
+#transactions .faq-item h5{
     font-size:20px;
     margin-bottom:15px;
     color:#fff;
 }
 
-#blog .faq-item p{
+#transactions .faq-item p{
     color:#bdbdbd;
     line-height:1.9;
     margin:0;
@@ -491,7 +491,7 @@ FAQ
 CTA BOX
 ========================= */
 
-#blog .transaction-cta{
+#transactions .transaction-cta{
 
     background:#181818;
 
@@ -509,7 +509,7 @@ CTA BOX
 
 }
 
-#blog .transaction-cta::before{
+#transactions .transaction-cta::before{
 
     content:"";
 
@@ -527,7 +527,7 @@ CTA BOX
 
 }
 
-#blog .transaction-cta h3{
+#transactions .transaction-cta h3{
 
     font-size:36px;
 
@@ -535,7 +535,7 @@ CTA BOX
 
 }
 
-#blog .transaction-cta p{
+#transactions .transaction-cta p{
 
     max-width:760px;
 
@@ -551,13 +551,13 @@ CTA BOX
 Buttons
 ========================= */
 
-#blog .transaction-buttons{
+#transactions .transaction-buttons{
 
     margin-top:35px;
 
 }
 
-#blog .transaction-buttons .btn{
+#transactions .transaction-buttons .btn{
 
     min-width:210px;
 
@@ -569,7 +569,7 @@ Buttons
 
 }
 
-#blog .button-outline{
+#transactions .button-outline{
 
     color:#fff;
 
@@ -581,7 +581,7 @@ Buttons
 
 }
 
-#blog .button-outline:hover{
+#transactions .button-outline:hover{
 
     background:#00d084;
 
@@ -595,7 +595,7 @@ Buttons
 Stats
 ========================= */
 
-#blog .transaction-stats{
+#transactions .transaction-stats{
 
     display:flex;
 
@@ -609,13 +609,13 @@ Stats
 
 }
 
-#blog .stat-item{
+#transactions .stat-item{
 
     min-width:150px;
 
 }
 
-#blog .stat-item h4{
+#transactions .stat-item h4{
 
     font-size:34px;
 
@@ -625,7 +625,7 @@ Stats
 
 }
 
-#blog .stat-item span{
+#transactions .stat-item span{
 
     color:#bdbdbd;
 
@@ -640,47 +640,47 @@ Part 4 - Responsive + Final Polish
 
 /* Smooth Animation */
 
-#blog .transaction-card,
-#blog .process-card,
-#blog .feature-card,
-#blog .faq-item,
-#blog .transaction-cta{
+#transactions .transaction-card,
+#transactions .process-card,
+#transactions .feature-card,
+#transactions .faq-item,
+#transactions .transaction-cta{
     transition:all .35s ease;
 }
 
 /* Better Title */
 
-#blog .section-title{
+#transactions .section-title{
     font-weight:700;
     letter-spacing:-.5px;
 }
 
-#blog .service-title{
+#transactions .service-title{
     font-weight:600;
 }
 
 /* Better Paragraph */
 
-#blog p{
+#transactions p{
     line-height:1.85;
 }
 
 /* List Style */
 
-#blog .transaction-list{
+#transactions .transaction-list{
     list-style:none;
     padding:0;
     margin-top:20px;
 }
 
-#blog .transaction-list li{
+#transactions .transaction-list li{
     position:relative;
     padding-left:28px;
     margin-bottom:14px;
     color:#d6d6d6;
 }
 
-#blog .transaction-list li:before{
+#transactions .transaction-list li:before{
     content:"✓";
     position:absolute;
     left:0;
@@ -691,8 +691,8 @@ Part 4 - Responsive + Final Polish
 
 /* Icon Circle */
 
-#blog .service-icon,
-#blog .transaction-icon{
+#transactions .service-icon,
+#transactions .transaction-icon{
     display:flex;
     align-items:center;
     justify-content:center;
@@ -700,15 +700,15 @@ Part 4 - Responsive + Final Polish
 
 /* Hover */
 
-#blog .transaction-card:hover,
-#blog .process-card:hover,
-#blog .feature-card:hover{
+#transactions .transaction-card:hover,
+#transactions .process-card:hover,
+#transactions .feature-card:hover{
     transform:translateY(-10px);
 }
 
 /* CTA */
 
-#blog .transaction-cta{
+#transactions .transaction-cta{
     box-shadow:0 20px 60px rgba(0,0,0,.30);
 }
 
@@ -716,19 +716,19 @@ Part 4 - Responsive + Final Polish
 
 @media (max-width:991px){
 
-#blog .transaction-hero h3{
+#transactions .transaction-hero h3{
     font-size:30px;
 }
 
-#blog .transaction-cta{
+#transactions .transaction-cta{
     padding:40px 25px;
 }
 
-#blog .transaction-cta h3{
+#transactions .transaction-cta h3{
     font-size:28px;
 }
 
-#blog .stat-item{
+#transactions .stat-item{
     width:100%;
     margin-bottom:20px;
 }
@@ -737,27 +737,27 @@ Part 4 - Responsive + Final Polish
 
 @media (max-width:767px){
 
-#blog .transaction-card,
-#blog .process-card,
-#blog .feature-card,
-#blog .faq-item{
+#transactions .transaction-card,
+#transactions .process-card,
+#transactions .feature-card,
+#transactions .faq-item{
     padding:25px;
 }
 
-#blog .section-title{
+#transactions .section-title{
     font-size:34px;
 }
 
-#blog .transaction-hero h3{
+#transactions .transaction-hero h3{
     font-size:28px;
 }
 
-#blog .transaction-buttons .btn{
+#transactions .transaction-buttons .btn{
     width:100%;
     margin:10px 0;
 }
 
-#blog .transaction-buttons{
+#transactions .transaction-buttons{
     display:block;
 }
 
@@ -765,18 +765,18 @@ Part 4 - Responsive + Final Polish
 
 @media (max-width:480px){
 
-#blog .transaction-tag{
+#transactions .transaction-tag{
     font-size:11px;
 }
 
-#blog .transaction-hero p,
-#blog .faq-item p,
-#blog .feature-card p,
-#blog .process-card p{
+#transactions .transaction-hero p,
+#transactions .faq-item p,
+#transactions .feature-card p,
+#transactions .process-card p{
     font-size:15px;
 }
 
-#blog .process-number{
+#transactions .process-number{
     width:60px;
     height:60px;
     font-size:20px;
@@ -786,20 +786,20 @@ Part 4 - Responsive + Final Polish
 
 /* Final Polish */
 
-#blog .animated-bar{
+#transactions .animated-bar{
     margin-top:20px;
     margin-bottom:25px;
 }
 
-#blog .single-service{
+#transactions .single-service{
     overflow:hidden;
 }
 
-#blog .button-main{
+#transactions .button-main{
     border-radius:40px;
 }
 
-#blog .button-main:hover{
+#transactions .button-main:hover{
     transform:translateY(-2px);
 }
 
@@ -807,13 +807,13 @@ Part 4 - Responsive + Final Polish
 
 /* Learn More Button */
 
-#blog .btn.button-outline{
+#transactions .btn.button-outline{
     color:#ffffff !important;
     background:transparent;
     border:2px solid #00d084;
 }
 
-#blog .btn.button-outline:hover{
+#transactions .btn.button-outline:hover{
     color:#bdbdbd !important;
     background:#00d084;
     border-color:#00d084;
