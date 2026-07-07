@@ -856,3 +856,23 @@ HOME NAME
 .btn.button-scheme {
  border-radius: 50px !important;
 }
+
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    background:linear-gradient(
+        180deg,
+        #ffffff 22.5%,
+        rgba(255,255,255,.70) 100%
+    ) !important;
+
+    -webkit-background-clip:text !important;
+    background-clip:text !important;
+
+    -webkit-text-fill-color:transparent !important;
+    color:transparent !important;
+
+}
