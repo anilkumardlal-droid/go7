@@ -1053,20 +1053,54 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     feedback.style.visibility = "visible";
     feedback.style.opacity = "1";
     feedback.style.color = "#00d084";
-    feedback.innerHTML =
-        "✓ Inquiry sent successfully. I will get back to you shortly.";
-
     document.getElementById("contact-form").reset();
 
-    if (typeof turnstile !== "undefined") {
-        turnstile.reset();
-    }
+if (typeof turnstile !== "undefined") {
+    turnstile.reset();
+}
 
-    btn.style.display = "none";
+btn.style.display = "none";
+
+let seconds = 10;
+
+const updateMessage = () => {
+
+    feedback.innerHTML = `
+    <div style="line-height:1.8;">
+        <strong style="color:#00d084;font-size:17px;">
+            ✓ Inquiry Sent Successfully
+        </strong><br>
+
+        Thank you for contacting <strong>GO7.IN</strong>.<br>
+        I will review your inquiry and get back to you as soon as possible.<br><br>
+
+        <span style="color:#bdbdbd;">
+            Redirecting to the Home page in
+            <strong style="color:#ffffff;">${seconds}</strong>
+            second${seconds !== 1 ? "s" : ""}...
+        </span>
+    </div>
+    `;
+
+};
+
+updateMessage();
+
+const countdown = setInterval(() => {
+
+    seconds--;
+
+updateMessage();
+
+if (seconds <= 0) {
+    clearInterval(countdown);
 
     setTimeout(() => {
-        location.reload();
-    }, 5000);
+    window.location.href = "/";
+}, 300);
+}
+
+}, 1000);
 
 } else {
             console.log(data);
