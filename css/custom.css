@@ -920,10 +920,16 @@ HOME NAME
 ================================ */
 
 /* Main Background */
-body,
-.home-area,
+body{
+    background:#0D0D0D !important;
+}
+
 .lightbox-wrapper{
     background:#0D0D0D !important;
+}
+
+.home-area{
+    background-color:#0D0D0D !important;
 }
 
 /* Cards / Boxes */
