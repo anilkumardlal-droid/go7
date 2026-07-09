@@ -1046,31 +1046,45 @@ document.getElementById("contact-form").addEventListener("submit", async functio
         const data = await res.json();
 
         if (data.success) {
-            document.querySelector(".contact-feedback").innerHTML =
-            "✓ Inquiry sent successfully. I will get back to you shortly.";
 
-            document.getElementById("contact-form").reset();
+    const feedback = document.querySelector(".contact-feedback");
 
-            if (typeof turnstile !== "undefined") {
-                turnstile.reset();
-            }
+    feedback.style.display = "block";
+    feedback.style.visibility = "visible";
+    feedback.style.opacity = "1";
+    feedback.style.color = "#00d084";
+    feedback.innerHTML =
+        "✓ Inquiry sent successfully. I will get back to you shortly.";
 
-            setTimeout(() => location.reload(), 8000);
-               } else {
+    document.getElementById("contact-form").reset();
+
+    if (typeof turnstile !== "undefined") {
+        turnstile.reset();
+    }
+
+    btn.style.display = "none";
+
+    setTimeout(() => {
+        location.reload();
+    }, 5000);
+
+} else {
             console.log(data);
             document.querySelector(".contact-feedback").innerHTML =
                 "✗ " + (data.error || data.message || "Unknown Error");
+          btn.disabled = false;
+btn.innerHTML = "Send Inquiry";
         }
 
-    } catch (err) {
-        console.error(err);
+   } catch (err) {
+    console.error(err);
 
-        document.querySelector(".contact-feedback").innerHTML =
-            "✗ " + err.message;
-    }
+    document.querySelector(".contact-feedback").innerHTML =
+        "✗ " + err.message;
 
     btn.disabled = false;
     btn.innerHTML = "Send Inquiry";
+}
 });
 </script>
 </body>
