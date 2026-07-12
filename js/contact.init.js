@@ -56,14 +56,13 @@ const updateMessage = () => {
     ✓ Inquiry Sent Successfully
 </strong><br><br>
 
-<span style="color:#BDBDBD;">
-    Thank you for your interest in our premium domains.<br>
-    Your inquiry has been received successfully. Our team will review it and get back to you as soon as possible.
+<span style="color:#10a6ba;">
+    Thanks for your interest in GO7.IN. I'll get back to you soon.
 </span><br><br>
 
-<span style="color:#BDBDBD;">
-    Redirecting to the Home page in
-    <strong style="color:#FACC15;">${seconds}</strong>
+<span style="color:#10a6ba;">
+    Redirecting to the homepage in
+    <strong style="color:#FE872D;">${seconds}</strong>
     second${seconds !== 1 ? "s" : ""}...
 </span>
     </div>
