@@ -1,24 +1,29 @@
-document.getElementById("contact-form").addEventListener("submit", async function(e) {
-    e.preventDefault();
-    document.querySelector(".contact-feedback").innerHTML = "";
-   const message = document.getElementById("contact-message").value.trim();
+e.preventDefault();
+
+const feedback = document.querySelector(".contact-feedback");
+const btn = document.getElementById("contact-submit");
+
+feedback.innerHTML = "";
+feedback.style.color = "";
+
+const message = document.getElementById("contact-message").value.trim();
 
 if (message.length < 20) {
-    document.querySelector(".contact-feedback").innerHTML =
-        "Please describe your offer in at least 20 characters.";
+    feedback.style.color = "#dc3545";
+    feedback.innerHTML = "Please describe your offer in at least 20 characters.";
     return;
 }
-    const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
 
-    if (!token) {
-        document.querySelector(".contact-feedback").innerHTML =
-        "Please complete the security check.";
-        return;
-    }
+const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
 
-    const btn = document.getElementById("contact-submit");
-    btn.disabled = true;
-    btn.innerHTML = "Sending...";
+if (!token) {
+    feedback.style.color = "#dc3545";
+    feedback.innerHTML = "Please complete the security check.";
+    return;
+}
+
+btn.disabled = true;
+btn.value = "Sending...";
 
     try {
         const res = await fetch("https://info.anilsrivastav561.workers.dev/", {
@@ -38,7 +43,6 @@ if (message.length < 20) {
         const data = await res.json();
 
         if (data.success) {
-        const feedback = document.querySelector(".contact-feedback");
 
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
@@ -96,19 +100,21 @@ if (seconds <= 0) {
 
 } else {
             console.log(data);
-            document.querySelector(".contact-feedback").innerHTML =
+            feedback.style.color = "#dc3545";
+feedback.innerHTML =
                 "✗ " + (data.error || data.message || "Unknown Error");
           btn.disabled = false;
-btn.innerHTML = "Send Inquiry";
+btn.value = "Send Inquiry";
         }
 
    } catch (err) {
     console.error(err);
 
-    document.querySelector(".contact-feedback").innerHTML =
+    feedback.style.color = "#dc3545";
+feedback.innerHTML =
         "✗ " + err.message;
 
     btn.disabled = false;
-    btn.innerHTML = "Send Inquiry";
+    btn.value = "Send Inquiry";
 }
 });
