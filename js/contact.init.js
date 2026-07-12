@@ -39,6 +39,7 @@ if (message.length < 20) {
         if (data.success) {
 
     const feedback = document.querySelector(".contact-feedback");
+    feedback.innerHTML = "";
 
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
