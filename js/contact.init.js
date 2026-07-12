@@ -44,8 +44,10 @@ if (typeof turnstile !== "undefined") {
     turnstile.reset();
 }
 
-document.querySelectorAll("#contact-form .row").forEach(row => {
-    row.style.display = "none";
+document.querySelectorAll("#contact-form .row").forEach((row, index) => {
+    if (index < 3) {
+        row.style.display = "none";
+    }
 });
 
 let seconds = 10;
