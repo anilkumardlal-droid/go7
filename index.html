@@ -92,19 +92,19 @@
                                 </div>
 
                                 <div class="custom-form mt-4">
-                                    <form method="post" onsubmit="return validateForm()" class="contact-form" name="myForm" id="myForm">
+                                    <form class="contact-form" id="contact-form">
                                         <span id="error-msg"></span>
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group mt-3">
-                                                    <input name="name" id="name" type="text" class="form-control"
+                                                    <input name="name" id="contact-name" type="text" class="form-control"
                                                         placeholder="Your Name" />
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6">
                                                 <div class="form-group mt-3">
-                                                    <input name="email" id="email" type="text" class="form-control"
+                                                    <input name="email" id="contact-email" type="text" class="form-control"
                                                         placeholder="Your Email" />
                                                 </div>
                                             </div>
@@ -113,7 +113,7 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group mt-3">
-                                                    <input name="subject" id="subject" type="text" class="form-control"
+                                                    <input name="subject" id="contact-subject" type="text" class="form-control"
                                                         placeholder="Subject" />
                                                 </div>
                                             </div>
@@ -122,7 +122,7 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group mt-3">
-                                                    <textarea name="comments" id="comments" rows="4"
+                                                    <textarea name="message" id="contact-message" rows="4"
                                                         class="form-control" placeholder="Your Messages"></textarea>
                                                 </div>
                                             </div>
@@ -131,10 +131,13 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="mt-4">
-                                                    <input type="submit" id="submit" name="send"
+                                                    <div class="cf-turnstile"
+     data-sitekey="0x4AAAAAADnxzvJGSfHstKEu"
+     data-theme="light"></div>
+                                                    <input type="submit" id="contact-submit" name="send"
                                                         class="submitBnt btn btn-primary btn-round text-uppercase"
                                                         value="Send Message" />
-                                                    <div id="simple-msg"></div>
+                                                    <p class="contact-feedback"></p>
                                                 </div>
                                             </div>
                                         </div>
