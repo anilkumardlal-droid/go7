@@ -4,7 +4,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
 if (message.length < 20) {
     document.querySelector(".contact-feedback").innerHTML =
-        "Please enter at least 20 characters in your message.";
+        "Please describe your offer in at least 20 characters.";
     return;
 }
     const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
