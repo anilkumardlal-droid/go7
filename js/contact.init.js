@@ -44,7 +44,7 @@ if (typeof turnstile !== "undefined") {
     turnstile.reset();
 }
 
-btn.style.display = "none";
+document.getElementById("contact-form").style.display = "none";
 
 let seconds = 10;
 
