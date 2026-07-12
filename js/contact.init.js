@@ -1,48 +1,109 @@
-// ----- CONTACT ----- //
-function validateForm() {
-    var name = document.forms["myForm"]["name"].value;
-    var email = document.forms["myForm"]["email"].value;
-    var comments = document.forms["myForm"]["comments"].value;
-    document.getElementById("error-msg").style.opacity = 0;
-    document.getElementById('error-msg').innerHTML = "";
-    if (name == "" || name == null) {
-        document.getElementById('error-msg').innerHTML = "<div class='alert alert-danger error_message'><i  data-feather='home' class='icon-sm align-middle me-2'></i> Please enter a name*</div>";
-        fadeIn();
-        return false;
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
+
+    if (!token) {
+        document.querySelector(".contact-feedback").innerHTML =
+        "Please complete the security check.";
+        return;
     }
-    if (email == "" || email == null) {
-        document.getElementById('error-msg').innerHTML = "<div class='alert alert-danger error_message'><i  data-feather='alert-triangle' class='icon-sm align-middle me-2'></i> Please enter a email*</div>";
-        fadeIn();
-        return false;
-    }
-    if (comments == "" || comments == null) {
-        document.getElementById('error-msg').innerHTML = "<div class='alert alert-danger error_message'><i class='mdi mdi-alert'></i> Please enter a comments*</div>";
-        fadeIn();
-        return false;
-    }
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("simple-msg").innerHTML = this.responseText;
-            document.forms["myForm"]["name"].value = "";
-            document.forms["myForm"]["email"].value = "";
-            document.forms["myForm"]["comments"].value = "";
-        }
-    };
-    xhttp.open("POST", "php/contact.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send("name=" + name + "&email=" + email + "&comments=" + comments);
-    return false;
+
+    const btn = document.getElementById("contact-submit");
+    btn.disabled = true;
+    btn.innerHTML = "Sending...";
+
+    try {
+        const res = await fetch("https://info.anilsrivastav561.workers.dev/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: document.getElementById("contact-name").value,
+                email: document.getElementById("contact-email").value,
+                subject: document.getElementById("contact-subject").value,
+                message: document.getElementById("contact-message").value,
+                token: token
+            })
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+
+    const feedback = document.querySelector(".contact-feedback");
+
+    feedback.style.display = "block";
+    feedback.style.visibility = "visible";
+    feedback.style.opacity = "1";
+    feedback.style.color = "#00d084";
+    document.getElementById("contact-form").reset();
+
+if (typeof turnstile !== "undefined") {
+    turnstile.reset();
 }
-function fadeIn() {
-    var fade = document.getElementById("error-msg");
-    var opacity = 0;
-    var intervalID = setInterval(function () {
-        if (opacity < 1) {
-            opacity = opacity + 0.5
-            fade.style.opacity = opacity;
-        } else {
-            clearInterval(intervalID);
-        }
-    }, 200);
+
+btn.style.display = "none";
+
+let seconds = 10;
+
+const updateMessage = () => {
+
+    feedback.innerHTML = `
+    <div style="line-height:1.8;">
+        <strong style="color:#22C55E;font-size:17px;font-weight:600;">
+    ✓ Inquiry Sent Successfully
+</strong><br><br>
+
+<span style="color:#BDBDBD;">
+    Thank you for your interest in our premium domains.<br>
+    Your inquiry has been received successfully. Our team will review it and get back to you as soon as possible.
+</span><br><br>
+
+<span style="color:#BDBDBD;">
+    Redirecting to the Home page in
+    <strong style="color:#FACC15;">${seconds}</strong>
+    second${seconds !== 1 ? "s" : ""}...
+</span>
+    </div>
+    `;
+
+};
+
+updateMessage();
+
+const countdown = setInterval(() => {
+
+    seconds--;
+
+updateMessage();
+
+if (seconds <= 0) {
+    clearInterval(countdown);
+
+    setTimeout(() => {
+    window.location.href = "/";
+}, 300);
 }
+
+}, 1000);
+
+} else {
+            console.log(data);
+            document.querySelector(".contact-feedback").innerHTML =
+                "✗ " + (data.error || data.message || "Unknown Error");
+          btn.disabled = false;
+btn.innerHTML = "Send Inquiry";
+        }
+
+   } catch (err) {
+    console.error(err);
+
+    document.querySelector(".contact-feedback").innerHTML =
+        "✗ " + err.message;
+
+    btn.disabled = false;
+    btn.innerHTML = "Send Inquiry";
+}
+});
