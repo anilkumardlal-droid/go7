@@ -51,18 +51,14 @@ let seconds = 10;
 const updateMessage = () => {
 
     feedback.innerHTML = `
-    <div style="line-height:1.8;">
+    <div style="line-height:1.6;">
         <strong style="color:#22C55E;font-size:17px;font-weight:600;">
     ✓ Inquiry Sent Successfully
 </strong><br><br>
 
 <span style="color:#10a6ba;">
     Thanks for your interest in GO7.IN. I'll get back to you soon.
-</span><br><br>
-
-<span style="color:#10a6ba;">
-    Redirecting to the homepage in
-    <strong style="color:#FE872D;">${seconds}</strong>
+    Redirecting in <strong style="color:#FE872D;">${seconds}</strong>
     second${seconds !== 1 ? "s" : ""}...
 </span>
     </div>
