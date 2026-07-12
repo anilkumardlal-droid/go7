@@ -50,6 +50,8 @@ document.querySelectorAll("#contact-form .row").forEach((row, index) => {
     }
 });
 
+document.getElementById("contact-fields").style.display = "none";
+
 let seconds = 10;
 
 const updateMessage = () => {
