@@ -67,7 +67,8 @@ const updateMessage = () => {
 </strong><br><br>
 
 <span style="color:#10a6ba;">
-    Thanks for your interest in GO7.IN. I'll get back to you soon.
+    Thank you for your interest in GO7.IN.<br>
+I'll review your inquiry and get back to you within 24 hours.<br>
     Redirecting in <strong style="color:#FE872D;">${seconds}</strong>
     second${seconds !== 1 ? "s" : ""}...
 </span>
