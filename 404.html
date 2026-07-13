@@ -6,8 +6,6 @@
 
 <title>404 - Page Not Found | GO7</title>
 
-<meta http-equiv="refresh" content="8;url=/">
-
 <style>
 *{
     margin:0;
@@ -18,98 +16,125 @@
 body{
     background:#F8F9FA;
     color:#111827;
-    font-family:Inter,sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    text-align:center;
+    font-family: "Nunito", sans-serif;
+    padding:70px 20px 40px;
+    line-height:1.5;
 }
 
 .container{
-    max-width:600px;
-    padding:40px;
-    background:#FFFFFF;
-    border:1px solid #E5E7EB;
-    border-radius:16px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    max-width:680px;
+    margin:0 auto;
 }
 
 h1{
-    font-size:72px;
-    font-weight:700;
-    color:#10A6BA;
-    margin-bottom:10px;
+    font-size:clamp(52px,8vw,72px);
+    font-weight:600;
+    color:#fe872d;
+    line-height:1;
+    margin-bottom:12px;
 }
 
 h2{
-    font-size:28px;
+    font-size:clamp(26px,4vw,34px);
+    font-weight:600;
+    margin-bottom:20px;
     color:#111827;
-    margin-bottom:15px;
 }
 
 p{
+    font-size:17px;
     color:#6B7280;
-    line-height:1.8;
+    margin-bottom:18px;
 }
 
 .countdown{
-    margin-top:20px;
+    margin-top:10px;
     font-size:18px;
+    font-weight:500;
     color:#111827;
 }
 
 #timer{
-    color:#10A6BA;
-    font-weight:700;
+    font-size:24px;
+    color:#3850d5;
+    font-weight:500;
 }
 
 .btn{
     display:inline-block;
-    margin-top:25px;
-    padding:12px 24px;
-    background:#10A6BA;
-    color:#FFFFFF;
+    margin-top:28px;
+    padding:12px 26px;
+    background:#10a6ba;
+    color:#fff;
+    letter-spacing: .5px;
     text-decoration:none;
-    border-radius:8px;
+    border-radius:5px;
+    font-size:16px;
     font-weight:600;
     transition:.25s ease;
 }
 
 .btn:hover{
-    background:#0D8FA1;
+    background:#10a6ba;
+}
+
+@media (max-width:768px){
+
+    body{
+        padding:50px 18px 30px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    .countdown{
+        font-size:17px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
 }
 </style>
 </head>
 <body>
 
 <div class="container">
+
     <h1>404</h1>
 
     <h2>Page Not Found</h2>
 
     <p>
-        The page you are looking for does not exist or has been moved.
+        The page you are trying to access could not be found. It may have been moved, deleted,
+        or the web address may have been entered incorrectly.
     </p>
 
-    <div class="countdown">
-        Redirecting to homepage in <span id="timer">8</span> seconds...
-    </div>
+    <p>
+        Please return to the GO7 homepage to continue browsing. You will be redirected
+        automatically in <span id="timer">8</span> seconds.
+    </p>
 
-    <a href="/" class="btn">Go Home</a>
+    <a href="/" class="btn">Go to Homepage</a>
+
 </div>
 
 <script>
 let time = 8;
+const timer = document.getElementById("timer");
 
-setInterval(() => {
+const countdown = setInterval(() => {
     time--;
-    document.getElementById("timer").innerText = time;
+    timer.textContent = time;
 
-    if(time <= 0){
+    if (time <= 0) {
+        clearInterval(countdown);
         window.location.href = "/";
     }
-},1000);
+}, 1000);
 </script>
 
 </body>
