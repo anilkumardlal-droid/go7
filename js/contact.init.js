@@ -62,14 +62,14 @@ const updateMessage = () => {
 
     feedback.innerHTML = `
     <div style="line-height:1.6;">
-        <strong style="color:#10a6ba;font-size:17px;font-weight:500;">
+        <strong style="color:#10a6ba;font-size:17px;font-weight:700;">
     ✓ Inquiry Sent Successfully
 </strong><br><br>
 
 <span style="color:#828f99;">
     Thank you for your interest in GO7.IN.
 I'll review your inquiry and get back to you within 24 hours.
-    Redirecting in <strong style="color:#3850d5;font-size:24px;font-weight:500;"> ${seconds} </strong>
+    Redirecting in <strong style="color:#3850d5;font-size:28px;font-weight:500;"> ${seconds} </strong>
     second${seconds !== 1 ? "s" : ""}...
 </span>
     </div>
