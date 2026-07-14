@@ -60,22 +60,35 @@ p{
     font-weight:500;
 }
 
+/* Base Button */
 .btn{
-    display:inline-block;
-    margin-top:28px;
     padding:12px 26px;
-    background:#10a6ba;
-    color:#fff;
-    letter-spacing: .5px;
-    text-decoration:none;
-    border-radius:5px;
-    font-size:16px;
-    font-weight:600;
-    transition:.25s ease;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.5px;
 }
 
-.btn:hover{
-    background:#10a6ba;
+.btn:focus{
+    box-shadow:none;
+    outline:none;
+}
+
+/* Primary Button */
+.btn-primary{
+    background:#3850d5 !important;
+    border-color:#3850d5 !important;
+    color:#fff;
+}
+
+/* Hover / Focus / Active */
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):active:focus{
+    background:#2b44cd;
+    border-color:#2b44cd;
 }
 
 @media (max-width:768px){
@@ -90,11 +103,6 @@ p{
 
     .countdown{
         font-size:17px;
-    }
-
-    .btn{
-        width:100%;
-        text-align:center;
     }
 
 }
