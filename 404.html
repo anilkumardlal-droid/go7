@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>404 - Page Not Found | GO7</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -60,35 +61,33 @@ p{
     font-weight:500;
 }
 
-/* Base Button */
 .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     padding:12px 26px;
     font-size:14px;
     font-weight:700;
     letter-spacing:.5px;
+    text-decoration:none;
+    border:1px solid transparent;
+    border-radius:5px;
+    transition:all .25s ease;
+    cursor:pointer;
 }
 
-.btn:focus{
-    box-shadow:none;
-    outline:none;
-}
-
-/* Primary Button */
 .btn-primary{
-    background:#3850d5 !important;
-    border-color:#3850d5 !important;
+    background:#10A6BA;
+    border:1px solid #10A6BA;
     color:#fff;
 }
 
-/* Hover / Focus / Active */
 .btn-primary:hover,
 .btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.btn-primary:not(:disabled):not(.disabled):active,
-.btn-primary:not(:disabled):not(.disabled):active:focus{
-    background:#2b44cd;
-    border-color:#2b44cd;
+.btn-primary:active{
+    background:#0D8FA1;
+    border-color:#0D8FA1;
+    color:#fff;
 }
 
 @media (max-width:768px){
@@ -126,7 +125,7 @@ p{
         automatically in <span id="timer">8</span> seconds.
     </p>
 
-    <a href="/" class="btn">Go to Homepage</a>
+    <a href="/" class="btn btn-primary">Go to Homepage</a>
 
 </div>
 
