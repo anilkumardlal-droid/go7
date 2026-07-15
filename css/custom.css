@@ -10,17 +10,7 @@
     bottom:auto !important;
 }
 
-.home-center,
-.home-desc-center{
-    display:block !important;
-    height:auto !important;
-}
-
-body{
-    overflow-x:hidden;
-}
-
-/* Responsive Navbar */
+/* Home Responsive Navbar */
 
 .navbar-toggler{
     border:0!important;
@@ -37,20 +27,24 @@ body{
     padding:.75rem 1rem;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active{
+.navbar-nav .nav-link:hover{
     color:#3850d5!important;
 }
 
 @media (max-width:767.98px){
 
+.header{
+    position:relative;
+    z-index:9999;
+}
+
 .navbar-collapse{
     margin-top:15px;
-    padding:12px 18px;
     background:#fff;
     border:1px solid #ececec;
     border-radius:12px;
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    padding:12px 18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
 .navbar-nav .nav-item{
