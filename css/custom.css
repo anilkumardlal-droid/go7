@@ -34,7 +34,7 @@
 
 @media (max-width:767.98px){
 
-    .legal-page{
+   .contain-box > .container{
     padding-top:30 !important;
     padding-bottom:0 !important;
 }
