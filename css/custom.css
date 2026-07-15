@@ -10,7 +10,7 @@
     bottom:auto !important;
 }
 
-/* Home Responsive Navbar */
+/* Responsive Navbar */
 
 .navbar-toggler{
     border:0!important;
@@ -22,16 +22,21 @@
 }
 
 .navbar-nav .nav-link{
-    color:#555!important;
-    font-weight:600;
+    color:#111111 !important;
+    font-weight:700;
     padding:.75rem 1rem;
 }
 
-.navbar-nav .nav-link:hover{
-    color:#3850d5!important;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color:#3850d5 !important;
 }
 
 @media (max-width:767.98px){
+
+.contain-box{
+    padding:60px 0 30px !important;
+}
 
 .header{
     position:relative;
