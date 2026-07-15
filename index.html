@@ -129,15 +129,29 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group mt-3">
-                                                    <input name="name" id="contact-name" type="text" class="form-control"
-                                                        placeholder="Your Name" />
+                                                    <input
+                                                     name="name"
+                                                     id="contact-name"
+                                                      type="text"
+                                                       class="form-control"
+                                                        placeholder="Your Name"
+                                                        required
+                                                       minlength="2"
+                                                     maxlength="60"
+                                                    pattern="[A-Za-z\s.'-]{2,60}"
+                                                   title="Please enter a valid name" />
                                                 </div>
                                             </div>
 
                                             <div class="col-lg-6">
                                                 <div class="form-group mt-3">
-                                                    <input name="email" id="contact-email" type="text" class="form-control"
-                                                        placeholder="Your Email" />
+                                                    <input
+                                                    name="email"
+                                                     id="contact-email"
+                                                       type="email"
+                                                       class="form-control"
+                                                      placeholder="Your Email"
+                                                   required />
                                                 </div>
                                             </div>
                                         </div>
@@ -145,8 +159,15 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group mt-3">
-                                                    <input name="subject" id="contact-subject" type="text" class="form-control"
-                                                        placeholder="Subject" />
+                                                    <input
+                                                     name="subject"
+                                                       id="contact-subject"
+                                                         type="text"
+                                                           class="form-control"
+                                                          placeholder="Subject"
+                                                         required
+                                                        minlength="3"
+                                                     maxlength="100" />
                                                 </div>
                                             </div>
                                         </div>
@@ -154,8 +175,15 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group mt-3">
-                                                    <textarea name="message" id="contact-message" minlength="20" rows="4"
-                                                        class="form-control" placeholder="Tell me about your offer..."></textarea>
+                                                    <textarea
+                                                      name="message"
+                                                        id="contact-message"
+                                                          rows="4"
+                                                           class="form-control"
+                                                          placeholder="Tell me about your offer..."
+                                                      required
+                                                    minlength="20"
+                                                  maxlength="5000"></textarea>
                                                 </div>
                                             </div>
                                         </div>
