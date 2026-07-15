@@ -3,9 +3,37 @@
 
   <url>
     <loc>https://www.go7.in/</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.go7.in/about.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.go7.in/faq.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.go7.in/privacy.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.go7.in/terms.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
