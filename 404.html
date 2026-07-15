@@ -30,11 +30,16 @@ body{
 
 h1{
     font-family:"Nunito",sans-serif;
-    font-size:clamp(52px,8vw,72px);
+    font-size:clamp(64px,10vw,90px);
     font-weight:700;
     line-height:1;
-    color:#FE872D;
+    letter-spacing:-3px;
     margin-bottom:12px;
+    background:linear-gradient(180deg,#FEA64D 0%,#FE872D 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    text-shadow:0 2px 8px rgba(254,135,45,.15);
 }
 
 h2{
@@ -126,7 +131,7 @@ p{
 
 <div class="container">
 
-    <h1>404</h1>
+    <h1 aria-label="404">404</h1>
 
     <h2>Page Not Found</h2>
 
