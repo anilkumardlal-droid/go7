@@ -24,3 +24,9 @@ body{
 .header .float-end a{
     font-weight:700 !important;
 }
+
+@media (max-width: 767.98px) {
+    .page-title .pt-5 {
+        padding-top: 0 !important;
+    }
+}
