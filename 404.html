@@ -61,10 +61,9 @@ p{
     font-weight:500;
 }
 
+/* Button */
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
+    display:inline-block;
     padding:12px 26px;
     font-size:14px;
     font-weight:700;
@@ -72,24 +71,33 @@ p{
     text-decoration:none;
     border:1px solid transparent;
     border-radius:5px;
-    transition:all .25s ease;
-    cursor:pointer;
+    transition:.25s ease;
 }
 
+.btn:focus{
+    outline:none;
+    box-shadow:none;
+}
+
+/* Primary Button */
 .btn-primary{
-    background:#10A6BA;
-    border:1px solid #10A6BA;
-    color:#fff;
+    background:#3850d5 !important;
+    border:1px solid #3850d5 !important;
+    color:#fff !important;
 }
 
+/* Hover / Focus / Active */
 .btn-primary:hover,
 .btn-primary:focus,
-.btn-primary:active{
-    background:#0D8FA1;
-    border-color:#0D8FA1;
-    color:#fff;
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.focus,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):active:focus{
+    background:#2b44cd !important;
+    border:1px solid #2b44cd !important;
+    color:#fff !important;
 }
-
 @media (max-width:768px){
 
     body{
