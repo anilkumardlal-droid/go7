@@ -34,8 +34,12 @@
 
 @media (max-width:767.98px){
 
+    .pt-5{
+    padding-top:0 !important;
+}
+
 .contain-box{
-    padding:60px 0 30px !important;
+    padding:0 !important;
 }
 
 .header{
