@@ -1,5 +1,10 @@
 /* About & FAQ Page Fix */
 
+.navbar-brand img{
+    height:40px !important;
+    width:auto;
+}
+
 .contain-box{
     height:auto !important;
     min-height:100vh;
@@ -33,6 +38,10 @@
 }
 
 @media (max-width:767.98px){
+
+    .navbar-brand img{
+    height:34px !important;
+}
 
    .contain-box > .container{
     padding-top:30 !important;
