@@ -1,1 +1,21 @@
+/* About & FAQ Page Fix */
 
+.contain-box{
+    height:auto !important;
+    min-height:100vh;
+}
+
+.footer{
+    position:relative !important;
+    bottom:auto !important;
+}
+
+.home-center,
+.home-desc-center{
+    display:block !important;
+    height:auto !important;
+}
+
+body{
+    overflow-x:hidden;
+}
