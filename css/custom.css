@@ -20,6 +20,6 @@ body{
     overflow-x:hidden;
 }
 
-.header a{
-    font-weight:700;
+.header .float-end a{
+    font-weight:700 !important;
 }
