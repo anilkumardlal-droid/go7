@@ -48,35 +48,28 @@
 
 
 .offer-status{
-    display:inline-block;
-    font-weight:700;
-    color:#0EA5E9;
-    position:relative;
-    overflow:hidden;
-}
-
-.offer-status::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-150%;
-    width:60%;
-    height:100%;
+    display:inline-block !important;
+    font-weight:700 !important;
     background:linear-gradient(
         90deg,
-        transparent,
-        rgba(255,255,255,.9),
-        transparent
+        #0EA5E9 0%,
+        #7DD3FC 35%,
+        #FFFFFF 50%,
+        #7DD3FC 65%,
+        #0EA5E9 100%
     );
-    transform:skewX(-20deg);
-    animation:shine 4.5s linear infinite;
+    background-size:250% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    animation:offerShine 2.2s linear infinite !important;
 }
 
-@keyframes shine{
-    0%{
-        left:-150%;
+@keyframes offerShine{
+    from{
+        background-position:200% center;
     }
-    100%{
-        left:250%;
+    to{
+        background-position:-200% center;
     }
 }
