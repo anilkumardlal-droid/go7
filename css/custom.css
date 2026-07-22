@@ -78,4 +78,15 @@
     border-bottom:none;
 }
 
+    :root {
+    --bg: #F8F9FA;
+    --surface: #FFFFFF;
+
+    --text-primary: #0D0D0D;
+    --text-secondary: #4B5563;
+    --text-muted: #6B7280;
+
+    --border: #E5E7EB;
+}
+
 }
