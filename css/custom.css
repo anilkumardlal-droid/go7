@@ -287,24 +287,3 @@ hr{
 .shadow-sm {
     box-shadow: none !important;
 }
-
-.offer-status{
-    display:inline-block;
-    color:#0EA5E9;
-    font-weight:700;
-    animation:offerPulse 2.2s ease-in-out infinite;
-    will-change:transform,opacity,text-shadow;
-}
-
-@keyframes offerPulse{
-    0%,100%{
-        opacity:1;
-        transform:scale(1);
-        text-shadow:0 0 0 rgba(14,165,233,0);
-    }
-    50%{
-        opacity:.96;
-        transform:scale(1.02);
-        text-shadow:0 0 10px rgba(14,165,233,.35);
-    }
-}
