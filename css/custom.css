@@ -216,7 +216,6 @@ hr{
     position:relative !important;
     bottom:auto !important;
     background:var(--bg) !important;
-    border-top:1px solid var(--border) !important;
 }
 
 .footer,
@@ -283,4 +282,8 @@ hr{
 
 .feature-text{
     color:#10A6BA !important;
+}
+
+.shadow-sm {
+    box-shadow: none !important;
 }
