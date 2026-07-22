@@ -49,21 +49,27 @@
 
 .offer-status{
     display:inline-block !important;
-    color:#0EA5E9 !important;
     font-weight:700 !important;
-    animation:offerPulse 2.2s ease-in-out infinite !important;
-    will-change:transform, opacity, text-shadow !important;
+    background:linear-gradient(
+        90deg,
+        #0EA5E9 0%,
+        #7DD3FC 35%,
+        #FFFFFF 50%,
+        #7DD3FC 65%,
+        #0EA5E9 100%
+    );
+    background-size:250% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    animation:offerShine 2.2s linear infinite !important;
 }
 
-@keyframes offerPulse{
-    0%,100%{
-        opacity:1;
-        transform:scale(1);
-        text-shadow:0 0 0 rgba(14,165,233,0);
+@keyframes offerShine{
+    from{
+        background-position:200% center;
     }
-    50%{
-        opacity:.96;
-        transform:scale(1.02);
-        text-shadow:0 0 10px rgba(14,165,233,.35);
+    to{
+        background-position:-200% center;
     }
 }
