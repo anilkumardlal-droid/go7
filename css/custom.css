@@ -153,6 +153,12 @@ a:hover{
    color:#fff !important;
 }
 
+.btn-primary:hover{
+    background:#2b44cd;
+    border-color:#2b44cd;
+    color:#fff !important;
+}
+
 .btn {
     padding: 12px 26px;
     font-size: 14px;
