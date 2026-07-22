@@ -148,15 +148,25 @@ a:hover{
    Buttons
    ========================================================== */
 .btn-primary{
-    background:#3850d5 !important;
-    border-color:#3850d5 !important;
+    background:var(--primary) !important;
+    border-color:var(--primary) !important;
 }
 
 .btn-primary:hover{
-    background:#2b44cd;
-    border-color:#2b44cd;
+    background:#2B44CD !important;
+    border-color:#2B44CD !important;
 }
 
+.btn-outline-primary{
+    color:var(--primary) !important;
+    border-color:var(--primary) !important;
+}
+
+.btn-outline-primary:hover{
+    color:#fff !important;
+    background:var(--primary) !important;
+    border-color:var(--primary) !important;
+}
 /* ==========================================================
    Forms
    ========================================================== */
