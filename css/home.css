@@ -53,24 +53,23 @@
     background:linear-gradient(
         90deg,
         #0EA5E9 0%,
-        #0EA5E9 45%,
+        #7DD3FC 35%,
         #FFFFFF 50%,
-        #0EA5E9 55%,
+        #7DD3FC 65%,
         #0EA5E9 100%
     );
-    background-size:300% 100%;
-    background-position:0% 0;
+    background-size:250% auto;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
-    animation:offerShine 5s linear infinite;
+    animation:offerShine 4.5s linear infinite !important;
 }
 
 @keyframes offerShine{
-    0%{
-        background-position:100% 0;
+    from{
+        background-position:200% center;
     }
-    100%{
-        background-position:-100% 0;
+    to{
+        background-position:-200% center;
     }
 }
