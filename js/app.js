@@ -5,13 +5,17 @@
 */
  
 
-// loader
-$(window).on('load', function() {
-    $('.status').fadeOut();
-    $('.preloader').delay(200).fadeOut('slow');
-    $('body').delay(200).css({
-        'overflow': 'visible'
-    });
+// GO7 Page Loader
+$(window).on('load', function () {
+
+    $('.go7-loader').fadeOut(250);
+
+    $('.go7-preloader')
+        .delay(200)
+        .fadeOut(600);
+
+    $('body').css('overflow', 'visible');
+
 });
 
 // backpage
