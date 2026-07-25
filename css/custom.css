@@ -287,3 +287,100 @@ hr{
 .shadow-sm {
     box-shadow: none !important;
 }
+
+
+
+
+
+
+
+
+
+
+.go7-preloader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    z-index: 9999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.go7-loader {
+    position: relative;
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animated Ring */
+.go7-ring {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+
+    border: 3px solid rgba(56, 80, 213, 0.12);
+    border-top-color: #3850d5;
+
+    border-radius: 50%;
+
+    animation: go7-spin 0.9s linear infinite;
+}
+
+/* GO7.IN */
+.go7-brand {
+    position: relative;
+    z-index: 2;
+
+    color: #1e3547;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.go7-brand span {
+    color: #3850d5;
+}
+
+/* Loading text */
+.go7-loading {
+    position: absolute;
+    top: 142px;
+
+    color: #828f99;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    animation: go7-pulse 1.2s ease-in-out infinite;
+}
+
+
+/* Animations */
+
+@keyframes go7-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes go7-pulse {
+
+    0%, 100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
