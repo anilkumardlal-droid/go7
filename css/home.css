@@ -53,9 +53,9 @@
     background:linear-gradient(
         90deg,
         #0d0d0d 0%,
-        #0d0d0d 35%,
-        #ffffff 50%,
-        #0d0d0d 65%,
+        #2b2b2b 25%,
+        #666666 50%,
+        #2b2b2b 75%,
         #0d0d0d 100%
     );
     background-size:250% auto;
