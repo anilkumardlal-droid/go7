@@ -21,7 +21,7 @@ if (message.length < 20) {
     btn.innerHTML = "Sending...";
 
     try {
-        const res = await fetch("https://info.anilsrivastav561.workers.dev/", {
+        const res = await fetch("https://api.go7.in/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
