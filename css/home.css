@@ -161,3 +161,7 @@
         opacity: 1;
     }
 }
+
+.text-muted {
+    color: #424242 !important;
+}
