@@ -54,7 +54,7 @@
         90deg,
         #0EA5E9 0%,
         #7DD3FC 35%,
-        #EAE8E9 50%,
+        #FFFFFF 50%,
         #7DD3FC 65%,
         #0EA5E9 100%
     );
@@ -162,6 +162,3 @@
     }
 }
 
-.text-muted {
-    color: #424242 !important;
-}
