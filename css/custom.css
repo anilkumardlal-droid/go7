@@ -2111,3 +2111,150 @@ a:hover{
         font-size:32px !important;
     }
 }
+
+
+/* ==========================================================
+   GO7.IN - INNER PAGE HERO MATCH
+   FAQ + Privacy + Terms now match About hero-shell
+   About itself remains unchanged
+   ========================================================== */
+
+.faq-page .faq-hero,
+.privacy-page .privacy-hero,
+.terms-page .terms-hero{
+    padding:60px 0 28px !important;
+}
+
+.faq-page .faq-hero-shell,
+.privacy-page .privacy-hero-shell,
+.terms-page .terms-hero-shell{
+    min-height:520px !important;
+    padding:52px !important;
+
+    display:grid !important;
+    grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr) !important;
+    align-items:center !important;
+    gap:52px !important;
+
+    position:relative !important;
+    overflow:hidden !important;
+
+    background:#FFFFFF !important;
+    border:1px solid var(--border) !important;
+    border-radius:24px !important;
+    box-shadow:none !important;
+}
+
+.faq-page .faq-hero-shell::after,
+.privacy-page .privacy-hero-shell::after,
+.terms-page .terms-hero-shell::after{
+    content:"" !important;
+    position:absolute !important;
+    width:360px !important;
+    height:360px !important;
+    right:-150px !important;
+    top:-170px !important;
+    border-radius:50% !important;
+    background:rgba(56,80,213,.055) !important;
+    pointer-events:none !important;
+}
+
+.faq-page .faq-hero-copy,
+.privacy-page .privacy-hero-copy,
+.terms-page .terms-hero-copy{
+    position:relative !important;
+    z-index:1 !important;
+    max-width:720px !important;
+}
+
+.faq-page .faq-hero h1,
+.privacy-page .privacy-hero h1,
+.terms-page .terms-hero h1{
+    margin:14px 0 18px !important;
+    font-size:clamp(38px,4.5vw,58px) !important;
+    line-height:1.06 !important;
+    font-weight:600 !important;
+    letter-spacing:-.04em !important;
+}
+
+.faq-page .faq-hero-copy > p,
+.privacy-page .privacy-hero-copy > p,
+.terms-page .terms-hero-copy > p{
+    max-width:680px !important;
+    margin:0 !important;
+    font-size:16px !important;
+    line-height:1.75 !important;
+}
+
+.faq-page .faq-hero-meta,
+.privacy-page .privacy-trust,
+.terms-page .terms-trust{
+    position:relative !important;
+    z-index:1 !important;
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:12px !important;
+}
+
+.faq-page .faq-hero-meta > div,
+.privacy-page .privacy-trust > div,
+.terms-page .terms-trust > div{
+    min-height:76px !important;
+    padding:16px 18px !important;
+    border:1px solid var(--border) !important;
+    border-radius:15px !important;
+    background:#F8F9FA !important;
+}
+
+@media (max-width:991.98px){
+    .faq-page .faq-hero-shell,
+    .privacy-page .privacy-hero-shell,
+    .terms-page .terms-hero-shell{
+        min-height:auto !important;
+        padding:40px !important;
+        grid-template-columns:1fr !important;
+        gap:32px !important;
+    }
+
+    .faq-page .faq-hero-meta,
+    .privacy-page .privacy-trust,
+    .terms-page .terms-trust{
+        grid-template-columns:repeat(3,1fr) !important;
+    }
+}
+
+@media (max-width:767.98px){
+    .faq-page .faq-hero,
+    .privacy-page .privacy-hero,
+    .terms-page .terms-hero{
+        padding:38px 0 20px !important;
+    }
+
+    .faq-page .faq-hero-shell,
+    .privacy-page .privacy-hero-shell,
+    .terms-page .terms-hero-shell{
+        padding:28px 22px !important;
+        gap:26px !important;
+        border-radius:20px !important;
+    }
+
+    .faq-page .faq-hero-meta,
+    .privacy-page .privacy-trust,
+    .terms-page .terms-trust{
+        grid-template-columns:1fr !important;
+    }
+
+    .faq-page .faq-hero h1,
+    .privacy-page .privacy-hero h1,
+    .terms-page .terms-hero h1{
+        font-size:36px !important;
+    }
+}
+
+@media (max-width:479.98px){
+    .faq-page .faq-hero h1,
+    .privacy-page .privacy-hero h1,
+    .terms-page .terms-hero h1{
+        font-size:32px !important;
+    }
+}
