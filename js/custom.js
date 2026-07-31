@@ -1,17 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const preloader = document.getElementById("go7Preloader");
+    const content = document.getElementById("go7Content");
 
-    if (!preloader) return;
+    if (!content) return;
 
-    window.addEventListener("load", function () {
+    setTimeout(function () {
 
-        preloader.classList.add("loaded");
+        content.classList.remove("go7-content-loading");
 
-        setTimeout(function () {
-            preloader.remove();
-        }, 400);
-
-    });
+    }, 4500);
 
 });
