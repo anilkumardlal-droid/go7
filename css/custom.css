@@ -1565,3 +1565,12 @@
         gap:8px !important;
     }
 }
+
+/* Direct Owner benefit boxes - no shadow */
+.about-page .owner-benefits > div{
+    box-shadow:none !important;
+}
+
+.about-page .owner-benefits > div:hover{
+    box-shadow:none !important;
+}
