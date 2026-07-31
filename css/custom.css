@@ -2642,3 +2642,153 @@ a:hover{
         grid-template-columns:1fr;
     }
 }
+
+
+/* ==========================================================
+   GO7.IN - FINAL ABOUT HERO SKELETON FIX
+   Header/Footer excluded; redesigned hero fully supported
+   ========================================================== */
+
+/* Keep the hero layout stable while loading */
+.about-page #go7Content.go7-content-loading .about-flow-hero .hero-shell,
+.about-page #go7Content.go7-content-loading .about-flow-hero .domain-stage,
+.about-page #go7Content.go7-content-loading .about-flow-hero .trust-strip{
+    visibility:visible !important;
+    opacity:1 !important;
+}
+
+/* Text skeletons */
+.about-page #go7Content.go7-content-loading .about-flow-hero .eyebrow,
+.about-page #go7Content.go7-content-loading .about-flow-hero h1,
+.about-page #go7Content.go7-content-loading .about-flow-hero .hero-copy,
+.about-page #go7Content.go7-content-loading .about-flow-hero .btn,
+.about-page #go7Content.go7-content-loading .about-flow-hero .text-link,
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-label,
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-availability,
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-domain,
+.about-page #go7Content.go7-content-loading .about-flow-hero .domain-stage > p,
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-meta span,
+.about-page #go7Content.go7-content-loading .about-flow-hero .trust-strip > div{
+    position:relative !important;
+    overflow:hidden !important;
+    color:transparent !important;
+    background:#f3f4f6 !important;
+    border-color:transparent !important;
+    border-radius:6px !important;
+    box-shadow:none !important;
+    text-shadow:none !important;
+    user-select:none !important;
+}
+
+/* Preserve useful skeleton dimensions */
+.about-page #go7Content.go7-content-loading .about-flow-hero .eyebrow{
+    width:118px !important;
+    min-height:18px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .eyebrow::before{
+    display:none !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero h1{
+    min-height:136px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .hero-copy{
+    min-height:82px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .btn{
+    min-width:160px !important;
+    min-height:44px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .text-link{
+    width:145px !important;
+    min-height:20px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .domain-stage{
+    background:#fff !important;
+    border-color:#e5e7eb !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .domain-stage-head{
+    background:transparent !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-label{
+    width:130px !important;
+    min-height:15px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-availability{
+    width:76px !important;
+    min-height:15px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-domain{
+    width:190px !important;
+    min-height:70px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .domain-stage > p{
+    width:88% !important;
+    min-height:43px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-meta span{
+    min-height:32px !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .trust-strip{
+    background:transparent !important;
+}
+.about-page #go7Content.go7-content-loading .about-flow-hero .trust-strip > div{
+    min-height:64px !important;
+    margin:8px !important;
+}
+
+/* Hide real icon/detail content during loading */
+.about-page #go7Content.go7-content-loading .about-flow-hero i,
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-domain span,
+.about-page #go7Content.go7-content-loading .about-flow-hero .trust-strip strong,
+.about-page #go7Content.go7-content-loading .about-flow-hero .trust-strip span{
+    visibility:hidden !important;
+    opacity:0 !important;
+}
+
+/* One shimmer implementation for every new hero skeleton block */
+.about-page #go7Content.go7-content-loading .about-flow-hero .eyebrow::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero h1::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero .hero-copy::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero .btn::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero .text-link::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-label::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-availability::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-domain::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero .domain-stage > p::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero .stage-meta span::after,
+.about-page #go7Content.go7-content-loading .about-flow-hero .trust-strip > div::after{
+    content:"" !important;
+    position:absolute !important;
+    inset:0 !important;
+    transform:translateX(-100%) !important;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    ) !important;
+    animation:go7Skeleton 1.3s infinite !important;
+    pointer-events:none !important;
+}
+
+/* Restore everything after custom.js removes the loading class */
+.about-page #go7Content:not(.go7-content-loading) .about-flow-hero i,
+.about-page #go7Content:not(.go7-content-loading) .about-flow-hero .stage-domain span,
+.about-page #go7Content:not(.go7-content-loading) .about-flow-hero .trust-strip strong,
+.about-page #go7Content:not(.go7-content-loading) .about-flow-hero .trust-strip span{
+    visibility:visible !important;
+    opacity:1 !important;
+}
+
+@media(max-width:767.98px){
+    .about-page #go7Content.go7-content-loading .about-flow-hero h1{
+        min-height:112px !important;
+    }
+    .about-page #go7Content.go7-content-loading .about-flow-hero .hero-copy{
+        min-height:100px !important;
+    }
+    .about-page #go7Content.go7-content-loading .about-flow-hero .trust-strip > div{
+        min-height:58px !important;
+        margin:6px !important;
+    }
+}
