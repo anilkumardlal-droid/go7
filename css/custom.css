@@ -1,33 +1,28 @@
 /* ==========================================================
-   GO7.IN - Final Premium Light Theme
-   Version: 1.0
+   GO7.IN - COMMON INNER PAGES CSS
+   Home page uses custom.home.css separately
    ========================================================== */
 
 :root{
-
-    /* Background */
     --bg:#F8F9FA;
     --card:#FFFFFF;
 
-    /* Text */
     --text:#0D0D0D;
     --text-secondary:#4B5563;
     --text-muted:#6B7280;
 
-    /* Brand */
     --primary:#3850D5;
     --primary-hover:#2F45BF;
 
-    /* Border */
     --border:#E5E7EB;
+    --soft:#F3F4F6;
 
-    /* Shadow */
-    --shadow:none !important;
-
+    --shadow:none;
 }
 
+
 /* ==========================================================
-   Base
+   BASE
    ========================================================== */
 
 html{
@@ -35,17 +30,22 @@ html{
 }
 
 body{
+    margin:0;
+
     background:var(--bg) !important;
     color:var(--text) !important;
-    font-family: "Nunito", sans-serif;
+
+    font-family:"Nunito",sans-serif;
     font-size:16px;
     line-height:1.7;
+
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
 }
 
+
 /* ==========================================================
-   Typography
+   TYPOGRAPHY
    ========================================================== */
 
 h1,
@@ -55,6 +55,7 @@ h4,
 h5,
 h6{
     color:var(--text) !important;
+
     font-weight:600 !important;
     line-height:1.25;
 }
@@ -72,7 +73,9 @@ small,
 
 a{
     color:var(--text) !important;
+
     text-decoration:none !important;
+
     transition:.25s ease !important;
 }
 
@@ -80,14 +83,17 @@ a:hover{
     color:var(--primary) !important;
 }
 
+
 /* ==========================================================
-   Layout
+   COMMON LAYOUT
    ========================================================== */
 
 .contain-box{
     min-height:100vh !important;
     height:auto !important;
+
     background:var(--bg) !important;
+
     padding:0 !important;
 }
 
@@ -95,13 +101,20 @@ a:hover{
     padding:80px 0;
 }
 
+
 /* ==========================================================
-   Header / Navbar
+   HEADER / NAVBAR
    ========================================================== */
 
 .header,
 .navbar{
     background:var(--bg) !important;
+}
+
+.header{
+    position:relative;
+
+    z-index:1000;
 }
 
 .navbar-brand img{
@@ -111,6 +124,7 @@ a:hover{
 
 .navbar-toggler{
     border:0 !important;
+
     padding:0 !important;
 }
 
@@ -120,9 +134,12 @@ a:hover{
 
 .navbar-nav .nav-link{
     color:var(--text) !important;
+
     font-size:15px !important;
     font-weight:600 !important;
+
     padding:.75rem 1rem !important;
+
     transition:.25s ease !important;
 }
 
@@ -131,48 +148,70 @@ a:hover{
     color:var(--primary) !important;
 }
 
+
 /* ==========================================================
-   Cards
+   COMMON CARDS
    ========================================================== */
 
 .card,
 .section-card{
     background:var(--card) !important;
+
     border:1px solid var(--border) !important;
     border-radius:16px !important;
+
     box-shadow:var(--shadow) !important;
 }
 
+.shadow-sm{
+    box-shadow:none !important;
+}
+
+
 /* ==========================================================
-   Buttons
+   BUTTONS
    ========================================================== */
+
+.btn{
+    padding:12px 26px;
+
+    font-size:14px;
+    font-weight:700;
+
+    letter-spacing:.5px;
+}
+
 .btn-primary{
-    background: #3850d5 !important;
-    border-color: #3850d5 !important;
-   color:#fff !important;
+    background:var(--primary) !important;
+
+    border-color:var(--primary) !important;
+
+    color:#FFFFFF !important;
 }
 
 .btn-primary:hover{
-    color:#fff !important;
+    background:var(--primary-hover) !important;
+
+    border-color:var(--primary-hover) !important;
+
+    color:#FFFFFF !important;
 }
 
-.btn {
-    padding: 12px 26px;
-    font-size: 14px;
-    letter-spacing: .5px;
-    font-weight: 700;
-}
+
 /* ==========================================================
-   Forms
+   FORMS
    ========================================================== */
 
 input,
 textarea,
 select{
-    background:#fff !important;
+    background:#FFFFFF !important;
+
     color:var(--text) !important;
+
     border:1px solid var(--border) !important;
     border-radius:10px !important;
+
     transition:.25s ease !important;
 }
 
@@ -185,12 +224,16 @@ input:focus,
 textarea:focus,
 select:focus{
     outline:none !important;
+
     border-color:var(--primary) !important;
-    box-shadow:0 0 0 .2rem rgba(56,80,213,.15) !important;
+
+    box-shadow:
+        0 0 0 .2rem rgba(56,80,213,.15) !important;
 }
 
+
 /* ==========================================================
-   List
+   LIST / DIVIDER
    ========================================================== */
 
 ul,
@@ -198,23 +241,33 @@ ol{
     color:var(--text-secondary) !important;
 }
 
-/* ==========================================================
-   Divider
-   ========================================================== */
-
 hr{
     border-color:var(--border) !important;
+
     opacity:1 !important;
 }
 
+
 /* ==========================================================
-   Footer
+   COMMON HELPERS
+   ========================================================== */
+
+.feature-text{
+    color:#10A6BA !important;
+}
+
+
+/* ==========================================================
+   FOOTER
    ========================================================== */
 
 .footer{
     position:relative !important;
     bottom:auto !important;
+
     background:var(--bg) !important;
+
+    padding-bottom:24px;
 }
 
 .footer,
@@ -232,69 +285,11 @@ hr{
     color:var(--primary) !important;
 }
 
-/* ==========================================================
-   Responsive
-   ========================================================== */
-
-@media (max-width:767.98px){
-
-    .navbar-brand img{
-        height:34px !important;
-    }
-
-    .contain-box>.container{
-        padding-top:30px !important;
-        padding-bottom:0 !important;
-    }
-
-    .pt-5{
-        padding-top:0 !important;
-    }
-
-    .header{
-        position:relative !important;
-        z-index:9999 !important;
-    }
-
-    .navbar-collapse{
-        margin-top:15px !important;
-        background:#FFFFFF !important;
-        border:1px solid var(--border) !important;
-        border-radius:14px !important;
-        padding:12px 18px !important;
-        box-shadow:var(--shadow) !important;
-    }
-
-    .navbar-nav .nav-item{
-        border-bottom:1px solid var(--border) !important;
-    }
-
-    .navbar-nav .nav-item:last-child{
-        border-bottom:none !important;
-    }
-
-    .navbar-nav .nav-link{
-        padding:.9rem 0 !important;
-    }
-
-}
-
-.feature-text{
-    color:#10A6BA !important;
-}
-
-.shadow-sm {
-    box-shadow: none !important;
-}
-
-
 
 /* ==========================================================
-   GO7.IN - Content Skeleton Loader
-   Header & Footer excluded
+   COMMON SKELETON LOADER
+   Header + Footer excluded
    ========================================================== */
-
-/* Skeleton elements */
 
 .go7-content-loading h1,
 .go7-content-loading h2,
@@ -304,32 +299,45 @@ hr{
 .go7-content-loading h6,
 .go7-content-loading p,
 .go7-content-loading .badge,
-.go7-content-loading .btn{
+.go7-content-loading .btn,
+.go7-content-loading .eyebrow,
+.go7-content-loading .section-kicker,
+.go7-content-loading .mini-label,
+.go7-content-loading .text-link,
+.go7-content-loading .stage-domain,
+.go7-content-loading .stage-label{
     position:relative !important;
+
     overflow:hidden !important;
 
     color:transparent !important;
-    background:#f3f4f6 !important;
+
+    background:var(--soft) !important;
+
     border-color:transparent !important;
 
     border-radius:6px !important;
+
     box-shadow:none !important;
 
     user-select:none !important;
 }
 
 
-/* Hide icons while loading */
+/* Hide actual icons */
 
 .go7-content-loading i{
     visibility:hidden !important;
 }
 
 
-/* Disable links/buttons while loading */
+/* Disable interaction */
 
 .go7-content-loading a,
-.go7-content-loading button{
+.go7-content-loading button,
+.go7-content-loading input,
+.go7-content-loading textarea,
+.go7-content-loading select{
     pointer-events:none !important;
 }
 
@@ -344,9 +352,17 @@ hr{
 .go7-content-loading h6::after,
 .go7-content-loading p::after,
 .go7-content-loading .badge::after,
-.go7-content-loading .btn::after{
+.go7-content-loading .btn::after,
+.go7-content-loading .eyebrow::after,
+.go7-content-loading .section-kicker::after,
+.go7-content-loading .mini-label::after,
+.go7-content-loading .text-link::after,
+.go7-content-loading .stage-domain::after,
+.go7-content-loading .stage-label::after{
     content:"";
+
     position:absolute;
+
     inset:0;
 
     transform:translateX(-100%);
@@ -361,8 +377,9 @@ hr{
     animation:go7Skeleton 1.3s infinite;
 }
 
-
-/* Skeleton animation */
+.go7-content-loading .stage-domain span{
+    color:transparent !important;
+}
 
 @keyframes go7Skeleton{
 
@@ -372,9 +389,1070 @@ hr{
 
 }
 
-
-/* Smooth transition back to content */
-
 #go7Content{
     transition:opacity .3s ease;
+}
+
+
+/* ==========================================================
+   ABOUT PAGE
+   ========================================================== */
+
+
+/* ==========================================================
+   ABOUT HERO
+   ========================================================== */
+
+.about-page .about-new-hero{
+    padding:72px 0 26px;
+}
+
+.about-page .hero-shell{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:64px;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+    border-radius:28px;
+}
+
+.about-page .hero-shell::after{
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    right:-170px;
+    top:-180px;
+
+    border:70px solid rgba(56,80,213,.045);
+    border-radius:50%;
+
+    pointer-events:none;
+}
+
+.about-page .eyebrow,
+.about-page .section-kicker,
+.about-page .mini-label{
+    display:inline-block;
+
+    color:var(--primary) !important;
+
+    font-size:12px;
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:1.8px;
+}
+
+.about-page .hero-shell h1{
+    max-width:720px;
+
+    margin:18px 0 22px;
+
+    font-size:clamp(2.6rem,5vw,4.65rem);
+
+    letter-spacing:-.055em;
+}
+
+.about-page .hero-copy{
+    max-width:700px;
+
+    margin:0;
+
+    font-size:19px;
+}
+
+.about-page .hero-actions{
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+    margin-top:34px;
+}
+
+.about-page .hero-actions .btn{
+    border-radius:999px !important;
+}
+
+.about-page .text-link{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    font-weight:700;
+}
+
+
+/* ==========================================================
+   ABOUT DOMAIN VISUAL
+   ========================================================== */
+
+.about-page .domain-stage{
+    position:relative;
+
+    z-index:2;
+
+    padding:34px;
+
+    background:var(--bg);
+
+    border:1px solid var(--border);
+    border-radius:22px;
+}
+
+.about-page .stage-label{
+    color:var(--text-muted);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:1.6px;
+}
+
+.about-page .stage-domain{
+    margin:30px 0 10px;
+
+    color:#1E3547;
+
+    font-size:clamp(3.2rem,6vw,5.4rem);
+
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:-.065em;
+}
+
+.about-page .stage-domain span{
+    color:var(--primary);
+}
+
+.about-page .domain-stage p{
+    margin-bottom:30px;
+
+    font-size:15px;
+}
+
+.about-page .stage-meta{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.about-page .stage-meta span{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:8px 11px;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+    border-radius:999px;
+
+    color:var(--text-secondary);
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+.about-page .stage-meta i{
+    color:var(--primary);
+}
+
+
+/* ==========================================================
+   ABOUT TRUST STRIP
+   ========================================================== */
+
+.about-page .trust-strip{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    margin-top:18px;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    overflow:hidden;
+}
+
+.about-page .trust-strip > div{
+    padding:22px 26px;
+
+    border-right:1px solid var(--border);
+}
+
+.about-page .trust-strip > div:last-child{
+    border-right:0;
+}
+
+.about-page .trust-strip strong,
+.about-page .trust-strip span{
+    display:block;
+}
+
+.about-page .trust-strip strong{
+    color:var(--text);
+
+    font-size:15px;
+}
+
+.about-page .trust-strip span{
+    margin-top:2px;
+
+    color:var(--text-muted);
+
+    font-size:12px;
+}
+
+
+/* ==========================================================
+   ABOUT SECTIONS
+   ========================================================== */
+
+.about-page .about-block{
+    padding:78px 0;
+}
+
+.about-page .section-intro{
+    max-width:780px;
+
+    margin-bottom:38px;
+}
+
+.about-page .section-intro h2,
+.about-page .brand-panel h2,
+.about-page .owner-panel h2,
+.about-page .final-panel h2{
+    margin:14px 0 16px;
+
+    font-size:clamp(2rem,4vw,3.2rem);
+
+    letter-spacing:-.04em;
+}
+
+.about-page .section-intro p{
+    margin:0;
+
+    font-size:18px;
+}
+
+.about-page .section-intro-row{
+    max-width:none;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:40px;
+}
+
+.about-page .section-intro-row p{
+    max-width:520px;
+}
+
+
+/* ==========================================================
+   ABOUT FEATURE MOSAIC
+   ========================================================== */
+
+.about-page .feature-mosaic{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:16px;
+}
+
+.about-page .feature-primary{
+    grid-column:span 2;
+    grid-row:span 2;
+
+    min-height:350px;
+
+    padding:36px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    background:#1E3547;
+
+    border-radius:22px;
+}
+
+.about-page .feature-primary h3{
+    margin:12px 0;
+
+    color:#FFFFFF !important;
+
+    font-size:2rem;
+}
+
+.about-page .feature-primary p{
+    color:rgba(255,255,255,.72) !important;
+}
+
+.about-page .feature-primary .mini-label{
+    color:#8FA1FF !important;
+}
+
+.about-page .feature-icon{
+    width:54px;
+    height:54px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.09);
+
+    border-radius:15px;
+
+    color:#FFFFFF;
+
+    font-size:26px;
+}
+
+.about-page .feature-tile{
+    min-height:166px;
+
+    padding:26px;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+.about-page .feature-tile:hover{
+    transform:translateY(-3px);
+
+    border-color:#D8DCEF;
+}
+
+.about-page .feature-tile > i{
+    color:var(--primary);
+
+    font-size:27px;
+}
+
+.about-page .feature-tile h4{
+    margin:13px 0 6px;
+
+    font-size:17px;
+}
+
+.about-page .feature-tile p{
+    margin:0;
+
+    font-size:14px;
+
+    line-height:1.6;
+}
+
+
+/* ==========================================================
+   ABOUT BRAND POTENTIAL
+   ========================================================== */
+
+.about-page .brand-panel{
+    padding:54px;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+    border-radius:26px;
+}
+
+.about-page .brand-panel > .row > div:first-child > p{
+    font-size:17px;
+}
+
+.about-page .brand-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    border:1px solid var(--border);
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.about-page .brand-point{
+    min-height:175px;
+
+    padding:27px;
+}
+
+.about-page .brand-point:nth-child(1),
+.about-page .brand-point:nth-child(2){
+    border-bottom:1px solid var(--border);
+}
+
+.about-page .brand-point:nth-child(1),
+.about-page .brand-point:nth-child(3){
+    border-right:1px solid var(--border);
+}
+
+.about-page .brand-point > span{
+    color:var(--primary);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+}
+
+.about-page .brand-point h4{
+    margin:12px 0 5px;
+}
+
+.about-page .brand-point p{
+    margin:0;
+
+    font-size:14px;
+}
+
+
+/* ==========================================================
+   ABOUT USE CASES
+   ========================================================== */
+
+.about-page .usecase-grid{
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:12px;
+}
+
+.about-page .usecase{
+    min-height:135px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    justify-content:space-between;
+
+    padding:20px;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+    border-radius:16px;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+.about-page .usecase:hover{
+    transform:translateY(-3px);
+
+    border-color:#D8DCEF;
+}
+
+.about-page .usecase i{
+    color:var(--primary);
+
+    font-size:27px;
+}
+
+.about-page .usecase span{
+    color:var(--text);
+
+    font-weight:700;
+}
+
+
+/* ==========================================================
+   ABOUT ACQUISITION PROCESS
+   ========================================================== */
+
+.about-page .process-line{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+    border-radius:22px;
+
+    overflow:hidden;
+}
+
+.about-page .process-step{
+    position:relative;
+
+    min-height:285px;
+
+    padding:30px;
+
+    border-right:1px solid var(--border);
+}
+
+.about-page .process-step:last-child{
+    border-right:0;
+}
+
+.about-page .step-number{
+    color:#A2A8B3;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+}
+
+.about-page .step-icon{
+    width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:40px 0 22px;
+
+    background:rgba(56,80,213,.07);
+
+    border-radius:14px;
+
+    color:var(--primary);
+
+    font-size:24px;
+}
+
+.about-page .process-step h4{
+    font-size:17px;
+}
+
+.about-page .process-step p{
+    margin:0;
+
+    font-size:14px;
+}
+
+
+/* ==========================================================
+   ABOUT DIRECT OWNER
+   ========================================================== */
+
+.about-page .owner-panel{
+    display:grid;
+
+    grid-template-columns:.9fr 1.1fr;
+
+    gap:60px;
+
+    padding:54px;
+
+    background:#1E3547;
+
+    border-radius:26px;
+}
+
+.about-page .owner-panel h2{
+    color:#FFFFFF !important;
+}
+
+.about-page .owner-copy > p{
+    color:rgba(255,255,255,.72) !important;
+
+    font-size:17px;
+}
+
+.about-page .owner-panel .section-kicker{
+    color:#8FA1FF !important;
+}
+
+.about-page .owner-benefits{
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.about-page .owner-benefits > div{
+    display:grid;
+
+    grid-template-columns:44px 1fr;
+
+    gap:14px;
+
+    align-items:center;
+
+    padding:19px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.about-page .owner-benefits > div:last-child{
+    border-bottom:0;
+}
+
+.about-page .owner-benefits i{
+    width:44px;
+    height:44px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#FFFFFF;
+
+    font-size:21px;
+}
+
+.about-page .owner-benefits span{
+    color:rgba(255,255,255,.72);
+}
+
+.about-page .owner-benefits strong{
+    display:block;
+
+    color:#FFFFFF;
+}
+
+
+/* ==========================================================
+   ABOUT FINAL CTA
+   ========================================================== */
+
+.about-page .about-final{
+    padding-top:55px;
+    padding-bottom:85px;
+}
+
+.about-page .final-panel{
+    padding:70px 40px;
+
+    text-align:center;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+    border-radius:28px;
+}
+
+.about-page .final-panel h2{
+    max-width:760px;
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.about-page .final-panel > p{
+    max-width:720px;
+
+    margin:0 auto 30px;
+
+    font-size:18px;
+}
+
+.about-page .final-panel .btn{
+    min-width:190px;
+
+    border-radius:999px !important;
+}
+
+.about-page .final-meta{
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:22px;
+}
+
+.about-page .final-meta span{
+    color:var(--text-muted);
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+.about-page .final-meta i{
+    color:var(--primary);
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width:1199.98px){
+
+    .about-page .hero-shell{
+        padding:50px;
+    }
+
+    .about-page .feature-mosaic{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-page .feature-primary{
+        grid-column:span 2;
+        grid-row:auto;
+
+        min-height:280px;
+    }
+
+    .about-page .usecase-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+
+@media (max-width:991.98px){
+
+    .about-page .about-new-hero{
+        padding-top:50px;
+    }
+
+    .about-page .domain-stage{
+        max-width:600px;
+    }
+
+    .about-page .trust-strip{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-page .trust-strip > div:nth-child(2){
+        border-right:0;
+    }
+
+    .about-page .trust-strip > div:nth-child(-n+2){
+        border-bottom:1px solid var(--border);
+    }
+
+    .about-page .brand-panel{
+        padding:40px;
+    }
+
+    .about-page .process-line{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-page .process-step:nth-child(2){
+        border-right:0;
+    }
+
+    .about-page .process-step:nth-child(-n+2){
+        border-bottom:1px solid var(--border);
+    }
+
+    .about-page .owner-panel{
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+        padding:44px;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width:767.98px){
+
+    .navbar-brand img{
+        height:34px !important;
+    }
+
+    .header{
+        position:relative !important;
+
+        z-index:9999 !important;
+    }
+
+    .navbar-collapse{
+        margin-top:15px !important;
+
+        background:#FFFFFF !important;
+
+        border:1px solid var(--border) !important;
+        border-radius:14px !important;
+
+        padding:12px 18px !important;
+
+        box-shadow:0 8px 25px rgba(0,0,0,.06) !important;
+    }
+
+    .navbar-nav .nav-item{
+        border-bottom:1px solid var(--border) !important;
+    }
+
+    .navbar-nav .nav-item:last-child{
+        border-bottom:none !important;
+    }
+
+    .navbar-nav .nav-link{
+        padding:.9rem 0 !important;
+    }
+
+
+    /* About */
+
+    .about-page .about-new-hero{
+        padding:34px 0 14px;
+    }
+
+    .about-page .hero-shell{
+        padding:30px 22px;
+
+        border-radius:20px;
+    }
+
+    .about-page .hero-shell h1{
+        font-size:2.45rem;
+    }
+
+    .about-page .hero-copy{
+        font-size:16px;
+    }
+
+    .about-page .hero-actions{
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:17px;
+    }
+
+    .about-page .domain-stage{
+        padding:25px;
+
+        border-radius:18px;
+    }
+
+    .about-page .stage-domain{
+        font-size:3.7rem;
+    }
+
+    .about-page .trust-strip{
+        border-radius:16px;
+    }
+
+    .about-page .trust-strip > div{
+        padding:17px;
+    }
+
+    .about-page .about-block{
+        padding:52px 0;
+    }
+
+    .about-page .section-intro{
+        margin-bottom:28px;
+    }
+
+    .about-page .section-intro h2,
+    .about-page .brand-panel h2,
+    .about-page .owner-panel h2,
+    .about-page .final-panel h2{
+        font-size:2rem;
+    }
+
+    .about-page .section-intro p{
+        font-size:16px;
+    }
+
+    .about-page .section-intro-row{
+        display:block;
+    }
+
+    .about-page .section-intro-row p{
+        margin-top:15px;
+    }
+
+    .about-page .feature-mosaic{
+        grid-template-columns:1fr;
+    }
+
+    .about-page .feature-primary{
+        grid-column:auto;
+
+        min-height:280px;
+
+        padding:28px;
+    }
+
+    .about-page .feature-tile{
+        min-height:auto;
+    }
+
+    .about-page .brand-panel{
+        padding:28px 22px;
+
+        border-radius:20px;
+    }
+
+    .about-page .brand-grid{
+        margin-top:10px;
+    }
+
+    .about-page .brand-point{
+        min-height:145px;
+
+        padding:20px;
+    }
+
+    .about-page .usecase-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-page .usecase{
+        min-height:120px;
+    }
+
+    .about-page .process-line{
+        grid-template-columns:1fr;
+    }
+
+    .about-page .process-step{
+        min-height:auto;
+
+        padding:25px;
+
+        border-right:0 !important;
+        border-bottom:1px solid var(--border);
+    }
+
+    .about-page .process-step:last-child{
+        border-bottom:0;
+    }
+
+    .about-page .step-icon{
+        margin:25px 0 18px;
+    }
+
+    .about-page .owner-panel{
+        padding:30px 22px;
+
+        border-radius:20px;
+    }
+
+    .about-page .owner-benefits > div{
+        grid-template-columns:40px 1fr;
+    }
+
+    .about-page .owner-benefits i{
+        width:40px;
+        height:40px;
+    }
+
+    .about-page .about-final{
+        padding-top:35px;
+        padding-bottom:60px;
+    }
+
+    .about-page .final-panel{
+        padding:48px 22px;
+
+        border-radius:20px;
+    }
+
+    .about-page .final-panel > p{
+        font-size:16px;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width:479.98px){
+
+    .about-page .hero-shell h1{
+        font-size:2.15rem;
+    }
+
+    .about-page .trust-strip{
+        grid-template-columns:1fr;
+    }
+
+    .about-page .trust-strip > div{
+        border-right:0 !important;
+
+        border-bottom:1px solid var(--border) !important;
+    }
+
+    .about-page .trust-strip > div:last-child{
+        border-bottom:0 !important;
+    }
+
+    .about-page .brand-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-page .brand-point{
+        border-right:0 !important;
+
+        border-bottom:1px solid var(--border) !important;
+    }
+
+    .about-page .brand-point:last-child{
+        border-bottom:0 !important;
+    }
+
 }
