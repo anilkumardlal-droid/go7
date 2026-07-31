@@ -294,17 +294,7 @@ hr{
 
 
 
-.go7-content-loading .cf-turnstile{
-    width:300px;
-    height:65px;
-    background:#e9ecef !important;
-    border-radius:6px;
-    overflow:hidden;
-}
 
-.go7-content-loading .cf-turnstile iframe{
-    visibility:hidden !important;
-}
 
 .go7-preloader {
     position: fixed;
