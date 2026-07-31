@@ -289,97 +289,92 @@ hr{
 
 
 
+/* ==========================================================
+   GO7.IN - Content Skeleton Loader
+   Header & Footer excluded
+   ========================================================== */
 
+/* Skeleton elements */
 
+.go7-content-loading h1,
+.go7-content-loading h2,
+.go7-content-loading h3,
+.go7-content-loading h4,
+.go7-content-loading h5,
+.go7-content-loading h6,
+.go7-content-loading p,
+.go7-content-loading .badge,
+.go7-content-loading .btn{
+    position:relative !important;
+    overflow:hidden !important;
 
+    color:transparent !important;
+    background:#f3f4f6 !important;
+    border-color:transparent !important;
 
+    border-radius:6px !important;
+    box-shadow:none !important;
 
-
-
-.go7-preloader {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background: #f8f9fa;
-    z-index: 9999999;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-}
-
-.go7-loader {
-    position: relative;
-    width: 150px;
-    height: 150px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Animated Ring */
-.go7-ring {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-
-    border: 3px solid rgba(56, 80, 213, 0.12);
-    border-top-color: #3850d5;
-
-    border-radius: 50%;
-
-    animation: go7-spin 0.9s linear infinite;
-}
-
-/* GO7.IN */
-.go7-brand {
-    position: relative;
-    z-index: 2;
-
-    color: #1e3547;
-    font-size: 23px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.go7-brand span {
-    color: #3850d5;
-}
-
-/* Loading text */
-.go7-loading {
-    position: absolute;
-    top: 142px;
-
-    color: #828f99;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 3px;
-
-    animation: go7-pulse 1.2s ease-in-out infinite;
+    user-select:none !important;
 }
 
 
-/* Animations */
+/* Hide icons while loading */
 
-@keyframes go7-spin {
-    100% {
-        transform: rotate(360deg);
-    }
+.go7-content-loading i{
+    visibility:hidden !important;
 }
 
-@keyframes go7-pulse {
 
-    0%, 100% {
-        opacity: 0.35;
+/* Disable links/buttons while loading */
+
+.go7-content-loading a,
+.go7-content-loading button{
+    pointer-events:none !important;
+}
+
+
+/* Skeleton shimmer */
+
+.go7-content-loading h1::after,
+.go7-content-loading h2::after,
+.go7-content-loading h3::after,
+.go7-content-loading h4::after,
+.go7-content-loading h5::after,
+.go7-content-loading h6::after,
+.go7-content-loading p::after,
+.go7-content-loading .badge::after,
+.go7-content-loading .btn::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    transform:translateX(-100%);
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    );
+
+    animation:go7Skeleton 1.3s infinite;
+}
+
+
+/* Skeleton animation */
+
+@keyframes go7Skeleton{
+
+    100%{
+        transform:translateX(100%);
     }
 
-    50% {
-        opacity: 1;
-    }
+}
+
+
+/* Smooth transition back to content */
+
+#go7Content{
+    transition:opacity .3s ease;
 }
