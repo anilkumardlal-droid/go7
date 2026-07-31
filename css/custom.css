@@ -1613,3 +1613,42 @@
         padding:.75rem 1rem !important;
     }
 }
+
+
+/* ==========================================================
+   FINAL NAVBAR - SAME BEHAVIOR AS HOME
+   Text color hover only. No underline / arrow / pseudo effect.
+   ========================================================== */
+
+.about-page .navbar-nav .nav-link{
+    color:#0d0d0d !important;
+    font-weight:600 !important;
+    padding:.75rem 1rem !important;
+    font-size:inherit !important;
+    letter-spacing:normal !important;
+}
+
+.about-page .navbar-nav .nav-link::before,
+.about-page .navbar-nav .nav-link::after,
+.about-page .navbar-nav .nav-link:hover::before,
+.about-page .navbar-nav .nav-link:hover::after,
+.about-page .navbar-nav .nav-link.active::before,
+.about-page .navbar-nav .nav-link.active::after{
+    display:none !important;
+    content:none !important;
+    transform:none !important;
+}
+
+.about-page .navbar-nav .nav-link.active{
+    color:#0d0d0d !important;
+}
+
+.about-page .navbar-nav .nav-link:hover{
+    color:#3850d5 !important;
+}
+
+@media(max-width:767.98px){
+    .about-page .navbar-nav .nav-link{
+        padding:.75rem 1rem !important;
+    }
+}
