@@ -1466,3 +1466,68 @@ a:hover{
     visibility:visible !important;
     opacity:1 !important;
 }
+
+
+/* ==========================================================
+   ABOUT PAGE - TRANSFER & SECURITY
+   ========================================================== */
+
+.about-page .transfer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.about-page .transfer-card{
+    padding:24px;
+    background:#FFFFFF;
+    border:1px solid var(--border);
+    border-radius:17px;
+}
+
+.about-page .transfer-card i{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+    background:rgba(56,80,213,.07);
+    border-radius:12px;
+    color:var(--primary);
+    font-size:23px;
+}
+
+.about-page .transfer-card h4{
+    margin:0 0 7px;
+    font-size:16px;
+}
+
+.about-page .transfer-card p{
+    margin:0;
+    font-size:13px;
+    line-height:1.6;
+}
+
+@media (max-width:991.98px){
+    .about-page .transfer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media (max-width:575.98px){
+    .about-page .transfer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+#go7Content.go7-content-loading .transfer-card i.mdi{
+    visibility:hidden !important;
+    opacity:0 !important;
+}
+
+#go7Content:not(.go7-content-loading) .transfer-card i.mdi{
+    visibility:visible !important;
+    opacity:1 !important;
+    color:var(--primary) !important;
+}
