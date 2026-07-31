@@ -17,7 +17,6 @@
     margin:0;
     background:var(--bg) !important;
     color:var(--text) !important;
-    font-family:"Nunito",sans-serif;
     font-size:16px;
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
@@ -1631,7 +1630,6 @@
     margin:0;
     background:var(--bg)!important;
     color:var(--text)!important;
-    font-family:"Nunito",sans-serif;
     line-height:1.7;
     -webkit-font-smoothing:antialiased;
 }
@@ -1901,7 +1899,7 @@
 }
 
 /* GO7.IN PRIVACY — FINAL, scoped only to .privacy-page */
-.privacy-page{--bg:#F8F9FA;--card:#fff;--text:#0d0d0d;--secondary:#4B5563;--muted:#6B7280;--primary:#3850D5;margin:0;background:var(--bg)!important;color:var(--text)!important;font-family:"Nunito",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+.privacy-page{--bg:#F8F9FA;--card:#fff;--text:#0d0d0d;--secondary:#4B5563;--muted:#6B7280;--primary:#3850D5;margin:0;background:var(--bg)!important;color:var(--text)!important;line-height:1.7;-webkit-font-smoothing:antialiased}
 .privacy-page *{box-sizing:border-box}.privacy-page .contain-box{min-height:auto!important;height:auto!important;padding:0!important;background:var(--bg)!important}.privacy-page h1,.privacy-page h2{color:var(--text)!important}.privacy-page p{color:var(--secondary)!important}
 
 /* Header: same as Home/About */
@@ -1941,7 +1939,7 @@
 @media(hover:none) and (pointer:coarse){.privacy-page .privacy-summary>div:active,.privacy-page .privacy-item:active{transform:translateY(-2px) scale(.995);box-shadow:0 10px 35px rgba(0,0,0,.09)}}
 
 /* GO7.IN TERMS — FINAL | scoped only to .terms-page */
-.terms-page{--bg:#F8F9FA;--text:#0d0d0d;--secondary:#4B5563;--muted:#6B7280;--primary:#3850D5;margin:0;background:var(--bg)!important;color:var(--text)!important;font-family:"Nunito",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+.terms-page{--bg:#F8F9FA;--text:#0d0d0d;--secondary:#4B5563;--muted:#6B7280;--primary:#3850D5;margin:0;background:var(--bg)!important;color:var(--text)!important;line-height:1.7;-webkit-font-smoothing:antialiased}
 .terms-page *{box-sizing:border-box}.terms-page .contain-box{min-height:auto!important;height:auto!important;padding:0!important;background:var(--bg)!important}.terms-page h1,.terms-page h2{color:var(--text)!important}.terms-page p{color:var(--secondary)!important}
 
 /* Header — Home/About behavior */
