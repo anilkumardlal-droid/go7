@@ -1574,3 +1574,42 @@
 .about-page .owner-benefits > div:hover{
     box-shadow:none !important;
 }
+
+
+/* ==========================================================
+   FINAL NAVBAR OVERRIDE
+   Original GO7 navbar typography + hover only
+   ========================================================== */
+
+.about-page .navbar-nav .nav-link{
+    color:#0d0d0d !important;
+    font-weight:600 !important;
+    padding:.75rem 1rem !important;
+    font-size:inherit !important;
+    letter-spacing:normal !important;
+}
+
+/* No permanent active effect */
+.about-page .navbar-nav .nav-link.active{
+    color:#0d0d0d !important;
+}
+
+.about-page .navbar-nav .nav-link.active::after{
+    transform:scaleX(0) !important;
+}
+
+/* Hover only */
+.about-page .navbar-nav .nav-link:hover{
+    color:#3850d5 !important;
+}
+
+.about-page .navbar-nav .nav-link:hover::after{
+    transform:scaleX(1) !important;
+}
+
+/* Keep mobile menu padding appropriate */
+@media(max-width:767.98px){
+    .about-page .navbar-nav .nav-link{
+        padding:.75rem 1rem !important;
+    }
+}
