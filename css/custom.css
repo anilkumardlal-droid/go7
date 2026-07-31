@@ -1531,3 +1531,146 @@ a:hover{
     opacity:1 !important;
     color:var(--primary) !important;
 }
+
+
+/* ==========================================================
+   GO7.IN - FAQ PAGE FINAL
+   Scoped: does not modify About page
+   ========================================================== */
+
+.faq-page .faq-hero{padding:52px 0 18px}
+
+.faq-page .faq-hero-shell{
+    position:relative;overflow:hidden;
+    display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);
+    gap:40px;align-items:center;padding:44px;
+    background:#fff;border:1px solid var(--border);border-radius:22px;
+}
+.faq-page .faq-hero-shell:after{
+    content:"";position:absolute;width:260px;height:260px;right:-110px;top:-130px;
+    border-radius:50%;background:rgba(56,80,213,.055);pointer-events:none
+}
+.faq-page .faq-hero-copy,.faq-page .faq-hero-meta{position:relative;z-index:1}
+.faq-page .faq-hero h1{
+    margin:12px 0 16px;max-width:760px;
+    font-size:clamp(36px,4.5vw,56px);line-height:1.06;letter-spacing:-.04em
+}
+.faq-page .faq-hero-copy>p{margin:0;max-width:700px;font-size:16px;line-height:1.7}
+
+.faq-page .faq-hero-meta{display:grid;gap:10px}
+.faq-page .faq-hero-meta>div{
+    display:flex;align-items:center;gap:13px;padding:14px 16px;
+    background:#f8f9fa;border:1px solid var(--border);border-radius:14px
+}
+.faq-page .faq-hero-meta i{
+    flex:0 0 40px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+    background:#fff;border:1px solid var(--border);border-radius:11px;
+    color:var(--primary)!important;font-size:20px
+}
+.faq-page .faq-hero-meta span{display:flex;flex-direction:column;font-size:12px;line-height:1.4}
+.faq-page .faq-hero-meta strong{color:var(--text);font-size:14px;margin-bottom:2px}
+
+.faq-page .faq-section{padding:26px 0 38px}
+.faq-page .faq-layout{
+    display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px;align-items:start
+}
+.faq-page .faq-side{
+    position:sticky;top:24px;padding:25px;background:#fff;
+    border:1px solid var(--border);border-radius:17px
+}
+.faq-page .faq-side h2{margin:10px 0 11px;font-size:23px;line-height:1.25;letter-spacing:-.025em}
+.faq-page .faq-side p{margin:0 0 20px;font-size:13px;line-height:1.7}
+
+.faq-page .faq-list{display:grid;gap:9px}
+.faq-page .faq-item{
+    overflow:hidden;background:#fff;border:1px solid var(--border)!important;
+    border-radius:15px!important
+}
+.faq-page .faq-item .accordion-button{
+    min-height:64px;display:flex;align-items:center;gap:14px;
+    padding:14px 18px!important;background:#fff!important;color:var(--text)!important;
+    border:0!important;box-shadow:none!important;font-size:14px;font-weight:700;line-height:1.45
+}
+.faq-page .faq-item .accordion-button:not(.collapsed){
+    background:rgba(56,80,213,.035)!important;color:var(--text)!important
+}
+.faq-page .faq-item .accordion-button:focus{box-shadow:none!important}
+.faq-page .faq-number{
+    flex:0 0 36px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+    background:rgba(56,80,213,.07);border-radius:10px;color:var(--primary)!important;
+    font-size:11px;font-weight:800;letter-spacing:.04em
+}
+.faq-page .accordion-body{padding:4px 22px 22px 68px!important}
+.faq-page .accordion-body p{margin:0;font-size:14px;line-height:1.8}
+
+.faq-page .faq-final{padding:38px 0 56px}
+.faq-page .faq-final .final-panel{margin:0;padding:48px 30px}
+
+/* FAQ skeleton: scoped so About is untouched */
+.faq-page #go7Content.go7-content-loading .faq-hero-shell,
+.faq-page #go7Content.go7-content-loading .faq-side,
+.faq-page #go7Content.go7-content-loading .faq-item,
+.faq-page #go7Content.go7-content-loading .final-panel{
+    pointer-events:none
+}
+.faq-page #go7Content.go7-content-loading .faq-hero-meta>div,
+.faq-page #go7Content.go7-content-loading .faq-number{
+    color:transparent!important;background:#f3f4f6!important;border-color:transparent!important
+}
+.faq-page #go7Content.go7-content-loading .faq-hero-meta span,
+.faq-page #go7Content.go7-content-loading .faq-hero-meta strong,
+.faq-page #go7Content.go7-content-loading .accordion-button,
+.faq-page #go7Content.go7-content-loading .accordion-body,
+.faq-page #go7Content.go7-content-loading .faq-side .section-kicker,
+.faq-page #go7Content.go7-content-loading .faq-final .section-kicker,
+.faq-page #go7Content.go7-content-loading .final-meta{
+    color:transparent!important
+}
+.faq-page #go7Content.go7-content-loading .faq-hero-meta i,
+.faq-page #go7Content.go7-content-loading .faq-side i,
+.faq-page #go7Content.go7-content-loading .faq-item i,
+.faq-page #go7Content.go7-content-loading .faq-final i{
+    visibility:hidden!important;opacity:0!important
+}
+.faq-page #go7Content.go7-content-loading .faq-hero-meta>div,
+.faq-page #go7Content.go7-content-loading .faq-item .accordion-button,
+.faq-page #go7Content.go7-content-loading .faq-side .section-kicker,
+.faq-page #go7Content.go7-content-loading .faq-final .section-kicker,
+.faq-page #go7Content.go7-content-loading .final-meta{
+    position:relative;overflow:hidden;background:#f3f4f6!important;border-radius:6px
+}
+.faq-page #go7Content.go7-content-loading .faq-hero-meta>div:after,
+.faq-page #go7Content.go7-content-loading .faq-item .accordion-button:after,
+.faq-page #go7Content.go7-content-loading .faq-side .section-kicker:after,
+.faq-page #go7Content.go7-content-loading .faq-final .section-kicker:after,
+.faq-page #go7Content.go7-content-loading .final-meta:after{
+    content:"";position:absolute;inset:0;transform:translateX(-100%);
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);
+    animation:go7Skeleton 1.3s infinite
+}
+.faq-page #go7Content.go7-content-loading .accordion-body{
+    min-height:100px;background:#f3f4f6!important;margin:10px 18px 18px;border-radius:8px;padding:0!important
+}
+.faq-page #go7Content:not(.go7-content-loading) .faq-hero-meta i{
+    visibility:visible!important;opacity:1!important
+}
+
+@media(max-width:991.98px){
+    .faq-page .faq-hero-shell{grid-template-columns:1fr;padding:36px;gap:28px}
+    .faq-page .faq-hero-meta{grid-template-columns:repeat(3,1fr)}
+    .faq-page .faq-layout{grid-template-columns:1fr}
+    .faq-page .faq-side{position:static}
+}
+@media(max-width:767.98px){
+    .faq-page .faq-hero{padding:34px 0 16px}
+    .faq-page .faq-hero-shell{padding:27px 22px;border-radius:18px}
+    .faq-page .faq-hero h1{font-size:36px}
+    .faq-page .faq-hero-copy>p{font-size:15px}
+    .faq-page .faq-hero-meta{grid-template-columns:1fr}
+    .faq-page .faq-section{padding:22px 0 30px}
+    .faq-page .faq-side{padding:22px}
+    .faq-page .faq-item .accordion-button{min-height:58px;padding:12px 15px!important;gap:11px}
+    .faq-page .accordion-body{padding:3px 17px 19px!important}
+    .faq-page .faq-final{padding:30px 0 44px}
+    .faq-page .faq-final .final-panel{padding:38px 20px}
+}
