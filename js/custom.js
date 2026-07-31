@@ -1,13 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
 
-    const content = document.getElementById("go7Content");
+    function removeSkeleton() {
+        const content = document.getElementById("go7Content");
 
-    if (!content) return;
+        if (content) {
+            content.classList.remove("go7-content-loading");
+        }
+    }
 
-    setTimeout(function () {
+    // Skeleton maximum 4.5 seconds
+    setTimeout(removeSkeleton, 4500);
 
-        content.classList.remove("go7-content-loading");
-
-    }, 4500);
-
-});
+})();
