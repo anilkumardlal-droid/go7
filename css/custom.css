@@ -1972,10 +1972,10 @@
 @media(max-width:767.98px){.terms-page .header{padding-top:14px}.terms-page .navbar-brand img{height:34px!important}.terms-page .navbar-collapse{position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:9999;padding:12px 18px;background:#fff!important;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.08)}.terms-page .terms-hero{padding:28px 0 18px}.terms-page .terms-hero-shell{grid-template-columns:1fr;gap:28px}.terms-page .terms-hero h1{font-size:39px}.terms-page .terms-hero-copy>p{font-size:15px}.terms-page .terms-trust{padding:13px}.terms-page .terms-summary{grid-template-columns:1fr;gap:8px;margin-top:20px}.terms-page .terms-section{padding:38px 0}.terms-page .terms-layout{grid-template-columns:1fr;gap:24px}.terms-page .terms-side{position:static;padding:24px}.terms-page .terms-side h2{font-size:27px}.terms-page .accordion-button{padding:16px 15px;gap:11px;font-size:13px}.terms-page .terms-number{width:34px;height:34px;flex-basis:34px}.terms-page .accordion-body{padding:0 16px 19px 60px}.terms-page .terms-final{padding-top:24px}.terms-page .final-panel{padding:32px 20px}}
 @media(hover:none) and (pointer:coarse){.terms-page .terms-summary>div:active,.terms-page .terms-item:active{transform:translateY(-2px) scale(.995);box-shadow:0 10px 35px rgba(0,0,0,.09)}}
 
-
 /* ==========================================================
-   GO7.IN — HOME TYPOGRAPHY MATCH
-   About + FAQ + Privacy + Terms
+   GO7.IN — FINAL TYPOGRAPHY ALIGNMENT
+   Home remains the typography reference.
+   Layout, spacing, cards, colors, hover and skeleton stay intact.
    ========================================================== */
 
 .about-page,
@@ -1986,54 +1986,65 @@
     font-size:16px;
 }
 
-/* Same font as Home */
-.about-page h1,
-.about-page h2,
-.about-page h3,
-.about-page h4,
-.about-page h5,
-.about-page h6,
-.faq-page h1,
-.faq-page h2,
-.faq-page h3,
-.faq-page h4,
-.faq-page h5,
-.faq-page h6,
-.privacy-page h1,
-.privacy-page h2,
-.privacy-page h3,
-.privacy-page h4,
-.privacy-page h5,
-.privacy-page h6,
-.terms-page h1,
-.terms-page h2,
-.terms-page h3,
-.terms-page h4,
-.terms-page h5,
-.terms-page h6{
-    font-family:"Nunito",sans-serif !important;
+/* Normal body copy: same readable base size as Home */
+.about-page .hero-copy,
+.about-page .section-intro>p,
+.about-page .brand-panel>p,
+.about-page .owner-copy>p,
+.about-page .final-panel>p,
+.about-page .domain-stage>p,
+.about-page .feature-primary p,
+.about-page .feature-tile p,
+.about-page .transfer-card p,
+.about-page .process-step p,
+.about-page .brand-point p,
+
+.faq-page .faq-hero-copy>p,
+.faq-page .faq-side p,
+.faq-page .accordion-body p,
+.faq-page .final-panel>p,
+
+.privacy-page .privacy-hero-copy>p,
+.privacy-page .privacy-side p,
+.privacy-page .accordion-body p,
+.privacy-page .final-panel>p,
+
+.terms-page .terms-hero-copy>p,
+.terms-page .terms-side p,
+.terms-page .accordion-body p,
+.terms-page .final-panel>p{
+    font-size:16px !important;
+    line-height:1.6 !important;
 }
 
-/* Home paragraph rhythm */
-.about-page p,
-.faq-page p,
-.privacy-page p,
-.terms-page p{
-    line-height:1.6;
+/* Content/card headings: don't allow 15px headings */
+.about-page .feature-tile h4,
+.about-page .transfer-card h4,
+.about-page .process-step h4,
+.about-page .brand-point h4{
+    font-size:18px !important;
 }
 
-/* Home muted color */
-.about-page .text-muted,
-.faq-page .text-muted,
-.privacy-page .text-muted,
-.terms-page .text-muted{
-    color:#828f99 !important;
+/* Accordion question text */
+.faq-page .accordion-button,
+.privacy-page .accordion-button,
+.terms-page .accordion-button{
+    font-size:16px !important;
 }
 
-/* Home primary color */
-.about-page .text-primary,
-.faq-page .text-primary,
-.privacy-page .text-primary,
-.terms-page .text-primary{
-    color:#3850d5 !important;
+/* Mobile: normal content remains readable; do not shrink it back */
+@media(max-width:767.98px){
+    .about-page .hero-copy,
+    .faq-page .faq-hero-copy>p,
+    .privacy-page .privacy-hero-copy>p,
+    .terms-page .terms-hero-copy>p{
+        font-size:16px !important;
+    }
+
+    .faq-page .accordion-button,
+    .privacy-page .accordion-button,
+    .terms-page .accordion-button{
+        font-size:16px !important;
+    }
 }
+
