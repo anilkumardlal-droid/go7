@@ -1,43 +1,1037 @@
-/* ==========================================================
-   GO7.IN - FINAL COMMON INNER PAGE CSS
-   Home page uses custom.home.css
-   ========================================================== */
 
-:root{
-    --bg:#F8F9FA;
-    --card:#FFFFFF;
 
-    --text:#0D0D0D;
-    --text-secondary:#4B5563;
-    --text-muted:#6B7280;
 
-    --primary:#3850D5;
-    --primary-hover:#2F45BF;
 
-    --border:#E5E7EB;
-    --soft:#F3F4F6;
+
+Today 9:29 AM
+
+Pasted text(576).txt
+Document
+.header .float-end a{
+    font-weight:700 !important;
+}
+
+.contact-info{
+    padding:1.5rem 1.5rem 1rem 1.5rem !important;
+}
+
+.navbar-brand img{
+    height:40px !important;
+    width:auto;
+}
+
+.navbar-nav .nav-link{
+    color:#0d0d0d !important;
+    font-weight:600;
+    padding:.75rem 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color:#3850d5 !important;
 }
 
 
+@media (max-width:767.98px){
+
+    .navbar-brand img{
+    height:34px !important;
+}
+
+.navbar-collapse{
+    margin-top:12px;
+    background:#ffffff !important;
+    border:1px solid #ececec;
+    border-radius:12px;
+    padding:12px 18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    z-index:9999;
+}
+
+}
+
+
+
+.offer-status{
+    display:inline-block !important;
+    font-weight:700 !important;
+    background:linear-gradient(
+        90deg,
+        #0EA5E9 0%,
+        #7DD3FC 35%,
+        #FFFFFF 50%,
+        #7DD3FC 65%,
+        #0EA5E9 100%
+    );
+    background-size:250% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    animation:offerShine 4.5s linear infinite !important;
+}
+
+@keyframes offerShine{
+    from{
+        background-position:200% center;
+    }
+    to{
+        background-position:-200% center;
+    }
+}
+
+.go7-preloader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #f8f9fa;
+    z-index: 9999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.go7-loader {
+    position: relative;
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animated Ring */
+.go7-ring {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+
+    border: 3px solid rgba(56, 80, 213, 0.12);
+    border-top-color: #3850d5;
+
+    border-radius: 50%;
+
+    animation: go7-spin 0.9s linear infinite;
+}
+
+/* GO7.IN */
+.go7-brand {
+    position: relative;
+    z-index: 2;
+
+    color: #1e3547;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.go7-brand span {
+    color: #3850d5;
+}
+
+/* Loading text */
+.go7-loading {
+    position: absolute;
+    top: 142px;
+
+    color: #828f99;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    animation: go7-pulse 1.2s ease-in-out infinite;
+}
+
+
+/* Animations */
+
+@keyframes go7-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes go7-pulse {
+
+    0%, 100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+css loader skeleton bana ke do
+
+screencapture-go7-in-2026-07-31-09_47_15.png
+open nahi ho raha h
+
+
+Pasted text(577).txt
+Document
+ about.html ka desining sahi h
+
+
+Pasted text(578).txt
+Document
+about ka do
+
+screencapture-go7-in-about-html-2026-07-31-11_42_04.png
+
+screencapture-go7-in-about-html-2026-07-31-11_50_03.png
+
+Pasted text(579).txt
+Document
+
+Pasted text (2)(15).txt
+Document
+bahut kharab dikh raha hai
+
+
+
+Pasted text(580).txt
+Document
+tum ne ye css diya hai sahi hai desining sahi hai per skeleton load nahi ho raha h
+
+is me 
+
+
+screencapture-go7-in-about-html-2026-07-31-12_03_28.png
+kuch to css me dikat hai
+
+
+Pasted text(581).txt
+Document
+
+Pasted text (2)(16).txt
+Document
+
+
+Pasted text(582).txt
+Document
+
+Pasted text (2)(17).txt
+Document
+ ab pura fix kar ke do
+
+screencapture-go7-in-about-html-2026-07-31-15_28_55.png
+
+#go7Content:not(.go7-content-loading) .usecase i.mdi  jo hai Made to adapt. me icon sab kyu nahi dikh raha h
+
+
+Pasted text(583).txt
+Document
+
+screencapture-go7-in-about-html-2026-07-31-15_47_29.png
+sach karna ye ye desining thik h
+
+
+Pasted text(584).txt
+Document
+.header .float-end a{
+    font-weight:700 !important;
+}
+
+.contact-info{
+    padding:1.5rem 1.5rem 1rem 1.5rem !important;
+}
+
+.navbar-brand img{
+    height:40px !important;
+    width:auto;
+}
+
+.navbar-nav .nav-link{
+    color:#0d0d0d !important;
+    font-weight:600;
+    padding:.75rem 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color:#3850d5 !important;
+}
+
+
+@media (max-width:767.98px){
+
+    .navbar-brand img{
+    height:34px !important;
+}
+
+.navbar-collapse{
+    margin-top:12px;
+    background:#ffffff !important;
+    border:1px solid #ececec;
+    border-radius:12px;
+    padding:12px 18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    z-index:9999;
+}
+
+}
+
+
+
+.offer-status{
+    display:inline-block !important;
+    font-weight:700 !important;
+    background:linear-gradient(
+        90deg,
+        #0EA5E9 0%,
+        #7DD3FC 35%,
+        #FFFFFF 50%,
+        #7DD3FC 65%,
+        #0EA5E9 100%
+    );
+    background-size:250% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    animation:offerShine 4.5s linear infinite !important;
+}
+
+@keyframes offerShine{
+    from{
+        background-position:200% center;
+    }
+    to{
+        background-position:-200% center;
+    }
+}
+
+/* =================================
+   GO7 Main Content Skeleton Loader
+================================= */
+
+
+/* =================================
+   Main Skeleton Elements
+================================= */
+
+.go7-content-loading h1,
+.go7-content-loading h2,
+.go7-content-loading h3,
+.go7-content-loading h4,
+.go7-content-loading h5,
+.go7-content-loading p,
+.go7-content-loading .form-control,
+.go7-content-loading .btn,
+.go7-content-loading .cf-turnstile{
+    position:relative;
+    overflow:hidden;
+
+    color:transparent !important;
+    background:#f3f4f6 !important;
+    border-color:transparent !important;
+
+    border-radius:6px;
+    box-shadow:none !important;
+
+    user-select:none;
+}
+
+
+/* =================================
+   Hide Actual Content
+================================= */
+
+.go7-content-loading i{
+    visibility:hidden !important;
+}
+
+.go7-content-loading input::placeholder,
+.go7-content-loading textarea::placeholder{
+    color:transparent !important;
+}
+
+
+/* =================================
+   Prevent Interaction
+================================= */
+
+.go7-content-loading input,
+.go7-content-loading textarea,
+.go7-content-loading button,
+.go7-content-loading .btn,
+.go7-content-loading a{
+    pointer-events:none !important;
+}
+
+
+/* =================================
+   Skeleton Shimmer
+================================= */
+
+.go7-content-loading h1::after,
+.go7-content-loading h2::after,
+.go7-content-loading h3::after,
+.go7-content-loading h4::after,
+.go7-content-loading h5::after,
+.go7-content-loading p::after,
+.go7-content-loading .form-control::after,
+.go7-content-loading .btn::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    transform:translateX(-100%);
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    );
+
+    animation:go7Skeleton 1.3s infinite;
+}
+
+
+@keyframes go7Skeleton{
+
+    100%{
+        transform:translateX(100%);
+    }
+
+}
+
+
+/* =================================
+   Form Skeleton
+================================= */
+
+.go7-content-loading .form-control{
+    min-height:45px;
+}
+
+.go7-content-loading textarea.form-control{
+    min-height:110px;
+}
+
+
+/* =================================
+   Cloudflare Turnstile Skeleton
+================================= */
+
+.go7-content-loading .cf-turnstile{
+    position:relative !important;
+
+    width:300px !important;
+    max-width:100% !important;
+    height:65px !important;
+
+    background:#f3f4f6 !important;
+
+    border:none !important;
+    border-radius:6px !important;
+
+    overflow:hidden !important;
+}
+
+
+/* Hide everything Cloudflare creates */
+
+.go7-content-loading .cf-turnstile > *{
+    visibility:hidden !important;
+    opacity:0 !important;
+}
+
+
+/* Extra protection for Turnstile iframe */
+
+.go7-content-loading .cf-turnstile iframe{
+    visibility:hidden !important;
+    opacity:0 !important;
+    display:block !important;
+}
+
+
+/* Turnstile Shimmer */
+
+.go7-content-loading .cf-turnstile::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    z-index:9999;
+
+    transform:translateX(-100%);
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    );
+
+    animation:go7Skeleton 1.3s infinite;
+
+    pointer-events:none;
+}
+
+
+/* =================================
+   Button Skeleton
+================================= */
+
+.go7-content-loading .submitBnt{
+    min-width:145px;
+    min-height:42px;
+}
+
+
+/* =================================
+   Hide Offer Status While Loading
+================================= */
+
+.go7-content-loading .offer-status{
+    visibility:hidden !important;
+    animation:none !important;
+}
+
+
+/* =================================
+   Loading Finish
+================================= */
+
+#go7Content{
+    transition:opacity .3s ease;
+}
+
+
+Pasted text(585).txt
+Document
+mujhe final css do 
+
+
+Pasted text(586).txt
+Document
+ye about pahle ka h
+
+
+Pasted text(587).txt
+Document
+
+
+Pasted text(588).txt
+Document
+ ab faq ka 
+
+हो गया। पुराने FAQ के सभी 10 questions/content को रखा है और design को About वाली premium UI language में बनाया है। पुराने FAQ में availability, offer, transfer, escrow, timeline, pricing, response और ownership जैसी पूरी जानकारी थी। 
+
+ 
+
+
+पुराना full-screen preloader हटाकर नया common skeleton system लगाया है और js/custom.js भी शामिल है।
+
+Final files
+faq.html
+
+custom.css
+
+ध्यान दें: अब custom.css के लिए यही FAQ वाला latest file use करना, क्योंकि इसमें About + FAQ दोनों की CSS मौजूद है। custom.home.css अलग ही रहेगा। 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FAQ | GO7.IN Premium .IN Domain</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find answers to frequently asked questions about GO7.IN, including pricing, secure transfer, escrow, ownership and the domain purchase process.">
+    <meta name="keywords" content="GO7.IN, FAQ, premium .IN domain, brandable domain, domain investment, premium domain for sale">
+    <meta name="author" content="Anil Srivastav">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link rel="canonical" href="https://www.go7.in/faq.html">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "GO7.IN Frequently Asked Questions",
+  "url": "https://www.go7.in/faq.html",
+  "description": "Answers to common questions about GO7.IN, pricing, ownership, secure transfer and the domain purchase process.",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is GO7.IN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GO7.IN is a premium short .IN domain name that is currently available for acquisition. Short domain names are naturally memorable, easy to type, and suitable for a wide range of businesses, startups, technology companies, digital products and modern online brands. One of the biggest advantages of GO7.IN is its simplicity. A short and clean domain creates a stronger first impression, is easier for customers to remember, and works well across websites, email addresses, advertising campaigns and social media branding. Whether you are building a new business, launching a startup, expanding an existing brand or investing in premium digital assets, GO7.IN offers long-term branding value. The domain is privately owned and available only for serious buyers who appreciate quality digital assets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is GO7.IN currently available for purchase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. At the time this page was published, GO7.IN is available and actively accepting serious purchase inquiries. Because premium domains are unique digital assets, ownership can change at any time. Once a purchase agreement has been completed, the domain will no longer be available. For that reason, interested buyers are encouraged to contact the owner as early as possible if GO7.IN matches their branding or investment goals. Availability shown on this website reflects the current status, but it cannot be guaranteed indefinitely. If multiple inquiries are received, discussions are handled individually and the final sale is completed only after both parties reach an agreement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I make an offer for GO7.IN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Making an offer is simple. Visit the home page of GO7.IN and submit the inquiry form with your name, email address and your proposed offer. If you have any questions or special requirements regarding the transfer process, you can also include those in your message. Every genuine inquiry is reviewed personally. Once your message is received, you'll receive a response as soon as possible, usually within 24 hours. During the discussion, we can talk about pricing, payment options, transfer methods and any additional details required to complete the transaction smoothly. There is absolutely no obligation when submitting an inquiry. It simply starts a conversation between the buyer and the owner. If both parties reach an agreement, the purchase process will move forward securely and transparently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How will the domain be transferred after purchase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Once payment arrangements have been completed, the domain will be transferred using a secure and mutually agreed method. Depending on the buyer's preference, the transfer can be completed through Escrow.com for additional security or directly between supported domain registrars such as GoDaddy. If both the buyer and seller use the same registrar, the transfer process is generally quicker because ownership can often be moved internally without waiting for a full registrar transfer. When different registrars are involved, the standard domain transfer process will be followed according to ICANN and registrar policies. Throughout the process, the buyer will receive clear instructions and updates until ownership has been successfully transferred. The goal is to ensure a smooth, secure and transparent experience for both parties from start to finish."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I use Escrow.com for the transaction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escrow.com is one of the most widely trusted platforms for high-value online transactions, including premium domain names. It helps protect both the buyer and the seller by ensuring that neither party needs to rely solely on trust during the transaction. In a typical escrow transaction, the buyer first submits the payment to Escrow.com. The seller is then notified to transfer the domain. Once the buyer confirms that the domain has been successfully received and ownership is complete, Escrow.com releases the payment to the seller. This process significantly reduces the risk for both parties. While direct registrar transfers are also possible when both parties agree, many buyers prefer Escrow because it provides an additional layer of security, transparency and confidence throughout the entire purchase process. The final transfer method is always decided through mutual agreement between the buyer and the seller."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the transfer process usually take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The transfer timeline depends on the transfer method and the registrars involved. In many cases, an internal transfer between accounts at the same registrar, such as GoDaddy to GoDaddy, can be completed much faster than a standard registrar transfer. If Escrow.com is used, the total time also depends on payment verification and buyer confirmation. Most completed transactions are finalized within a few business days, although some transfers may take longer depending on registrar policies or verification requirements. Throughout the process, clear communication is maintained so that both parties understand each stage of the transfer. The objective is always to complete the transaction securely, efficiently and with minimal delays while ensuring that ownership is transferred correctly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the asking price fixed, or can I submit an offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Serious offers are always welcome. Every premium domain has its own market value, and the final sale price depends on several factors, including branding potential, market demand and the overall terms agreed upon by both parties. If GO7.IN is a strong fit for your business, startup or investment portfolio, you are encouraged to submit a genuine offer through the inquiry form. Every proposal is reviewed carefully, and all discussions remain private and confidential. The objective is not simply to sell the domain quickly, but to reach a fair agreement that benefits both the buyer and the owner. Professional communication and reasonable negotiations are always welcome."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly will I receive a response after submitting an inquiry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every legitimate inquiry is reviewed personally rather than through an automated system. Most messages receive a response within 24 hours, although replies are often sent much sooner whenever possible. To help speed up the conversation, it's recommended to include your name, contact details and any relevant information about your offer or intended use of the domain. This allows the discussion to begin with a clear understanding of your requirements. Whether your inquiry is about pricing, transfer methods, Escrow, registrar transfers or general questions, every serious buyer receives the same level of attention and professional communication throughout the process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who owns GO7.IN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GO7.IN is privately owned by Anil Srivastav. The domain is not listed through a marketplace where communication passes through multiple intermediaries. Instead, inquiries submitted through this website are reviewed directly by the owner. Speaking directly with the owner helps make the process more transparent and efficient. Questions about pricing, transfer options, payment methods or the purchase process can be discussed openly without unnecessary delays or third-party negotiations. The goal is to provide a professional and straightforward buying experience for every genuine buyer. From the initial inquiry to the final transfer, communication remains clear, respectful and focused on completing a secure transaction for both parties."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I still have questions. How can I contact you?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your question has not been answered on this page, you're welcome to get in touch through the inquiry form available on the home page. Whether you would like to discuss pricing, request additional information, understand the transfer process or simply verify availability, every genuine inquiry is welcome. Please include your contact details and, if possible, a brief message describing your interest in GO7.IN. Providing a little context helps ensure that you receive a more accurate and helpful response. Every serious inquiry is handled personally, and most responses are sent within 24 hours. The objective is to make the acquisition process as smooth, transparent and professional as possible from the very first conversation."
+      }
+    }
+  ]
+}
+    </script>
+</head>
+
+<body class="faq-page">
+
+<header class="header">
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light p-0">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo-go7.in.png" alt="GO7.IN" height="44">
+            </a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                    aria-controls="mainMenu" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="mdi mdi-menu text-primary fs-2"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
+                <ul class="navbar-nav align-items-md-center">
+                    <li class="nav-item"><a class="nav-link text-uppercase" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-uppercase active" href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="contain-box go7-content-loading" id="go7Content">
+
+    <section class="faq-hero">
+        <div class="container">
+            <div class="faq-hero-shell">
+                <div class="faq-hero-copy">
+                    <span class="section-kicker">FREQUENTLY ASKED QUESTIONS</span>
+                    <h1>Everything you need to know about GO7.IN.</h1>
+                    <p>
+                        Clear answers about availability, pricing, ownership, escrow,
+                        transfer methods and the purchase process before you make an offer.
+                    </p>
+                </div>
+
+                <div class="faq-hero-meta">
+                    <div><i class="mdi mdi-message-text"></i><span><strong>10 answers</strong>Common buyer questions</span></div>
+                    <div><i class="mdi mdi-account"></i><span><strong>Direct owner</strong>Clear communication</span></div>
+                    <div><i class="mdi mdi-shield-check"></i><span><strong>Secure process</strong>Transfer options available</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-layout">
+                <aside class="faq-side">
+                    <span class="section-kicker">QUICK GUIDE</span>
+                    <h2>Questions before acquiring GO7.IN?</h2>
+                    <p>
+                        Start with the answers here. If you need anything specific,
+                        send an inquiry and discuss it directly.
+                    </p>
+                    <a href="index.html#contact-form" class="btn btn-primary btn-round text-uppercase">Send an Inquiry</a>
+                </aside>
+
+                <div class="faq-list accordion" id="faqAccordion">
+
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqOne">
+                        <button class="accordion-button" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                            <span class="faq-number">01</span>
+                            <span>What is GO7.IN?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show"
+                         aria-labelledby="faqOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>GO7.IN is a premium short .IN domain name that is currently available for acquisition. Short domain names are naturally memorable, easy to type, and suitable for a wide range of businesses, startups, technology companies, digital products and modern online brands. One of the biggest advantages of GO7.IN is its simplicity. A short and clean domain creates a stronger first impression, is easier for customers to remember, and works well across websites, email addresses, advertising campaigns and social media branding. Whether you are building a new business, launching a startup, expanding an existing brand or investing in premium digital assets, GO7.IN offers long-term branding value. The domain is privately owned and available only for serious buyers who appreciate quality digital assets.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqTwo">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo">
+                            <span class="faq-number">02</span>
+                            <span>Is GO7.IN currently available for purchase?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse"
+                         aria-labelledby="faqTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Yes. At the time this page was published, GO7.IN is available and actively accepting serious purchase inquiries. Because premium domains are unique digital assets, ownership can change at any time. Once a purchase agreement has been completed, the domain will no longer be available. For that reason, interested buyers are encouraged to contact the owner as early as possible if GO7.IN matches their branding or investment goals. Availability shown on this website reflects the current status, but it cannot be guaranteed indefinitely. If multiple inquiries are received, discussions are handled individually and the final sale is completed only after both parties reach an agreement.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqThree">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree">
+                            <span class="faq-number">03</span>
+                            <span>How can I make an offer for GO7.IN?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse"
+                         aria-labelledby="faqThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Making an offer is simple. Visit the home page of GO7.IN and submit the inquiry form with your name, email address and your proposed offer. If you have any questions or special requirements regarding the transfer process, you can also include those in your message. Every genuine inquiry is reviewed personally. Once your message is received, you&#x27;ll receive a response as soon as possible, usually within 24 hours. During the discussion, we can talk about pricing, payment options, transfer methods and any additional details required to complete the transaction smoothly. There is absolutely no obligation when submitting an inquiry. It simply starts a conversation between the buyer and the owner. If both parties reach an agreement, the purchase process will move forward securely and transparently.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqFour">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                aria-expanded="false" aria-controls="collapseFour">
+                            <span class="faq-number">04</span>
+                            <span>How will the domain be transferred after purchase?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse"
+                         aria-labelledby="faqFour" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Once payment arrangements have been completed, the domain will be transferred using a secure and mutually agreed method. Depending on the buyer&#x27;s preference, the transfer can be completed through Escrow.com for additional security or directly between supported domain registrars such as GoDaddy. If both the buyer and seller use the same registrar, the transfer process is generally quicker because ownership can often be moved internally without waiting for a full registrar transfer. When different registrars are involved, the standard domain transfer process will be followed according to ICANN and registrar policies. Throughout the process, the buyer will receive clear instructions and updates until ownership has been successfully transferred. The goal is to ensure a smooth, secure and transparent experience for both parties from start to finish.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqFive">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                aria-expanded="false" aria-controls="collapseFive">
+                            <span class="faq-number">05</span>
+                            <span>Why should I use Escrow.com for the transaction?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse"
+                         aria-labelledby="faqFive" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Escrow.com is one of the most widely trusted platforms for high-value online transactions, including premium domain names. It helps protect both the buyer and the seller by ensuring that neither party needs to rely solely on trust during the transaction. In a typical escrow transaction, the buyer first submits the payment to Escrow.com. The seller is then notified to transfer the domain. Once the buyer confirms that the domain has been successfully received and ownership is complete, Escrow.com releases the payment to the seller. This process significantly reduces the risk for both parties. While direct registrar transfers are also possible when both parties agree, many buyers prefer Escrow because it provides an additional layer of security, transparency and confidence throughout the entire purchase process. The final transfer method is always decided through mutual agreement between the buyer and the seller.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqSix">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                aria-expanded="false" aria-controls="collapseSix">
+                            <span class="faq-number">06</span>
+                            <span>How long does the transfer process usually take?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse"
+                         aria-labelledby="faqSix" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>The transfer timeline depends on the transfer method and the registrars involved. In many cases, an internal transfer between accounts at the same registrar, such as GoDaddy to GoDaddy, can be completed much faster than a standard registrar transfer. If Escrow.com is used, the total time also depends on payment verification and buyer confirmation. Most completed transactions are finalized within a few business days, although some transfers may take longer depending on registrar policies or verification requirements. Throughout the process, clear communication is maintained so that both parties understand each stage of the transfer. The objective is always to complete the transaction securely, efficiently and with minimal delays while ensuring that ownership is transferred correctly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqSeven">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+                                aria-expanded="false" aria-controls="collapseSeven">
+                            <span class="faq-number">07</span>
+                            <span>Is the asking price fixed, or can I submit an offer?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse"
+                         aria-labelledby="faqSeven" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Serious offers are always welcome. Every premium domain has its own market value, and the final sale price depends on several factors, including branding potential, market demand and the overall terms agreed upon by both parties. If GO7.IN is a strong fit for your business, startup or investment portfolio, you are encouraged to submit a genuine offer through the inquiry form. Every proposal is reviewed carefully, and all discussions remain private and confidential. The objective is not simply to sell the domain quickly, but to reach a fair agreement that benefits both the buyer and the owner. Professional communication and reasonable negotiations are always welcome.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqEight">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseEight"
+                                aria-expanded="false" aria-controls="collapseEight">
+                            <span class="faq-number">08</span>
+                            <span>How quickly will I receive a response after submitting an inquiry?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse"
+                         aria-labelledby="faqEight" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>Every legitimate inquiry is reviewed personally rather than through an automated system. Most messages receive a response within 24 hours, although replies are often sent much sooner whenever possible. To help speed up the conversation, it&#x27;s recommended to include your name, contact details and any relevant information about your offer or intended use of the domain. This allows the discussion to begin with a clear understanding of your requirements. Whether your inquiry is about pricing, transfer methods, Escrow, registrar transfers or general questions, every serious buyer receives the same level of attention and professional communication throughout the process.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqNine">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseNine"
+                                aria-expanded="false" aria-controls="collapseNine">
+                            <span class="faq-number">09</span>
+                            <span>Who owns GO7.IN?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse"
+                         aria-labelledby="faqNine" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>GO7.IN is privately owned by Anil Srivastav. The domain is not listed through a marketplace where communication passes through multiple intermediaries. Instead, inquiries submitted through this website are reviewed directly by the owner. Speaking directly with the owner helps make the process more transparent and efficient. Questions about pricing, transfer options, payment methods or the purchase process can be discussed openly without unnecessary delays or third-party negotiations. The goal is to provide a professional and straightforward buying experience for every genuine buyer. From the initial inquiry to the final transfer, communication remains clear, respectful and focused on completing a secure transaction for both parties.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h2 class="accordion-header" id="faqTen">
+                        <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseTen"
+                                aria-expanded="false" aria-controls="collapseTen">
+                            <span class="faq-number">10</span>
+                            <span>I still have questions. How can I contact you?</span>
+                        </button>
+                    </h2>
+                    <div id="collapseTen" class="accordion-collapse collapse"
+                         aria-labelledby="faqTen" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <p>If your question has not been answered on this page, you&#x27;re welcome to get in touch through the inquiry form available on the home page. Whether you would like to discuss pricing, request additional information, understand the transfer process or simply verify availability, every genuine inquiry is welcome. Please include your contact details and, if possible, a brief message describing your interest in GO7.IN. Providing a little context helps ensure that you receive a more accurate and helpful response. Every serious inquiry is handled personally, and most responses are sent within 24 hours. The objective is to make the acquisition process as smooth, transparent and professional as possible from the very first conversation.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-final">
+        <div class="container">
+            <div class="final-panel">
+                <span class="section-kicker">STILL HAVE A QUESTION?</span>
+                <h2>Talk directly about GO7.IN.</h2>
+                <p>
+                    Ask about pricing, availability, escrow or the transfer process.
+                    Genuine inquiries are reviewed personally and typically receive a response within 24 hours.
+                </p>
+                <a href="index.html#contact-form" class="btn btn-primary btn-round text-uppercase">Submit an Inquiry</a>
+                <div class="final-meta">
+                    <span><i class="mdi mdi-clock-outline"></i> Response within 24 hours</span>
+                    <span><i class="mdi mdi-shield-check"></i> Secure escrow available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="text-center">
+            <p class="mb-1 mt-4">© <script>document.write(new Date().getFullYear())</script> GO7.IN • Premium .IN Domain</p>
+            <p class="mb-0 small text-muted">
+                <a href="privacy.html" class="text-decoration-none text-muted">Privacy Policy</a>
+                &nbsp;|&nbsp;
+                <a href="terms.html" class="text-decoration-none text-muted">Terms of Use</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
+
+faq.html
+HTML
+
+
+custom.css
+Code
+
+
+custom.css pahle se hai ya add karna padega
+
+पहले से है। अलग से FAQ CSS add करने की जरूरत नहीं है।
+
+जो मैंने अभी latest custom.css दिया है, उसमें:
+
+पुरानी/common CSS + About CSS + Transfer & Security CSS + FAQ CSS
+
+सब एक साथ merged है।
+
+इसलिए बस:
+
+पुरानी css/custom.css हटाओ/replace करो।
+
+अभी वाली latest custom.css उसी जगह upload करो।
+
+faq.html भी replace करो।
+
+फिर Ctrl + F5।
+
+दो custom.css files नहीं रखनी हैं। एक ही latest custom.css रखनी है।
+
+
+custom.css
+Code
+
+
+
+Pasted text(589).txt
+Document
+
+Pasted text (2)(18).txt
+Document
+kon sa 
+
+Searched within files
+Pasted text(589).txt वाला CSS use करो।
+
+यही सबसे latest है, क्योंकि इसमें:
+
+Common inner-page CSS
+
+About CSS
+
+Transfer & Security CSS
+
+FAQ CSS भी मौजूद है 
+
+
+दूसरे Pasted text (2)(18).txt में Transfer & Security तो है, लेकिन FAQ CSS नहीं है। 
+
+
+इसलिए 589 वाले को css/custom.css नाम से रखो और दूसरे को use मत करो।
+
+
 /* ==========================================================
-   BASE
-   ========================================================== */
+GO7.IN - FINAL COMMON INNER PAGE CSS
+Home page uses custom.home.css
+========================================================== */
+
+{
+--bg:#F8F9FA;
+--card:#FFFFFF;
+
+--text:#0D0D0D;
+--text-secondary:#4B5563;
+--text-muted:#6B7280;
+
+--primary:#3850D5;
+--primary-hover:#2F45BF;
+
+--border:#E5E7EB;
+--soft:#F3F4F6;
+}
+
+/* ==========================================================
+BASE
+========================================================== */
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior;
 }
 
 body{
-    margin:0;
-    background:var(--bg) !important;
-    color:var(--text) !important;
+margin:0;
+background(--bg) !important;
+color(--text) !important;
 
-    font-family:"Nunito",sans-serif;
-    font-size:16px;
-    line-height:1.7;
+font-family:"Nunito",sans-serif;
+font-size:16px;
+line-height:1.7;
 
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
 }
 
 h1,
@@ -46,1204 +1040,1185 @@ h3,
 h4,
 h5,
 h6{
-    color:var(--text) !important;
-    font-weight:600 !important;
-    line-height:1.25;
+color(--text) !important;
+font-weight:600 !important;
+line-height:1.25;
 }
 
 p,
 li,
 label{
-    color:var(--text-secondary) !important;
+color(--text-secondary) !important;
 }
 
 small,
 .text-muted{
-    color:var(--text-muted) !important;
+color(--text-muted) !important;
 }
 
 a{
-    color:var(--text) !important;
-    text-decoration:none !important;
-    transition:.25s ease !important;
+color(--text) !important;
+text-decoration !important;
+transition:.25s ease !important;
 }
 
-a:hover{
-    color:var(--primary) !important;
+a{
+color(--primary) !important;
 }
-
 
 /* ==========================================================
-   MAIN CONTENT
-   ========================================================== */
+MAIN CONTENT
+========================================================== */
 
 .contain-box{
-    position:relative !important;
+position !important;
 
-    min-height:auto !important;
-    height:auto !important;
+min-height:auto !important;
+height:auto !important;
 
-    padding:0 !important;
+padding:0 !important;
 
-    background:var(--bg) !important;
+background:var(--bg) !important;
 }
 
-
 /* ==========================================================
-   HEADER
-   ========================================================== */
+HEADER
+========================================================== */
 
 .header,
 .navbar{
-    background:var(--bg) !important;
+background(--bg) !important;
 }
 
 .header{
-    position:relative !important;
+position !important;
 
-    top:auto !important;
-    right:auto !important;
-    bottom:auto !important;
-    left:auto !important;
+top:auto !important;
+right:auto !important;
+bottom:auto !important;
+left:auto !important;
 
-    z-index:1000 !important;
+z-index:1000 !important;
 }
 
 .navbar-brand img{
-    width:auto !important;
-    height:40px !important;
+width !important;
+height:40px !important;
 }
 
 .navbar-toggler{
-    padding:0 !important;
-    border:0 !important;
+padding:0 !important;
+border:0 !important;
 }
 
-.navbar-toggler:focus{
-    box-shadow:none !important;
+.navbar-toggler{
+box-shadow !important;
 }
 
 .navbar-nav .nav-link{
-    padding:.75rem 1rem !important;
+padding:.75rem 1rem !important;
 
-    color:var(--text) !important;
+color:var(--text) !important;
 
-    font-size:15px !important;
-    font-weight:600 !important;
+font-size:15px !important;
+font-weight:600 !important;
 }
 
-.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link,
 .navbar-nav .nav-link.active{
-    color:var(--primary) !important;
+color(--primary) !important;
 }
-
 
 /* ==========================================================
-   BUTTONS
-   ========================================================== */
+BUTTONS
+========================================================== */
 
 .btn{
-    padding:12px 26px;
+padding:12px 26px;
 
-    font-size:14px;
-    font-weight:700;
+font-size:14px;
+font-weight:700;
 
-    letter-spacing:.5px;
+letter-spacing:.5px;
 }
 
 .btn-primary{
-    background:var(--primary) !important;
-    border-color:var(--primary) !important;
+background(--primary) !important;
+border-color(--primary) !important;
 
-    color:#FFFFFF !important;
+color:#FFFFFF !important;
 }
 
-.btn-primary:hover{
-    background:var(--primary-hover) !important;
-    border-color:var(--primary-hover) !important;
+.btn-primary{
+background(--primary-hover) !important;
+border-color(--primary-hover) !important;
 
-    color:#FFFFFF !important;
+color:#FFFFFF !important;
 }
-
 
 /* ==========================================================
-   FOOTER
-   ========================================================== */
+FOOTER
+========================================================== */
 
 .footer{
-    position:relative !important;
+position !important;
 
-    top:auto !important;
-    right:auto !important;
-    bottom:auto !important;
-    left:auto !important;
+top:auto !important;
+right:auto !important;
+bottom:auto !important;
+left:auto !important;
 
-    width:100% !important;
-    height:auto !important;
+width:100% !important;
+height:auto !important;
 
-    margin:0 !important;
-    padding:20px 0 26px !important;
+margin:0 !important;
+padding:20px 0 26px !important;
 
-    background:var(--bg) !important;
+background:var(--bg) !important;
 
-    transform:none !important;
+transform:none !important;
 
-    z-index:auto !important;
+z-index:auto !important;
 }
 
 .footer,
 .footer p,
 .footer span,
 .footer small{
-    color:var(--text-muted) !important;
+color(--text-muted) !important;
 }
 
 .footer a{
-    color:var(--text-secondary) !important;
+color(--text-secondary) !important;
 }
 
-.footer a:hover{
-    color:var(--primary) !important;
+.footer a{
+color(--primary) !important;
 }
-
 
 /* ==========================================================
-   ABOUT PAGE - HERO
-   ========================================================== */
+ABOUT PAGE - HERO
+========================================================== */
 
 .about-page .about-new-hero{
-    padding:72px 0 24px;
+padding:72px 0 24px;
 }
 
 .about-page .hero-shell{
-    position:relative;
-    overflow:hidden;
+position;
+overflow;
 
-    padding:56px;
+padding:56px;
 
-    background:#FFFFFF;
+background:#FFFFFF;
 
-    border:1px solid var(--border);
-    border-radius:26px;
+border:1px solid var(--border);
+border-radius:26px;
 }
 
 .about-page .hero-shell::after{
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    width:300px;
-    height:300px;
+width:300px;
+height:300px;
 
-    right:-145px;
-    top:-155px;
+right:-145px;
+top:-155px;
 
-    border:55px solid rgba(56,80,213,.045);
-    border-radius:50%;
+border:55px solid rgba(56,80,213,.045);
+border-radius:50%;
 
-    pointer-events:none;
+pointer-events:none;
 }
 
 .about-page .eyebrow,
 .about-page .section-kicker,
 .about-page .mini-label{
-    display:inline-block;
+display;
 
-    color:var(--primary) !important;
+color:var(--primary) !important;
 
-    font-size:11px;
-    line-height:1;
+font-size:11px;
+line-height:1;
 
-    font-weight:800;
+font-weight:800;
 
-    letter-spacing:1.6px;
+letter-spacing:1.6px;
 }
 
 .about-page .hero-shell h1{
-    max-width:650px;
+max-width:650px;
 
-    margin:17px 0 20px;
+margin:17px 0 20px;
 
-    font-size:clamp(2.55rem,4.8vw,4.2rem);
+font-size:clamp(2.55rem,4.8vw,4.2rem);
 
-    letter-spacing:-.05em;
+letter-spacing:-.05em;
 }
 
 .about-page .hero-copy{
-    max-width:670px;
+max-width:670px;
 
-    margin:0;
+margin:0;
 
-    font-size:17px;
+font-size:17px;
 }
 
 .about-page .hero-actions{
-    display:flex;
+display;
 
-    align-items:center;
+align-items:center;
 
-    gap:22px;
+gap:22px;
 
-    margin-top:30px;
+margin-top:30px;
 }
 
 .about-page .hero-actions .btn,
 .about-page .final-panel .btn{
-    border-radius:999px !important;
+border-radius:999px !important;
 }
 
 .about-page .text-link{
-    display:inline-flex;
+display;
 
-    align-items:center;
+align-items:center;
 
-    gap:6px;
+gap:6px;
 
-    font-weight:700;
+font-weight:700;
 }
 
-
 /* ==========================================================
-   DOMAIN VISUAL
-   ========================================================== */
+DOMAIN VISUAL
+========================================================== */
 
 .about-page .domain-stage{
-    position:relative;
+position;
 
-    z-index:2;
+z-index:2;
 
-    padding:30px;
+padding:30px;
 
-    background:var(--bg);
+background:var(--bg);
 
-    border:1px solid var(--border);
-    border-radius:20px;
+border:1px solid var(--border);
+border-radius:20px;
 }
 
 .about-page .stage-label{
-    color:var(--text-muted);
+color(--text-muted);
 
-    font-size:10px;
+font-size:10px;
 
-    font-weight:800;
+font-weight:800;
 
-    letter-spacing:1.5px;
+letter-spacing:1.5px;
 }
 
 .about-page .stage-domain{
-    margin:27px 0 9px;
+margin:27px 0 9px;
 
-    color:#1E3547;
+color:#1E3547;
 
-    font-size:clamp(3.2rem,6vw,5rem);
+font-size:clamp(3.2rem,6vw,5rem);
 
-    line-height:1;
+line-height:1;
 
-    font-weight:800;
+font-weight:800;
 
-    letter-spacing:-.06em;
+letter-spacing:-.06em;
 }
 
 .about-page .stage-domain span{
-    color:var(--primary);
+color(--primary);
 }
 
 .about-page .domain-stage p{
-    margin-bottom:25px;
+margin-bottom:25px;
 
-    font-size:14px;
+font-size:14px;
 }
 
 .about-page .stage-meta{
-    display:flex;
+display;
 
-    flex-wrap:wrap;
+flex-wrap:wrap;
 
-    gap:8px;
+gap:8px;
 }
 
 .about-page .stage-meta span{
-    display:inline-flex;
+display;
 
-    align-items:center;
+align-items:center;
 
-    gap:5px;
+gap:5px;
 
-    padding:7px 10px;
+padding:7px 10px;
 
-    background:#FFFFFF;
+background:#FFFFFF;
 
-    border:1px solid var(--border);
-    border-radius:999px;
+border:1px solid var(--border);
+border-radius:999px;
 
-    color:var(--text-secondary);
+color:var(--text-secondary);
 
-    font-size:11px;
+font-size:11px;
 
-    font-weight:700;
+font-weight:700;
 }
 
 .about-page .stage-meta i{
-    color:var(--primary);
+color(--primary);
 }
 
-
 /* ==========================================================
-   TRUST STRIP
-   ========================================================== */
+TRUST STRIP
+========================================================== */
 
 .about-page .trust-strip{
-    display:grid;
+display;
 
-    grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(4,1fr);
 
-    margin-top:16px;
+margin-top:16px;
 
-    background:#FFFFFF;
+background:#FFFFFF;
 
-    border:1px solid var(--border);
-    border-radius:16px;
+border:1px solid var(--border);
+border-radius:16px;
 
-    overflow:hidden;
+overflow:hidden;
 }
 
 .about-page .trust-strip > div{
-    padding:19px 23px;
+padding:19px 23px;
 
-    border-right:1px solid var(--border);
+border-right:1px solid var(--border);
 }
 
-.about-page .trust-strip > div:last-child{
-    border-right:0;
+.about-page .trust-strip > div{
+border-right:0;
 }
 
 .about-page .trust-strip strong,
 .about-page .trust-strip span{
-    display:block;
+display;
 }
 
 .about-page .trust-strip strong{
-    color:var(--text);
+color(--text);
 
-    font-size:14px;
+font-size:14px;
 }
 
 .about-page .trust-strip span{
-    margin-top:2px;
+margin-top:2px;
 
-    color:var(--text-muted);
+color:var(--text-muted);
 
-    font-size:11px;
+font-size:11px;
 }
 
-
 /* ==========================================================
-   ABOUT SECTIONS
-   ========================================================== */
+ABOUT SECTIONS
+========================================================== */
 
 .about-page .about-block{
-    padding:44px 0;
+padding:44px 0;
 }
 
 .about-page .section-intro{
-    max-width:760px;
+max-width:760px;
 
-    margin-bottom:30px;
+margin-bottom:30px;
 }
 
 .about-page .section-intro h2,
 .about-page .brand-panel h2,
 .about-page .owner-panel h2,
 .about-page .final-panel h2{
-    margin:13px 0 14px;
+margin:13px 0 14px;
 
-    font-size:clamp(2rem,3.8vw,3rem);
+font-size:clamp(2rem,3.8vw,3rem);
 
-    letter-spacing:-.035em;
+letter-spacing:-.035em;
 }
 
 .about-page .section-intro p{
-    margin:0;
+margin:0;
 
-    font-size:16px;
+font-size:16px;
 }
 
 .about-page .section-intro-row{
-    max-width:none;
+max-width;
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    align-items:flex-end;
+align-items:flex-end;
 
-    gap:36px;
+gap:36px;
 }
 
 .about-page .section-intro-row p{
-    max-width:500px;
+max-width:500px;
 }
 
-
 /* ==========================================================
-   FEATURE MOSAIC
-   ========================================================== */
+FEATURE MOSAIC
+========================================================== */
 
 .about-page .feature-mosaic{
-    display:grid;
+display;
 
-    grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(4,1fr);
 
-    gap:14px;
+gap:14px;
+}
+
+.about-page .feature-primary{
+grid-column 2;
+grid-row 2;
+
+min-height:330px;
+
+padding:32px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:space-between;
+
+background:#1E3547;
+
+border-radius:20px;
+}
+
+.about-page .feature-primary h3{
+margin:11px 0;
+
+color:#FFFFFF !important;
+
+font-size:1.9rem;
+}
+
+.about-page .feature-primary p{
+margin-bottom:0;
+
+color:rgba(255,255,255,.72) !important;
+}
+
+.about-page .feature-primary .mini-label{
+color:#9AA9FF !important;
+}
+
+.about-page .feature-icon{
+width:50px;
+height:50px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:rgba(255,255,255,.09);
+
+border-radius:14px;
+
+color:#FFFFFF;
+
+font-size:24px;
+}
+
+.about-page .feature-tile{
+min-height:158px;
+
+padding:23px;
+
+background:#FFFFFF;
+
+border:1px solid var(--border);
+border-radius:17px;
+
+transition:.25s ease;
+}
+
+.about-page .feature-tile{
+transform(-3px);
+
+border-color:#D8DCEF;
+}
+
+.about-page .feature-tile > i{
+color(--primary);
+
+font-size:25px;
+}
+
+.about-page .feature-tile h4{
+margin:11px 0 5px;
+
+font-size:16px;
+}
+
+.about-page .feature-tile p{
+margin:0;
+
+font-size:13px;
+
+line-height:1.55;
+}
+
+/* ==========================================================
+BRAND PANEL
+========================================================== */
+
+.about-page .brand-panel{
+padding:48px;
+
+background:#FFFFFF;
+
+border:1px solid var(--border);
+border-radius:24px;
+}
+
+.about-page .brand-grid{
+display;
+
+grid-template-columns:1fr 1fr;
+
+border:1px solid var(--border);
+border-radius:18px;
+
+overflow:hidden;
+}
+
+.about-page .brand-point{
+min-height:155px;
+
+padding:24px;
+}
+
+.about-page .brand-point(1),
+.about-page .brand-point(2){
+border-bottom:1px solid var(--border);
+}
+
+.about-page .brand-point(1),
+.about-page .brand-point(3){
+border-right:1px solid var(--border);
+}
+
+.about-page .brand-point > span{
+color(--primary);
+
+font-size:10px;
+
+font-weight:800;
+
+letter-spacing:1px;
+}
+
+.about-page .brand-point h4{
+margin:10px 0 4px;
+}
+
+.about-page .brand-point p{
+margin:0;
+
+font-size:13px;
+}
+
+/* ==========================================================
+USE CASES
+========================================================== */
+
+.about-page .usecase-grid{
+display;
+
+grid-template-columns:repeat(6,1fr);
+
+gap:11px;
+}
+
+.about-page .usecase{
+min-height:135px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+justify-content:space-between;
+
+padding:20px;
+
+background:#FFFFFF;
+
+border:1px solid var(--border);
+border-radius:16px;
+
+transition:.25s ease;
+}
+
+.about-page .usecase{
+transform(-3px);
+
+border-color:#D8DCEF;
+}
+
+.about-page .usecase i{
+width:40px;
+height:40px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:rgba(56,80,213,.07);
+
+border-radius:11px;
+
+color:var(--primary);
+
+font-size:21px;
+}
+
+.about-page .usecase span{
+color(--text);
+
+font-size:13px;
+
+font-weight:700;
+}
+
+/* ==========================================================
+PROCESS
+========================================================== */
+
+.about-page .process-line{
+display;
+
+grid-template-columns:repeat(4,1fr);
+
+background:#FFFFFF;
+
+border:1px solid var(--border);
+border-radius:20px;
+
+overflow:hidden;
+}
+
+.about-page .process-step{
+min-height:260px;
+
+padding:27px;
+
+border-right:1px solid var(--border);
+}
+
+.about-page .process-step{
+border-right:0;
+}
+
+.about-page .step-number{
+color:#A2A8B3;
+
+font-size:10px;
+
+font-weight:800;
+
+letter-spacing:1px;
+}
+
+.about-page .step-icon{
+width:45px;
+height:45px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin:34px 0 19px;
+
+background:rgba(56,80,213,.07);
+
+border-radius:13px;
+
+color:var(--primary);
+
+font-size:22px;
+}
+
+.about-page .process-step h4{
+font-size:16px;
+}
+
+.about-page .process-step p{
+margin:0;
+
+font-size:13px;
+}
+
+/* ==========================================================
+OWNER PANEL
+========================================================== */
+
+.about-page .owner-panel{
+display;
+
+grid-template-columns:.9fr 1.1fr;
+
+gap:54px;
+
+padding:48px;
+
+background:#1E3547;
+
+border-radius:24px;
+}
+
+.about-page .owner-panel h2{
+color:#FFFFFF !important;
+}
+
+.about-page .owner-copy > p{
+color(255,255,255,.72) !important;
+
+font-size:16px;
+}
+
+.about-page .owner-panel .section-kicker{
+color:#9AA9FF !important;
+}
+
+.about-page .owner-benefits{
+display;
+
+flex-direction:column;
+
+justify-content:center;
+}
+
+.about-page .owner-benefits > div{
+display;
+
+grid-template-columns:42px 1fr;
+
+gap:13px;
+
+align-items:center;
+
+padding:17px 0;
+
+border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.about-page .owner-benefits > div{
+border-bottom:0;
+}
+
+.about-page .owner-benefits i{
+width:42px;
+height:42px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:11px;
+
+background:rgba(255,255,255,.08);
+
+color:#FFFFFF;
+
+font-size:20px;
+}
+
+.about-page .owner-benefits span{
+color(255,255,255,.72);
+}
+
+.about-page .owner-benefits strong{
+display;
+
+color:#FFFFFF;
+}
+
+/* ==========================================================
+FINAL CTA
+========================================================== */
+
+.about-page .about-final{
+padding-top:42px;
+padding-bottom:64px;
+}
+
+.about-page .final-panel{
+padding:58px 36px;
+
+text-align:center;
+
+background:#FFFFFF;
+
+border:1px solid var(--border);
+border-radius:24px;
+}
+
+.about-page .final-panel h2{
+max-width:720px;
+
+margin-left:auto;
+margin-right:auto;
+}
+
+.about-page .final-panel > p{
+max-width:690px;
+
+margin:0 auto 27px;
+
+font-size:16px;
+}
+
+.about-page .final-panel .btn{
+min-width:180px;
+}
+
+.about-page .final-meta{
+margin-top:21px;
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:20px;
+}
+
+.about-page .final-meta span{
+color(--text-muted);
+
+font-size:12px;
+
+font-weight:600;
+}
+
+.about-page .final-meta i{
+color(--primary);
+}
+
+/* ==========================================================
+ABOUT RESPONSIVE - TABLET
+========================================================== */
+
+@media (max-width:1199.98px){
+
+.about-page .hero-shell{
+    padding:46px;
+}
+
+.about-page .feature-mosaic{
+    grid-template-columns:repeat(2,1fr);
 }
 
 .about-page .feature-primary{
     grid-column:span 2;
-    grid-row:span 2;
+    grid-row:auto;
 
-    min-height:330px;
-
-    padding:32px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-    background:#1E3547;
-
-    border-radius:20px;
+    min-height:270px;
 }
-
-.about-page .feature-primary h3{
-    margin:11px 0;
-
-    color:#FFFFFF !important;
-
-    font-size:1.9rem;
-}
-
-.about-page .feature-primary p{
-    margin-bottom:0;
-
-    color:rgba(255,255,255,.72) !important;
-}
-
-.about-page .feature-primary .mini-label{
-    color:#9AA9FF !important;
-}
-
-.about-page .feature-icon{
-    width:50px;
-    height:50px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:rgba(255,255,255,.09);
-
-    border-radius:14px;
-
-    color:#FFFFFF;
-
-    font-size:24px;
-}
-
-.about-page .feature-tile{
-    min-height:158px;
-
-    padding:23px;
-
-    background:#FFFFFF;
-
-    border:1px solid var(--border);
-    border-radius:17px;
-
-    transition:.25s ease;
-}
-
-.about-page .feature-tile:hover{
-    transform:translateY(-3px);
-
-    border-color:#D8DCEF;
-}
-
-.about-page .feature-tile > i{
-    color:var(--primary);
-
-    font-size:25px;
-}
-
-.about-page .feature-tile h4{
-    margin:11px 0 5px;
-
-    font-size:16px;
-}
-
-.about-page .feature-tile p{
-    margin:0;
-
-    font-size:13px;
-
-    line-height:1.55;
-}
-
-
-/* ==========================================================
-   BRAND PANEL
-   ========================================================== */
-
-.about-page .brand-panel{
-    padding:48px;
-
-    background:#FFFFFF;
-
-    border:1px solid var(--border);
-    border-radius:24px;
-}
-
-.about-page .brand-grid{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    border:1px solid var(--border);
-    border-radius:18px;
-
-    overflow:hidden;
-}
-
-.about-page .brand-point{
-    min-height:155px;
-
-    padding:24px;
-}
-
-.about-page .brand-point:nth-child(1),
-.about-page .brand-point:nth-child(2){
-    border-bottom:1px solid var(--border);
-}
-
-.about-page .brand-point:nth-child(1),
-.about-page .brand-point:nth-child(3){
-    border-right:1px solid var(--border);
-}
-
-.about-page .brand-point > span{
-    color:var(--primary);
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:1px;
-}
-
-.about-page .brand-point h4{
-    margin:10px 0 4px;
-}
-
-.about-page .brand-point p{
-    margin:0;
-
-    font-size:13px;
-}
-
-
-/* ==========================================================
-   USE CASES
-   ========================================================== */
 
 .about-page .usecase-grid{
-    display:grid;
-
-    grid-template-columns:repeat(6,1fr);
-
-    gap:11px;
+    grid-template-columns:repeat(3,1fr);
 }
-
-.about-page .usecase{
-    min-height:135px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    justify-content:space-between;
-
-    padding:20px;
-
-    background:#FFFFFF;
-
-    border:1px solid var(--border);
-    border-radius:16px;
-
-    transition:.25s ease;
 }
-
-.about-page .usecase:hover{
-    transform:translateY(-3px);
-
-    border-color:#D8DCEF;
-}
-
-.about-page .usecase i{
-    width:40px;
-    height:40px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:rgba(56,80,213,.07);
-
-    border-radius:11px;
-
-    color:var(--primary);
-
-    font-size:21px;
-}
-
-.about-page .usecase span{
-    color:var(--text);
-
-    font-size:13px;
-
-    font-weight:700;
-}
-
-
-/* ==========================================================
-   PROCESS
-   ========================================================== */
-
-.about-page .process-line{
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    background:#FFFFFF;
-
-    border:1px solid var(--border);
-    border-radius:20px;
-
-    overflow:hidden;
-}
-
-.about-page .process-step{
-    min-height:260px;
-
-    padding:27px;
-
-    border-right:1px solid var(--border);
-}
-
-.about-page .process-step:last-child{
-    border-right:0;
-}
-
-.about-page .step-number{
-    color:#A2A8B3;
-
-    font-size:10px;
-
-    font-weight:800;
-
-    letter-spacing:1px;
-}
-
-.about-page .step-icon{
-    width:45px;
-    height:45px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    margin:34px 0 19px;
-
-    background:rgba(56,80,213,.07);
-
-    border-radius:13px;
-
-    color:var(--primary);
-
-    font-size:22px;
-}
-
-.about-page .process-step h4{
-    font-size:16px;
-}
-
-.about-page .process-step p{
-    margin:0;
-
-    font-size:13px;
-}
-
-
-/* ==========================================================
-   OWNER PANEL
-   ========================================================== */
-
-.about-page .owner-panel{
-    display:grid;
-
-    grid-template-columns:.9fr 1.1fr;
-
-    gap:54px;
-
-    padding:48px;
-
-    background:#1E3547;
-
-    border-radius:24px;
-}
-
-.about-page .owner-panel h2{
-    color:#FFFFFF !important;
-}
-
-.about-page .owner-copy > p{
-    color:rgba(255,255,255,.72) !important;
-
-    font-size:16px;
-}
-
-.about-page .owner-panel .section-kicker{
-    color:#9AA9FF !important;
-}
-
-.about-page .owner-benefits{
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-}
-
-.about-page .owner-benefits > div{
-    display:grid;
-
-    grid-template-columns:42px 1fr;
-
-    gap:13px;
-
-    align-items:center;
-
-    padding:17px 0;
-
-    border-bottom:1px solid rgba(255,255,255,.12);
-}
-
-.about-page .owner-benefits > div:last-child{
-    border-bottom:0;
-}
-
-.about-page .owner-benefits i{
-    width:42px;
-    height:42px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:11px;
-
-    background:rgba(255,255,255,.08);
-
-    color:#FFFFFF;
-
-    font-size:20px;
-}
-
-.about-page .owner-benefits span{
-    color:rgba(255,255,255,.72);
-}
-
-.about-page .owner-benefits strong{
-    display:block;
-
-    color:#FFFFFF;
-}
-
-
-/* ==========================================================
-   FINAL CTA
-   ========================================================== */
-
-.about-page .about-final{
-    padding-top:42px;
-    padding-bottom:64px;
-}
-
-.about-page .final-panel{
-    padding:58px 36px;
-
-    text-align:center;
-
-    background:#FFFFFF;
-
-    border:1px solid var(--border);
-    border-radius:24px;
-}
-
-.about-page .final-panel h2{
-    max-width:720px;
-
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.about-page .final-panel > p{
-    max-width:690px;
-
-    margin:0 auto 27px;
-
-    font-size:16px;
-}
-
-.about-page .final-panel .btn{
-    min-width:180px;
-}
-
-.about-page .final-meta{
-    margin-top:21px;
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:20px;
-}
-
-.about-page .final-meta span{
-    color:var(--text-muted);
-
-    font-size:12px;
-
-    font-weight:600;
-}
-
-.about-page .final-meta i{
-    color:var(--primary);
-}
-
-
-/* ==========================================================
-   ABOUT RESPONSIVE - TABLET
-   ========================================================== */
-
-@media (max-width:1199.98px){
-
-    .about-page .hero-shell{
-        padding:46px;
-    }
-
-    .about-page .feature-mosaic{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .about-page .feature-primary{
-        grid-column:span 2;
-        grid-row:auto;
-
-        min-height:270px;
-    }
-
-    .about-page .usecase-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-}
-
 
 @media (max-width:991.98px){
 
-    .about-page .about-new-hero{
-        padding-top:48px;
-    }
-
-    .about-page .trust-strip{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .about-page .trust-strip > div:nth-child(2){
-        border-right:0;
-    }
-
-    .about-page .trust-strip > div:nth-child(-n+2){
-        border-bottom:1px solid var(--border);
-    }
-
-    .about-page .brand-panel{
-        padding:36px;
-    }
-
-    .about-page .process-line{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .about-page .process-step:nth-child(2){
-        border-right:0;
-    }
-
-    .about-page .process-step:nth-child(-n+2){
-        border-bottom:1px solid var(--border);
-    }
-
-    .about-page .owner-panel{
-        grid-template-columns:1fr;
-
-        gap:22px;
-
-        padding:40px;
-    }
+.about-page .about-new-hero{
+    padding-top:48px;
 }
 
+.about-page .trust-strip{
+    grid-template-columns:1fr 1fr;
+}
+
+.about-page .trust-strip > div:nth-child(2){
+    border-right:0;
+}
+
+.about-page .trust-strip > div:nth-child(-n+2){
+    border-bottom:1px solid var(--border);
+}
+
+.about-page .brand-panel{
+    padding:36px;
+}
+
+.about-page .process-line{
+    grid-template-columns:1fr 1fr;
+}
+
+.about-page .process-step:nth-child(2){
+    border-right:0;
+}
+
+.about-page .process-step:nth-child(-n+2){
+    border-bottom:1px solid var(--border);
+}
+
+.about-page .owner-panel{
+    grid-template-columns:1fr;
+
+    gap:22px;
+
+    padding:40px;
+}
+}
 
 /* ==========================================================
-   MOBILE HEADER + ABOUT
-   ========================================================== */
+MOBILE HEADER + ABOUT
+========================================================== */
 
 @media (max-width:767.98px){
 
-    .navbar-brand img{
-        height:34px !important;
-    }
-
-    .header{
-        position:relative !important;
-
-        z-index:9999 !important;
-    }
-
-    .navbar-collapse{
-        margin-top:15px !important;
-
-        padding:12px 18px !important;
-
-        background:#FFFFFF !important;
-
-        border:1px solid var(--border) !important;
-        border-radius:14px !important;
-
-        box-shadow:0 8px 25px rgba(0,0,0,.06) !important;
-    }
-
-    .navbar-nav .nav-item{
-        border-bottom:1px solid var(--border) !important;
-    }
-
-    .navbar-nav .nav-item:last-child{
-        border-bottom:0 !important;
-    }
-
-    .navbar-nav .nav-link{
-        padding:.9rem 0 !important;
-    }
-
-
-    .about-page .about-new-hero{
-        padding:30px 0 12px;
-    }
-
-    .about-page .hero-shell{
-        padding:28px 20px;
-
-        border-radius:19px;
-    }
-
-    .about-page .hero-shell h1{
-        font-size:2.35rem;
-    }
-
-    .about-page .hero-copy{
-        font-size:15px;
-    }
-
-    .about-page .hero-actions{
-        align-items:flex-start;
-
-        flex-direction:column;
-
-        gap:15px;
-    }
-
-    .about-page .domain-stage{
-        padding:23px;
-
-        border-radius:17px;
-    }
-
-    .about-page .stage-domain{
-        font-size:3.5rem;
-    }
-
-    .about-page .about-block{
-        padding:32px 0;
-    }
-
-    .about-page .section-intro{
-        margin-bottom:25px;
-    }
-
-    .about-page .section-intro h2,
-    .about-page .brand-panel h2,
-    .about-page .owner-panel h2,
-    .about-page .final-panel h2{
-        font-size:1.9rem;
-    }
-
-    .about-page .section-intro p{
-        font-size:15px;
-    }
-
-    .about-page .section-intro-row{
-        display:block;
-    }
-
-    .about-page .section-intro-row p{
-        margin-top:12px;
-    }
-
-    .about-page .feature-mosaic{
-        grid-template-columns:1fr;
-    }
-
-    .about-page .feature-primary{
-        grid-column:auto;
-
-        min-height:260px;
-
-        padding:26px;
-    }
-
-    .about-page .feature-tile{
-        min-height:auto;
-    }
-
-    .about-page .brand-panel{
-        padding:26px 20px;
-
-        border-radius:19px;
-    }
-
-    .about-page .brand-point{
-        min-height:135px;
-
-        padding:18px;
-    }
-
-    .about-page .usecase-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .about-page .usecase{
-        min-height:122px;
-
-        padding:17px;
-    }
-
-    .about-page .process-line{
-        grid-template-columns:1fr;
-    }
-
-    .about-page .process-step{
-        min-height:auto;
-
-        padding:23px;
-
-        border-right:0 !important;
-        border-bottom:1px solid var(--border);
-    }
-
-    .about-page .process-step:last-child{
-        border-bottom:0;
-    }
-
-    .about-page .step-icon{
-        margin:22px 0 16px;
-    }
-
-    .about-page .owner-panel{
-        padding:28px 20px;
-
-        border-radius:19px;
-    }
-
-    .about-page .about-final{
-        padding-top:30px;
-        padding-bottom:50px;
-    }
-
-    .about-page .final-panel{
-        padding:42px 20px;
-
-        border-radius:19px;
-    }
+.navbar-brand img{
+    height:34px !important;
 }
 
+.header{
+    position:relative !important;
+
+    z-index:9999 !important;
+}
+
+.navbar-collapse{
+    margin-top:15px !important;
+
+    padding:12px 18px !important;
+
+    background:#FFFFFF !important;
+
+    border:1px solid var(--border) !important;
+    border-radius:14px !important;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.06) !important;
+}
+
+.navbar-nav .nav-item{
+    border-bottom:1px solid var(--border) !important;
+}
+
+.navbar-nav .nav-item:last-child{
+    border-bottom:0 !important;
+}
+
+.navbar-nav .nav-link{
+    padding:.9rem 0 !important;
+}
+
+
+.about-page .about-new-hero{
+    padding:30px 0 12px;
+}
+
+.about-page .hero-shell{
+    padding:28px 20px;
+
+    border-radius:19px;
+}
+
+.about-page .hero-shell h1{
+    font-size:2.35rem;
+}
+
+.about-page .hero-copy{
+    font-size:15px;
+}
+
+.about-page .hero-actions{
+    align-items:flex-start;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.about-page .domain-stage{
+    padding:23px;
+
+    border-radius:17px;
+}
+
+.about-page .stage-domain{
+    font-size:3.5rem;
+}
+
+.about-page .about-block{
+    padding:32px 0;
+}
+
+.about-page .section-intro{
+    margin-bottom:25px;
+}
+
+.about-page .section-intro h2,
+.about-page .brand-panel h2,
+.about-page .owner-panel h2,
+.about-page .final-panel h2{
+    font-size:1.9rem;
+}
+
+.about-page .section-intro p{
+    font-size:15px;
+}
+
+.about-page .section-intro-row{
+    display:block;
+}
+
+.about-page .section-intro-row p{
+    margin-top:12px;
+}
+
+.about-page .feature-mosaic{
+    grid-template-columns:1fr;
+}
+
+.about-page .feature-primary{
+    grid-column:auto;
+
+    min-height:260px;
+
+    padding:26px;
+}
+
+.about-page .feature-tile{
+    min-height:auto;
+}
+
+.about-page .brand-panel{
+    padding:26px 20px;
+
+    border-radius:19px;
+}
+
+.about-page .brand-point{
+    min-height:135px;
+
+    padding:18px;
+}
+
+.about-page .usecase-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.about-page .usecase{
+    min-height:122px;
+
+    padding:17px;
+}
+
+.about-page .process-line{
+    grid-template-columns:1fr;
+}
+
+.about-page .process-step{
+    min-height:auto;
+
+    padding:23px;
+
+    border-right:0 !important;
+    border-bottom:1px solid var(--border);
+}
+
+.about-page .process-step:last-child{
+    border-bottom:0;
+}
+
+.about-page .step-icon{
+    margin:22px 0 16px;
+}
+
+.about-page .owner-panel{
+    padding:28px 20px;
+
+    border-radius:19px;
+}
+
+.about-page .about-final{
+    padding-top:30px;
+    padding-bottom:50px;
+}
+
+.about-page .final-panel{
+    padding:42px 20px;
+
+    border-radius:19px;
+}
+}
 
 @media (max-width:479.98px){
 
-    .about-page .hero-shell h1{
-        font-size:2.05rem;
-    }
-
-    .about-page .trust-strip{
-        grid-template-columns:1fr;
-    }
-
-    .about-page .trust-strip > div{
-        border-right:0 !important;
-
-        border-bottom:1px solid var(--border) !important;
-    }
-
-    .about-page .trust-strip > div:last-child{
-        border-bottom:0 !important;
-    }
-
-    .about-page .brand-grid{
-        grid-template-columns:1fr;
-    }
-
-    .about-page .brand-point{
-        border-right:0 !important;
-
-        border-bottom:1px solid var(--border) !important;
-    }
-
-    .about-page .brand-point:last-child{
-        border-bottom:0 !important;
-    }
-
-    .about-page .final-meta{
-        flex-direction:column;
-
-        gap:7px;
-    }
+.about-page .hero-shell h1{
+    font-size:2.05rem;
 }
 
+.about-page .trust-strip{
+    grid-template-columns:1fr;
+}
+
+.about-page .trust-strip > div{
+    border-right:0 !important;
+
+    border-bottom:1px solid var(--border) !important;
+}
+
+.about-page .trust-strip > div:last-child{
+    border-bottom:0 !important;
+}
+
+.about-page .brand-grid{
+    grid-template-columns:1fr;
+}
+
+.about-page .brand-point{
+    border-right:0 !important;
+
+    border-bottom:1px solid var(--border) !important;
+}
+
+.about-page .brand-point:last-child{
+    border-bottom:0 !important;
+}
+
+.about-page .final-meta{
+    flex-direction:column;
+
+    gap:7px;
+}
+}
 
 /* ==========================================================
-   GO7.IN - COMPLETE SKELETON
-   Header and Footer excluded because class is on #go7Content
-   ========================================================== */
+GO7.IN - COMPLETE SKELETON
+Header and Footer excluded because class is on #go7Content
+========================================================== */
 
 .go7-content-loading h1,
 .go7-content-loading h2,
@@ -1260,36 +2235,33 @@ a:hover{
 .go7-content-loading .text-link,
 .go7-content-loading .stage-label,
 .go7-content-loading .stage-domain{
-    position:relative !important;
+position !important;
 
-    overflow:hidden !important;
+overflow:hidden !important;
 
-    color:transparent !important;
+color:transparent !important;
 
-    background:var(--soft) !important;
+background:var(--soft) !important;
 
-    border-color:transparent !important;
-    border-radius:6px !important;
+border-color:transparent !important;
+border-radius:6px !important;
 
-    box-shadow:none !important;
+box-shadow:none !important;
 
-    user-select:none !important;
+user-select:none !important;
 }
-
 
 /* Hide icons during loading */
 
 .go7-content-loading i{
-    visibility:hidden !important;
+visibility !important;
 }
-
 
 /* Hide .IN */
 
 .go7-content-loading .stage-domain span{
-    color:transparent !important;
+color !important;
 }
-
 
 /* Disable interaction */
 
@@ -1298,17 +2270,15 @@ a:hover{
 .go7-content-loading input,
 .go7-content-loading textarea,
 .go7-content-loading select{
-    pointer-events:none !important;
+pointer-events !important;
 }
-
 
 /* Keep dark panels */
 
 .go7-content-loading .feature-primary,
 .go7-content-loading .owner-panel{
-    background:#1E3547 !important;
+background:#1E3547 !important;
 }
-
 
 /* Dark panel text */
 
@@ -1320,13 +2290,12 @@ a:hover{
 .go7-content-loading .owner-panel .section-kicker,
 .go7-content-loading .owner-panel span,
 .go7-content-loading .owner-panel strong{
-    color:transparent !important;
+color !important;
 }
 
-
 /* ==========================================================
-   SKELETON SHIMMER
-   ========================================================== */
+SKELETON SHIMMER
+========================================================== */
 
 .go7-content-loading h1::after,
 .go7-content-loading h2::after,
@@ -1343,36 +2312,34 @@ a:hover{
 .go7-content-loading .text-link::after,
 .go7-content-loading .stage-label::after,
 .go7-content-loading .stage-domain::after{
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    inset:0;
+inset:0;
 
-    z-index:2;
+z-index:2;
 
-    transform:translateX(-100%);
+transform:translateX(-100%);
 
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.95),
-        transparent
-    );
+background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.95),
+    transparent
+);
 
-    animation:go7Skeleton 1.3s linear infinite;
+animation:go7Skeleton 1.3s linear infinite;
 
-    pointer-events:none;
+pointer-events:none;
 }
-
 
 @keyframes go7Skeleton{
 
-    100%{
-        transform:translateX(100%);
-    }
+100%{
+    transform:translateX(100%);
 }
-
+}
 
 /* Cards cannot be clicked during skeleton */
 
@@ -1380,154 +2347,443 @@ a:hover{
 .go7-content-loading .brand-point,
 .go7-content-loading .usecase,
 .go7-content-loading .process-step{
-    pointer-events:none !important;
+pointer-events !important;
 }
-
 
 /* Secondary details */
 
 .go7-content-loading .stage-meta,
 .go7-content-loading .trust-strip,
 .go7-content-loading .final-meta{
-    opacity:.35;
+opacity:.35;
 }
-
 
 /* Smooth skeleton finish */
 
 #go7Content{
-    transition:opacity .3s ease;
+transition .3s ease;
 }
 
-
 /* ==========================================================
-   GO7.IN - ICON VISIBILITY FINAL FIX
-   ========================================================== */
+GO7.IN - ICON VISIBILITY FINAL FIX
+========================================================== */
 
 /* Skeleton के दौरान icons hidden रहेंगे */
 #go7Content.go7-content-loading i.mdi{
-    visibility:hidden !important;
-    opacity:0 !important;
+visibility !important;
+opacity:0 !important;
 }
 
 /* Skeleton हटने के बाद सभी MDI icons restore */
-#go7Content:not(.go7-content-loading) i.mdi{
-    visibility:visible !important;
-    opacity:1 !important;
+#go7Content(.go7-content-loading) i.mdi{
+visibility !important;
+opacity:1 !important;
 }
 
 /* Use-case icons */
-#go7Content:not(.go7-content-loading) .usecase i.mdi{
-    width:40px !important;
-    height:40px !important;
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-    flex:0 0 40px !important;
-    background:rgba(56,80,213,.07) !important;
-    border-radius:11px !important;
-    color:var(--primary) !important;
-    font-size:21px !important;
-    line-height:1 !important;
+#go7Content(.go7-content-loading) .usecase i.mdi{
+width:40px !important;
+height:40px !important;
+display !important;
+align-items !important;
+justify-content !important;
+flex:0 0 40px !important;
+background(56,80,213,.07) !important;
+border-radius:11px !important;
+color(--primary) !important;
+font-size:21px !important;
+line-height:1 !important;
 }
 
 /* Feature tile icons */
-#go7Content:not(.go7-content-loading) .feature-tile > i.mdi{
-    color:var(--primary) !important;
-    font-size:25px !important;
-    line-height:1 !important;
+#go7Content(.go7-content-loading) .feature-tile > i.mdi{
+color(--primary) !important;
+font-size:25px !important;
+line-height:1 !important;
 }
 
 /* Main dark feature icon */
-#go7Content:not(.go7-content-loading) .feature-icon i.mdi{
-    color:#fff !important;
-    font-size:24px !important;
-    line-height:1 !important;
+#go7Content(.go7-content-loading) .feature-icon i.mdi{
+color:#fff !important;
+font-size:24px !important;
+line-height:1 !important;
 }
 
 /* Process icons */
-#go7Content:not(.go7-content-loading) .step-icon i.mdi{
-    color:var(--primary) !important;
-    font-size:22px !important;
-    line-height:1 !important;
+#go7Content(.go7-content-loading) .step-icon i.mdi{
+color(--primary) !important;
+font-size:22px !important;
+line-height:1 !important;
 }
 
 /* Owner-panel icons */
-#go7Content:not(.go7-content-loading) .owner-benefits i.mdi{
-    color:#fff !important;
-    font-size:20px !important;
-    line-height:1 !important;
+#go7Content(.go7-content-loading) .owner-benefits i.mdi{
+color:#fff !important;
+font-size:20px !important;
+line-height:1 !important;
 }
 
 /* Meta icons */
-#go7Content:not(.go7-content-loading) .stage-meta i.mdi,
-#go7Content:not(.go7-content-loading) .final-meta i.mdi{
-    color:var(--primary) !important;
-    visibility:visible !important;
-    opacity:1 !important;
+#go7Content(.go7-content-loading) .stage-meta i.mdi,
+#go7Content(.go7-content-loading) .final-meta i.mdi{
+color(--primary) !important;
+visibility !important;
+opacity:1 !important;
 }
 
-
 /* ==========================================================
-   ABOUT PAGE - TRANSFER & SECURITY
-   ========================================================== */
+ABOUT PAGE - TRANSFER & SECURITY
+========================================================== */
 
 .about-page .transfer-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
+display;
+grid-template-columns(4,1fr);
+gap:14px;
 }
 
 .about-page .transfer-card{
-    padding:24px;
-    background:#FFFFFF;
-    border:1px solid var(--border);
-    border-radius:17px;
+padding:24px;
+background:#FFFFFF;
+border:1px solid var(--border);
+border-radius:17px;
 }
 
 .about-page .transfer-card i{
-    width:44px;
-    height:44px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:18px;
-    background:rgba(56,80,213,.07);
-    border-radius:12px;
-    color:var(--primary);
-    font-size:23px;
+width:44px;
+height:44px;
+display;
+align-items;
+justify-content;
+margin-bottom:18px;
+background(56,80,213,.07);
+border-radius:12px;
+color(--primary);
+font-size:23px;
 }
 
 .about-page .transfer-card h4{
-    margin:0 0 7px;
-    font-size:16px;
+margin:0 0 7px;
+font-size:16px;
 }
 
 .about-page .transfer-card p{
-    margin:0;
-    font-size:13px;
-    line-height:1.6;
+margin:0;
+font-size:13px;
+line-height:1.6;
 }
 
 @media (max-width:991.98px){
-    .about-page .transfer-grid{
-        grid-template-columns:1fr 1fr;
-    }
+.about-page .transfer-grid{
+grid-template-columns:1fr 1fr;
+}
 }
 
 @media (max-width:575.98px){
-    .about-page .transfer-grid{
-        grid-template-columns:1fr;
-    }
+.about-page .transfer-grid{
+grid-template-columns:1fr;
+}
 }
 
 #go7Content.go7-content-loading .transfer-card i.mdi{
-    visibility:hidden !important;
-    opacity:0 !important;
+visibility !important;
+opacity:0 !important;
 }
 
-#go7Content:not(.go7-content-loading) .transfer-card i.mdi{
-    visibility:visible !important;
-    opacity:1 !important;
-    color:var(--primary) !important;
+#go7Content(.go7-content-loading) .transfer-card i.mdi{
+visibility !important;
+opacity:1 !important;
+color(--primary) !important;
 }
+
+/* ==========================================================
+GO7.IN - FAQ PAGE
+========================================================== */
+
+.faq-page .faq-hero{
+padding:72px 0 32px;
+}
+
+.faq-page .faq-hero-shell{
+position;
+overflow;
+display;
+grid-template-columns(0,1.35fr) minmax(280px,.65fr);
+gap:54px;
+align-items;
+padding:52px;
+background:#FFFFFF;
+border:1px solid var(--border);
+border-radius:24px;
+}
+
+.faq-page .faq-hero-shell::after{
+content:"";
+position;
+width:280px;
+height:280px;
+right:-110px;
+top:-130px;
+border-radius:50%;
+background(56,80,213,.055);
+pointer-events;
+}
+
+.faq-page .faq-hero-copy{
+position;
+z-index:1;
+max-width:720px;
+}
+
+.faq-page .faq-hero h1{
+margin:14px 0 18px;
+max-width:760px;
+font-size(36px,5vw,60px);
+line-height:1.04;
+letter-spacing:-.045em;
+}
+
+.faq-page .faq-hero-copy>p{
+max-width:690px;
+margin:0;
+font-size:17px;
+line-height:1.75;
+}
+
+.faq-page .faq-hero-meta{
+position;
+z-index:1;
+display;
+gap:12px;
+}
+
+.faq-page .faq-hero-meta>div{
+display;
+gap:14px;
+align-items;
+padding:17px 18px;
+background:#F8F9FA;
+border:1px solid var(--border);
+border-radius:15px;
+}
+
+.faq-page .faq-hero-meta i{
+flex:0 0 auto;
+width:42px;
+height:42px;
+display;
+align-items;
+justify-content;
+border-radius:12px;
+background:#FFFFFF;
+color(--primary);
+font-size:22px;
+}
+
+.faq-page .faq-hero-meta span{
+display;
+flex-direction;
+font-size:12px;
+line-height:1.45;
+}
+
+.faq-page .faq-hero-meta strong{
+margin-bottom:2px;
+color(--text);
+font-size:14px;
+}
+
+.faq-page .faq-section{
+padding:44px 0;
+}
+
+.faq-page .faq-layout{
+display;
+grid-template-columns:300px minmax(0,1fr);
+gap:28px;
+align-items;
+}
+
+.faq-page .faq-side{
+position;
+top:28px;
+padding:28px;
+background:#FFFFFF;
+border:1px solid var(--border);
+border-radius:18px;
+}
+
+.faq-page .faq-side h2{
+margin:12px 0 12px;
+font-size:24px;
+letter-spacing:-.025em;
+}
+
+.faq-page .faq-side p{
+margin:0 0 22px;
+font-size:14px;
+line-height:1.7;
+}
+
+.faq-page .faq-list{
+display;
+gap:12px;
+}
+
+.faq-page .faq-item{
+overflow;
+background:#FFFFFF;
+border:1px solid var(--border);
+border-radius:17px;
+}
+
+.faq-page .faq-item .accordion-button{
+display;
+gap:16px;
+align-items;
+padding:20px 22px;
+background:#FFFFFF !important;
+color(--text) !important;
+box-shadow !important;
+font-size:15px;
+font-weight:700;
+line-height:1.45;
+}
+
+.faq-page .faq-item .accordion-button(.collapsed){
+color(--primary) !important;
+}
+
+.faq-page .faq-item .accordion-button{
+border-color;
+box-shadow;
+}
+
+.faq-page .faq-number{
+flex:0 0 auto;
+width:34px;
+height:34px;
+display;
+align-items;
+justify-content;
+border-radius:10px;
+background(56,80,213,.07);
+color(--primary);
+font-size:11px;
+font-weight:800;
+letter-spacing:.04em;
+}
+
+.faq-page .accordion-body{
+padding:0 24px 24px 72px;
+}
+
+.faq-page .accordion-body p{
+margin:0;
+font-size:14px;
+line-height:1.8;
+}
+
+.faq-page .faq-final{
+padding:44px 0 62px;
+}
+
+.faq-page .final-panel{
+margin-top:0;
+}
+
+@media (max-width:991.98px){
+.faq-page .faq-hero-shell{
+grid-template-columns:1fr;
+gap:30px;
+padding:40px;
+}
+
+.faq-page .faq-hero-meta{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.faq-page .faq-hero-meta>div{
+    align-items:flex-start;
+}
+
+.faq-page .faq-layout{
+    grid-template-columns:1fr;
+}
+
+.faq-page .faq-side{
+    position:static;
+}
+}
+
+@media (max-width:767.98px){
+.faq-page .faq-hero{
+padding:42px 0 22px;
+}
+
+.faq-page .faq-hero-shell{
+    padding:30px 24px;
+    border-radius:20px;
+}
+
+.faq-page .faq-hero h1{
+    font-size:38px;
+}
+
+.faq-page .faq-hero-copy>p{
+    font-size:15px;
+}
+
+.faq-page .faq-hero-meta{
+    grid-template-columns:1fr;
+}
+
+.faq-page .faq-section{
+    padding:32px 0;
+}
+
+.faq-page .faq-side{
+    padding:24px;
+}
+
+.faq-page .faq-item .accordion-button{
+    gap:12px;
+    padding:17px;
+    font-size:14px;
+}
+
+.faq-page .accordion-body{
+    padding:0 18px 20px 63px;
+}
+
+.faq-page .faq-final{
+    padding:32px 0 46px;
+}
+}
+
+@media (max-width:575.98px){
+.faq-page .faq-hero h1{
+font-size:34px;
+}
+
+.faq-page .accordion-body{
+    padding:0 17px 19px;
+}
+}
+
+/* FAQ skeleton icon behavior */
+
+#go7Content.go7-content-loading .faq-page i.mdi,
+#go7Content.go7-content-loading .faq-hero-meta i.mdi,
+#go7Content.go7-content-loading .faq-side i.mdi{
+visibility !important;
+opacity:0 !important;
+}
+
+#go7Content(.go7-content-loading) .faq-hero-meta i.mdi,
+#go7Content(.go7-content-loading) .faq-side i.mdi{
+visibility !important;
+opacity:1 !important;
+}
+
+
+Close
