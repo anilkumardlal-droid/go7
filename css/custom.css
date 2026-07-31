@@ -1911,7 +1911,7 @@ a:hover{
 .terms-page .accordion-body p{margin:0 0 14px;font-size:14px;line-height:1.8}
 .terms-page .accordion-body p:last-child{margin-bottom:0}
 
-.terms-page .terms-final{padding:38px 0 56px}
+.terms-page .terms-final{padding:38px 0 12px}
 .terms-page .terms-final .final-panel{margin:0;padding:48px 30px}
 
 /* Terms-only skeleton */
