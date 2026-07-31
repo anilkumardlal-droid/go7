@@ -1380,3 +1380,188 @@
         padding:31px 20px !important;
     }
 }
+
+
+/* ==========================================================
+   ABOUT FINAL VISUAL REFINEMENT
+   ========================================================== */
+
+/* Header: hover only, no permanent active underline/color */
+.about-page .navbar-nav .nav-link.active{
+    color:var(--text) !important;
+}
+
+.about-page .navbar-nav .nav-link.active::after{
+    transform:scaleX(0) !important;
+}
+
+.about-page .navbar-nav .nav-link:hover{
+    color:var(--primary) !important;
+}
+
+.about-page .navbar-nav .nav-link:hover::after{
+    transform:scaleX(1) !important;
+}
+
+/* Available: live pulse */
+.about-page .stage-status b{
+    position:relative;
+    width:8px !important;
+    height:8px !important;
+    flex:0 0 8px;
+    background:#22C55E !important;
+    border-radius:50%;
+    box-shadow:0 0 0 0 rgba(34,197,94,.35);
+    animation:go7AvailablePulse 2s ease-out infinite;
+}
+
+.about-page .stage-status b::after{
+    content:"";
+    position:absolute;
+    inset:-5px;
+    border:1px solid rgba(34,197,94,.35);
+    border-radius:50%;
+    animation:go7AvailableRing 2s ease-out infinite;
+}
+
+@keyframes go7AvailablePulse{
+    0%{box-shadow:0 0 0 0 rgba(34,197,94,.38)}
+    70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}
+    100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+}
+
+@keyframes go7AvailableRing{
+    0%{transform:scale(.65);opacity:.7}
+    70%,100%{transform:scale(1.35);opacity:0}
+}
+
+/* Trust boxes */
+.about-page .trust-strip{
+    gap:10px !important;
+    border:0 !important;
+}
+
+.about-page .trust-strip>div{
+    background:#FFFFFF !important;
+    border:0 !important;
+    border-radius:12px !important;
+    box-shadow:0px 0px 50px 0px rgba(0,0,0,.05) !important;
+}
+
+/* Feature primary: distinct premium soft green treatment */
+.about-page .feature-primary{
+    background:linear-gradient(145deg,#F0FDF4 0%,#ECFDF5 100%) !important;
+    border:0 !important;
+    box-shadow:0px 0px 50px 0px rgba(0,0,0,.05) !important;
+}
+
+.about-page .feature-primary .feature-icon{
+    background:#FFFFFF !important;
+    border:0 !important;
+    box-shadow:0 8px 24px rgba(15,23,42,.06) !important;
+}
+
+/* Brand Potential: remove full-width dark band */
+.about-page .about-block.brand-potential{
+    background:var(--bg) !important;
+    padding:48px 0 !important;
+}
+
+.about-page .brand-potential .brand-panel{
+    padding:36px !important;
+    background:#111827 !important;
+    border:0 !important;
+    border-radius:18px !important;
+    box-shadow:0px 0px 50px 0px rgba(0,0,0,.05) !important;
+}
+
+.about-page .brand-potential .brand-grid{
+    gap:12px !important;
+}
+
+.about-page .brand-potential .brand-point{
+    border:0 !important;
+    background:#182131 !important;
+    box-shadow:none !important;
+}
+
+/* All principal boxes: no borders, soft shadow */
+.about-page .domain-stage,
+.about-page .feature-tile,
+.about-page .brand-panel,
+.about-page .usecase,
+.about-page .transfer-card,
+.about-page .process-step,
+.about-page .owner-panel,
+.about-page .owner-benefits>div,
+.about-page .final-panel{
+    border:0 !important;
+    box-shadow:0px 0px 50px 0px rgba(0,0,0,.05) !important;
+}
+
+/* Hover motion */
+.about-page .domain-stage,
+.about-page .feature-primary,
+.about-page .feature-tile,
+.about-page .brand-point,
+.about-page .usecase,
+.about-page .transfer-card,
+.about-page .process-step,
+.about-page .owner-benefits>div,
+.about-page .final-panel{
+    transition:transform .24s ease, box-shadow .24s ease !important;
+}
+
+@media(hover:hover) and (pointer:fine){
+    .about-page .domain-stage:hover,
+    .about-page .feature-primary:hover,
+    .about-page .feature-tile:hover,
+    .about-page .brand-point:hover,
+    .about-page .usecase:hover,
+    .about-page .transfer-card:hover,
+    .about-page .process-step:hover,
+    .about-page .owner-benefits>div:hover,
+    .about-page .final-panel:hover{
+        transform:translateY(-4px);
+        box-shadow:0px 14px 45px 0px rgba(0,0,0,.09) !important;
+    }
+}
+
+/* Keep Brand panel itself stable; only its inner cards hover */
+.about-page .brand-potential .brand-panel:hover{
+    transform:none !important;
+}
+
+/* Skeleton: disable visual effects while loading */
+.about-page #go7Content.go7-content-loading .stage-status b,
+.about-page #go7Content.go7-content-loading .stage-status b::after{
+    animation:none !important;
+    box-shadow:none !important;
+}
+
+.about-page #go7Content.go7-content-loading .domain-stage,
+.about-page #go7Content.go7-content-loading .feature-primary,
+.about-page #go7Content.go7-content-loading .feature-tile,
+.about-page #go7Content.go7-content-loading .brand-point,
+.about-page #go7Content.go7-content-loading .usecase,
+.about-page #go7Content.go7-content-loading .transfer-card,
+.about-page #go7Content.go7-content-loading .process-step,
+.about-page #go7Content.go7-content-loading .owner-benefits>div,
+.about-page #go7Content.go7-content-loading .final-panel{
+    transform:none !important;
+    transition:none !important;
+}
+
+@media(max-width:767.98px){
+    .about-page .about-block.brand-potential{
+        padding:38px 0 !important;
+    }
+
+    .about-page .brand-potential .brand-panel{
+        padding:24px !important;
+    }
+
+    .about-page .trust-strip{
+        gap:8px !important;
+    }
+}
