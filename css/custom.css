@@ -1398,3 +1398,71 @@ a:hover{
 #go7Content{
     transition:opacity .3s ease;
 }
+
+
+/* ==========================================================
+   GO7.IN - ICON VISIBILITY FINAL FIX
+   ========================================================== */
+
+/* Skeleton के दौरान icons hidden रहेंगे */
+#go7Content.go7-content-loading i.mdi{
+    visibility:hidden !important;
+    opacity:0 !important;
+}
+
+/* Skeleton हटने के बाद सभी MDI icons restore */
+#go7Content:not(.go7-content-loading) i.mdi{
+    visibility:visible !important;
+    opacity:1 !important;
+}
+
+/* Use-case icons */
+#go7Content:not(.go7-content-loading) .usecase i.mdi{
+    width:40px !important;
+    height:40px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex:0 0 40px !important;
+    background:rgba(56,80,213,.07) !important;
+    border-radius:11px !important;
+    color:var(--primary) !important;
+    font-size:21px !important;
+    line-height:1 !important;
+}
+
+/* Feature tile icons */
+#go7Content:not(.go7-content-loading) .feature-tile > i.mdi{
+    color:var(--primary) !important;
+    font-size:25px !important;
+    line-height:1 !important;
+}
+
+/* Main dark feature icon */
+#go7Content:not(.go7-content-loading) .feature-icon i.mdi{
+    color:#fff !important;
+    font-size:24px !important;
+    line-height:1 !important;
+}
+
+/* Process icons */
+#go7Content:not(.go7-content-loading) .step-icon i.mdi{
+    color:var(--primary) !important;
+    font-size:22px !important;
+    line-height:1 !important;
+}
+
+/* Owner-panel icons */
+#go7Content:not(.go7-content-loading) .owner-benefits i.mdi{
+    color:#fff !important;
+    font-size:20px !important;
+    line-height:1 !important;
+}
+
+/* Meta icons */
+#go7Content:not(.go7-content-loading) .stage-meta i.mdi,
+#go7Content:not(.go7-content-loading) .final-meta i.mdi{
+    color:var(--primary) !important;
+    visibility:visible !important;
+    opacity:1 !important;
+}
