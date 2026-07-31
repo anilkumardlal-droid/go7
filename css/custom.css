@@ -1976,3 +1976,138 @@ a:hover{
     .terms-page .terms-final{padding:30px 0 44px}
     .terms-page .terms-final .final-panel{padding:38px 20px}
 }
+
+/* ==========================================================
+   GO7.IN - UNIFIED INNER PAGE TYPOGRAPHY
+   About + FAQ + Privacy + Terms
+   Home untouched
+   ========================================================== */
+
+/* HERO H1 */
+.about-page .hero-shell h1,
+.faq-page .faq-hero h1,
+.privacy-page .privacy-hero h1,
+.terms-page .terms-hero h1{
+    font-size:clamp(38px,4.5vw,58px) !important;
+    line-height:1.06 !important;
+    font-weight:600 !important;
+    letter-spacing:-0.04em !important;
+}
+
+/* HERO DESCRIPTION */
+.about-page .hero-copy,
+.faq-page .faq-hero-copy > p,
+.privacy-page .privacy-hero-copy > p,
+.terms-page .terms-hero-copy > p{
+    font-size:16px !important;
+    line-height:1.75 !important;
+    font-weight:400 !important;
+}
+
+/* SECTION LABEL / KICKER */
+.about-page .eyebrow,
+.about-page .section-kicker,
+.about-page .mini-label,
+.faq-page .section-kicker,
+.privacy-page .section-kicker,
+.terms-page .section-kicker{
+    font-size:11px !important;
+    line-height:1 !important;
+    font-weight:800 !important;
+    letter-spacing:1.6px !important;
+}
+
+/* MAIN SECTION H2 */
+.about-page .section-intro h2,
+.about-page .brand-panel h2,
+.about-page .owner-panel h2,
+.about-page .final-panel h2,
+.faq-page .final-panel h2,
+.privacy-page .final-panel h2,
+.terms-page .final-panel h2{
+    font-size:clamp(32px,3.8vw,48px) !important;
+    line-height:1.15 !important;
+    font-weight:600 !important;
+    letter-spacing:-0.035em !important;
+}
+
+/* SIDE PANEL H2 */
+.faq-page .faq-side h2,
+.privacy-page .privacy-side h2,
+.terms-page .terms-side h2{
+    font-size:23px !important;
+    line-height:1.25 !important;
+    font-weight:600 !important;
+    letter-spacing:-0.025em !important;
+}
+
+/* BODY TEXT */
+.about-page p,
+.faq-page .faq-hero-copy > p,
+.privacy-page .privacy-hero-copy > p,
+.terms-page .terms-hero-copy > p{
+    font-weight:400;
+}
+
+/* ACCORDION QUESTION / TITLE */
+.faq-page .accordion-button,
+.privacy-page .accordion-button,
+.terms-page .accordion-button{
+    font-size:14px !important;
+    line-height:1.45 !important;
+    font-weight:700 !important;
+}
+
+/* ACCORDION CONTENT */
+.faq-page .accordion-body p,
+.privacy-page .accordion-body p,
+.terms-page .accordion-body p{
+    font-size:14px !important;
+    line-height:1.8 !important;
+    font-weight:400 !important;
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width:767.98px){
+
+    .about-page .hero-shell h1,
+    .faq-page .faq-hero h1,
+    .privacy-page .privacy-hero h1,
+    .terms-page .terms-hero h1{
+        font-size:36px !important;
+        line-height:1.08 !important;
+        letter-spacing:-0.035em !important;
+    }
+
+    .about-page .hero-copy,
+    .faq-page .faq-hero-copy > p,
+    .privacy-page .privacy-hero-copy > p,
+    .terms-page .terms-hero-copy > p{
+        font-size:15px !important;
+        line-height:1.7 !important;
+    }
+
+    .about-page .section-intro h2,
+    .about-page .brand-panel h2,
+    .about-page .owner-panel h2,
+    .about-page .final-panel h2,
+    .faq-page .final-panel h2,
+    .privacy-page .final-panel h2,
+    .terms-page .final-panel h2{
+        font-size:30px !important;
+        line-height:1.18 !important;
+    }
+}
+
+@media (max-width:479.98px){
+
+    .about-page .hero-shell h1,
+    .faq-page .faq-hero h1,
+    .privacy-page .privacy-hero h1,
+    .terms-page .terms-hero h1{
+        font-size:32px !important;
+    }
+}
