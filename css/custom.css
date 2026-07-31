@@ -1596,3 +1596,20 @@
         padding:.75rem 1rem !important;
     }
 }
+
+/* Mobile / touch box tap effect */
+@media (hover:none) and (pointer:coarse){
+
+    .about-page .domain-stage:active,
+    .about-page .feature-primary:active,
+    .about-page .feature-tile:active,
+    .about-page .brand-point:active,
+    .about-page .usecase:active,
+    .about-page .transfer-card:active,
+    .about-page .process-step:active,
+    .about-page .final-panel:active{
+        transform:translateY(-3px) scale(.99);
+        box-shadow:0 10px 35px rgba(0,0,0,.09) !important;
+        transition:transform .15s ease, box-shadow .15s ease !important;
+    }
+}
