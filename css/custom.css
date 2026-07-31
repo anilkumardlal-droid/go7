@@ -16,3 +16,156 @@
 @media(max-width:991.98px){.about-page .about-new-hero{padding-top:48px}.about-page .trust-strip{grid-template-columns:1fr 1fr}.about-page .trust-strip>div:nth-child(2){border-right:0}.about-page .trust-strip>div:nth-child(-n+2){border-bottom:1px solid var(--border)}.about-page .brand-panel{padding:36px}.about-page .process-line{grid-template-columns:1fr 1fr}.about-page .process-step:nth-child(2){border-right:0}.about-page .process-step:nth-child(-n+2){border-bottom:1px solid var(--border)}.about-page .owner-panel{grid-template-columns:1fr;gap:22px;padding:40px}}
 @media(max-width:767.98px){.about-page .about-new-hero{padding:30px 0 12px}.about-page .hero-shell{padding:28px 20px;border-radius:19px}.about-page .hero-shell h1{font-size:2.35rem}.about-page .hero-copy{font-size:15px}.about-page .hero-actions{align-items:flex-start;flex-direction:column;gap:15px}.about-page .domain-stage{padding:23px;border-radius:17px}.about-page .stage-domain{font-size:3.5rem}.about-page .about-block{padding:43px 0}.about-page .section-intro{margin-bottom:25px}.about-page .section-intro h2,.about-page .brand-panel h2,.about-page .owner-panel h2,.about-page .final-panel h2{font-size:1.9rem}.about-page .section-intro p{font-size:15px}.about-page .section-intro-row{display:block}.about-page .section-intro-row p{margin-top:12px}.about-page .feature-mosaic{grid-template-columns:1fr}.about-page .feature-primary{grid-column:auto;min-height:260px;padding:26px}.about-page .feature-tile{min-height:auto}.about-page .brand-panel{padding:26px 20px;border-radius:19px}.about-page .brand-point{min-height:135px;padding:18px}.about-page .usecase-grid{grid-template-columns:1fr 1fr}.about-page .usecase{min-height:122px;padding:17px}.about-page .process-line{grid-template-columns:1fr}.about-page .process-step{min-height:auto;padding:23px;border-right:0!important;border-bottom:1px solid var(--border)}.about-page .process-step:last-child{border-bottom:0}.about-page .step-icon{margin:22px 0 16px}.about-page .owner-panel{padding:28px 20px;border-radius:19px}.about-page .about-final{padding-top:30px;padding-bottom:50px}.about-page .final-panel{padding:42px 20px;border-radius:19px}}
 @media(max-width:479.98px){.about-page .hero-shell h1{font-size:2.05rem}.about-page .trust-strip{grid-template-columns:1fr}.about-page .trust-strip>div{border-right:0!important;border-bottom:1px solid var(--border)!important}.about-page .trust-strip>div:last-child{border-bottom:0!important}.about-page .brand-grid{grid-template-columns:1fr}.about-page .brand-point{border-right:0!important;border-bottom:1px solid var(--border)!important}.about-page .brand-point:last-child{border-bottom:0!important}.about-page .final-meta{flex-direction:column;gap:7px}}
+/* ==========================================================
+   GO7.IN - COMPLETE SKELETON LOADER
+   Header & Footer excluded
+   ========================================================== */
+
+/* Main text / buttons */
+
+.go7-content-loading h1,
+.go7-content-loading h2,
+.go7-content-loading h3,
+.go7-content-loading h4,
+.go7-content-loading h5,
+.go7-content-loading h6,
+.go7-content-loading p,
+.go7-content-loading .btn,
+.go7-content-loading .badge,
+.go7-content-loading .eyebrow,
+.go7-content-loading .section-kicker,
+.go7-content-loading .mini-label,
+.go7-content-loading .text-link,
+.go7-content-loading .stage-label,
+.go7-content-loading .stage-domain{
+    position:relative !important;
+    overflow:hidden !important;
+
+    color:transparent !important;
+    background:#f3f4f6 !important;
+    border-color:transparent !important;
+
+    border-radius:6px !important;
+    box-shadow:none !important;
+
+    user-select:none !important;
+}
+
+
+/* Keep dark panels visible */
+
+.go7-content-loading .feature-primary,
+.go7-content-loading .owner-panel{
+    background:#1e3547 !important;
+}
+
+
+/* Skeleton inside dark panels */
+
+.go7-content-loading .feature-primary h3,
+.go7-content-loading .feature-primary p,
+.go7-content-loading .feature-primary .mini-label,
+.go7-content-loading .owner-panel h2,
+.go7-content-loading .owner-panel p,
+.go7-content-loading .owner-panel .section-kicker,
+.go7-content-loading .owner-panel span,
+.go7-content-loading .owner-panel strong{
+    color:transparent !important;
+}
+
+
+/* Hide actual icons */
+
+.go7-content-loading i{
+    visibility:hidden !important;
+}
+
+
+/* Stage .IN text */
+
+.go7-content-loading .stage-domain span{
+    color:transparent !important;
+}
+
+
+/* Prevent interaction */
+
+.go7-content-loading a,
+.go7-content-loading button,
+.go7-content-loading input,
+.go7-content-loading textarea,
+.go7-content-loading select{
+    pointer-events:none !important;
+}
+
+
+/* ==========================================================
+   SHIMMER
+   ========================================================== */
+
+.go7-content-loading h1::after,
+.go7-content-loading h2::after,
+.go7-content-loading h3::after,
+.go7-content-loading h4::after,
+.go7-content-loading h5::after,
+.go7-content-loading h6::after,
+.go7-content-loading p::after,
+.go7-content-loading .btn::after,
+.go7-content-loading .badge::after,
+.go7-content-loading .eyebrow::after,
+.go7-content-loading .section-kicker::after,
+.go7-content-loading .mini-label::after,
+.go7-content-loading .text-link::after,
+.go7-content-loading .stage-label::after,
+.go7-content-loading .stage-domain::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    transform:translateX(-100%);
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    );
+
+    animation:go7Skeleton 1.3s infinite;
+}
+
+
+@keyframes go7Skeleton{
+    100%{
+        transform:translateX(100%);
+    }
+}
+
+
+/* ==========================================================
+   SKELETON CARD DETAILS
+   ========================================================== */
+
+.go7-content-loading .feature-tile,
+.go7-content-loading .brand-point,
+.go7-content-loading .usecase,
+.go7-content-loading .process-step{
+    pointer-events:none !important;
+}
+
+
+/* Hide meta / small details until loaded */
+
+.go7-content-loading .stage-meta,
+.go7-content-loading .trust-strip,
+.go7-content-loading .final-meta{
+    opacity:.35;
+}
+
+
+/* Smooth finish */
+
+#go7Content{
+    transition:opacity .3s ease;
+}
