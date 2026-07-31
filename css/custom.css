@@ -1042,97 +1042,114 @@
 
 
 /* ==========================================================
-   ABOUT FINAL - PREMIUM DARK BRAND ROW
-   Single contrast section between light sections
+   ABOUT FINAL - BRAND POTENTIAL DARK SECTION
+   Exact HTML selector: .about-block.brand-potential
    ========================================================== */
 
-.about-page .brand-block{
-    position:relative;
+.about-page .about-block.brand-potential{
     padding:68px 0 !important;
     background:#111827 !important;
 }
 
-.about-page .brand-block .brand-panel{
+.about-page .brand-potential .brand-panel{
     padding:0 !important;
     background:transparent !important;
     border:0 !important;
     border-radius:0 !important;
 }
 
-.about-page .brand-block .mini-label,
-.about-page .brand-block .section-kicker{
+.about-page .brand-potential .section-kicker{
     color:#8EA0FF !important;
 }
 
-.about-page .brand-block h2,
-.about-page .brand-block h3,
-.about-page .brand-block h4,
-.about-page .brand-block strong{
+.about-page .brand-potential h2,
+.about-page .brand-potential h4{
     color:#FFFFFF !important;
 }
 
-.about-page .brand-block>div p,
-.about-page .brand-block .brand-panel>p{
+.about-page .brand-potential .brand-panel > .row > div:first-child > p{
     color:#CBD5E1 !important;
 }
 
-.about-page .brand-block .brand-grid{
-    margin-top:28px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
+.about-page .brand-potential .brand-grid{
+    display:grid !important;
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:12px !important;
     border:0 !important;
     border-radius:0 !important;
     overflow:visible !important;
 }
 
-.about-page .brand-block .brand-point{
-    min-height:150px;
-    padding:22px;
+.about-page .brand-potential .brand-point{
+    min-height:145px;
+    padding:22px !important;
     background:#182131 !important;
     border:1px solid rgba(255,255,255,.09) !important;
     border-radius:14px !important;
 }
 
-.about-page .brand-block .brand-point>span{
+.about-page .brand-potential .brand-point > span{
     color:#8EA0FF !important;
 }
 
-.about-page .brand-block .brand-point p{
+.about-page .brand-potential .brand-point h4{
+    color:#FFFFFF !important;
+}
+
+.about-page .brand-potential .brand-point p{
     color:#AEB8C7 !important;
 }
 
-/* Dark section skeleton */
-.about-page #go7Content.go7-content-loading .brand-block h2,
-.about-page #go7Content.go7-content-loading .brand-block p,
-.about-page #go7Content.go7-content-loading .brand-block .mini-label,
-.about-page #go7Content.go7-content-loading .brand-block .brand-point{
+/* Exact dark-section skeleton */
+.about-page #go7Content.go7-content-loading .brand-potential .section-kicker,
+.about-page #go7Content.go7-content-loading .brand-potential h2,
+.about-page #go7Content.go7-content-loading .brand-potential .brand-panel > .row > div:first-child > p,
+.about-page #go7Content.go7-content-loading .brand-potential .brand-point{
+    position:relative !important;
+    overflow:hidden !important;
+    color:transparent !important;
     background:#202B3C !important;
     border-color:transparent !important;
+    border-radius:6px !important;
 }
 
-.about-page #go7Content.go7-content-loading .brand-block h2::after,
-.about-page #go7Content.go7-content-loading .brand-block p::after,
-.about-page #go7Content.go7-content-loading .brand-block .mini-label::after,
-.about-page #go7Content.go7-content-loading .brand-block .brand-point::after{
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.12),
-        transparent
-    ) !important;
+.about-page #go7Content.go7-content-loading .brand-potential .section-kicker::after,
+.about-page #go7Content.go7-content-loading .brand-potential h2::after,
+.about-page #go7Content.go7-content-loading .brand-potential .brand-panel > .row > div:first-child > p::after,
+.about-page #go7Content.go7-content-loading .brand-potential .brand-point::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    transform:translateX(-100%);
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.13),transparent) !important;
+    animation:go7Skeleton 1.3s infinite;
+    pointer-events:none;
+}
+
+.about-page #go7Content.go7-content-loading .brand-potential .brand-point > span,
+.about-page #go7Content.go7-content-loading .brand-potential .brand-point h4,
+.about-page #go7Content.go7-content-loading .brand-potential .brand-point p{
+    visibility:hidden !important;
+    opacity:0 !important;
+}
+
+.about-page #go7Content:not(.go7-content-loading) .brand-potential .brand-point > span,
+.about-page #go7Content:not(.go7-content-loading) .brand-potential .brand-point h4,
+.about-page #go7Content:not(.go7-content-loading) .brand-potential .brand-point p{
+    visibility:visible !important;
+    opacity:1 !important;
 }
 
 @media(max-width:767.98px){
-    .about-page .brand-block{
+    .about-page .about-block.brand-potential{
         padding:48px 0 !important;
     }
 
-    .about-page .brand-block .brand-grid{
-        grid-template-columns:1fr;
+    .about-page .brand-potential .brand-grid{
+        grid-template-columns:1fr !important;
     }
 
-    .about-page .brand-block .brand-point{
+    .about-page .brand-potential .brand-point{
         min-height:auto;
     }
 }
