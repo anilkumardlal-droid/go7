@@ -251,6 +251,12 @@
     min-height:42px;
 }
 
+/* Hide offer status text during skeleton loading */
+.go7-content-loading .offer-status{
+    visibility:hidden !important;
+    animation:none !important;
+}
+
 
 /* =================================
    Loading Finish
