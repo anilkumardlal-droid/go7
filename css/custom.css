@@ -1039,3 +1039,100 @@
         grid-template-columns:1fr;
     }
 }
+
+
+/* ==========================================================
+   ABOUT FINAL - PREMIUM DARK BRAND ROW
+   Single contrast section between light sections
+   ========================================================== */
+
+.about-page .brand-block{
+    position:relative;
+    padding:68px 0 !important;
+    background:#111827 !important;
+}
+
+.about-page .brand-block .brand-panel{
+    padding:0 !important;
+    background:transparent !important;
+    border:0 !important;
+    border-radius:0 !important;
+}
+
+.about-page .brand-block .mini-label,
+.about-page .brand-block .section-kicker{
+    color:#8EA0FF !important;
+}
+
+.about-page .brand-block h2,
+.about-page .brand-block h3,
+.about-page .brand-block h4,
+.about-page .brand-block strong{
+    color:#FFFFFF !important;
+}
+
+.about-page .brand-block>div p,
+.about-page .brand-block .brand-panel>p{
+    color:#CBD5E1 !important;
+}
+
+.about-page .brand-block .brand-grid{
+    margin-top:28px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    border:0 !important;
+    border-radius:0 !important;
+    overflow:visible !important;
+}
+
+.about-page .brand-block .brand-point{
+    min-height:150px;
+    padding:22px;
+    background:#182131 !important;
+    border:1px solid rgba(255,255,255,.09) !important;
+    border-radius:14px !important;
+}
+
+.about-page .brand-block .brand-point>span{
+    color:#8EA0FF !important;
+}
+
+.about-page .brand-block .brand-point p{
+    color:#AEB8C7 !important;
+}
+
+/* Dark section skeleton */
+.about-page #go7Content.go7-content-loading .brand-block h2,
+.about-page #go7Content.go7-content-loading .brand-block p,
+.about-page #go7Content.go7-content-loading .brand-block .mini-label,
+.about-page #go7Content.go7-content-loading .brand-block .brand-point{
+    background:#202B3C !important;
+    border-color:transparent !important;
+}
+
+.about-page #go7Content.go7-content-loading .brand-block h2::after,
+.about-page #go7Content.go7-content-loading .brand-block p::after,
+.about-page #go7Content.go7-content-loading .brand-block .mini-label::after,
+.about-page #go7Content.go7-content-loading .brand-block .brand-point::after{
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    ) !important;
+}
+
+@media(max-width:767.98px){
+    .about-page .brand-block{
+        padding:48px 0 !important;
+    }
+
+    .about-page .brand-block .brand-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-page .brand-block .brand-point{
+        min-height:auto;
+    }
+}
