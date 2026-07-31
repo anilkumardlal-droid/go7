@@ -79,7 +79,9 @@
 ================================= */
 
 
-/* Main Skeleton Elements */
+/* =================================
+   Main Skeleton Elements
+================================= */
 
 .go7-content-loading h1,
 .go7-content-loading h2,
@@ -94,7 +96,7 @@
     overflow:hidden;
 
     color:transparent !important;
-    background:#e9ecef !important;
+    background:#f3f4f6 !important;
     border-color:transparent !important;
 
     border-radius:6px;
@@ -118,7 +120,9 @@
 }
 
 
-/* Prevent Interaction */
+/* =================================
+   Prevent Interaction
+================================= */
 
 .go7-content-loading input,
 .go7-content-loading textarea,
@@ -150,7 +154,7 @@
     background:linear-gradient(
         90deg,
         transparent,
-        rgba(255,255,255,.8),
+        rgba(255,255,255,.95),
         transparent
     );
 
@@ -191,7 +195,7 @@
     max-width:100% !important;
     height:65px !important;
 
-    background:#e9ecef !important;
+    background:#f3f4f6 !important;
 
     border:none !important;
     border-radius:6px !important;
@@ -232,7 +236,7 @@
     background:linear-gradient(
         90deg,
         transparent,
-        rgba(255,255,255,.8),
+        rgba(255,255,255,.95),
         transparent
     );
 
@@ -251,7 +255,11 @@
     min-height:42px;
 }
 
-/* Hide offer status text during skeleton loading */
+
+/* =================================
+   Hide Offer Status While Loading
+================================= */
+
 .go7-content-loading .offer-status{
     visibility:hidden !important;
     animation:none !important;
