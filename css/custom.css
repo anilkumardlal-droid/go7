@@ -1674,3 +1674,154 @@ a:hover{
     .faq-page .faq-final{padding:30px 0 44px}
     .faq-page .faq-final .final-panel{padding:38px 20px}
 }
+
+
+/* ==========================================================
+   GO7.IN - PRIVACY PAGE FINAL
+   Scoped: About and FAQ remain unchanged
+   ========================================================== */
+
+.privacy-page .privacy-hero{padding:52px 0 18px}
+
+.privacy-page .privacy-hero-shell{
+    position:relative;overflow:hidden;
+    display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);
+    gap:42px;align-items:center;padding:44px;
+    background:#fff;border:1px solid var(--border);border-radius:22px
+}
+.privacy-page .privacy-hero-shell:after{
+    content:"";position:absolute;width:270px;height:270px;right:-110px;top:-135px;
+    border-radius:50%;background:rgba(56,80,213,.055);pointer-events:none
+}
+.privacy-page .privacy-hero-copy,.privacy-page .privacy-trust{position:relative;z-index:1}
+.privacy-page .privacy-hero h1{
+    margin:12px 0 16px;font-size:clamp(38px,4.8vw,58px);
+    line-height:1.04;letter-spacing:-.045em
+}
+.privacy-page .privacy-hero-copy>p{margin:0;max-width:700px;font-size:16px;line-height:1.75}
+
+.privacy-page .privacy-trust{display:grid;gap:10px}
+.privacy-page .privacy-trust>div{
+    display:flex;gap:13px;align-items:center;padding:14px 16px;
+    background:#f8f9fa;border:1px solid var(--border);border-radius:14px
+}
+.privacy-page .privacy-trust i{
+    flex:0 0 40px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+    background:#fff;border:1px solid var(--border);border-radius:11px;
+    color:var(--primary)!important;font-size:20px
+}
+.privacy-page .privacy-trust span{display:flex;flex-direction:column;font-size:12px;line-height:1.45}
+.privacy-page .privacy-trust strong{color:var(--text);font-size:14px;margin-bottom:2px}
+
+.privacy-page .privacy-summary{
+    display:grid;grid-template-columns:repeat(3,1fr);margin-top:14px;
+    background:#fff;border:1px solid var(--border);border-radius:17px;overflow:hidden
+}
+.privacy-page .privacy-summary>div{padding:17px 20px;border-right:1px solid var(--border)}
+.privacy-page .privacy-summary>div:last-child{border-right:0}
+.privacy-page .privacy-summary strong{display:block;color:var(--text);font-size:13px;margin-bottom:3px}
+.privacy-page .privacy-summary span{font-size:12px;line-height:1.45;color:var(--text-muted)}
+
+.privacy-page .privacy-section{padding:26px 0 38px}
+.privacy-page .privacy-layout{
+    display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px;align-items:start
+}
+.privacy-page .privacy-side{
+    position:sticky;top:24px;padding:25px;background:#fff;
+    border:1px solid var(--border);border-radius:17px
+}
+.privacy-page .privacy-side h2{margin:10px 0 11px;font-size:23px;line-height:1.25;letter-spacing:-.025em}
+.privacy-page .privacy-side>p{margin:0 0 20px;font-size:13px;line-height:1.7}
+.privacy-page .privacy-side-note{
+    display:flex;gap:10px;padding:13px;background:#f8f9fa;border:1px solid var(--border);
+    border-radius:12px;font-size:11px;line-height:1.55
+}
+.privacy-page .privacy-side-note i{color:var(--primary)!important;font-size:18px;flex:0 0 auto}
+
+.privacy-page .privacy-list{display:grid;gap:9px}
+.privacy-page .privacy-item{
+    overflow:hidden;background:#fff;border:1px solid var(--border)!important;border-radius:15px!important
+}
+.privacy-page .privacy-item .accordion-button{
+    min-height:64px;display:flex;align-items:center;gap:14px;padding:14px 18px!important;
+    background:#fff!important;color:var(--text)!important;border:0!important;
+    box-shadow:none!important;font-size:14px;font-weight:700;line-height:1.45
+}
+.privacy-page .privacy-item .accordion-button:not(.collapsed){
+    background:rgba(56,80,213,.035)!important;color:var(--text)!important
+}
+.privacy-page .privacy-item .accordion-button:focus{box-shadow:none!important}
+.privacy-page .privacy-number{
+    flex:0 0 36px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;
+    background:rgba(56,80,213,.07);border-radius:10px;color:var(--primary)!important;
+    font-size:11px;font-weight:800;letter-spacing:.04em
+}
+.privacy-page .accordion-body{padding:4px 22px 22px 68px!important}
+.privacy-page .accordion-body p{margin:0 0 14px;font-size:14px;line-height:1.8}
+.privacy-page .accordion-body p:last-child{margin-bottom:0}
+
+.privacy-page .privacy-final{padding:38px 0 56px}
+.privacy-page .privacy-final .final-panel{margin:0;padding:48px 30px}
+
+/* Privacy-only skeleton */
+.privacy-page #go7Content.go7-content-loading .privacy-trust>div,
+.privacy-page #go7Content.go7-content-loading .privacy-summary>div,
+.privacy-page #go7Content.go7-content-loading .privacy-item .accordion-button,
+.privacy-page #go7Content.go7-content-loading .privacy-side-note{
+    position:relative;overflow:hidden;background:#f3f4f6!important;
+    border-color:transparent!important;color:transparent!important
+}
+.privacy-page #go7Content.go7-content-loading .privacy-trust span,
+.privacy-page #go7Content.go7-content-loading .privacy-trust strong,
+.privacy-page #go7Content.go7-content-loading .privacy-summary strong,
+.privacy-page #go7Content.go7-content-loading .privacy-summary span,
+.privacy-page #go7Content.go7-content-loading .privacy-number,
+.privacy-page #go7Content.go7-content-loading .privacy-side .section-kicker,
+.privacy-page #go7Content.go7-content-loading .privacy-final .section-kicker,
+.privacy-page #go7Content.go7-content-loading .final-meta{
+    color:transparent!important
+}
+.privacy-page #go7Content.go7-content-loading .privacy-trust i,
+.privacy-page #go7Content.go7-content-loading .privacy-side i,
+.privacy-page #go7Content.go7-content-loading .privacy-final i{
+    visibility:hidden!important;opacity:0!important
+}
+.privacy-page #go7Content.go7-content-loading .privacy-trust>div:after,
+.privacy-page #go7Content.go7-content-loading .privacy-summary>div:after,
+.privacy-page #go7Content.go7-content-loading .privacy-item .accordion-button:after,
+.privacy-page #go7Content.go7-content-loading .privacy-side-note:after{
+    content:"";position:absolute;inset:0;transform:translateX(-100%);
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.95),transparent);
+    animation:go7Skeleton 1.3s infinite
+}
+.privacy-page #go7Content.go7-content-loading .accordion-body{
+    min-height:150px;background:#f3f4f6!important;margin:10px 18px 18px;
+    border-radius:8px;padding:0!important
+}
+.privacy-page #go7Content:not(.go7-content-loading) .privacy-trust i,
+.privacy-page #go7Content:not(.go7-content-loading) .privacy-side i,
+.privacy-page #go7Content:not(.go7-content-loading) .privacy-final i{
+    visibility:visible!important;opacity:1!important
+}
+
+@media(max-width:991.98px){
+    .privacy-page .privacy-hero-shell{grid-template-columns:1fr;padding:36px;gap:28px}
+    .privacy-page .privacy-trust{grid-template-columns:repeat(3,1fr)}
+    .privacy-page .privacy-layout{grid-template-columns:1fr}
+    .privacy-page .privacy-side{position:static}
+}
+@media(max-width:767.98px){
+    .privacy-page .privacy-hero{padding:34px 0 16px}
+    .privacy-page .privacy-hero-shell{padding:27px 22px;border-radius:18px}
+    .privacy-page .privacy-hero h1{font-size:36px}
+    .privacy-page .privacy-hero-copy>p{font-size:15px}
+    .privacy-page .privacy-trust,.privacy-page .privacy-summary{grid-template-columns:1fr}
+    .privacy-page .privacy-summary>div{border-right:0;border-bottom:1px solid var(--border)}
+    .privacy-page .privacy-summary>div:last-child{border-bottom:0}
+    .privacy-page .privacy-section{padding:22px 0 30px}
+    .privacy-page .privacy-side{padding:22px}
+    .privacy-page .privacy-item .accordion-button{min-height:58px;padding:12px 15px!important;gap:11px}
+    .privacy-page .accordion-body{padding:3px 17px 19px!important}
+    .privacy-page .privacy-final{padding:30px 0 44px}
+    .privacy-page .privacy-final .final-panel{padding:38px 20px}
+}
