@@ -531,5 +531,13 @@ body,
 }
 
 .hero-section{
-    margin-bottom:60px;
+    margin-bottom:60px !important;
+}
+
+.footer{
+    padding:8px 0 !important;
+}
+   
+.mb-5{
+    margin-bottom:1.5rem !important;
 }
