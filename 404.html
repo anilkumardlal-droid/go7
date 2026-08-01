@@ -20,7 +20,7 @@
     <link href="css/bootstrap.min.css"
           rel="stylesheet">
 
-    <!-- Material Icons -->
+    <!-- Material Design Icons -->
     <link href="css/materialdesignicons.min.css"
           rel="stylesheet">
 
@@ -28,7 +28,7 @@
     <link href="css/style.min.css"
           rel="stylesheet">
 
-    <!-- 404 Custom CSS -->
+    <!-- Custom -->
     <link href="css/custom.css"
           rel="stylesheet">
 
@@ -36,7 +36,96 @@
 
 <body class="page-404">
 
-    <!-- Content -->
+    <main class="error-404 d-flex align-items-center justify-content-center min-vh-100">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-7 text-center">
+
+                    <h1 class="display-1 fw-bold text-primary mb-3">
+
+                        404
+
+                    </h1>
+
+                    <h2 class="mb-3">
+
+                        Page Not Found
+
+                    </h2>
+
+                    <p class="text-muted mb-4">
+
+                        The page you're looking for doesn't exist,
+                        may have been moved, or is no longer available.
+
+                    </p>
+
+                    <p class="text-muted mb-4">
+
+                        Redirecting in
+
+                        <strong id="timer">8</strong>
+
+                        seconds...
+
+                    </p>
+
+                    <a href="/"
+                       class="btn btn-primary px-4 py-2">
+
+                        GO TO HOMEPAGE
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer-404 text-center pb-4">
+
+        <small class="text-muted">
+
+            ©
+            <script>
+                document.write(new Date().getFullYear());
+            </script>
+
+            GO7.IN • Premium .IN Domain
+
+        </small>
+
+    </footer>
+
+    <script>
+
+        let time = 8;
+
+        const timer = document.getElementById("timer");
+
+        const countdown = setInterval(function () {
+
+            time--;
+
+            timer.textContent = time;
+
+            if (time <= 0) {
+
+                clearInterval(countdown);
+
+                window.location.href = "/";
+
+            }
+
+        }, 1000);
+
+    </script>
 
 </body>
 
