@@ -329,8 +329,6 @@ hr{
     display:inline-block;
     width:1em;
     height:1em;
-    min-width:20px;
-    min-height:20px;
 
     color:transparent !important;
     background:#E8E8E8 !important;
@@ -451,7 +449,14 @@ hr{
 
     color:transparent !important;
     background:#E8E8E8 !important;
+    border:none !important;
     box-shadow:none !important;
+
+    background-image:none !important;
+}
+
+.go7-content-loading .accordion-button::before{
+    display:none !important;
 }
 
 .go7-content-loading .accordion-button::after{
