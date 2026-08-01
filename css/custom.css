@@ -515,3 +515,8 @@ body,
 
 
 
+.feature-text i{
+    color:#10A6BA;
+    font-size:18px;
+    vertical-align:middle;
+}
