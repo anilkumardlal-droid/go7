@@ -6,8 +6,8 @@
 :root{
 
     /* Background */
-    --bg:#F8F9FA;
-    --card:#FFFFFF;
+    --bg:#FCFCFC;
+    --card:#F3F3F3;
 
     /* Text */
     --text:#0D0D0D;
@@ -22,7 +22,7 @@
     --border:#E5E7EB;
 
     /* Shadow */
-    --shadow:none !important;
+    --shadow: rgba(0,0,0,.10) 0px 1px 3px 0px, rgba(0,0,0,.06) 0px 1px 2px 0px;
 
 }
 
@@ -138,7 +138,7 @@ a:hover{
 .card,
 .section-card{
     background:var(--card) !important;
-    border:1px solid var(--border) !important;
+    border:none !important;
     border-radius:16px !important;
     box-shadow:var(--shadow) !important;
 }
@@ -171,7 +171,7 @@ textarea,
 select{
     background:#fff !important;
     color:var(--text) !important;
-    border:1px solid var(--border) !important;
+    border:none !important;
     border-radius:10px !important;
     transition:.25s ease !important;
 }
@@ -259,7 +259,7 @@ hr{
     .navbar-collapse{
         margin-top:15px !important;
         background:#FFFFFF !important;
-        border:1px solid var(--border) !important;
+        border:none !important;
         border-radius:14px !important;
         padding:12px 18px !important;
         box-shadow:var(--shadow) !important;
@@ -283,8 +283,10 @@ hr{
     color:#10A6BA !important;
 }
 
-.shadow-sm {
-    box-shadow: none !important;
+.shadow-sm{
+    box-shadow:
+    rgba(0,0,0,.10) 0px 1px 3px 0px,
+    rgba(0,0,0,.06) 0px 1px 2px 0px !important;
 }
 
 /* =================================
@@ -309,7 +311,7 @@ hr{
     overflow:hidden;
 
     color:transparent !important;
-    background:#f3f4f6 !important;
+    background:#E8E8E8 !important;
     border-color:transparent !important;
 
     border-radius:6px;
@@ -323,9 +325,40 @@ hr{
 ================================= */
 
 .go7-content-loading i{
-    visibility:hidden !important;
+    position:relative;
+    display:inline-block;
+    width:1em;
+    height:1em;
+    min-width:20px;
+    min-height:20px;
+
+    color:transparent !important;
+    background:#E8E8E8 !important;
+
+    border-radius:50%;
+    overflow:hidden;
 }
 
+.go7-content-loading .feature-text{
+    display:inline-block;
+}
+
+.go7-content-loading i::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    transform:translateX(-100%);
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    );
+
+    animation:go7Skeleton 1.3s linear infinite;
+}
 /* =================================
    Prevent Interaction
 ================================= */
@@ -410,4 +443,30 @@ hr{
 
 #go7Content{
     transition:opacity .3s ease;
+}
+
+.go7-content-loading .accordion-button{
+    position:relative;
+    overflow:hidden;
+
+    color:transparent !important;
+    background:#E8E8E8 !important;
+    box-shadow:none !important;
+}
+
+.go7-content-loading .accordion-button::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    transform:translateX(-100%);
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.95),
+        transparent
+    );
+
+    animation:go7Skeleton 1.3s linear infinite;
 }
