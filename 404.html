@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>404 - Page Not Found | GO7.IN</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -18,19 +20,19 @@
     --primary-hover:#2B44CD;
     --text:#1E293B;
     --muted:#64748B;
-    --card:#fff;
+    --card:#FFFFFF;
     --shadow:0 0 50px rgba(0,0,0,.05);
 }
 
 body{
-    font-family: "Nunito", sans-serif;
+    font-family:"Nunito",sans-serif;
     background:#FCFCFC;
     color:var(--text);
     min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:25px;
+    padding:20px;
 }
 
 .wrapper{
@@ -39,23 +41,18 @@ body{
 }
 
 .card{
-    background:var(--card);
+    background:#FFFFFF;
     border-radius:16px;
     box-shadow:var(--shadow);
-    padding:55px 40px;
+    padding:48px 38px;
     text-align:center;
 }
 
-.logo{
-    width:150px;
-    margin-bottom:35px;
-}
-
 .error{
-    font-size:110px;
-    font-weight:800;
+    font-size:92px;
+    font-weight:700;
     line-height:1;
-    letter-spacing:-4px;
+    letter-spacing:-3px;
 
     background:linear-gradient(
         90deg,
@@ -64,123 +61,158 @@ body{
         #3850D5
     );
 
-    background-size:220%;
+    background-size:200%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
-    animation:shine 5s linear infinite;
+    animation:shine 6s linear infinite;
 }
 
 @keyframes shine{
+
     from{
         background-position:200%;
     }
+
     to{
         background-position:-200%;
     }
+
 }
 
 h2{
-    margin-top:12px;
-    font-size:34px;
-    font-weight:700;
+    margin-top:10px;
+    font-size:30px;
+    font-weight:600;
+    color:#1E293B;
 }
 
 p{
-    margin-top:18px;
-    color:var(--muted);
+    max-width:430px;
+    margin:16px auto 0;
+    color:#64748B;
+    font-size:16px;
     line-height:1.8;
-    font-size:17px;
 }
 
 .countdown{
-    display:inline-block;
-    margin-top:28px;
-    padding:10px 22px;
-    border-radius:999px;
-    background:#EEF4FF;
-    color:var(--primary);
-    font-weight:700;
+    margin-top:22px;
+    color:#64748B;
     font-size:15px;
+    font-weight:600;
 }
 
 #timer{
-    font-size:18px;
+    color:#3850D5;
+    font-weight:700;
 }
 
 .btn{
     display:inline-block;
-    margin-top:32px;
-    padding:14px 30px;
-    background:var(--primary);
-    color:#fff;
+    margin-top:28px;
+    padding:13px 28px;
+    border-radius:6px;
+    background:#3850D5;
+    color:#FFFFFF;
     text-decoration:none;
-    border-radius:8px;
+    font-size:14px;
     font-weight:700;
-    transition:.25s;
+    transition:.25s ease;
 }
 
 .btn:hover{
-    background:var(--primary-hover);
+    background:#2B44CD;
     transform:translateY(-2px);
 }
 
 .footer{
-    margin-top:25px;
+    margin-top:18px;
     text-align:center;
     color:#94A3B8;
-    font-size:14px;
+    font-size:13px;
 }
 
 @media(max-width:768px){
 
-.card{
-    padding:45px 24px;
-}
+    .card{
+        padding:36px 24px;
+    }
 
-.logo{
-    width:125px;
-}
+    .error{
+        font-size:76px;
+    }
 
-.error{
-    font-size:82px;
-}
+    h2{
+        font-size:26px;
+    }
 
-h2{
-    font-size:28px;
-}
-
-p{
-    font-size:16px;
-}
+    p{
+        font-size:15px;
+    }
 
 }
+
 </style>
- </head>
- <body>
-   <div class="wrapper">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
     <div class="card">
-      <img src="images/logo-go7.in.png" alt="GO7.IN" class="logo">
-       <div class="error">404</div>
+
+        <div class="error">404</div>
+
         <h2>Page Not Found</h2>
-         <p>The page you're looking for may have been moved, deleted, or never existed.</p>
-           <div class="countdown">Redirecting in <span id="timer">8</span> seconds</div>
-            <br>
-             <a href="/" class="btn">GO TO HOMEPAGE</a>
-          </div>
-        <div class="footer">© <script>document.write(new Date().getFullYear())</script> GO7.IN • Premium .IN Domain</div>
-     </div>
-   <script>
-     let time=8;
-       const timer=document.getElementById("timer");
-         const countdown=setInterval(()=>{
-           time--;
-             timer.textContent=time;
-               if(time<=0){
-              clearInterval(countdown);
-            window.location.href="/";
-         }
-      },1000);
-   </script>
+
+        <p>
+            The page you're looking for may have been moved,
+            deleted, or never existed.
+        </p>
+
+        <div class="countdown">
+            Redirecting in
+            <span id="timer">8</span>
+            seconds
+        </div>
+
+        <a href="/" class="btn">
+            GO TO HOMEPAGE
+        </a>
+
+    </div>
+
+    <div class="footer">
+        © <script>document.write(new Date().getFullYear())</script>
+        GO7.IN • Premium .IN Domain
+    </div>
+
+</div>
+
+<script>
+
+let time = 8;
+
+const timer = document.getElementById("timer");
+
+const countdown = setInterval(() => {
+
+    time--;
+
+    timer.textContent = time;
+
+    if(time <= 0){
+
+        clearInterval(countdown);
+
+        window.location.href = "/";
+
+    }
+
+},1000);
+
+</script>
+
 </body>
 </html>
