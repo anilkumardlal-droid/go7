@@ -568,3 +568,7 @@ body,
 .accordion-body{
     background:#fff !important;
 }
+
+.bg-white.rounded.p-5{
+    box-shadow:0px 0px 50px rgba(0,0,0,.05);
+}
