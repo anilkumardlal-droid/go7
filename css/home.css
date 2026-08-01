@@ -378,3 +378,12 @@ body{
 text-muted {
     color: #1e3547 !important;
 }
+
+.custom-form .form-control{
+    color:#0D0D0D !important;
+}
+
+.custom-form .form-control::placeholder{
+    color:#94A3B8 !important;
+    opacity:1;
+}
