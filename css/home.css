@@ -374,3 +374,7 @@ body{
     z-index:2;
 
 }
+
+text-muted {
+    color: #1e3547 !important;
+}
