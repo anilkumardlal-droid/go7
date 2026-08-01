@@ -440,7 +440,12 @@ hr{
 ================================= */
 
 #go7Content{
+    opacity:1;
     transition:opacity .3s ease;
+}
+
+.go7-content-loading{
+    opacity:.95;
 }
 
 .go7-content-loading .accordion-button{
@@ -506,4 +511,14 @@ body,
     box-shadow:
         rgba(0,0,0,.10) 0px 1px 3px 0px,
         rgba(0,0,0,.06) 0px 1px 2px 0px !important;
+}
+
+/* =================================
+   Container Width
+================================= */
+
+@media (min-width:1400px){
+    .container{
+        max-width:1140px !important;
+    }
 }
