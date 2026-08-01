@@ -274,9 +274,9 @@
     transition:opacity .3s ease;
 }
 
-/* ===========================================================
-   GO7 Premium Hero Background v2
-=========================================================== */
+/* ==========================================================
+   GO7 Premium Hero Background (FINAL)
+========================================================== */
 
 body{
     background:#FCFCFC !important;
@@ -286,58 +286,16 @@ body{
     position:relative;
     overflow:hidden;
     background:linear-gradient(
-        to bottom,
+        180deg,
         #FCFCFC 0%,
-        #FCFCFC 60%,
+        #FCFCFC 72%,
         #FFFFFF 100%
     );
 }
 
-/* GO7 Pattern */
+/* Soft Background */
 
 .contain-box::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-    right:0;
-
-    height:230px;
-
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60'%3E%3Ctext x='12' y='38' fill='%23C7CCD3' fill-opacity='0.10' font-size='28' font-family='Arial'%3EGO7%3C/text%3E%3C/svg%3E");
-
-    background-repeat:repeat;
-
-    background-position:center top;
-
-    opacity:.65;
-
-    mask-image:linear-gradient(
-        to bottom,
-        rgba(0,0,0,.95) 0%,
-        rgba(0,0,0,.60) 45%,
-        transparent 100%
-    );
-
-    -webkit-mask-image:linear-gradient(
-        to bottom,
-        rgba(0,0,0,.95) 0%,
-        rgba(0,0,0,.60) 45%,
-        transparent 100%
-    );
-
-    pointer-events:none;
-
-    z-index:0;
-
-}
-
-/* Premium Glow */
-
-.contain-box::after{
 
     content:"";
 
@@ -348,21 +306,21 @@ body{
     background:
 
         radial-gradient(
-            circle at 15% 12%,
-            rgba(255,255,255,.95),
-            transparent 22%
+            circle at 12% 12%,
+            rgba(56,80,213,.05),
+            transparent 28%
         ),
 
         radial-gradient(
-            circle at 85% 10%,
-            rgba(255,255,255,.90),
-            transparent 24%
+            circle at 88% 14%,
+            rgba(14,165,233,.05),
+            transparent 26%
         ),
 
         radial-gradient(
-            circle at 50% 45%,
-            rgba(255,255,255,.35),
-            transparent 42%
+            circle at 50% 80%,
+            rgba(56,80,213,.025),
+            transparent 38%
         );
 
     pointer-events:none;
@@ -371,7 +329,30 @@ body{
 
 }
 
-/* Keep Hero Content Above */
+/* Very Light Noise */
+
+.contain-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.18;
+
+    background-image:
+    radial-gradient(rgba(0,0,0,.03) 1px,transparent 1px);
+
+    background-size:28px 28px;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+/* Keep Content Above */
 
 .home-center,
 .home-desc-center,
