@@ -50,13 +50,7 @@ content="Learn more about GO7.IN, a premium short and brandable .IN domain avail
 </head>
 
 <body style="background:#F8F9FA;">
-    <div class="go7-preloader">
-    <div class="go7-loader">
-        <div class="go7-ring"></div>
-        <div class="go7-brand">GO7<span>.IN</span></div>
-        <div class="go7-loading">LOADING</div>
     </div>
-</div>
 
     <div class="header">
     <div class="container">
@@ -609,24 +603,15 @@ content="Learn more about GO7.IN, a premium short and brandable .IN domain avail
 <script src="js/jquery.easing.min.js"></script>
 
 <!-- Main Js -->
-<script src="js/app.js"></script> 
+<script src="js/app.js"></script>    
 <script>
 window.addEventListener("load",function(){
-
 setTimeout(function(){
-
-document
-.getElementById("go7Content")
-.classList.remove("go7-content-loading");
-
-document
-.querySelector(".go7-preloader")
-.style.display="none";
-
-},600);
-
+document.getElementById("go7Content").classList.remove("go7-content-loading");
+},1000);
 });
-</script>    
+</script>
+
 </body>
 
 </html> 
