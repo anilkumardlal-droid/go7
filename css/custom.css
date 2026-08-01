@@ -300,9 +300,7 @@ hr{
 .go7-content-loading p,
 .go7-content-loading .badge,
 .go7-content-loading .btn,
-.go7-content-loading .feature-text,
-.go7-content-loading .border,
-.go7-content-loading .bg-white{
+.go7-content-loading .feature-text{
     position:relative;
     overflow:hidden;
 
@@ -310,37 +308,38 @@ hr{
     background:#f3f4f6 !important;
     border-color:transparent !important;
 
-    border-radius:8px;
+    border-radius:6px;
     box-shadow:none !important;
 
     user-select:none;
 }
 
+/* Hide Icons */
+
 .go7-content-loading i{
     visibility:hidden !important;
 }
+
+/* Disable Button */
 
 .go7-content-loading .btn{
     pointer-events:none !important;
 }
 
-/* Keep card layout */
-.go7-content-loading .border.bg-white,
-.go7-content-loading .border.rounded{
-    position:relative;
-}
+/* Hero */
 
-/* Hero heading */
 .go7-content-loading h1{
     min-height:58px;
 }
 
-/* Section headings */
+/* Section */
+
 .go7-content-loading h2{
     min-height:42px;
 }
 
-/* Card headings */
+/* Card Heading */
+
 .go7-content-loading h3,
 .go7-content-loading h4,
 .go7-content-loading h5,
@@ -348,24 +347,29 @@ hr{
     min-height:24px;
 }
 
-/* Paragraphs */
+/* Paragraph */
+
 .go7-content-loading p{
     min-height:16px;
 }
 
 /* Badge */
+
 .go7-content-loading .badge{
     min-width:140px;
     min-height:34px;
 }
 
 /* Button */
+
 .go7-content-loading .btn{
     min-width:170px;
     min-height:48px;
 }
 
-/* Shimmer */
+/* ==========================================================
+   SHIMMER
+   ========================================================== */
 
 .go7-content-loading h1::after,
 .go7-content-loading h2::after,
@@ -375,9 +379,7 @@ hr{
 .go7-content-loading h6::after,
 .go7-content-loading p::after,
 .go7-content-loading .badge::after,
-.go7-content-loading .btn::after,
-.go7-content-loading .border::after,
-.go7-content-loading .bg-white::after{
+.go7-content-loading .btn::after{
 
     content:"";
 
