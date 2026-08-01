@@ -1,157 +1,95 @@
-/* ==========================================
-   404 Page
-========================================== */
+/* ==========================================================
+   GO7 Premium Hero Background (CSS Only)
+========================================================== */
+
+body{
+    background:#FCFCFC !important;
+}
 
 .page-404{
-    background:#FCFCFC;
-    color:#1E293B;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
     position:relative;
     overflow:hidden;
 }
 
-/* Background Pattern */
+/* Main Pattern */
 
 .page-404::before{
+
     content:"";
-    position:fixed;
+
+    position:absolute;
+
     inset:0;
 
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='42'%3E%3Ctext x='8' y='27' fill='%23BCC3CC' fill-opacity='0.16' font-size='20' font-family='Arial'%3EGO7%3C/text%3E%3C/svg%3E");
+    background-image:
 
-    background-repeat:repeat;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='42'%3E%3Ctext x='8' y='27' fill='%23BCC3CC' fill-opacity='0.22' font-size='20' font-family='Arial'%3EGO7%3C/text%3E%3C/svg%3E"),
+
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='42'%3E%3Ctext x='8' y='27' fill='%23BCC3CC' fill-opacity='0.22' font-size='20' font-family='Arial'%3EGO7%3C/text%3E%3C/svg%3E");
+
+    background-repeat:repeat,repeat;
+
+    /* First Grid */
+    background-position:
+        0 0,
+
+        /* Second Grid (Offset) */
+        60px 21px;
+
+    background-size:
+        120px 42px,
+        120px 42px;
 
     mask-image:linear-gradient(
         to bottom,
         rgba(0,0,0,.95) 0%,
-        rgba(0,0,0,.75) 35%,
-        rgba(0,0,0,.45) 65%,
+        rgba(0,0,0,.78) 25%,
+        rgba(0,0,0,.55) 50%,
+        rgba(0,0,0,.28) 72%,
         transparent 100%
     );
 
     -webkit-mask-image:linear-gradient(
         to bottom,
         rgba(0,0,0,.95) 0%,
-        rgba(0,0,0,.75) 35%,
-        rgba(0,0,0,.45) 65%,
+        rgba(0,0,0,.78) 25%,
+        rgba(0,0,0,.55) 50%,
+        rgba(0,0,0,.28) 72%,
         transparent 100%
     );
 
     pointer-events:none;
+
     z-index:0;
 }
 
-/* Soft Glow */
+/* Soft Light */
 
 .page-404::after{
+
     content:"";
-    position:fixed;
+
+    position:absolute;
+
     inset:0;
 
     background:
-        radial-gradient(circle at 15% 20%,rgba(255,255,255,.10),transparent 30%),
-        radial-gradient(circle at 85% 15%,rgba(255,255,255,.08),transparent 30%),
-        radial-gradient(circle at 50% 70%,rgba(255,255,255,.04),transparent 42%);
+
+        radial-gradient(circle at 15% 20%,rgba(255,255,255,.18),transparent 30%),
+
+        radial-gradient(circle at 85% 15%,rgba(255,255,255,.14),transparent 30%),
+
+        radial-gradient(circle at 50% 70%,rgba(255,255,255,.08),transparent 42%);
 
     pointer-events:none;
+
     z-index:1;
 }
 
-.page-404 .wrapper{
+/* Hero Content */
+
+.page-404 .error-404,
+.page-404 .footer-404{
     position:relative;
     z-index:2;
-    width:100%;
-    max-width:620px;
-}
-
-.page-404 .card{
-    background:#fff;
-    border-radius:16px;
-    box-shadow:0px 0px 50px 0px rgba(0,0,0,.05);
-    padding:48px 38px;
-    text-align:center;
-}
-
-.page-404 .error{
-    font-size:92px;
-    font-weight:700;
-    line-height:1;
-    letter-spacing:-3px;
-    background:linear-gradient(90deg,#3850D5,#0EA5E9,#3850D5);
-    background-size:200%;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:shine404 6s linear infinite;
-}
-
-@keyframes shine404{
-    from{background-position:200%;}
-    to{background-position:-200%;}
-}
-
-.page-404 h2{
-    margin-top:10px;
-    font-size:30px;
-    font-weight:600;
-}
-
-.page-404 p{
-    max-width:430px;
-    margin:16px auto 0;
-    color:#64748B;
-    line-height:1.8;
-}
-
-.page-404 .countdown{
-    margin-top:22px;
-    color:#64748B;
-    font-weight:600;
-}
-
-.page-404 #timer{
-    color:#3850D5;
-}
-
-.btn-404{
-    display:inline-block;
-    margin-top:28px;
-    padding:13px 28px;
-    background:#3850D5;
-    color:#fff;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:700;
-    transition:.25s;
-}
-
-.btn-404:hover{
-    background:#2B44CD;
-    transform:translateY(-2px);
-}
-
-.page-404 .footer{
-    margin-top:18px;
-    text-align:center;
-    color:#94A3B8;
-    font-size:13px;
-}
-
-@media (max-width:768px){
-
-    .page-404 .card{
-        padding:36px 24px;
-    }
-
-    .page-404 .error{
-        font-size:76px;
-    }
-
-    .page-404 h2{
-        font-size:26px;
-    }
-
 }
