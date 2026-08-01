@@ -547,3 +547,24 @@ body,
     border-radius:var(--bs-border-radius) !important;
     box-shadow:0px 0px 50px 0px rgba(0,0,0,.05) !important;
 }
+
+.accordion-item{
+    background:#fff !important;
+    border:none !important;
+    border-radius:var(--bs-border-radius) !important;
+    box-shadow:0px 0px 50px 0px rgba(0,0,0,.05) !important;
+}
+
+.accordion-button{
+    background:#fff !important;
+    box-shadow:none !important;
+}
+
+.accordion-button:not(.collapsed){
+    background:#fff !important;
+    color:inherit !important;
+}
+
+.accordion-body{
+    background:#fff !important;
+}
