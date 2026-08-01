@@ -292,41 +292,43 @@ body{
     position:absolute;
     inset:0;
 
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='42'%3E%3Ctext x='8' y='27' fill='%23C9CDD3' fill-opacity='0.16' font-size='20' font-family='Arial'%3EGO7%3C/text%3E%3C/svg%3E");
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='50'%3E%3Ctext x='10' y='32' fill='%23BCC3CC' fill-opacity='0.22' font-size='22' font-family='Arial'%3EGO7%3C/text%3E%3C/svg%3E");
 
     background-repeat:repeat;
 
-    mask-image:linear-gradient(to bottom,
-        rgba(0,0,0,.9),
-        rgba(0,0,0,.6),
-        rgba(0,0,0,.25),
-        transparent);
+    background-position:center top;
 
-    -webkit-mask-image:linear-gradient(to bottom,
-        rgba(0,0,0,.9),
-        rgba(0,0,0,.6),
-        rgba(0,0,0,.25),
-        transparent);
+    mask-image:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.95) 0%,
+        rgba(0,0,0,.75) 30%,
+        rgba(0,0,0,.50) 60%,
+        rgba(0,0,0,.25) 80%,
+        transparent 100%
+    );
+
+    -webkit-mask-image:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.95) 0%,
+        rgba(0,0,0,.75) 30%,
+        rgba(0,0,0,.50) 60%,
+        rgba(0,0,0,.25) 80%,
+        transparent 100%
+    );
 
     pointer-events:none;
     z-index:0;
 }
-
 .contain-box::after{
     content:"";
     position:absolute;
     inset:0;
 
     background:
-        radial-gradient(circle at 15% 20%,rgba(255,255,255,.9),transparent 28%),
-        radial-gradient(circle at 85% 15%,rgba(255,255,255,.7),transparent 30%),
-        radial-gradient(circle at 50% 70%,rgba(255,255,255,.45),transparent 38%);
+        radial-gradient(circle at 15% 20%,rgba(255,255,255,.75),transparent 28%),
+        radial-gradient(circle at 85% 15%,rgba(255,255,255,.55),transparent 30%),
+        radial-gradient(circle at 50% 70%,rgba(255,255,255,.30),transparent 38%);
 
     pointer-events:none;
-    z-index:0;
-}
-
-.home-center{
-    position:relative;
-    z-index:2;
+    z-index:1;
 }
