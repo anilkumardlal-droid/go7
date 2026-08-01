@@ -156,62 +156,31 @@ p{
 
 }
 </style>
-</head>
-
-<body>
-
-<div class="wrapper">
-
-<div class="card">
-
-<img src="images/logo-go7.in.png" alt="GO7.IN" class="logo">
-
-<div class="error">404</div>
-
-<h2>Page Not Found</h2>
-
-<p>
-The page you're looking for may have been moved,
-deleted, or never existed.
-</p>
-
-<div class="countdown">
-Redirecting in <span id="timer">8</span> seconds
-</div>
-
-<br>
-
-<a href="/" class="btn">GO TO HOMEPAGE</a>
-
-</div>
-
-<div class="footer">
-© <script>document.write(new Date().getFullYear())</script> GO7.IN • Premium .IN Domain
-</div>
-
-</div>
-
-<script>
-let time=8;
-
-const timer=document.getElementById("timer");
-
-const countdown=setInterval(()=>{
-
-time--;
-
-timer.textContent=time;
-
-if(time<=0){
-
-clearInterval(countdown);
-
-window.location.href="/";
-
-}
-
-},1000);
-</script>
-
+ </head>
+ <body>
+   <div class="wrapper">
+    <div class="card">
+      <img src="images/logo-go7.in.png" alt="GO7.IN" class="logo">
+       <div class="error">404</div>
+        <h2>Page Not Found</h2>
+         <p>The page you're looking for may have been moved, deleted, or never existed.</p>
+           <div class="countdown">Redirecting in <span id="timer">8</span> seconds</div>
+            <br>
+             <a href="/" class="btn">GO TO HOMEPAGE</a>
+          </div>
+        <div class="footer">© <script>document.write(new Date().getFullYear())</script> GO7.IN • Premium .IN Domain</div>
+     </div>
+   <script>
+     let time=8;
+       const timer=document.getElementById("timer");
+         const countdown=setInterval(()=>{
+           time--;
+             timer.textContent=time;
+               if(time<=0){
+              clearInterval(countdown);
+            window.location.href="/";
+         }
+      },1000);
+   </script>
 </body>
 </html>
