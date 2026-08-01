@@ -515,8 +515,17 @@ body,
 
 
 
+.feature-text{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#10A6BA !important;
+    font-weight:600;
+}
+
 .feature-text i{
-    color:#10A6BA;
     font-size:18px;
-    vertical-align:middle;
+    color:#10A6BA;
+    line-height:1;
+    flex-shrink:0;
 }
