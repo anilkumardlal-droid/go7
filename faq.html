@@ -99,7 +99,7 @@
     </div>
 </div>
 <!-- FAQ Hero -->
-<div class="contain-box">
+<div class="contain-box go7-content-loading" id="go7Content">
     <div class="pt-5">
         <div class="container">
 
@@ -621,7 +621,34 @@
 <script src="js/jquery.easing.min.js"></script>
 
 <!-- Main Js -->
-<script src="js/app.js"></script>    
+<script src="js/app.js"></script> 
+<script>
+(function () {
+
+    const content = document.getElementById("go7Content");
+    if (!content) return;
+
+    const startTime = Date.now();
+    const minimumTime = 3000;
+
+    function showContent() {
+
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, minimumTime - elapsed);
+
+        setTimeout(function () {
+            content.classList.remove("go7-content-loading");
+        }, remaining);
+    }
+
+    if (document.readyState === "complete") {
+        showContent();
+    } else {
+        window.addEventListener("load", showContent, { once: true });
+    }
+
+})();
+</script>
 </body>
 
 </html> 
