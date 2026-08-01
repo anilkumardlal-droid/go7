@@ -475,3 +475,35 @@ hr{
 
     animation:go7Skeleton 1.3s linear infinite;
 }
+
+
+/* =================================
+   GO7 Theme Override
+================================= */
+
+html,
+body,
+.contain-box{
+    background:#FCFCFC !important;
+}
+
+.header,
+.navbar,
+.footer{
+    background:#FCFCFC !important;
+}
+
+.bg-white{
+    background:#F3F3F3 !important;
+}
+
+.border{
+    border:none !important;
+}
+
+.border.rounded,
+.bg-white{
+    box-shadow:
+        rgba(0,0,0,.10) 0px 1px 3px 0px,
+        rgba(0,0,0,.06) 0px 1px 2px 0px !important;
+}
