@@ -287,9 +287,13 @@ hr{
     box-shadow: none !important;
 }
 
-/* ==========================================================
-   GO7.IN CONTENT SKELETON LOADER
-   ========================================================== */
+/* =================================
+   GO7 About Skeleton Loader
+================================= */
+
+/* =================================
+   Main Skeleton Elements
+================================= */
 
 .go7-content-loading h1,
 .go7-content-loading h2,
@@ -314,31 +318,34 @@ hr{
     user-select:none;
 }
 
-/* Hide Icons */
+/* =================================
+   Hide Actual Content
+================================= */
 
 .go7-content-loading i{
     visibility:hidden !important;
 }
 
-/* Disable Button */
+/* =================================
+   Prevent Interaction
+================================= */
 
-.go7-content-loading .btn{
+.go7-content-loading .btn,
+.go7-content-loading a{
     pointer-events:none !important;
 }
 
-/* Hero */
+/* =================================
+   Skeleton Sizes
+================================= */
 
 .go7-content-loading h1{
     min-height:58px;
 }
 
-/* Section */
-
 .go7-content-loading h2{
     min-height:42px;
 }
-
-/* Card Heading */
 
 .go7-content-loading h3,
 .go7-content-loading h4,
@@ -347,29 +354,23 @@ hr{
     min-height:24px;
 }
 
-/* Paragraph */
-
 .go7-content-loading p{
     min-height:16px;
 }
-
-/* Badge */
 
 .go7-content-loading .badge{
     min-width:140px;
     min-height:34px;
 }
 
-/* Button */
-
 .go7-content-loading .btn{
     min-width:170px;
     min-height:48px;
 }
 
-/* ==========================================================
-   SHIMMER
-   ========================================================== */
+/* =================================
+   Skeleton Shimmer
+================================= */
 
 .go7-content-loading h1::after,
 .go7-content-loading h2::after,
@@ -379,10 +380,9 @@ hr{
 .go7-content-loading h6::after,
 .go7-content-loading p::after,
 .go7-content-loading .badge::after,
-.go7-content-loading .btn::after{
-
+.go7-content-loading .btn::after,
+.go7-content-loading .feature-text::after{
     content:"";
-
     position:absolute;
     inset:0;
 
@@ -391,17 +391,23 @@ hr{
     background:linear-gradient(
         90deg,
         transparent,
-        rgba(255,255,255,.92),
+        rgba(255,255,255,.95),
         transparent
     );
 
-    animation:go7Skeleton 1.25s linear infinite;
+    animation:go7Skeleton 1.3s linear infinite;
 }
 
 @keyframes go7Skeleton{
-
     100%{
         transform:translateX(100%);
     }
+}
 
+/* =================================
+   Loading Finish
+================================= */
+
+#go7Content{
+    transition:opacity .3s ease;
 }
