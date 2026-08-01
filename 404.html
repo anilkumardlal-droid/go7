@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>404 - Page Not Found | GO7</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<title>404 - Page Not Found | GO7.IN</title>
 
 <style>
 *{
@@ -14,157 +13,204 @@
     box-sizing:border-box;
 }
 
+:root{
+    --primary:#3850D5;
+    --primary-hover:#2B44CD;
+    --text:#1E293B;
+    --muted:#64748B;
+    --card:#fff;
+    --shadow:0 0 50px rgba(0,0,0,.05);
+}
+
 body{
-    background:#F8F9FA;
-    color:#2D3748;
-    font-family:"Nunito",sans-serif;
-    font-size:16px;
-    line-height:1.7;
-    padding:80px 20px 40px;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background:#F8FAFC url("images/overlay-2.png") center;
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
 }
 
-.container{
-    max-width:700px;
-    margin:auto;
+.wrapper{
+    width:100%;
+    max-width:620px;
 }
 
-h1{
-    font-size:clamp(70px,11vw,110px);
-    font-weight:700;
+.card{
+    background:var(--card);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    padding:55px 40px;
+    text-align:center;
+}
+
+.logo{
+    width:150px;
+    margin-bottom:35px;
+}
+
+.error{
+    font-size:110px;
+    font-weight:800;
     line-height:1;
     letter-spacing:-4px;
-    margin-bottom:16px;
 
     background:linear-gradient(
         90deg,
-        #0EA5E9 0%,
-        #38BDF8 50%,
-        #0EA5E9 100%
+        #3850D5,
+        #0EA5E9,
+        #3850D5
     );
 
+    background-size:220%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    background-clip:text;
+
+    animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+    from{
+        background-position:200%;
+    }
+    to{
+        background-position:-200%;
+    }
 }
 
 h2{
-    font-size:clamp(30px,4vw,38px);
+    margin-top:12px;
+    font-size:34px;
     font-weight:700;
-    color:#1E293B;
-    margin-bottom:22px;
 }
 
 p{
-    color:#64748B;
-    font-size:18px;
-    margin-bottom:20px;
+    margin-top:18px;
+    color:var(--muted);
+    line-height:1.8;
+    font-size:17px;
+}
+
+.countdown{
+    display:inline-block;
+    margin-top:28px;
+    padding:10px 22px;
+    border-radius:999px;
+    background:#EEF4FF;
+    color:var(--primary);
+    font-weight:700;
+    font-size:15px;
 }
 
 #timer{
-    font-size:24px;
-    font-weight:700;
-    color:#0EA5E9;
+    font-size:18px;
 }
 
-/* Home Page Button */
 .btn{
     display:inline-block;
-    padding:12px 26px;
-    font-size:14px;
-    font-weight:700;
-    letter-spacing:.5px;
+    margin-top:32px;
+    padding:14px 30px;
+    background:var(--primary);
+    color:#fff;
     text-decoration:none;
-    border:1px solid transparent;
-    transition:.25s ease;
-    border-radius:5px;
+    border-radius:8px;
+    font-weight:700;
+    transition:.25s;
 }
 
-.btn:focus{
-    outline:none;
-    box-shadow:none;
+.btn:hover{
+    background:var(--primary-hover);
+    transform:translateY(-2px);
 }
 
-.btn-primary{
-    background:#3850D5 !important;
-    border-color:#3850D5 !important;
-    color:#fff !important;
+.footer{
+    margin-top:25px;
+    text-align:center;
+    color:#94A3B8;
+    font-size:14px;
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.btn-primary.focus,
-.btn-primary:not(:disabled):not(.disabled):active,
-.btn-primary:not(:disabled):not(.disabled):active:focus{
-    background:#2B44CD !important;
-    border-color:#2B44CD !important;
-    color:#fff !important;
+@media(max-width:768px){
+
+.card{
+    padding:45px 24px;
 }
 
-@media (max-width:768px){
+.logo{
+    width:125px;
+}
 
-    body{
-        padding:50px 18px 30px;
-    }
+.error{
+    font-size:82px;
+}
 
-    .container{
-        max-width:100%;
-    }
+h2{
+    font-size:28px;
+}
 
-    h1{
-        font-size:52px;
-    }
+p{
+    font-size:16px;
+}
 
-    h2{
-        font-size:28px;
-    }
-
-    p{
-        font-size:17px;
-    }
-
-    #timer{
-        font-size:22px;
-    }
 }
 </style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="wrapper">
 
-    <h1 aria-label="404">404</h1>
+<div class="card">
 
-    <h2>Oops! This page doesn't exist.</h2>
+<img src="images/logo-go7.in.png" alt="GO7.IN" class="logo">
 
-    <p>
-The page you're looking for may have been moved, deleted, or never existed.
-</p>
+<div class="error">404</div>
+
+<h2>Page Not Found</h2>
 
 <p>
-Return to the GO7 homepage to continue browsing.
-You will be redirected automatically in
-<strong><span id="timer">8</span></strong> seconds.
+The page you're looking for may have been moved,
+deleted, or never existed.
 </p>
 
-    <a href="/" class="btn btn-primary">GO TO HOMEPAGE</a>
+<div class="countdown">
+Redirecting in <span id="timer">8</span> seconds
+</div>
+
+<br>
+
+<a href="/" class="btn">GO TO HOMEPAGE</a>
+
+</div>
+
+<div class="footer">
+© <script>document.write(new Date().getFullYear())</script> GO7.IN • Premium .IN Domain
+</div>
 
 </div>
 
 <script>
-let time = 8;
-const timer = document.getElementById("timer");
+let time=8;
 
-const countdown = setInterval(() => {
-    time--;
-    timer.textContent = time;
+const timer=document.getElementById("timer");
 
-    if (time <= 0) {
-        clearInterval(countdown);
-        window.location.href = "/";
-    }
-}, 1000);
+const countdown=setInterval(()=>{
+
+time--;
+
+timer.textContent=time;
+
+if(time<=0){
+
+clearInterval(countdown);
+
+window.location.href="/";
+
+}
+
+},1000);
 </script>
 
 </body>
