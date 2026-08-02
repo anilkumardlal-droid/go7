@@ -375,14 +375,6 @@ body{
 }
 
 
-.custom-form .form-control{
-    color:#0D0D0D !important;
-}
-
-.custom-form .form-control::placeholder{
-    color:#94A3B8 !important;
-    opacity:1;
-}
 
 @media (max-width:767.98px){
 
