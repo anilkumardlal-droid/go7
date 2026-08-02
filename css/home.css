@@ -471,3 +471,7 @@ body{
     }
 
 }
+
+.text-muted {
+    color: #1e3547 !important;
+}
