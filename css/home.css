@@ -446,3 +446,28 @@ body{
     }
 
 }
+
+.response-info{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.response-info .separator{
+    color:#94A3B8;
+}
+
+@media (max-width:767.98px){
+
+    .response-info{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+    .response-info .separator{
+        display:none;
+    }
+
+}
