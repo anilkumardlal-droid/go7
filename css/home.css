@@ -375,8 +375,8 @@ body{
 
 }
 
-text-muted {
-    color: #1e3547 !important;
+.text-muted{
+    color:#1E3547 !important;
 }
 
 .custom-form .form-control{
