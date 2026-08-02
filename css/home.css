@@ -477,10 +477,10 @@ body{
 }
 
 .custom-form .form-control{
-    color:#0D0D0D !important;
+    color:#0D0D0D;
 }
 
 .custom-form .form-control::placeholder{
-    color:#94A3B8 !important;
+    color:#94A3B8;
     opacity:1;
 }
