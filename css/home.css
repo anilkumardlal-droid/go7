@@ -91,6 +91,7 @@
 .go7-content-loading p,
 .go7-content-loading .form-control,
 .go7-content-loading .btn,
+.go7-content-loading .live-dot,
 .go7-content-loading .cf-turnstile{
     position:relative;
     overflow:hidden;
@@ -144,7 +145,8 @@
 .go7-content-loading h5::after,
 .go7-content-loading p::after,
 .go7-content-loading .form-control::after,
-.go7-content-loading .btn::after{
+.go7-content-loading .btn::after,
+.go7-content-loading .live-dot::after{
     content:"";
     position:absolute;
     inset:0;
@@ -263,6 +265,19 @@
 .go7-content-loading .offer-status{
     visibility:hidden !important;
     animation:none !important;
+}
+
+.go7-content-loading .live-dot{
+
+    position:relative;
+    overflow:hidden;
+
+    background:#F1F3F6 !important;
+
+    box-shadow:none !important;
+
+    animation:none !important;
+
 }
 
 
