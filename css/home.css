@@ -387,3 +387,12 @@ body{
     color:#94A3B8 !important;
     opacity:1;
 }
+
+@media (max-width:767.98px){
+
+    .container{
+        padding-left:22px !important;
+        padding-right:22px !important;
+    }
+
+}
