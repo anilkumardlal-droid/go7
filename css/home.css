@@ -384,3 +384,11 @@ body{
     }
 
 }
+
+@media (min-width:200px) and (max-width:768px){
+
+    .contain-box{
+        padding:120px 0 20px !important;
+    }
+
+}
