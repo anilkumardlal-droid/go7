@@ -364,13 +364,12 @@ body{
 
 /* Hero Content */
 
-.home-center,
-.home-desc-center,
-.container,
-.row{
+.contain-box .home-center,
+.contain-box .home-desc-center,
+.contain-box .container,
+.contain-box .row{
 
     position:relative;
-
     z-index:2;
 
 }
