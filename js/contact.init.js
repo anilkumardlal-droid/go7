@@ -4,21 +4,37 @@ document.getElementById("contact-form").addEventListener("submit", async functio
    const message = document.getElementById("contact-message").value.trim();
 
 if (message.length < 20) {
-    document.querySelector(".contact-feedback").innerHTML =
-        "Please describe your offer in at least 20 characters.";
+
+    const feedback = document.querySelector(".contact-feedback");
+
+    feedback.style.color = "#DC2626";
+    feedback.style.fontWeight = "600";
+
+    feedback.innerHTML =
+        "⚠ Please describe your offer in at least 20 characters.";
+
     return;
 }
     const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
 
     if (!token) {
-        document.querySelector(".contact-feedback").innerHTML =
-        "Please complete the security check.";
-        return;
-    }
+
+    const feedback = document.querySelector(".contact-feedback");
+
+    feedback.style.color = "#DC2626";
+    feedback.style.fontWeight = "600";
+
+    feedback.innerHTML =
+        "⚠ Please complete the security check.";
+
+    return;
+}
 
     const btn = document.getElementById("contact-submit");
     btn.disabled = true;
     btn.innerHTML = "Sending...";
+    btn.style.cursor = "not-allowed";
+    btn.style.cursor = "pointer";
 
     try {
         const res = await fetch("https://api.go7.in/", {
@@ -104,18 +120,35 @@ if (seconds <= 0) {
 }, 1000);
 
 } else {
-            console.log(data);
-            document.querySelector(".contact-feedback").innerHTML =
-                "✗ " + (data.error || data.message || "Unknown Error");
-          btn.disabled = false;
-btn.innerHTML = "Send Inquiry";
-        }
+    console.log(data);
+
+    const feedback = document.querySelector(".contact-feedback");
+
+    feedback.style.display = "block";
+    feedback.style.visibility = "visible";
+    feedback.style.opacity = "1";
+    feedback.style.color = "#DC2626";
+    feedback.style.fontWeight = "600";
+
+    feedback.innerHTML =
+        "⚠ " + (data.error || data.message || "Unknown Error");
+
+    btn.disabled = false;
+    btn.innerHTML = "Send Inquiry";
+}
 
    } catch (err) {
     console.error(err);
 
-    document.querySelector(".contact-feedback").innerHTML =
-        "✗ " + err.message;
+    const feedback = document.querySelector(".contact-feedback");
+
+    feedback.style.display = "block";
+    feedback.style.visibility = "visible";
+    feedback.style.opacity = "1";
+    feedback.style.color = "#DC2626";
+    feedback.style.fontWeight = "600";
+
+    feedback.innerHTML = "⚠ " + err.message;
 
     btn.disabled = false;
     btn.innerHTML = "Send Inquiry";
