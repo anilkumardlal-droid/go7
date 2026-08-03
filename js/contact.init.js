@@ -1,6 +1,10 @@
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
     e.preventDefault();
-    document.querySelector(".contact-feedback").innerHTML = "";
+    const feedback = document.querySelector(".contact-feedback");
+
+feedback.innerHTML = "";
+feedback.style.color = "";
+feedback.style.fontWeight = "";
    const message = document.getElementById("contact-message").value.trim();
 
 if (message.length < 20) {
