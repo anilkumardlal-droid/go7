@@ -61,19 +61,27 @@ let seconds = 10;
 const updateMessage = () => {
 
     feedback.innerHTML = `
-    <div style="line-height:1.6;">
-        <strong style="color:#10a6ba;font-size:17px;font-weight:700;">
-    ✓ Inquiry Sent Successfully
-</strong><br><br>
+<div style="line-height:1.7;">
 
-<span style="color:#828f99;">
-    Thank you for your interest in GO7.IN.
-I'll review your inquiry and get back to you within 24 hours.
-    Redirecting in <strong style="color:#3850d5;font-size:24px;font-weight:700;"> ${seconds} </strong>
-    second${seconds !== 1 ? "s" : ""}...
-</span>
-    </div>
-    `;
+<strong style="display:block;color:#10A6BA;font-size:17px;font-weight:700;">
+✓ Inquiry Sent Successfully
+</strong>
+
+<p style="margin:14px 0 0;color:#64748B;">
+Thank you for your inquiry.<br>
+GO7.IN will review your inquiry and respond within 24 hours.
+</p>
+
+<p style="margin:14px 0 0;color:#64748B;">
+Redirecting in
+<strong style="color:#3850D5;font-size:24px;font-weight:700;">
+${seconds}
+</strong>
+second${seconds !== 1 ? "s" : ""}...
+</p>
+
+</div>
+`;
 
 };
 
