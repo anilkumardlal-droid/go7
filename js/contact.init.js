@@ -7,7 +7,7 @@ if (message.length < 20) {
 
     const feedback = document.querySelector(".contact-feedback");
 
-    feedback.style.color = "#DC2626";
+    feedback.style.color = "#D97706";
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
@@ -21,7 +21,7 @@ if (message.length < 20) {
 
     const feedback = document.querySelector(".contact-feedback");
 
-    feedback.style.color = "#DC2626";
+    feedback.style.color = "#D97706";
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
@@ -34,7 +34,6 @@ if (message.length < 20) {
     btn.disabled = true;
     btn.innerHTML = "Sending...";
     btn.style.cursor = "not-allowed";
-    btn.style.cursor = "pointer";
 
     try {
         const res = await fetch("https://api.go7.in/", {
@@ -127,7 +126,7 @@ if (seconds <= 0) {
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
     feedback.style.opacity = "1";
-    feedback.style.color = "#DC2626";
+    feedback.style.color = "#D97706";
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
@@ -135,6 +134,7 @@ if (seconds <= 0) {
 
     btn.disabled = false;
     btn.innerHTML = "Send Inquiry";
+    btn.style.cursor = "pointer";
 }
 
    } catch (err) {
@@ -145,12 +145,14 @@ if (seconds <= 0) {
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
     feedback.style.opacity = "1";
-    feedback.style.color = "#DC2626";
+    feedback.style.color = "#D97706";
     feedback.style.fontWeight = "600";
 
-    feedback.innerHTML = "⚠ " + err.message;
+    feedback.innerHTML =
+"⚠ Unable to send your inquiry. Please check your internet connection and try again.";
 
     btn.disabled = false;
     btn.innerHTML = "Send Inquiry";
+    btn.style.cursor = "pointer";
 }
 });
