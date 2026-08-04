@@ -15,7 +15,7 @@ if (message.length < 20) {
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
-    '<i class="mdi mdi-alert-outline" style="margin-right:6px;"></i>Please describe your offer in at least 20 characters.';
+    '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Please describe your offer in at least 20 characters.';
 
     return;
 }
@@ -29,7 +29,7 @@ if (message.length < 20) {
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
-    '<i class="mdi mdi-alert-outline" style="margin-right:6px;"></i>Please complete the security check.';
+    '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Please complete the security check.';
 
     return;
 }
@@ -134,7 +134,7 @@ if (seconds <= 0) {
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
-    '<i class="mdi mdi-alert-outline" style="margin-right:6px;"></i>' +
+    '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>' +
     (data.error || data.message || "Unknown Error");
 
     btn.disabled = false;
@@ -154,7 +154,7 @@ if (seconds <= 0) {
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
-'<i class="mdi mdi-alert-outline" style="margin-right:6px;"></i>Unable to send your inquiry. Please check your internet connection and try again.';
+'<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Unable to send your inquiry. Please check your internet connection and try again.';
     btn.disabled = false;
     btn.innerHTML = "Send Inquiry";
     btn.style.cursor = "pointer";
