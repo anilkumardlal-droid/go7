@@ -11,7 +11,7 @@ if (message.length < 20) {
 
     const feedback = document.querySelector(".contact-feedback");
 
-    feedback.style.color = "#D97706";
+    feedback.style.color = "#B45309";
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
@@ -25,7 +25,7 @@ if (message.length < 20) {
 
     const feedback = document.querySelector(".contact-feedback");
 
-    feedback.style.color = "#D97706";
+    feedback.style.color = "#B45309";
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
@@ -130,7 +130,7 @@ if (seconds <= 0) {
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
     feedback.style.opacity = "1";
-    feedback.style.color = "#D97706";
+    feedback.style.color = "#B45309";
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
@@ -150,7 +150,7 @@ if (seconds <= 0) {
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
     feedback.style.opacity = "1";
-    feedback.style.color = "#D97706";
+    feedback.style.color = "#B45309";
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
