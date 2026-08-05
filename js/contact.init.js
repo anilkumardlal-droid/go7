@@ -137,9 +137,8 @@ if (seconds <= 0) {
 
 if (data.retryAfter) {
 
-btn.disabled = true;
-btn.innerHTML = "Try Again Later";
-btn.style.cursor = "not-allowed";
+document.querySelector(".cf-turnstile").style.display = "none";
+btn.style.display = "none";
 
     let remaining = Math.max(0, Number(data.retryAfter) || 0);
 
@@ -194,6 +193,9 @@ feedback.innerHTML = `
 ✓ You can now submit your inquiry again.
 </strong>
 `;
+
+document.querySelector(".cf-turnstile").style.display = "";
+btn.style.display = "";
 
 btn.disabled = false;
 btn.innerHTML = "Send Inquiry";
