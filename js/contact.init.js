@@ -134,6 +134,10 @@ if (seconds <= 0) {
 
 if (data.retryAfter) {
 
+btn.disabled = true;
+btn.innerHTML = "Try Again Later";
+btn.style.cursor = "not-allowed";
+
     let remaining = Math.max(0, Number(data.retryAfter) || 0);
 
     const formatTime = (sec) => {
