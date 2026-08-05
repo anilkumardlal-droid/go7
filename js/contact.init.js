@@ -142,15 +142,6 @@ btn.style.display = "none";
 
     let remaining = Math.max(0, Number(data.retryAfter) || 0);
 
-    const formatTime = (sec) => {
-
-        const h = String(Math.floor(sec / 3600)).padStart(2, "0");
-        const m = String(Math.floor((sec % 3600) / 60)).padStart(2, "0");
-        const s = String(sec % 60).padStart(2, "0");
-
-        return `${h}:${m}:${s}`;
-    };
-
    const updateCountdown = () => {
 
     const h = String(Math.floor(remaining / 3600)).padStart(2, "0");
@@ -176,7 +167,7 @@ margin-top:16px;
 ">
 
 <div style="
-width:72px;
+width:80px;
 padding:12px 8px;
 border:1px solid #E2E8F0;
 border-radius:10px;
@@ -184,11 +175,11 @@ background:#F8FAFC;
 text-align:center;
 ">
 <div style="font-size:24px;font-weight:700;color:#3850D5;">${h}</div>
-<div style="font-size:11px;color:#64748B;">HOURS</div>
+<div style="font-size:11px;color:#64748B;">HRS</div>
 </div>
 
 <div style="
-width:72px;
+width:80px;
 padding:12px 8px;
 border:1px solid #E2E8F0;
 border-radius:10px;
@@ -196,11 +187,11 @@ background:#F8FAFC;
 text-align:center;
 ">
 <div style="font-size:24px;font-weight:700;color:#3850D5;">${m}</div>
-<div style="font-size:11px;color:#64748B;">MINUTES</div>
+<div style="font-size:11px;color:#64748B;">MIN</div>
 </div>
 
 <div style="
-width:72px;
+width:80px;
 padding:12px 8px;
 border:1px solid #E2E8F0;
 border-radius:10px;
@@ -208,7 +199,7 @@ background:#F8FAFC;
 text-align:center;
 ">
 <div style="font-size:24px;font-weight:700;color:#3850D5;">${s}</div>
-<div style="font-size:11px;color:#64748B;">SECONDS</div>
+<div style="font-size:11px;color:#64748B;">SEC</div>
 </div>
 
 </div>
