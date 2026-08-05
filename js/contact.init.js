@@ -184,7 +184,7 @@ background:#F8FAFC;
 text-align:center;
 ">
 <div style="font-size:24px;font-weight:700;color:#3850D5;">${h}</div>
-<div style="font-size:11px;color:#64748B;">HRS</div>
+<div style="font-size:11px;color:#64748B;">HOURS</div>
 </div>
 
 <div style="
@@ -196,7 +196,7 @@ background:#F8FAFC;
 text-align:center;
 ">
 <div style="font-size:24px;font-weight:700;color:#3850D5;">${m}</div>
-<div style="font-size:11px;color:#64748B;">MIN</div>
+<div style="font-size:11px;color:#64748B;">MINUTES</div>
 </div>
 
 <div style="
@@ -208,7 +208,7 @@ background:#F8FAFC;
 text-align:center;
 ">
 <div style="font-size:24px;font-weight:700;color:#3850D5;">${s}</div>
-<div style="font-size:11px;color:#64748B;">SEC</div>
+<div style="font-size:11px;color:#64748B;">SECONDS</div>
 </div>
 
 </div>
