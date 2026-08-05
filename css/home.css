@@ -394,8 +394,8 @@ body{
 @media (max-width:767.98px){
 
     .container{
-        padding-left:32px !important;
-        padding-right:32px !important;
+        padding-left:24px !important;
+        padding-right:24px !important;
     }
 
 }
