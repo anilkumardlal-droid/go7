@@ -123,7 +123,6 @@ if (seconds <= 0) {
 }, 1000);
 
 } else {
-    console.log(data);
 
     const feedback = document.querySelector(".contact-feedback");
 
@@ -133,13 +132,87 @@ if (seconds <= 0) {
     feedback.style.color = "#B45309";
     feedback.style.fontWeight = "600";
 
+if (data.retryAfter) {
+
+    let remaining = Math.max(0, Number(data.retryAfter) || 0);
+
+    const formatTime = (sec) => {
+
+        const h = String(Math.floor(sec / 3600)).padStart(2, "0");
+        const m = String(Math.floor((sec % 3600) / 60)).padStart(2, "0");
+        const s = String(sec % 60).padStart(2, "0");
+
+        return `${h}:${m}:${s}`;
+    };
+
+    const updateCountdown = () => {
+
+        feedback.innerHTML = `
+<div style="line-height:1.7">
+
+<strong style="display:block;color:#B45309;font-size:17px;font-weight:700;">
+⚠ You've reached the inquiry limit.
+</strong>
+
+<p style="margin:14px 0 0;color:#64748B;">
+Please try again after
+</p>
+
+<div style="
+margin-top:10px;
+font-size:28px;
+font-weight:700;
+color:#3850D5;
+letter-spacing:1px;
+">
+${formatTime(remaining)}
+</div>
+
+</div>
+`;
+    };
+
+    updateCountdown();
+
+    const timer = setInterval(() => {
+
+        remaining--;
+
+if (remaining < 0) {
+    
+clearInterval(timer);
+
+feedback.innerHTML = `
+<strong style="color:#10A6BA;font-size:16px;">
+✓ You can now submit your inquiry again.
+</strong>
+`;
+
+btn.disabled = false;
+btn.innerHTML = "Send Inquiry";
+btn.style.cursor = "pointer";
+
+if (typeof turnstile !== "undefined") {
+    turnstile.reset();
+}
+
+            return;
+        }
+
+        updateCountdown();
+
+    }, 1000);
+
+} else {
+
     feedback.innerHTML =
-    '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>' +
-    (data.error || data.message || "Unknown Error");
+        '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>' +
+        (data.error || data.message || "Unknown Error");
 
     btn.disabled = false;
     btn.innerHTML = "Send Inquiry";
     btn.style.cursor = "pointer";
+}
 }
 
    } catch (err) {
