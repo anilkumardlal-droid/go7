@@ -137,7 +137,10 @@ if (seconds <= 0) {
 
 if (data.retryAfter) {
 
-document.querySelector(".cf-turnstile").style.display = "none";
+const turnstileBox = document.querySelector(".cf-turnstile");
+if (turnstileBox) {
+    turnstileBox.style.display = "none";
+}
 btn.style.display = "none";
 
     let remaining = Math.max(0, Number(data.retryAfter) || 0);
@@ -194,7 +197,9 @@ feedback.innerHTML = `
 </strong>
 `;
 
-document.querySelector(".cf-turnstile").style.display = "";
+if (turnstileBox) {
+    turnstileBox.style.display = "";
+}
 btn.style.display = "";
 
 btn.disabled = false;
