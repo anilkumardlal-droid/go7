@@ -167,7 +167,7 @@ margin-top:16px;
 ">
 
 <div style="
-width:80px;
+width:65px;
 padding:12px 8px;
 border:1px solid #E2E8F0;
 border-radius:10px;
@@ -179,7 +179,7 @@ text-align:center;
 </div>
 
 <div style="
-width:80px;
+width:65px;
 padding:12px 8px;
 border:1px solid #E2E8F0;
 border-radius:10px;
@@ -191,7 +191,7 @@ text-align:center;
 </div>
 
 <div style="
-width:80px;
+width:65px;
 padding:12px 8px;
 border:1px solid #E2E8F0;
 border-radius:10px;
