@@ -151,9 +151,13 @@ btn.style.display = "none";
         return `${h}:${m}:${s}`;
     };
 
-    const updateCountdown = () => {
+   const updateCountdown = () => {
 
-        feedback.innerHTML = `
+    const h = String(Math.floor(remaining / 3600)).padStart(2, "0");
+const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, "0");
+const s = String(remaining % 60).padStart(2, "0");
+
+feedback.innerHTML = `
 <div style="line-height:1.7">
 
 <strong style="display:block;color:#B45309;font-size:17px;font-weight:700;">
@@ -165,18 +169,53 @@ Please try again in
 </p>
 
 <div style="
-margin-top:10px;
-font-size:24px;
-font-weight:700;
-color:#3850D5;
-letter-spacing:1px;
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:16px;
 ">
-${formatTime(remaining)}
+
+<div style="
+width:72px;
+padding:12px 8px;
+border:1px solid #E2E8F0;
+border-radius:10px;
+background:#F8FAFC;
+text-align:center;
+">
+<div style="font-size:24px;font-weight:700;color:#3850D5;">${h}</div>
+<div style="font-size:11px;color:#64748B;">HRS</div>
+</div>
+
+<div style="
+width:72px;
+padding:12px 8px;
+border:1px solid #E2E8F0;
+border-radius:10px;
+background:#F8FAFC;
+text-align:center;
+">
+<div style="font-size:24px;font-weight:700;color:#3850D5;">${m}</div>
+<div style="font-size:11px;color:#64748B;">MIN</div>
+</div>
+
+<div style="
+width:72px;
+padding:12px 8px;
+border:1px solid #E2E8F0;
+border-radius:10px;
+background:#F8FAFC;
+text-align:center;
+">
+<div style="font-size:24px;font-weight:700;color:#3850D5;">${s}</div>
+<div style="font-size:11px;color:#64748B;">SEC</div>
+</div>
+
 </div>
 
 </div>
 `;
-    };
+};
 
     updateCountdown();
 
