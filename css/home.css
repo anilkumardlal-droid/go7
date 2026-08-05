@@ -485,8 +485,8 @@ body{
 @media (max-width:767.98px){
 
   .contain-box .container{
-    padding-left:36px !important;
-    padding-right:36px !important;
+    padding-left:32px !important;
+    padding-right:32px !important;
   }
 
   .contain-box .row{
