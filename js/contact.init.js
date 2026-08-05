@@ -166,7 +166,7 @@ Please try again in
 
 <div style="
 margin-top:10px;
-font-size:28px;
+font-size:24px;
 font-weight:700;
 color:#3850D5;
 letter-spacing:1px;
