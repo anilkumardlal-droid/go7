@@ -36,7 +36,10 @@ if (message.length < 20) {
 
     const btn = document.getElementById("contact-submit");
     btn.disabled = true;
-    btn.innerHTML = "Sending...";
+    btn.innerHTML = `
+<span class="spinner-border spinner-border-sm me-2"></span>
+Sending...
+`;
     btn.style.cursor = "not-allowed";
 
     try {
@@ -155,11 +158,11 @@ btn.style.cursor = "not-allowed";
 <div style="line-height:1.7">
 
 <strong style="display:block;color:#B45309;font-size:17px;font-weight:700;">
-⚠ You've reached the inquiry limit.
+⚠ Too many inquiry attempts.
 </strong>
 
 <p style="margin:14px 0 0;color:#64748B;">
-Please try again after
+Please try again in
 </p>
 
 <div style="
@@ -222,7 +225,11 @@ if (typeof turnstile !== "undefined") {
    } catch (err) {
     console.error(err);
 
-    const feedback = document.querySelector(".contact-feedback");
+if (typeof turnstile !== "undefined") {
+    turnstile.reset();
+}
+
+const feedback = document.querySelector(".contact-feedback");
 
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
