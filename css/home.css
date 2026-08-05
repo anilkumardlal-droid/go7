@@ -481,29 +481,28 @@ body{
     color:#64748B !important;
 }
 
-/* ==========================
-   Mobile Spacing Fix
-========================== */
 
-@media (max-width: 767.98px) {
+@media (max-width:767.98px){
 
-    .contain-box .container{
-        padding-left:28px !important;
-        padding-right:28px !important;
-    }
+  .contain-box .container{
+    padding-left:32px !important;
+    padding-right:32px !important;
+  }
 
-    .contain-box .row{
-        margin-left:0 !important;
-        margin-right:0 !important;
-    }
+  .contain-box .row{
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
 
-    .contain-box [class*="col-"]{
-        padding-left:0 !important;
-        padding-right:0 !important;
-    }
+  .contain-box .col-lg-6,
+  .contain-box .col-lg-5{
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
 
-    .contact-info{
-        padding:24px 20px !important;
-    }
+  .contact-info{
+    margin:0 !important;
+    width:100%;
+  }
 
 }
