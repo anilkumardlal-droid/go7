@@ -508,9 +508,10 @@ body{
     padding-right:0 !important;
   }
 
-  .contact-info{
+ .contact-info{
     margin:0 !important;
     width:100%;
-  }
+    padding:1.5rem !important;
+}
 
 }
