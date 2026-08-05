@@ -9,8 +9,6 @@ feedback.style.fontWeight = "";
 
 if (message.length < 20) {
 
-    const feedback = document.querySelector(".contact-feedback");
-
     feedback.style.color = "#B45309";
     feedback.style.fontWeight = "600";
 
@@ -22,8 +20,6 @@ if (message.length < 20) {
     const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
 
     if (!token) {
-
-    const feedback = document.querySelector(".contact-feedback");
 
     feedback.style.color = "#B45309";
     feedback.style.fontWeight = "600";
@@ -60,7 +56,6 @@ Sending...
         const data = await res.json();
 
         if (data.success) {
-        const feedback = document.querySelector(".contact-feedback");
 
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
@@ -126,8 +121,6 @@ if (seconds <= 0) {
 }, 1000);
 
 } else {
-
-    const feedback = document.querySelector(".contact-feedback");
 
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
@@ -236,8 +229,6 @@ if (typeof turnstile !== "undefined") {
     turnstile.reset();
 }
 
-const feedback = document.querySelector(".contact-feedback");
-
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
     feedback.style.opacity = "1";
@@ -246,6 +237,13 @@ const feedback = document.querySelector(".contact-feedback");
 
     feedback.innerHTML =
 '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Unable to send your inquiry. Please check your internet connection and try again.';
+    const turnstileBox = document.querySelector(".cf-turnstile");
+
+if (turnstileBox) {
+    turnstileBox.style.display = "";
+}
+
+btn.style.display = "";
     btn.disabled = false;
     btn.innerHTML = "Send Inquiry";
     btn.style.cursor = "pointer";
