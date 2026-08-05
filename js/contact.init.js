@@ -55,7 +55,11 @@ Sending...
 
         const data = await res.json();
 
-        if (data.success) {
+if (!res.ok && res.status !== 429) {
+    throw new Error(data.error || "Request failed");
+}
+
+if (data.success) {
 
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
