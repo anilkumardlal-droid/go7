@@ -172,7 +172,7 @@ padding:12px 8px;
 border:1px solid #E2E8F0;
 border-radius:10px;
 background:#F8FAFC;
-text-align:center;
+text-align:left;
 ">
 <div style="font-size:24px;font-weight:700;color:#3850D5;">${h}</div>
 <div style="font-size:11px;color:#64748B;">HRS</div>
@@ -184,7 +184,7 @@ padding:12px 8px;
 border:1px solid #E2E8F0;
 border-radius:10px;
 background:#F8FAFC;
-text-align:center;
+text-align:left;
 ">
 <div style="font-size:24px;font-weight:700;color:#3850D5;">${m}</div>
 <div style="font-size:11px;color:#64748B;">MIN</div>
@@ -196,7 +196,7 @@ padding:12px 8px;
 border:1px solid #E2E8F0;
 border-radius:10px;
 background:#F8FAFC;
-text-align:center;
+text-align:left;
 ">
 <div style="font-size:24px;font-weight:700;color:#3850D5;">${s}</div>
 <div style="font-size:11px;color:#64748B;">SEC</div>
