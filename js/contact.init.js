@@ -161,7 +161,8 @@ Please try again in
 
 <div style="
 display:flex;
-justify-content:center;
+justify-content:flex-start;
+align-items:flex-start;
 gap:10px;
 margin-top:16px;
 ">
