@@ -35,8 +35,9 @@ color:var(--text);
 display:flex;
 align-items:center;
 justify-content:center;
-padding:40px;
+padding:24px 40px;
 overflow-x:hidden;
+min-height:100vh;
 }
 
 .error-wrapper{
@@ -55,7 +56,7 @@ align-items:center;
 
 .right{
 flex:1;
-max-width:500px;
+max-width:540px;
 }
 
 @media(max-width:991px){
@@ -73,7 +74,7 @@ text-align:center;
 
 .left svg{
 width:100%;
-max-width:560px;
+max-width:620px;
 height:auto;
 }
 
@@ -82,7 +83,7 @@ max-width:100%;
 }
 
 }
-a:hover{
+.error-wrapper a:hover{
 background:var(--primary-hover) !important;
 color:#fff !important;
 transform:translateY(-2px);
@@ -102,8 +103,13 @@ width="560"
 height="430"
 viewBox="0 0 560 430"
 fill="none"
-xmlns="http://www.w3.org/2000/svg">
+xmlns="http://www.w3.org/2000/svg"
+role="img"
+aria-labelledby="error404title">
 
+<title id="error404title">
+404 Illustration
+</title>
 <defs>
 
 <linearGradient id="bgGradient" x1="0" y1="0" x2="560" y2="430">
@@ -210,6 +216,7 @@ y="330"
 text-anchor="middle"
 font-size="72"
 font-weight="800"
+font-family="Arial, sans-serif"
 fill="#3850D5">
 404
 </text>
@@ -229,6 +236,7 @@ y="181"
 text-anchor="middle"
 font-size="20"
 font-weight="700"
+font-family="Arial, sans-serif"
 fill="#3850D5">
 &lt;/&gt;
 </text>
@@ -338,10 +346,7 @@ font-size:17px;
 line-height:1.8;
 color:var(--text-light);
 margin-bottom:30px;
-">
-The page you are looking for may have been removed,
-renamed, or is temporarily unavailable.
-</p>
+">The page you're looking for may have been moved, deleted, or is temporarily unavailable.</p>
 
 <div style="
 display:flex;
@@ -378,7 +383,7 @@ font-weight:700;
 color:#3850D5;
 ">
 
-<span id="countdown">10</span> seconds
+<span id="countdown">10</span> second<span id="plural">s</span>
 
 </div>
 
@@ -415,10 +420,15 @@ const countdown = document.getElementById("countdown");
 
 const timer = setInterval(() => {
 
-seconds--;
+seconds = Math.max(0, seconds - 1);
 
 if (countdown) {
 countdown.textContent = seconds;
+const plural = document.getElementById("plural");
+
+if (plural) {
+    plural.style.display = seconds === 1 ? "none" : "";
+}
 }
 
 if (seconds <= 0) {
