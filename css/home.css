@@ -96,7 +96,7 @@
 .go7-content-loading .custom-form button,
 .go7-content-loading .custom-form .submitBnt,
 .go7-content-loading .live-dot,
-.go7-content-loading .cf-turnstile
+.go7-content-loading .cf-turnstile{
     position:relative;
     overflow:hidden;
 
@@ -153,7 +153,7 @@
 .go7-content-loading .btn::after,
 .go7-content-loading .custom-form button::after,
 .go7-content-loading .custom-form .submitBnt::after,
-.go7-content-loading .live-dot::after
+.go7-content-loading .live-dot::after{
     content:"";
     position:absolute;
     inset:0;
