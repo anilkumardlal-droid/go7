@@ -1,0 +1,483 @@
+.header .float-end a{
+    font-weight:700 !important;
+}
+
+.contact-info{
+    padding:1.5rem 1.5rem 1rem 1.5rem !important;
+}
+
+
+.navbar-brand img{
+    height:40px !important;
+    width:auto;
+}
+
+.navbar-nav .nav-link{
+    color:#0d0d0d !important;
+    font-weight:600;
+    padding:.75rem 1rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color:#3850d5 !important;
+}
+
+
+@media (max-width:767.98px){
+
+    .navbar-brand img{
+    height:34px !important;
+}
+
+.navbar-collapse{
+    margin-top:12px;
+    background:#ffffff !important;
+    border:1px solid #ececec;
+    border-radius:12px;
+    padding:12px 18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    z-index:9999;
+}
+
+}
+
+
+
+.offer-status{
+    display:inline-block !important;
+    font-weight:700 !important;
+    background:linear-gradient(
+        90deg,
+        #0EA5E9 0%,
+        #7DD3FC 35%,
+        #FFFFFF 50%,
+        #7DD3FC 65%,
+        #0EA5E9 100%
+    );
+    background-size:250% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    animation:offerShine 4.5s linear infinite !important;
+}
+
+@keyframes offerShine{
+    from{
+        background-position:200% center;
+    }
+    to{
+        background-position:-200% center;
+    }
+}
+
+/* =================================
+   GO7 Main Content Skeleton Loader
+================================= */
+
+
+/* =================================
+   Main Skeleton Elements
+================================= */
+
+.go7-content-loading h1,
+.go7-content-loading h2,
+.go7-content-loading h3,
+.go7-content-loading h4,
+.go7-content-loading h5,
+.go7-content-loading p,
+.go7-content-loading .form-control,
+.go7-content-loading .btn,
+.go7-content-loading .live-dot,
+.go7-content-loading .cf-turnstile{
+    position:relative;
+    overflow:hidden;
+
+    color:transparent !important;
+    background:#F1F3F6 !important;
+    border-color:transparent !important;
+
+    border-radius:6px;
+    box-shadow:none !important;
+
+    user-select:none;
+}
+
+
+/* =================================
+   Hide Actual Content
+================================= */
+
+.go7-content-loading i{
+    visibility:hidden !important;
+}
+
+.go7-content-loading input::placeholder,
+.go7-content-loading textarea::placeholder{
+    color:transparent !important;
+}
+
+
+/* =================================
+   Prevent Interaction
+================================= */
+
+.go7-content-loading input,
+.go7-content-loading textarea,
+.go7-content-loading button,
+.go7-content-loading .btn,
+.go7-content-loading a{
+    pointer-events:none !important;
+}
+
+
+/* =================================
+   Skeleton Shimmer
+================================= */
+
+.go7-content-loading h1::after,
+.go7-content-loading h2::after,
+.go7-content-loading h3::after,
+.go7-content-loading h4::after,
+.go7-content-loading h5::after,
+.go7-content-loading p::after,
+.go7-content-loading .form-control::after,
+.go7-content-loading .btn::after,
+.go7-content-loading .live-dot::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    transform:translateX(-100%);
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.75),
+        transparent
+    );
+
+    animation:go7Skeleton 1.4s linear infinite;
+}
+
+
+@keyframes go7Skeleton{
+
+    100%{
+        transform:translateX(100%);
+    }
+
+}
+
+
+/* =================================
+   Form Skeleton
+================================= */
+
+.go7-content-loading .form-control{
+    min-height:45px;
+}
+
+.go7-content-loading textarea.form-control{
+    min-height:110px;
+}
+
+
+/* =================================
+   Cloudflare Turnstile Skeleton
+================================= */
+
+.go7-content-loading .cf-turnstile{
+    position:relative !important;
+
+    width:300px !important;
+    max-width:100% !important;
+    height:65px !important;
+
+    background:#F1F3F6 !important;
+
+    border:none !important;
+    border-radius:6px !important;
+
+    overflow:hidden !important;
+}
+
+
+/* Hide everything Cloudflare creates */
+
+.go7-content-loading .cf-turnstile > *{
+    visibility:hidden !important;
+    opacity:0 !important;
+}
+
+
+/* Extra protection for Turnstile iframe */
+
+.go7-content-loading .cf-turnstile iframe{
+    visibility:hidden !important;
+    opacity:0 !important;
+    display:block !important;
+}
+
+
+/* Turnstile Shimmer */
+
+.go7-content-loading .cf-turnstile::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    z-index:9999;
+
+    transform:translateX(-100%);
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.75),
+        transparent
+    );
+
+    animation:go7Skeleton 1.4s linear infinite;
+
+    pointer-events:none;
+}
+
+
+/* =================================
+   Button Skeleton
+================================= */
+
+.go7-content-loading .submitBnt{
+    min-width:145px;
+    min-height:42px;
+}
+
+
+/* =================================
+   Hide Offer Status While Loading
+================================= */
+
+.go7-content-loading .offer-status{
+    visibility:hidden !important;
+    animation:none !important;
+}
+
+.go7-content-loading .live-dot{
+
+    position:relative;
+    overflow:hidden;
+
+    background:#F1F3F6 !important;
+
+    box-shadow:none !important;
+
+    animation:none !important;
+
+}
+
+
+/* =================================
+   Loading Finish
+================================= */
+
+#go7Content{
+    transition:opacity .3s ease;
+}
+
+/* ==========================================================
+   GO7 Premium Hero Background (CSS Only)
+========================================================== */
+
+body{
+    background:#FCFCFC !important;
+}
+
+.contain-box{
+    position:relative;
+    overflow:hidden;
+}
+
+/* Main Pattern */
+
+.contain-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='42'%3E%3Ctext x='8' y='27' fill='%23BCC3CC' fill-opacity='0.22' font-size='20' font-family='Arial'%3EGO7%3C/text%3E%3C/svg%3E"),
+
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='42'%3E%3Ctext x='8' y='27' fill='%23BCC3CC' fill-opacity='0.22' font-size='20' font-family='Arial'%3EGO7%3C/text%3E%3C/svg%3E");
+
+    background-repeat:repeat,repeat;
+
+    /* First Grid */
+    background-position:
+        0 0,
+
+        /* Second Grid (Offset) */
+        60px 21px;
+
+    background-size:
+        120px 42px,
+        120px 42px;
+
+    mask-image:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.95) 0%,
+        rgba(0,0,0,.78) 25%,
+        rgba(0,0,0,.55) 50%,
+        rgba(0,0,0,.28) 72%,
+        transparent 100%
+    );
+
+    -webkit-mask-image:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.95) 0%,
+        rgba(0,0,0,.78) 25%,
+        rgba(0,0,0,.55) 50%,
+        rgba(0,0,0,.28) 72%,
+        transparent 100%
+    );
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+/* Soft Light */
+
+.contain-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(circle at 15% 20%,rgba(255,255,255,.18),transparent 30%),
+
+        radial-gradient(circle at 85% 15%,rgba(255,255,255,.14),transparent 30%),
+
+        radial-gradient(circle at 50% 70%,rgba(255,255,255,.08),transparent 42%);
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+/* Hero Content */
+
+.home-center,
+.home-desc-center,
+.container,
+.row{
+
+    position:relative;
+    z-index:2;
+
+}
+
+@media (min-width:200px) and (max-width:768px){
+
+    .contain-box{
+        padding:90px 0 20px !important;
+    }
+
+}
+
+.live-dot{
+    display:inline-block;
+
+    width:0.9em;
+    height:0.9em;
+
+    min-width:0.9em;
+
+    margin-right:0.45em;
+
+    border-radius:50%;
+
+    background:#22C55E;
+
+    box-shadow:0 0 0 .18em rgba(34,197,94,.18);
+
+    animation:livePulse 2s infinite;
+
+    vertical-align:middle;
+
+    transform:translateY(-0.05em);
+}
+
+@keyframes livePulse{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(34,197,94,.45);
+    }
+
+    70%{
+        box-shadow:0 0 0 .45em rgba(34,197,94,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(34,197,94,0);
+    }
+
+}
+
+.response-info{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.response-info .separator{
+    color:#94A3B8;
+}
+
+@media (max-width:767.98px){
+
+    .response-info{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+    }
+
+    .response-info .separator{
+        display:none;
+    }
+
+}
+
+.text-muted {
+    color: #202124 !important;
+}
+
+.custom-form .form-control{
+    color:#202124;
+}
+
+.custom-form .form-control::placeholder{
+    color:#94A3B8;
+    opacity:1;
+}
+
+.footer,
+.footer p,
+.footer small,
+.footer a{
+    color:#64748B !important;
+}
