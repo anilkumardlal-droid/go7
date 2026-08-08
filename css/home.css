@@ -481,3 +481,33 @@ body{
 .footer a{
     color:#64748B !important;
 }
+
+.domain-transfer-banner-wrap {
+    width: 700px;
+    max-width: 100%;
+    margin: 22px auto 0;
+    overflow: hidden;
+}
+
+.domain-transfer-banner-wrap iframe {
+    display: block;
+    width: 700px;
+    height: 90px;
+    max-width: 100%;
+    border: 0;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .domain-transfer-banner-wrap {
+        width: 300px;
+        max-width: 100%;
+        margin: 22px auto 0;
+    }
+
+    .domain-transfer-banner-wrap iframe {
+        width: 300px;
+        height: 250px;
+        max-width: 100%;
+    }
+}
