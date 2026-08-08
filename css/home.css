@@ -91,9 +91,12 @@
 .go7-content-loading h5,
 .go7-content-loading p,
 .go7-content-loading .form-control,
+.go7-content-loading .custom-form .form-control,
 .go7-content-loading .btn,
+.go7-content-loading .custom-form button,
+.go7-content-loading .custom-form .submitBnt,
 .go7-content-loading .live-dot,
-.go7-content-loading .cf-turnstile{
+.go7-content-loading .cf-turnstile
     position:relative;
     overflow:hidden;
 
@@ -146,8 +149,11 @@
 .go7-content-loading h5::after,
 .go7-content-loading p::after,
 .go7-content-loading .form-control::after,
+.go7-content-loading .custom-form .form-control::after,
 .go7-content-loading .btn::after,
-.go7-content-loading .live-dot::after{
+.go7-content-loading .custom-form button::after,
+.go7-content-loading .custom-form .submitBnt::after,
+.go7-content-loading .live-dot::after
     content:"";
     position:absolute;
     inset:0;
@@ -253,7 +259,8 @@
    Button Skeleton
 ================================= */
 
-.go7-content-loading .submitBnt{
+.go7-content-loading .submitBnt,
+.go7-content-loading .custom-form button{
     min-width:145px;
     min-height:42px;
 }
