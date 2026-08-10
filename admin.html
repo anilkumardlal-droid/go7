@@ -320,10 +320,10 @@ textarea.form-control{min-height:120px;resize:vertical}
           <div class="toggle-row"><div><strong style="font-size:13px">Secure session</strong><div style="font-size:11px;color:#94a3b8;margin-top:3px">Protected admin sessions</div></div><button class="toggle on" onclick="toast('Secure sessions will connect to Worker auth')"></button></div>
         </div>
         <div class="card setting-card">
-          <h3>System</h3><p>Current frontend configuration.</p>
+          <h3>System</h3><p>Current GO7 Admin API configuration.</p>
           <div class="detail-row"><span class="detail-label">Environment</span><strong>Frontend Preview</strong></div>
-          <div class="detail-row"><span class="detail-label">API</span><strong>Not connected</strong></div>
-          <div class="detail-row"><span class="detail-label">Database</span><strong>Cloudflare D1 — pending</strong></div>
+          <div class="detail-row"><span class="detail-label">API</span><strong>Connected</strong></div>
+          <div class="detail-row"><span class="detail-label">Database</span><strong>Cloudflare D1</strong></div>
         </div>
       </div>
     </section>
@@ -456,28 +456,46 @@ function updateApiInfo(){
   els.forEach(el => el.textContent = `API connected • ${apiTotal} total inquiries`);
 }
 
+function escapeHtml(value){
+  return String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function escapeAttr(value){
+  return escapeHtml(value);
+}
+
 function statusClass(s){return s==="New"?"new":s==="In Progress"?"progress":s==="Replied"?"replied":"closed"}
 function renderTable(){
- const q=document.getElementById('searchInput').value.toLowerCase();
- const filter=document.getElementById('statusFilter').value;
- const rows=inquiries.filter(x=>(filter==='all'||x.status===filter)&&(`${x.name} ${x.email} ${x.message}`.toLowerCase().includes(q)));
+ const search=document.getElementById('searchInput');
+ const status=document.getElementById('statusFilter');
+ const q=(search?.value || '').toLowerCase();
+ const filter=status?.value || 'all';
+ const rows=inquiries.filter(x=>
+   (filter==='all'||x.status===filter) &&
+   (`${x.name} ${x.email} ${x.message}`.toLowerCase().includes(q))
+ );
  document.getElementById('resultCount').textContent=`${rows.length} inquiries`;
  document.getElementById('inquiryTable').innerHTML=rows.map(x=>`
  <tr>
-  <td><strong>${x.name}</strong><br><span style="font-size:11px;color:#94a3b8">${x.email}</span></td>
-  <td style="max-width:220px"><strong>${x.subject}</strong></td>
-  <td><strong>${x.id}</strong></td>
-  <td style="white-space:nowrap">${x.date}</td>
-  <td><span class="status ${statusClass(x.status)}">${x.status}</span></td>
-  <td><div class="actions"><button class="small-btn" onclick="openInquiry('${x.id}')">View</button></div></td>
+  <td><strong>${escapeHtml(x.name)}</strong><br><span style="font-size:11px;color:#94a3b8">${escapeHtml(x.email)}</span></td>
+  <td style="max-width:220px"><strong>${escapeHtml(x.subject)}</strong></td>
+  <td><strong>${escapeHtml(x.id)}</strong></td>
+  <td style="white-space:nowrap">${escapeHtml(x.date)}</td>
+  <td><span class="status ${statusClass(x.status)}">${escapeHtml(x.status)}</span></td>
+  <td><div class="actions"><button class="small-btn view-inquiry" data-inquiry-id="${escapeAttr(x.id)}">View</button></div></td>
  </tr>`).join('') || `<tr><td colspan="6"><div class="empty">No inquiries found.</div></td></tr>`;
 }
 function renderRecent(){
  document.getElementById('recentList').innerHTML=inquiries.slice(0,5).map(x=>`
  <div class="activity-row">
   <span class="activity-dot"></span>
-  <div><strong>${x.name} · ${x.subject}</strong><p>${x.message.slice(0,72)}${x.message.length>72?'…':''}</p></div>
-  <span class="activity-time">${x.date.split(',')[0]}</span>
+  <div><strong>${escapeHtml(x.name)} · ${escapeHtml(x.subject)}</strong><p>${escapeHtml(x.message.slice(0,72))}${x.message.length>72?'…':''}</p></div>
+  <span class="activity-time">${escapeHtml(x.date.split(',')[0])}</span>
  </div>`).join('');
 }
 function updateStats(){
@@ -521,26 +539,37 @@ function showPage(page){
  window.scrollTo({top:0,behavior:'smooth'});
 }
 function openInquiry(id){
- const x=inquiries.find(i=>i.id===id); if(!x)return;
- currentId=id;
- document.getElementById('drawerTitle').textContent=x.name;
+ const x=inquiries.find(i=>String(i.id)===String(id));
+ if(!x) return;
+
+ currentId=x.id;
+ document.getElementById('drawerTitle').textContent=x.name || 'Inquiry';
  document.getElementById('drawerSubtitle').textContent=`Inquiry #${x.id} · ${x.date}`;
  document.getElementById('drawerBody').innerHTML=`
-  <div class="form-group"><label>Status</label><select class="form-control" id="drawerStatus" onchange="changeStatus(this.dataset.id,this.value)" data-id="${x.id}"><option ${x.status==='New'?'selected':''}>New</option><option ${x.status==='In Progress'?'selected':''}>In Progress</option><option ${x.status==='Replied'?'selected':''}>Replied</option><option ${x.status==='Closed'?'selected':''}>Closed</option></select></div>
-  <div class="detail-row"><span class="detail-label">Name</span><strong>${x.name}</strong></div>
-  <div class="detail-row"><span class="detail-label">Email</span><strong>${x.email}</strong></div>
-  <div class="detail-row"><span class="detail-label">Subject</span><strong>${x.subject}</strong></div>
-  <div class="detail-row"><span class="detail-label">Inquiry ID</span><strong>${x.id}</strong></div>
-  <div class="detail-row"><span class="detail-label">Date & Time</span><span>${x.date}</span></div>
-  <div class="detail-row"><span class="detail-label">IP Address</span><strong>${x.ip}</strong></div>
-  <div class="detail-row"><span class="detail-label">Country</span><span>${x.country}</span></div>
-  <div class="detail-row"><span class="detail-label">City</span><span>${x.city}</span></div>
-  <div class="detail-row"><span class="detail-label">Region</span><span>${x.region}</span></div>
-  <div class="detail-row"><span class="detail-label">Device</span><span>${x.device}</span></div>
-  <div class="detail-row"><span class="detail-label">Browser</span><span>${x.browser}</span></div>
-  <div class="detail-row"><span class="detail-label">Timezone</span><span>${x.timezone}</span></div>
-  <div class="form-group" style="margin-top:20px"><label>Message</label><div class="message-box">${x.message}</div></div>
+  <div class="form-group">
+   <label>Status</label>
+   <select class="form-control" id="drawerStatus" data-id="${escapeAttr(x.id)}">
+    <option ${x.status==='New'?'selected':''}>New</option>
+    <option ${x.status==='In Progress'?'selected':''}>In Progress</option>
+    <option ${x.status==='Replied'?'selected':''}>Replied</option>
+    <option ${x.status==='Closed'?'selected':''}>Closed</option>
+   </select>
+  </div>
+  <div class="detail-row"><span class="detail-label">Name</span><strong>${escapeHtml(x.name)}</strong></div>
+  <div class="detail-row"><span class="detail-label">Email</span><strong>${escapeHtml(x.email)}</strong></div>
+  <div class="detail-row"><span class="detail-label">Subject</span><strong>${escapeHtml(x.subject)}</strong></div>
+  <div class="detail-row"><span class="detail-label">Inquiry ID</span><strong>${escapeHtml(x.id)}</strong></div>
+  <div class="detail-row"><span class="detail-label">Date & Time</span><span>${escapeHtml(x.date)}</span></div>
+  <div class="detail-row"><span class="detail-label">IP Address</span><strong>${escapeHtml(x.ip)}</strong></div>
+  <div class="detail-row"><span class="detail-label">Country</span><span>${escapeHtml(x.country)}</span></div>
+  <div class="detail-row"><span class="detail-label">City</span><span>${escapeHtml(x.city)}</span></div>
+  <div class="detail-row"><span class="detail-label">Region</span><span>${escapeHtml(x.region)}</span></div>
+  <div class="detail-row"><span class="detail-label">Device</span><span>${escapeHtml(x.device)}</span></div>
+  <div class="detail-row"><span class="detail-label">Browser</span><span>${escapeHtml(x.browser)}</span></div>
+  <div class="detail-row"><span class="detail-label">Timezone</span><span>${escapeHtml(x.timezone)}</span></div>
+  <div class="form-group" style="margin-top:20px"><label>Message</label><div class="message-box">${escapeHtml(x.message)}</div></div>
   <div class="form-group"><label>Internal note</label><textarea class="form-control" placeholder="Add a private note..."></textarea></div>`;
+
  document.getElementById('overlay').classList.add('show');
  document.getElementById('drawer').classList.add('show');
 }
@@ -562,6 +591,19 @@ function exportCSV(){
  toast('CSV exported');
 }
 document.querySelectorAll('.nav button[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+
+document.getElementById('inquiryTable').addEventListener('click', event=>{
+ const btn=event.target.closest('.view-inquiry');
+ if(!btn) return;
+ openInquiry(btn.dataset.inquiryId);
+});
+
+document.getElementById('drawerBody').addEventListener('change', event=>{
+ if(event.target.id==='drawerStatus'){
+   changeStatus(event.target.dataset.id,event.target.value);
+ }
+});
+
 document.getElementById('searchInput').addEventListener('input',renderTable);
 document.getElementById('statusFilter').addEventListener('change',renderTable);
 document.getElementById('overlay').addEventListener('click',closeDrawer);
@@ -569,7 +611,11 @@ document.getElementById('mobileMenu').addEventListener('click',()=>document.getE
 document.getElementById('refreshBtn').addEventListener('click',()=>loadInquiries());
 document.getElementById('notificationBtn').addEventListener('click',()=>toast('No new notifications'));
 document.getElementById('logoutBtn').addEventListener('click',()=>{clearApiKey();showApiKeyPrompt('API key removed from this browser session.');});
-renderTable();renderRecent();updateStats();loadInquiries();
+
+renderTable();
+renderRecent();
+updateStats();
+loadInquiries();
 </script>
 </body>
 </html>
