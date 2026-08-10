@@ -60,6 +60,9 @@ a{text-decoration:none;color:inherit}
 .top-actions{display:flex;align-items:center;gap:9px}
 .icon-btn{border:1px solid var(--border);background:#fff;width:38px;height:38px;border-radius:9px;display:grid;place-items:center;color:#64748b}
 .icon-btn:hover{border-color:#cbd2e1;color:var(--brand)}
+.icon-btn:disabled{opacity:.65;cursor:not-allowed}
+.icon-btn.refreshing svg{animation:go7spin .75s linear infinite}
+@keyframes go7spin{to{transform:rotate(360deg)}}
 .content{padding:30px;max-width:1500px;margin:auto}
 .page{display:none}
 .page.active{display:block}
@@ -181,6 +184,7 @@ textarea.form-control{min-height:120px;resize:vertical}
 
 /* Authentication */
 body.auth-loading .app{visibility:hidden}
+body.auth-loading .login-screen{display:none !important}
 .login-screen{position:fixed;inset:0;background:rgba(247,248,251,.98);z-index:1000;display:grid;place-items:center;padding:20px}
 .login-card{width:min(420px,100%);background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 20px 60px rgba(15,23,42,.12);padding:28px}
 .login-brand{display:flex;align-items:center;gap:11px;margin-bottom:24px}
@@ -422,6 +426,8 @@ async function apiFetch(path, options={}){
 }
 
 async function checkSession(){
+  // Keep the dashboard hidden until the existing session is checked.
+  document.body.classList.add("auth-loading");
   try{
     const data = await apiFetch("/api/session", {method:"GET"});
     if(data.authenticated){
@@ -497,6 +503,30 @@ async function loadInquiries(){
       console.error("GO7 Admin API error:", error);
       toast(error.message || "Unable to load inquiries");
     }
+  }
+}
+
+
+async function refreshDashboard(){
+  if(!authenticated){
+    await checkSession();
+    return;
+  }
+
+  const btn = document.getElementById("refreshBtn");
+  if(btn.dataset.refreshing === "1") return;
+
+  btn.dataset.refreshing = "1";
+  btn.disabled = true;
+  btn.classList.add("refreshing");
+
+  try{
+    await loadInquiries();
+    toast("Dashboard refreshed");
+  }finally{
+    btn.classList.remove("refreshing");
+    btn.disabled = false;
+    btn.dataset.refreshing = "0";
   }
 }
 
@@ -643,7 +673,7 @@ document.getElementById("searchInput").addEventListener("input",renderTable);
 document.getElementById("statusFilter").addEventListener("change",renderTable);
 document.getElementById("overlay").addEventListener("click",closeDrawer);
 document.getElementById("mobileMenu").addEventListener("click",()=>document.getElementById("sidebar").classList.toggle("open"));
-document.getElementById("refreshBtn").addEventListener("click",()=>loadInquiries());
+document.getElementById("refreshBtn").addEventListener("click",refreshDashboard);
 document.getElementById("notificationBtn").addEventListener("click",()=>toast("No new notifications"));
 document.getElementById("logoutBtn").addEventListener("click",logout);
 
