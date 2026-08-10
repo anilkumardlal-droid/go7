@@ -215,6 +215,18 @@ body.auth-loading .login-screen{display:none !important}
       <input class="form-control" id="loginUsername" name="username" type="text" autocomplete="username" placeholder="Admin username" required>
       <label for="loginPassword">Password</label>
       <input class="form-control" id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Admin password" required>
+
+      <div id="otpWrap" style="display:none">
+        <label for="loginOtp">Authenticator code</label>
+        <input class="form-control" id="loginOtp" name="otp" type="text"
+               inputmode="numeric" autocomplete="one-time-code"
+               maxlength="6" pattern="[0-9]{6}"
+               placeholder="6-digit code">
+        <div style="font-size:12px;color:#64748b;margin-top:6px">
+          Enter the 6-digit code from your authenticator app.
+        </div>
+      </div>
+
       <button class="primary login-submit" id="loginSubmit" type="submit">Sign in</button>
     </form>
     <div class="login-help">Protected by GO7 Admin API • Secure session</div>
@@ -396,8 +408,20 @@ function setAuthState(isAuthenticated){
 
 function showLogin(message=""){
   const box = document.getElementById("loginError");
+  const otpWrap = document.getElementById("otpWrap");
+  const otpInput = document.getElementById("loginOtp");
+
   box.textContent = message;
   box.classList.toggle("show", !!message);
+
+  if(otpWrap){
+    otpWrap.style.display = "none";
+  }
+  if(otpInput){
+    otpInput.value = "";
+    otpInput.required = false;
+  }
+
   document.getElementById("loginScreen").style.display = "grid";
   document.body.classList.remove("auth-loading");
   setTimeout(()=>document.getElementById("loginUsername")?.focus(),50);
@@ -446,31 +470,71 @@ async function checkSession(){
 async function login(username,password){
   const submit = document.getElementById("loginSubmit");
   const errorBox = document.getElementById("loginError");
+  const otpWrap = document.getElementById("otpWrap");
+  const otpInput = document.getElementById("loginOtp");
+
   submit.disabled = true;
   submit.textContent = "Signing in…";
   errorBox.classList.remove("show");
+
   try{
+    const otp = otpWrap && otpWrap.style.display !== "none"
+      ? String(otpInput.value || "").replace(/\D/g,"").slice(0,6)
+      : "";
+
     const data = await apiFetch("/api/login", {
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({username,password})
+      body:JSON.stringify({username,password,otp})
     });
-    if(!data.success) throw new Error(data.error || "Unable to login");
+
+    // First step: password accepted, OTP required.
+    if(data.two_factor_required){
+      otpWrap.style.display = "block";
+      otpInput.required = true;
+      submit.textContent = "Verify & Sign in";
+      otpInput.focus();
+      errorBox.textContent = "Password verified. Enter your 6-digit authenticator code.";
+      errorBox.classList.add("show");
+      return;
+    }
+
+    if(!data.success){
+      throw new Error(data.error || "Unable to login");
+    }
+
     authenticated = true;
     hideLogin();
     apiPage = 1;
     await loadInquiries();
     toast("Login successful");
+
   }catch(error){
     console.error("Login:",error);
-    errorBox.textContent = error.message === "Unauthorized" ? "Login failed. Please check your username and password." : (error.message || "Unable to login");
+    errorBox.textContent =
+      error.message === "Unauthorized"
+        ? "Invalid username, password, or 2FA code."
+        : (error.message || "Unable to login");
     errorBox.classList.add("show");
+
+    // Keep OTP visible after a failed OTP attempt.
+    if(otpWrap && otpWrap.style.display !== "none"){
+      otpInput.focus();
+      otpInput.select();
+    }
+
   }finally{
     submit.disabled = false;
-    submit.textContent = "Sign in";
+
+    const otpVisible =
+      otpWrap && otpWrap.style.display !== "none";
+
+    submit.textContent =
+      otpVisible
+        ? "Verify & Sign in"
+        : "Sign in";
   }
 }
-
 async function logout(){
   try{
     await apiFetch("/api/logout", {method:"POST"});
@@ -662,9 +726,12 @@ function exportCSV(){
   const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="go7-inquiries.csv";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast("CSV exported");
 }
 
-document.getElementById("loginForm").addEventListener("submit",e=>{
+document.getElementById("loginForm").addEventListener("submit", e => {
   e.preventDefault();
-  login(document.getElementById("loginUsername").value.trim(),document.getElementById("loginPassword").value);
+  login(
+    document.getElementById("loginUsername").value.trim(),
+    document.getElementById("loginPassword").value
+  );
 });
 document.querySelectorAll(".nav button[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
 document.getElementById("inquiryTable").addEventListener("click",event=>{const btn=event.target.closest(".view-inquiry");if(btn)openInquiry(btn.dataset.inquiryId);});
