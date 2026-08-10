@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO7 Admin Dashboard</title>
+<style>
+:root{
+  --brand:#3850D5;
+  --brand-dark:#2f43b8;
+  --bg:#f7f8fb;
+  --card:#fff;
+  --text:#202124;
+  --muted:#64748b;
+  --border:#e7e9ef;
+  --sidebar:#fff;
+  --success:#16a34a;
+  --warning:#d97706;
+  --danger:#dc2626;
+  --info:#2563eb;
+  --shadow:0 8px 30px rgba(15,23,42,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--bg)}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+.app{min-height:100vh}
+.sidebar{
+  position:fixed;inset:0 auto 0 0;width:250px;background:var(--sidebar);
+  border-right:1px solid var(--border);padding:22px 16px;z-index:50;
+  display:flex;flex-direction:column;
+}
+.brand{display:flex;align-items:center;gap:11px;padding:4px 10px 28px}
+.brand-mark{width:40px;height:40px;border-radius:11px;background:var(--brand);display:grid;place-items:center;color:#fff;font-weight:800;font-size:17px;letter-spacing:-.05em}
+.brand-name{font-size:19px;font-weight:750;letter-spacing:-.03em}
+.brand-name span{font-weight:500;color:var(--muted)}
+.nav-title{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#94a3b8;font-weight:700;padding:8px 12px}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav button{
+  border:0;background:transparent;color:#64748b;width:100%;text-align:left;
+  display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:9px;font-weight:600;
+}
+.nav button:hover{background:#f3f5ff;color:var(--brand)}
+.nav button.active{background:#eef1ff;color:var(--brand)}
+.nav svg{width:19px;height:19px;flex:none}
+.sidebar-bottom{margin-top:auto}
+.admin-mini{display:flex;align-items:center;gap:10px;padding:12px;border-top:1px solid var(--border);margin-top:12px}
+.avatar{width:36px;height:36px;border-radius:50%;background:#e8ecff;color:var(--brand);display:grid;place-items:center;font-size:13px;font-weight:800}
+.admin-mini strong{display:block;font-size:13px}
+.admin-mini small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.main{margin-left:250px;min-height:100vh}
+.topbar{
+  height:72px;background:rgba(255,255,255,.94);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);
+}
+.top-left{display:flex;align-items:center;gap:12px}
+.page-title{font-size:18px;font-weight:750;letter-spacing:-.02em}
+.mobile-menu{display:none;border:0;background:#f3f4f6;width:38px;height:38px;border-radius:9px}
+.top-actions{display:flex;align-items:center;gap:9px}
+.icon-btn{border:1px solid var(--border);background:#fff;width:38px;height:38px;border-radius:9px;display:grid;place-items:center;color:#64748b}
+.icon-btn:hover{border-color:#cbd2e1;color:var(--brand)}
+.content{padding:30px;max-width:1500px;margin:auto}
+.page{display:none}
+.page.active{display:block}
+.welcome{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:23px}
+.welcome h1{margin:0;font-size:27px;letter-spacing:-.035em}
+.welcome p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.primary{border:0;background:var(--brand);color:#fff;padding:11px 16px;border-radius:9px;font-weight:700;box-shadow:0 4px 12px rgba(56,80,213,.18)}
+.primary:hover{background:var(--brand-dark)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow)}
+.stat{padding:19px}
+.stat-top{display:flex;justify-content:space-between;align-items:center}
+.stat-label{font-size:13px;color:var(--muted);font-weight:600}
+.stat-icon{width:38px;height:38px;border-radius:10px;background:#f1f4ff;color:var(--brand);display:grid;place-items:center}
+.stat-value{font-size:28px;font-weight:780;letter-spacing:-.04em;margin-top:12px}
+.stat-note{font-size:12px;color:var(--muted);margin-top:5px}
+.stat-note strong{color:var(--success)}
+.grid-2{display:grid;grid-template-columns:1.55fr 1fr;gap:18px}
+.section-card{padding:20px}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}
+.section-head h2{font-size:16px;margin:0;letter-spacing:-.02em}
+.link-btn{border:0;background:none;color:var(--brand);font-weight:700;font-size:13px}
+.activity{display:flex;flex-direction:column}
+.activity-row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid #f0f1f4}
+.activity-row:last-child{border-bottom:0}
+.activity-dot{width:9px;height:9px;border-radius:50%;margin-top:5px;background:var(--brand);flex:none}
+.activity-row strong{font-size:13px}
+.activity-row p{margin:3px 0 0;color:var(--muted);font-size:12px}
+.activity-time{margin-left:auto;color:#94a3b8;font-size:11px;white-space:nowrap}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quick button{border:1px solid var(--border);background:#fff;border-radius:10px;padding:14px;text-align:left;color:#334155;font-weight:700}
+.quick button:hover{border-color:#cbd4ff;background:#f8f9ff;color:var(--brand)}
+.quick small{display:block;color:var(--muted);font-weight:500;margin-top:4px}
+.table-card{overflow:hidden}
+.table-toolbar{padding:17px 20px;border-bottom:1px solid var(--border);display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.toolbar-left{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.search{position:relative}
+.search input{width:250px;height:40px;border:1px solid var(--border);border-radius:9px;padding:0 13px 0 38px;outline:none;background:#fff}
+.search svg{position:absolute;left:12px;top:11px;width:17px;color:#94a3b8}
+.select{height:40px;border:1px solid var(--border);border-radius:9px;padding:0 11px;background:#fff;color:#475569;outline:none}
+.table-wrap{overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:850px}
+th,td{padding:14px 20px;text-align:left;border-bottom:1px solid #f0f1f4;font-size:13px}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#94a3b8;background:#fafbfc;font-weight:750}
+td{color:#334155}
+td strong{color:#202124}
+.status{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:750}
+.status:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.status.new{color:var(--info);background:#eff6ff}
+.status.progress{color:var(--warning);background:#fff7ed}
+.status.replied{color:var(--success);background:#f0fdf4}
+.status.closed{color:#64748b;background:#f1f5f9}
+.actions{display:flex;gap:6px}
+.small-btn{border:1px solid var(--border);background:#fff;border-radius:7px;padding:7px 9px;color:#64748b;font-size:12px;font-weight:650}
+.small-btn:hover{color:var(--brand);border-color:#cbd4ff}
+.pagination{padding:13px 20px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
+.pager{display:flex;gap:5px}
+.pager button{border:1px solid var(--border);background:#fff;border-radius:7px;width:32px;height:30px}
+.pager button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.empty{padding:50px 20px;text-align:center;color:var(--muted)}
+.detail-layout{display:grid;grid-template-columns:1.5fr .8fr;gap:18px}
+.detail-card{padding:22px}
+.detail-head{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:18px}
+.detail-head h2{margin:0;font-size:19px}
+.detail-head p{margin:5px 0 0;color:var(--muted);font-size:12px}
+.detail-row{display:grid;grid-template-columns:130px 1fr;gap:15px;padding:12px 0;border-bottom:1px solid #f1f2f5;font-size:13px}
+.detail-row:last-child{border-bottom:0}
+.detail-label{color:#94a3b8;font-weight:650}
+.message-box{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:15px;line-height:1.7;color:#334155;font-size:13px;white-space:pre-wrap}
+.form-group{margin-bottom:15px}
+.form-group label{display:block;font-size:12px;font-weight:700;color:#475569;margin-bottom:7px}
+.form-control{width:100%;border:1px solid var(--border);border-radius:9px;padding:10px 11px;outline:none;background:#fff;color:#202124}
+textarea.form-control{min-height:120px;resize:vertical}
+.form-control:focus{border-color:#aeb9f5;box-shadow:0 0 0 3px rgba(56,80,213,.08)}
+.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.setting-card{padding:21px}
+.setting-card h3{font-size:15px;margin:0 0 5px}
+.setting-card p{font-size:12px;color:var(--muted);margin:0 0 18px;line-height:1.6}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-top:1px solid #f0f1f4}
+.toggle{width:40px;height:22px;border-radius:20px;background:#cbd5e1;position:relative;border:0}
+.toggle.on{background:var(--brand)}
+.toggle:after{content:"";position:absolute;width:16px;height:16px;border-radius:50%;background:#fff;top:3px;left:3px;transition:.2s}
+.toggle.on:after{left:21px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.42);z-index:80}
+.overlay.show{display:block}
+.drawer{position:fixed;right:0;top:0;height:100%;width:min(520px,100%);background:#fff;z-index:90;transform:translateX(100%);transition:.25s;display:flex;flex-direction:column}
+.drawer.show{transform:translateX(0)}
+.drawer-head{padding:19px 21px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.drawer-head h2{font-size:17px;margin:0}
+.drawer-body{padding:21px;overflow:auto}
+.drawer-foot{padding:15px 21px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px}
+.toast{position:fixed;right:24px;bottom:24px;background:#202124;color:#fff;padding:12px 15px;border-radius:9px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.18);opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s;z-index:200}
+.toast.show{opacity:1;transform:none}
+.overlay-close{border:0;background:#f1f3f5;width:34px;height:34px;border-radius:8px;color:#64748b}
+@media(max-width:1050px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid-2,.detail-layout,.settings-grid{grid-template-columns:1fr}
+}
+@media(max-width:780px){
+  .sidebar{transform:translateX(-100%);transition:.25s}
+  .sidebar.open{transform:none;box-shadow:10px 0 35px rgba(0,0,0,.12)}
+  .main{margin-left:0}
+  .mobile-menu{display:grid;place-items:center}
+  .topbar{padding:0 16px}
+  .content{padding:20px 15px}
+  .welcome{align-items:flex-start;gap:15px}
+  .welcome .primary{display:none}
+  .stats{grid-template-columns:1fr 1fr;gap:10px}
+  .stat{padding:15px}
+  .stat-value{font-size:24px}
+  .search input{width:100%}
+  .search{flex:1;min-width:190px}
+}
+@media(max-width:480px){
+  .stats{grid-template-columns:1fr}
+  .quick{grid-template-columns:1fr}
+  .welcome h1{font-size:23px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="brand-mark">GO7</div>
+    <div class="brand-name">GO7<span>.IN</span></div>
+  </div>
+
+  <div class="nav-title">Workspace</div>
+  <nav class="nav">
+    <button class="active" data-page="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard
+    </button>
+    <button data-page="inquiries">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v13H7l-3 3V4Z"/><path d="M8 8h8M8 12h5"/></svg>Inquiries
+    </button>
+    <button data-page="analytics">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-5 3 3 5-7"/></svg>Analytics
+    </button>
+    <button data-page="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15.5A3.5 3.5 0 1 0 12 8a3.5 3.5 0 0 0 0 7.5Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 1.7-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V20h-2.4v-.2a1.7 1.7 0 0 0-1.03-1.56 1.7 1.7 0 0 0-1.88.34l-.06.06-1.7-1.7.06-.06A1.7 1.7 0 0 0 8.46 15a1.7 1.7 0 0 0-1.56-1.03H6v-2.4h.9A1.7 1.7 0 0 0 8.46 10a1.7 1.7 0 0 0-.34-1.88l-.06-.06 1.7-1.7.06.06A1.7 1.7 0 0 0 11.7 6.1 1.7 1.7 0 0 0 12.73 4.5V4h2.4v.5a1.7 1.7 0 0 0 1.03 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06 1.7 1.7-.06.06A1.7 1.7 0 0 0 19.4 10a1.7 1.7 0 0 0 1.56 1.03h.54v2.4h-.54A1.7 1.7 0 0 0 19.4 15Z"/></svg>Settings
+    </button>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <div class="nav-title">Account</div>
+    <button class="nav" style="border:0;background:transparent;padding:0" id="logoutBtn">
+      <span style="display:flex;align-items:center;gap:12px;width:100%;padding:11px 12px;border-radius:9px;color:#64748b;font-weight:600">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 17l5-5-5-5M15 12H3"/><path d="M21 3v18"/></svg>Logout
+      </span>
+    </button>
+    <div class="admin-mini">
+      <div class="avatar">AS</div>
+      <div><strong>Administrator</strong><small>GO7.IN Admin</small></div>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+  <header class="topbar">
+    <div class="top-left">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <div class="page-title" id="pageTitle">Dashboard</div>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" id="refreshBtn" title="Refresh">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 5v4h4M4 13a8.1 8.1 0 0 0 15.5 2M20 19v-4h-4"/></svg>
+      </button>
+      <button class="icon-btn" id="notificationBtn" title="Notifications">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <section class="page active" id="dashboard">
+      <div class="welcome">
+        <div><h1>Good evening, Anil</h1><p>Here’s what’s happening with your GO7.IN inquiries.</p><div id="apiConnectionStatus" style="font-size:11px;color:#16a34a;margin-top:7px">Connecting to GO7 Admin API…</div></div>
+        <button class="primary" onclick="showPage('inquiries')">View inquiries</button>
+      </div>
+
+      <div class="stats">
+        <div class="card stat"><div class="stat-top"><span class="stat-label">Total Inquiries</span><span class="stat-icon">✉</span></div><div class="stat-value" id="totalStat">128</div><div class="stat-note"><strong>+12%</strong> vs last month</div></div>
+        <div class="card stat"><div class="stat-top"><span class="stat-label">New</span><span class="stat-icon">●</span></div><div class="stat-value" id="newStat">12</div><div class="stat-note">Need your attention</div></div>
+        <div class="card stat"><div class="stat-top"><span class="stat-label">In Progress</span><span class="stat-icon">◷</span></div><div class="stat-value" id="progressStat">8</div><div class="stat-note">Currently being handled</div></div>
+        <div class="card stat"><div class="stat-top"><span class="stat-label">Replied</span><span class="stat-icon">✓</span></div><div class="stat-value" id="repliedStat">108</div><div class="stat-note">96% response rate</div></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card section-card">
+          <div class="section-head"><h2>Recent inquiries</h2><button class="link-btn" onclick="showPage('inquiries')">View all</button></div>
+          <div class="activity" id="recentList"></div>
+        </div>
+        <div class="card section-card">
+          <div class="section-head"><h2>Quick actions</h2></div>
+          <div class="quick">
+            <button onclick="showPage('inquiries')">View inquiries<small>Review incoming messages</small></button>
+            <button onclick="showPage('analytics')">View analytics<small>See inquiry trends</small></button>
+            <button onclick="showPage('settings')">Admin settings<small>Manage preferences</small></button>
+            <button onclick="exportCSV()">Export CSV<small>Download inquiry data</small></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="inquiries">
+      <div class="welcome"><div><h1>Inquiries</h1><p>Manage customer inquiries and view complete submission details.</p></div><button class="primary" onclick="exportCSV()">Export CSV</button></div>
+      <div class="card table-card">
+        <div class="table-toolbar">
+          <div class="toolbar-left">
+            <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="searchInput" placeholder="Search name, email or message..."></div>
+            <select class="select" id="statusFilter"><option value="all">All statuses</option><option value="New">New</option><option value="In Progress">In Progress</option><option value="Replied">Replied</option><option value="Closed">Closed</option></select>
+          </div>
+          <span style="font-size:12px;color:#94a3b8" id="resultCount">0 inquiries</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Customer</th><th>Subject</th><th>Inquiry ID</th><th>Date & Time</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="inquiryTable"></tbody>
+          </table>
+        </div>
+        <div class="pagination"><span id="apiConnectionStatus">Connecting to API…</span><div class="pager"><button onclick="prevPage()">‹</button><button class="active" id="pageNumber">1</button><button onclick="nextPage()">›</button></div></div>
+      </div>
+    </section>
+
+    <section class="page" id="analytics">
+      <div class="welcome"><div><h1>Analytics</h1><p>Frontend preview of your inquiry performance.</p></div></div>
+      <div class="stats">
+        <div class="card stat"><div class="stat-top"><span class="stat-label">This month</span><span class="stat-icon">↗</span></div><div class="stat-value" id="analyticsNew">0</div><div class="stat-note">New inquiries</div></div>
+        <div class="card stat"><div class="stat-top"><span class="stat-label">Response rate</span><span class="stat-icon">%</span></div><div class="stat-value" id="analyticsResponse">—</div><div class="stat-note">Replied / total</div></div>
+        <div class="card stat"><div class="stat-top"><span class="stat-label">Avg. response</span><span class="stat-icon">◷</span></div><div class="stat-value">4.2h</div><div class="stat-note">Frontend sample</div></div>
+        <div class="card stat"><div class="stat-top"><span class="stat-label">Conversion</span><span class="stat-icon">✓</span></div><div class="stat-value">18%</div><div class="stat-note">Inquiry to deal</div></div>
+      </div>
+      <div class="card section-card">
+        <div class="section-head"><h2>Inquiry trend</h2><span style="font-size:12px;color:#94a3b8">Last 7 days</span></div>
+        <div style="height:260px;display:flex;align-items:flex-end;gap:18px;padding:15px 10px 5px;border-top:1px solid #f1f2f5">
+          <div class="bar" style="height:38%"><span>Mon</span></div><div class="bar" style="height:58%"><span>Tue</span></div><div class="bar" style="height:45%"><span>Wed</span></div><div class="bar" style="height:78%"><span>Thu</span></div><div class="bar" style="height:66%"><span>Fri</span></div><div class="bar" style="height:92%"><span>Sat</span></div><div class="bar" style="height:70%"><span>Sun</span></div>
+        </div>
+      </div>
+      <style>.bar{flex:1;max-width:90px;background:linear-gradient(180deg,#3850D5,#aeb8ee);border-radius:8px 8px 3px 3px;position:relative;min-height:30px}.bar span{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);font-size:11px;color:#94a3b8}</style>
+    </section>
+
+    <section class="page" id="settings">
+      <div class="welcome"><div><h1>Settings</h1><p>Manage your GO7 admin preferences.</p></div><button class="primary" onclick="toast('Settings saved')">Save changes</button></div>
+      <div class="settings-grid">
+        <div class="card setting-card">
+          <h3>Notifications</h3><p>Control how the admin dashboard handles new inquiry alerts.</p>
+          <div class="toggle-row"><div><strong style="font-size:13px">New inquiry alerts</strong><div style="font-size:11px;color:#94a3b8;margin-top:3px">Show alerts for new submissions</div></div><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+          <div class="toggle-row"><div><strong style="font-size:13px">Email notifications</strong><div style="font-size:11px;color:#94a3b8;margin-top:3px">Send admin notification emails</div></div><button class="toggle on" onclick="this.classList.toggle('on')"></button></div>
+        </div>
+        <div class="card setting-card">
+          <h3>Security</h3><p>Security controls that will be connected to the backend in the next phase.</p>
+          <div class="toggle-row"><div><strong style="font-size:13px">Two-factor authentication</strong><div style="font-size:11px;color:#94a3b8;margin-top:3px">Authenticator app protection</div></div><button class="toggle on" onclick="toast('2FA backend connection is next phase')"></button></div>
+          <div class="toggle-row"><div><strong style="font-size:13px">Secure session</strong><div style="font-size:11px;color:#94a3b8;margin-top:3px">Protected admin sessions</div></div><button class="toggle on" onclick="toast('Secure sessions will connect to Worker auth')"></button></div>
+        </div>
+        <div class="card setting-card">
+          <h3>System</h3><p>Current frontend configuration.</p>
+          <div class="detail-row"><span class="detail-label">Environment</span><strong>Frontend Preview</strong></div>
+          <div class="detail-row"><span class="detail-label">API</span><strong>Not connected</strong></div>
+          <div class="detail-row"><span class="detail-label">Database</span><strong>Cloudflare D1 — pending</strong></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><div><h2 id="drawerTitle">Inquiry</h2><div id="drawerSubtitle" style="font-size:11px;color:#94a3b8;margin-top:3px"></div></div><button class="overlay-close" onclick="closeDrawer()">✕</button></div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot"><button class="small-btn" onclick="closeDrawer()">Close</button><button class="primary" onclick="markCurrentReplied()">Mark as replied</button></div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+const API_BASE = "https://go7-admin.anilsrivastav561.workers.dev";
+let inquiries = [];
+let currentId = null;
+let apiPage = 1;
+let apiTotal = 0;
+const apiLimit = 50;
+
+function getApiKey(){ return sessionStorage.getItem("GO7_ADMIN_API_KEY") || ""; }
+function setApiKey(key){ sessionStorage.setItem("GO7_ADMIN_API_KEY", key); }
+function clearApiKey(){ sessionStorage.removeItem("GO7_ADMIN_API_KEY"); }
+
+async function loadInquiries(){
+  const key = getApiKey();
+  if(!key){ showApiKeyPrompt(); return; }
+
+  try{
+    const res = await fetch(`${API_BASE}/api/inquiries?page=${apiPage}&limit=${apiLimit}`, {
+      method:"GET",
+      headers:{ "Authorization":`Bearer ${key}`, "Accept":"application/json" },
+      cache:"no-store"
+    });
+    const data = await res.json();
+
+    if(res.status === 401){
+      clearApiKey();
+      showApiKeyPrompt("Invalid API key. Please enter the correct ADMIN_API_KEY.");
+      return;
+    }
+    if(!res.ok || !data.success) throw new Error(data.error || "Unable to load inquiries");
+
+    inquiries = (data.inquiries || []).map(normalizeInquiry);
+    apiTotal = Number(data.total || 0);
+    renderTable();
+    renderRecent();
+    updateStats();
+    updateApiInfo();
+  }catch(error){
+    console.error("GO7 Admin API error:", error);
+    toast(error.message || "Unable to connect to API");
+  }
+}
+
+function normalizeInquiry(x){
+  return {
+    id:x.inquiry_id || x.id || "",
+    name:x.name || "",
+    email:x.email || "",
+    subject:x.subject || "",
+    message:x.message || "",
+    date:formatDate(x.created_at),
+    ip:x.ip || "",
+    country:x.country || "",
+    city:x.city || "",
+    region:x.region || "",
+    device:x.device || "",
+    browser:x.browser || "",
+    timezone:x.timezone || "",
+    status:x.status || "New",
+    admin_note:x.admin_note || ""
+  };
+}
+
+function formatDate(value){
+  if(!value) return "—";
+  const d = new Date(value);
+  if(Number.isNaN(d.getTime())) return String(value);
+  return d.toLocaleString("en-IN", {
+    day:"2-digit",month:"short",year:"numeric",
+    hour:"numeric",minute:"2-digit",hour12:true,timeZone:"Asia/Kolkata"
+  });
+}
+
+function showApiKeyPrompt(message=""){
+  const old = document.getElementById("apiKeyModal");
+  if(old) old.remove();
+
+  const modal = document.createElement("div");
+  modal.id = "apiKeyModal";
+  modal.style.cssText = "position:fixed;inset:0;background:rgba(15,23,42,.55);z-index:500;display:grid;place-items:center;padding:20px";
+  modal.innerHTML = `
+    <div style="width:min(460px,100%);background:#fff;border-radius:14px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.2)">
+      <h2 style="margin:0 0 7px;font-size:19px">Connect GO7 Admin API</h2>
+      <p style="margin:0 0 17px;color:#64748b;font-size:13px;line-height:1.55">
+        Enter your Cloudflare <strong>ADMIN_API_KEY</strong>. It is kept only in this browser session.
+      </p>
+      ${message ? `<div style="background:#fef2f2;color:#b91c1c;border:1px solid #fecaca;padding:10px;border-radius:8px;font-size:12px;margin-bottom:12px">${message}</div>` : ""}
+      <label style="display:block;font-size:12px;font-weight:700;color:#475569;margin-bottom:7px">ADMIN_API_KEY</label>
+      <input id="apiKeyInput" type="password" autocomplete="off" placeholder="Paste your API key"
+        style="width:100%;height:42px;border:1px solid #e7e9ef;border-radius:9px;padding:0 12px;outline:none">
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:15px">
+        <button id="apiKeyCancel" class="small-btn">Cancel</button>
+        <button id="apiKeyConnect" class="primary">Connect</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+
+  const input = document.getElementById("apiKeyInput");
+  input.focus();
+  document.getElementById("apiKeyCancel").onclick = () => modal.remove();
+  document.getElementById("apiKeyConnect").onclick = async () => {
+    const key = input.value.trim();
+    if(!key){ input.focus(); return; }
+    setApiKey(key);
+    modal.remove();
+    await loadInquiries();
+  };
+  input.addEventListener("keydown", e => {
+    if(e.key === "Enter") document.getElementById("apiKeyConnect").click();
+  });
+}
+
+function updateApiInfo(){
+  const els = document.querySelectorAll("#apiConnectionStatus");
+  els.forEach(el => el.textContent = `API connected • ${apiTotal} total inquiries`);
+}
+
+function statusClass(s){return s==="New"?"new":s==="In Progress"?"progress":s==="Replied"?"replied":"closed"}
+function renderTable(){
+ const q=document.getElementById('searchInput').value.toLowerCase();
+ const filter=document.getElementById('statusFilter').value;
+ const rows=inquiries.filter(x=>(filter==='all'||x.status===filter)&&(`${x.name} ${x.email} ${x.message}`.toLowerCase().includes(q)));
+ document.getElementById('resultCount').textContent=`${rows.length} inquiries`;
+ document.getElementById('inquiryTable').innerHTML=rows.map(x=>`
+ <tr>
+  <td><strong>${x.name}</strong><br><span style="font-size:11px;color:#94a3b8">${x.email}</span></td>
+  <td style="max-width:220px"><strong>${x.subject}</strong></td>
+  <td><strong>${x.id}</strong></td>
+  <td style="white-space:nowrap">${x.date}</td>
+  <td><span class="status ${statusClass(x.status)}">${x.status}</span></td>
+  <td><div class="actions"><button class="small-btn" onclick="openInquiry('${x.id}')">View</button></div></td>
+ </tr>`).join('') || `<tr><td colspan="6"><div class="empty">No inquiries found.</div></td></tr>`;
+}
+function renderRecent(){
+ document.getElementById('recentList').innerHTML=inquiries.slice(0,5).map(x=>`
+ <div class="activity-row">
+  <span class="activity-dot"></span>
+  <div><strong>${x.name} · ${x.subject}</strong><p>${x.message.slice(0,72)}${x.message.length>72?'…':''}</p></div>
+  <span class="activity-time">${x.date.split(',')[0]}</span>
+ </div>`).join('');
+}
+function updateStats(){
+  const total = apiTotal || inquiries.length;
+  const n = inquiries.filter(x=>x.status==="New").length;
+  const p = inquiries.filter(x=>x.status==="In Progress").length;
+  const r = inquiries.filter(x=>x.status==="Replied").length;
+  document.getElementById("totalStat").textContent = total;
+  document.getElementById("newStat").textContent = n;
+  document.getElementById("progressStat").textContent = p;
+  document.getElementById("repliedStat").textContent = r;
+  const aNew=document.getElementById("analyticsNew");
+  const aResp=document.getElementById("analyticsResponse");
+  if(aNew) aNew.textContent=n;
+  if(aResp) aResp.textContent=total ? Math.round(r/total*100)+"%" : "—";
+}
+function updatePageNumber(){
+  const el=document.getElementById("pageNumber");
+  if(el) el.textContent=apiPage;
+}
+async function prevPage(){
+  if(apiPage<=1) return;
+  apiPage--;
+  updatePageNumber();
+  await loadInquiries();
+}
+async function nextPage(){
+  if(apiPage*apiLimit>=apiTotal) return;
+  apiPage++;
+  updatePageNumber();
+  await loadInquiries();
+}
+
+function showPage(page){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(page).classList.add('active');
+ document.querySelectorAll('.nav button[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));
+ const names={dashboard:'Dashboard',inquiries:'Inquiries',analytics:'Analytics',settings:'Settings'};
+ document.getElementById('pageTitle').textContent=names[page];
+ document.getElementById('sidebar').classList.remove('open');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function openInquiry(id){
+ const x=inquiries.find(i=>i.id===id); if(!x)return;
+ currentId=id;
+ document.getElementById('drawerTitle').textContent=x.name;
+ document.getElementById('drawerSubtitle').textContent=`Inquiry #${x.id} · ${x.date}`;
+ document.getElementById('drawerBody').innerHTML=`
+  <div class="form-group"><label>Status</label><select class="form-control" id="drawerStatus" onchange="changeStatus(this.dataset.id,this.value)" data-id="${x.id}"><option ${x.status==='New'?'selected':''}>New</option><option ${x.status==='In Progress'?'selected':''}>In Progress</option><option ${x.status==='Replied'?'selected':''}>Replied</option><option ${x.status==='Closed'?'selected':''}>Closed</option></select></div>
+  <div class="detail-row"><span class="detail-label">Name</span><strong>${x.name}</strong></div>
+  <div class="detail-row"><span class="detail-label">Email</span><strong>${x.email}</strong></div>
+  <div class="detail-row"><span class="detail-label">Subject</span><strong>${x.subject}</strong></div>
+  <div class="detail-row"><span class="detail-label">Inquiry ID</span><strong>${x.id}</strong></div>
+  <div class="detail-row"><span class="detail-label">Date & Time</span><span>${x.date}</span></div>
+  <div class="detail-row"><span class="detail-label">IP Address</span><strong>${x.ip}</strong></div>
+  <div class="detail-row"><span class="detail-label">Country</span><span>${x.country}</span></div>
+  <div class="detail-row"><span class="detail-label">City</span><span>${x.city}</span></div>
+  <div class="detail-row"><span class="detail-label">Region</span><span>${x.region}</span></div>
+  <div class="detail-row"><span class="detail-label">Device</span><span>${x.device}</span></div>
+  <div class="detail-row"><span class="detail-label">Browser</span><span>${x.browser}</span></div>
+  <div class="detail-row"><span class="detail-label">Timezone</span><span>${x.timezone}</span></div>
+  <div class="form-group" style="margin-top:20px"><label>Message</label><div class="message-box">${x.message}</div></div>
+  <div class="form-group"><label>Internal note</label><textarea class="form-control" placeholder="Add a private note..."></textarea></div>`;
+ document.getElementById('overlay').classList.add('show');
+ document.getElementById('drawer').classList.add('show');
+}
+function changeStatus(id,status){
+  toast("Status editing is not connected yet. Current API is read-only.");
+  renderTable();
+}
+function markCurrentReplied(){if(currentId)changeStatus(currentId,'Replied');closeDrawer()}
+function closeDrawer(){document.getElementById('overlay').classList.remove('show');document.getElementById('drawer').classList.remove('show')}
+function toast(msg){
+ const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+ clearTimeout(window._toast);window._toast=setTimeout(()=>t.classList.remove('show'),2400);
+}
+function exportCSV(){
+ const header=['Inquiry ID','Name','Email','Subject','Date & Time','IP Address','Country','City','Region','Device','Browser','Timezone','Message','Status'];
+ const lines=[header,...inquiries.map(x=>[x.id,x.name,x.email,x.subject,x.date,x.ip,x.country,x.city,x.region,x.device,x.browser,x.timezone,x.message,x.status])].map(r=>r.map(v=>`"${String(v).replaceAll('"','""')}"`).join(',')).join('\n');
+ const blob=new Blob([lines],{type:'text/csv;charset=utf-8;'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='go7-inquiries.csv';a.click();URL.revokeObjectURL(a.href);
+ toast('CSV exported');
+}
+document.querySelectorAll('.nav button[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.getElementById('searchInput').addEventListener('input',renderTable);
+document.getElementById('statusFilter').addEventListener('change',renderTable);
+document.getElementById('overlay').addEventListener('click',closeDrawer);
+document.getElementById('mobileMenu').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
+document.getElementById('refreshBtn').addEventListener('click',()=>loadInquiries());
+document.getElementById('notificationBtn').addEventListener('click',()=>toast('No new notifications'));
+document.getElementById('logoutBtn').addEventListener('click',()=>{clearApiKey();showApiKeyPrompt('API key removed from this browser session.');});
+renderTable();renderRecent();updateStats();loadInquiries();
+</script>
+</body>
+</html>
