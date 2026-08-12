@@ -301,14 +301,61 @@ img{max-width:100%}
 }
 #notificationBtn.is-read{color:#5369e8!important;border-color:#b9c3f5!important;background:#f5f7ff!important}
 .toast{
-  position:fixed!important;right:20px!important;bottom:20px!important;z-index:700!important;
-  max-width:min(380px,calc(100vw - 28px))!important;
-  padding:12px 15px!important;border-radius:12px!important;
+  position:fixed!important;
+  right:20px!important;
+  bottom:20px!important;
+  z-index:700!important;
+  width:max-content!important;
+  max-width:min(390px,calc(100vw - 28px))!important;
+  min-width:280px!important;
+  padding:14px 17px!important;
+  border-radius:13px!important;
+  border:1px solid #d9def0!important;
+  background:#ffffff!important;
+  color:#172033!important;
+  box-shadow:0 14px 38px rgba(15,23,42,.16),0 3px 10px rgba(15,23,42,.07)!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  line-height:1.45!important;
   opacity:0!important;
   transform:translateY(8px)!important;
   pointer-events:none!important;
   visibility:hidden!important;
   transition:opacity .22s ease,transform .22s ease,visibility .22s ease!important;
+}
+.toast.show{
+  opacity:1!important;
+  transform:translateY(0)!important;
+  visibility:visible!important;
+}
+.toast.success{
+  border-color:#b7e3c5!important;
+  background:#f0fdf4!important;
+  color:#166534!important;
+  box-shadow:0 14px 38px rgba(21,128,61,.14),0 3px 10px rgba(21,128,61,.06)!important;
+}
+.toast.info{
+  border-color:#c7d5ff!important;
+  background:#eff4ff!important;
+  color:#2947a4!important;
+  box-shadow:0 14px 38px rgba(56,80,213,.14),0 3px 10px rgba(56,80,213,.06)!important;
+}
+.toast.warning{
+  border-color:#f3d28a!important;
+  background:#fff9e8!important;
+  color:#9a5b00!important;
+  box-shadow:0 14px 38px rgba(180,83,9,.13),0 3px 10px rgba(180,83,9,.06)!important;
+}
+@media(max-width:560px){
+  .toast{
+    right:12px!important;
+    bottom:14px!important;
+    min-width:0!important;
+    width:calc(100vw - 24px)!important;
+    max-width:none!important;
+    padding:13px 15px!important;
+    font-size:12.5px!important;
+  }
 }
 .toast.show{
   opacity:1!important;
