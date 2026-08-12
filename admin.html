@@ -204,6 +204,330 @@ body.auth-loading .login-screen{display:none !important}
 .login-submit:disabled{opacity:.65;cursor:not-allowed}
 .login-help{font-size:11px;color:#94a3b8;text-align:center;margin-top:14px}
 </style>
+
+<style id="go7-premium-dashboard">
+/* =========================================================
+   GO7.IN — Premium Admin UI
+   Design-only layer. Existing functionality remains intact.
+   ========================================================= */
+
+:root{
+  --brand:#3850d5 !important;
+  --brand-2:#4f67ea !important;
+  --brand-soft:#eef1ff !important;
+  --bg:#f6f8fc !important;
+  --surface:#ffffff !important;
+  --surface-2:#fbfcff !important;
+  --text:#172033 !important;
+  --muted:#667085 !important;
+  --border:#e7eaf1 !important;
+  --shadow:0 10px 30px rgba(24,34,61,.06) !important;
+  --shadow-lg:0 18px 55px rgba(24,34,61,.10) !important;
+}
+
+*{box-sizing:border-box}
+body{
+  background:
+    radial-gradient(circle at 12% 0%,rgba(56,80,213,.055),transparent 28%),
+    radial-gradient(circle at 88% 8%,rgba(79,103,234,.045),transparent 25%),
+    var(--bg) !important;
+  color:var(--text) !important;
+  -webkit-font-smoothing:antialiased;
+}
+
+.sidebar{
+  background:rgba(255,255,255,.94) !important;
+  border-right:1px solid var(--border) !important;
+  box-shadow:8px 0 30px rgba(20,31,56,.035) !important;
+  backdrop-filter:blur(14px);
+}
+
+.brand{
+  padding:24px 22px !important;
+  border-bottom:1px solid var(--border) !important;
+}
+
+.brand-mark{
+  width:40px !important;
+  height:40px !important;
+  border-radius:12px !important;
+  box-shadow:0 7px 18px rgba(56,80,213,.20) !important;
+}
+
+.brand-title{
+  font-weight:750 !important;
+  letter-spacing:-.02em !important;
+}
+
+.nav{
+  padding:18px 12px !important;
+}
+
+.nav a{
+  margin:4px 0 !important;
+  border-radius:10px !important;
+  padding:11px 12px !important;
+  transition:.18s ease !important;
+}
+
+.nav a:hover{
+  background:#f3f5ff !important;
+  color:var(--brand) !important;
+  transform:translateX(2px);
+}
+
+.nav a.active{
+  background:linear-gradient(135deg,#eef1ff,#f6f7ff) !important;
+  color:var(--brand) !important;
+  box-shadow:inset 3px 0 0 var(--brand);
+  font-weight:700 !important;
+}
+
+.main{
+  background:transparent !important;
+}
+
+.topbar{
+  height:72px !important;
+  padding:0 30px !important;
+  background:rgba(255,255,255,.84) !important;
+  border-bottom:1px solid rgba(231,234,241,.9) !important;
+  backdrop-filter:blur(16px) !important;
+  position:sticky !important;
+  top:0 !important;
+  z-index:30 !important;
+}
+
+.page{
+  max-width:1500px !important;
+  padding:30px !important;
+}
+
+.page-title{
+  font-size:28px !important;
+  font-weight:760 !important;
+  letter-spacing:-.035em !important;
+}
+
+.page-subtitle{
+  color:#7a8498 !important;
+  margin-top:5px !important;
+}
+
+.stat-grid{
+  gap:16px !important;
+}
+
+.stat-card{
+  background:rgba(255,255,255,.96) !important;
+  border:1px solid var(--border) !important;
+  border-radius:16px !important;
+  box-shadow:var(--shadow) !important;
+  padding:20px !important;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease !important;
+}
+
+.stat-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 15px 36px rgba(24,34,61,.09) !important;
+  border-color:#dce1ef !important;
+}
+
+.stat-value{
+  font-size:28px !important;
+  font-weight:780 !important;
+  letter-spacing:-.035em !important;
+}
+
+.card,
+.table-card,
+.panel,
+.settings-card{
+  background:rgba(255,255,255,.97) !important;
+  border:1px solid var(--border) !important;
+  border-radius:16px !important;
+  box-shadow:var(--shadow) !important;
+}
+
+.card-header,
+.table-header{
+  padding:19px 21px !important;
+  border-bottom:1px solid var(--border) !important;
+}
+
+.card-title{
+  font-weight:720 !important;
+  letter-spacing:-.015em !important;
+}
+
+.table-wrap{
+  border-radius:0 0 16px 16px !important;
+}
+
+table{
+  border-collapse:separate !important;
+  border-spacing:0 !important;
+}
+
+thead th{
+  background:#fafbfe !important;
+  color:#667085 !important;
+  font-size:11px !important;
+  font-weight:750 !important;
+  letter-spacing:.06em !important;
+  text-transform:uppercase !important;
+  border-bottom:1px solid var(--border) !important;
+}
+
+tbody tr{
+  transition:background .15s ease !important;
+}
+
+tbody tr:hover{
+  background:#fafbff !important;
+}
+
+tbody td{
+  border-bottom:1px solid #f0f2f6 !important;
+}
+
+.badge{
+  border-radius:999px !important;
+  padding:5px 9px !important;
+  font-weight:700 !important;
+  font-size:11px !important;
+}
+
+.primary{
+  border:0 !important;
+  border-radius:9px !important;
+  background:linear-gradient(135deg,#3850d5,#4d64e7) !important;
+  box-shadow:0 7px 16px rgba(56,80,213,.18) !important;
+  font-weight:700 !important;
+  transition:.18s ease !important;
+}
+
+.primary:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 21px rgba(56,80,213,.24) !important;
+}
+
+.small-btn,
+.danger-btn{
+  border-radius:9px !important;
+  transition:.16s ease !important;
+}
+
+.small-btn:hover,
+.danger-btn:hover{
+  transform:translateY(-1px);
+}
+
+.search{
+  background:#fff !important;
+  border:1px solid var(--border) !important;
+  border-radius:10px !important;
+  box-shadow:0 3px 12px rgba(20,31,56,.035) !important;
+}
+
+.search:focus{
+  border-color:#aab6f4 !important;
+  box-shadow:0 0 0 3px rgba(56,80,213,.09) !important;
+}
+
+.form-control{
+  background:#fff !important;
+  border:1px solid #dfe3eb !important;
+  border-radius:9px !important;
+  transition:.16s ease !important;
+}
+
+.form-control:focus{
+  border-color:#9eabf1 !important;
+  box-shadow:0 0 0 3px rgba(56,80,213,.08) !important;
+  outline:0 !important;
+}
+
+.drawer{
+  box-shadow:-22px 0 60px rgba(15,23,42,.16) !important;
+  border-left:1px solid var(--border) !important;
+}
+
+.drawer-head{
+  background:rgba(255,255,255,.96) !important;
+  border-bottom:1px solid var(--border) !important;
+  backdrop-filter:blur(14px);
+}
+
+.drawer-title{
+  font-weight:760 !important;
+  letter-spacing:-.025em !important;
+}
+
+.drawer-foot{
+  background:rgba(255,255,255,.96) !important;
+  border-top:1px solid var(--border) !important;
+  backdrop-filter:blur(14px);
+}
+
+.reply-box{
+  background:linear-gradient(180deg,#fbfcff,#fff) !important;
+  border:1px solid var(--border) !important;
+  border-radius:13px !important;
+  padding:16px !important;
+}
+
+.reply-box .form-group:last-child{
+  margin-bottom:10px !important;
+}
+
+.danger-btn{
+  background:#fff !important;
+  color:#c24141 !important;
+  border:1px solid #f0caca !important;
+}
+
+.danger-btn:hover{
+  background:#fff6f6 !important;
+  border-color:#e9a7a7 !important;
+}
+
+.toast{
+  border:1px solid var(--border) !important;
+  box-shadow:0 16px 38px rgba(20,31,56,.13) !important;
+  border-radius:11px !important;
+  backdrop-filter:blur(12px);
+}
+
+.overlay{
+  background:rgba(15,23,42,.38) !important;
+  backdrop-filter:blur(3px);
+}
+
+.login-card{
+  border:1px solid var(--border) !important;
+  border-radius:20px !important;
+  box-shadow:0 25px 80px rgba(15,23,42,.13) !important;
+}
+
+.login-logo{
+  box-shadow:0 10px 28px rgba(56,80,213,.18) !important;
+}
+
+@media(max-width:900px){
+  .topbar{padding:0 18px !important}
+  .page{padding:20px 16px !important}
+  .page-title{font-size:24px !important}
+}
+
+@media(max-width:640px){
+  .stat-grid{grid-template-columns:1fr 1fr !important}
+  .topbar{height:64px !important}
+  .page{padding:16px 12px !important}
+  .drawer{width:100% !important}
+}
+</style>
+
 </head>
 <body class="auth-loading">
 <div class="login-screen" id="loginScreen">
