@@ -304,6 +304,16 @@ img{max-width:100%}
   position:fixed!important;right:20px!important;bottom:20px!important;z-index:700!important;
   max-width:min(380px,calc(100vw - 28px))!important;
   padding:12px 15px!important;border-radius:12px!important;
+  opacity:0!important;
+  transform:translateY(8px)!important;
+  pointer-events:none!important;
+  visibility:hidden!important;
+  transition:opacity .22s ease,transform .22s ease,visibility .22s ease!important;
+}
+.toast.show{
+  opacity:1!important;
+  transform:translateY(0)!important;
+  visibility:visible!important;
 }
 
 /* ---------- CONFIRM MODAL COLORS ---------- */
@@ -1190,7 +1200,18 @@ function closeDrawer(){
   document.getElementById("overlay").classList.remove("show");
   document.getElementById("drawer").classList.remove("show");
 }
-function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(window._toast);window._toast=setTimeout(()=>t.classList.remove("show"),2400);}
+function toast(msg){
+  const t=document.getElementById("toast");
+  if(!t) return;
+  t.textContent=msg;
+  t.classList.remove("show");
+  void t.offsetWidth;
+  t.classList.add("show");
+  clearTimeout(window._toast);
+  window._toast=setTimeout(()=>{
+    t.classList.remove("show");
+  },2400);
+}
 
 function exportCSV(){
   if(!authenticated){showLogin();return;}
