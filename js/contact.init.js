@@ -151,8 +151,8 @@ const s = String(remaining % 60).padStart(2, "0");
 feedback.innerHTML = `
 <div style="line-height:1.7">
 
-<strong style="display:block;color:#B45309;font-size:17px;font-weight:700;">
-⚠ This IP address is temporarily blocked after 3 requests.
+<strong style="display:block;color:#B45309;font-size:14px;font-weight:500;">
+⚠ For security reasons, your IP address has been temporarily blocked after 3 requests.
 </strong>
 
 <p style="margin:14px 0 0;color:#64748B;">
