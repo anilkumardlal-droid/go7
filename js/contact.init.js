@@ -271,7 +271,7 @@ if (typeof turnstile !== "undefined") {
     feedback.style.fontWeight = "600";
 
     feedback.innerHTML =
-'<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Unable to send your inquiry. Please check your internet connection and try again.';
+'<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Unable to send your inquiry. Please check your connection and try again.';
     const turnstileBox = document.querySelector(".cf-turnstile");
 
 if (turnstileBox) {
