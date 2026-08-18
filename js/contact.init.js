@@ -151,7 +151,7 @@ const s = String(remaining % 60).padStart(2, "0");
 feedback.innerHTML = `
 <div style="line-height:1.7">
 
-<strong style="display:block;color:#B45309;font-size:16px;font-weight:400;">
+<strong style="display:block;color:#B45309;font-size:15px;font-weight:600;">
 Access has been temporarily restricted after 3 requests.
 </strong>
 
