@@ -61,8 +61,6 @@ if (!res.ok && res.status !== 429) {
 
 if (data.success) {
 
-    showFireworks();
-
     feedback.style.display = "block";
     feedback.style.visibility = "visible";
     feedback.style.opacity = "1";
