@@ -51,21 +51,21 @@
 .offer-status{
     display:inline-block !important;
     font-weight:700 !important;
-    background:linear-gradient(
-        90deg,
-        #0EA5E9 0%,
-        #7DD3FC 35%,
-        #FFFFFF 50%,
-        #7DD3FC 65%,
-        #0EA5E9 100%
-    );
+
     background-size:250% auto;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     background-clip:text;
     animation:offerShine 4.5s linear infinite !important;
 }
-
+background: linear-gradient(
+  90deg,
+  #22c55e 0%,
+  #86efac 35%,
+  #ffffff 50%,
+  #86efac 65%,
+  #22c55e 100%
+);
 @keyframes offerShine{
     from{
         background-position:200% center;
