@@ -483,7 +483,15 @@ body{
 }
 
 @media (max-width: 767px) {
+  .header {
+    padding: 25px;
+  }
+
   .contact-info {
     background-color: red !important;
+  }
+
+  body {
+    padding: 0 24px;
   }
 }
