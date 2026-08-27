@@ -482,21 +482,16 @@ body{
     color:#64748B !important;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .header {
-    padding: 25px;
+    padding: 25px !important;
   }
 
   .contact-info {
-    background: linear-gradient(
-      90deg,
-      #e0f2fe 0%,
-      #ffffff 50%,
-      #e0f2fe 100%
-    ) !important;
+    background: linear-gradient(90deg, #e0f2fe 0%, #ffffff 50%, #e0f2fe 100%) !important;
   }
 
   body {
-    padding: 0 15px;
+    padding: 0 15px !important;
   }
 }
