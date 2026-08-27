@@ -481,3 +481,9 @@ body{
 .footer a{
     color:#64748B !important;
 }
+
+@media (max-width: 767px) {
+  .contact-info {
+    background-color: red !important;
+  }
+}
