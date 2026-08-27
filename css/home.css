@@ -475,11 +475,7 @@ body{
 .footer p,
 .footer small,
 .footer a{
-    color:#64748B !important;
-}
-
-footer {
-  display: none !important;
+    display: none !important;
 }
 
 @media screen and (max-width: 767px) {
