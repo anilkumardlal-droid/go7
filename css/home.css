@@ -2,10 +2,6 @@
     font-weight:700 !important;
 }
 
-.contact-info{
-    padding:1.5rem 1.5rem 1rem 1.5rem !important;
-}
-
 
 .navbar-brand img{
     height:40px !important;
@@ -483,14 +479,6 @@ body{
 }
 
 @media screen and (max-width: 767px) {
-  .header {
-    padding: 25px !important;
-  }
-
-  .contact-info {
-    background: linear-gradient(90deg, #e0f2fe 0%, #ffffff 50%, #e0f2fe 100%) !important;
-  }
-
   body {
     padding: 0 14px !important;
   }
