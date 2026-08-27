@@ -478,6 +478,10 @@ body{
     color:#64748B !important;
 }
 
+footer {
+  display: none !important;
+}
+
 @media screen and (max-width: 767px) {
   body {
     padding: 0 14px !important;
