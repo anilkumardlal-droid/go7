@@ -481,9 +481,3 @@ body{
 .footer a{
     color:#64748B !important;
 }
-
-@media (max-width: 767px) {
-  body {
-    padding: 0 24px;
-  }
-}
