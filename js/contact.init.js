@@ -84,7 +84,7 @@ const updateMessage = () => {
     feedback.innerHTML = `
 <div style="line-height:1.7;">
 
-<strong style="display:block;color:#10A6BA;font-size:17px;font-weight:700;">
+<strong style="display:block;color:#22c55e;font-size:17px;font-weight:700;">
 ✓ Inquiry Sent Successfully
 </strong>
 
