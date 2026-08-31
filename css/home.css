@@ -2,6 +2,9 @@
     font-weight:700 !important;
 }
 
+.py-5 {
+    padding-bottom: 1.5rem !important;
+}
 
 .navbar-brand img{
     height:40px !important;
