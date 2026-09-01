@@ -93,8 +93,8 @@ const updateMessage = () => {
 </strong>
 
 <p style="margin:14px 0 0;color:#64748B;">
-Thank you for your inquiry.<br>
-GO7.IN will review your inquiry and respond within 24 hours.
+Thank you for your interest in <strong>${sourceDomain.toUpperCase()}</strong>.<br>
+We will review your inquiry and respond within 24 hours.
 </p>
 
 <p style="margin:14px 0 0;color:#64748B;">
