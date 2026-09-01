@@ -27,3 +27,33 @@
     }
 
 })();
+
+(function () {
+
+    const source = new URLSearchParams(window.location.search).get("source");
+
+    let domain = "GO7.IN";
+
+    if (source) {
+        const cleaned = source
+            .trim()
+            .toLowerCase()
+            .replace(/^https?:\/\//, "")
+            .replace(/^www\./, "")
+            .split("/")[0];
+
+        if (/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(cleaned)) {
+            domain = cleaned.toUpperCase();
+        }
+    }
+
+    document.getElementById("domain-name").textContent =
+        "www." + domain;
+
+    document.getElementById("interest-title").textContent =
+        "Interested in " + domain + "?";
+
+    document.getElementById("inquiry-description").textContent =
+        "Interested in " + domain + "? Submit your inquiry or offer.";
+
+})();
