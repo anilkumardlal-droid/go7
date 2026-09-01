@@ -38,22 +38,26 @@ Sending...
 `;
     btn.style.cursor = "not-allowed";
 
-    try {
-        const res = await fetch("https://api.go7.in/", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: document.getElementById("contact-name").value,
-                email: document.getElementById("contact-email").value,
-                subject: document.getElementById("contact-subject").value,
-                message: document.getElementById("contact-message").value,
-                token: token
-            })
-        });
+const sourceDomain =
+    new URLSearchParams(window.location.search).get("source") || "go7.in";
 
-        const data = await res.json();
+try {
+    const res = await fetch("https://api.go7.in/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: document.getElementById("contact-name").value,
+            email: document.getElementById("contact-email").value,
+            subject: document.getElementById("contact-subject").value,
+            message: document.getElementById("contact-message").value,
+            source_domain: sourceDomain,
+            token: token
+        })
+    });
+
+    const data = await res.json();
 
 if (!res.ok && res.status !== 429) {
     throw new Error(data.error || "Request failed");
