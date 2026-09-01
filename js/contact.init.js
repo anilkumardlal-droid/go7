@@ -1,102 +1,158 @@
+let turnstileVerifiedToken = null;
+let turnstileWaitingForVerification = false;
+
+window.onTurnstileSuccess = function(token) {
+
+    turnstileVerifiedToken = token;
+    turnstileWaitingForVerification = false;
+
+    const form = document.getElementById("contact-form");
+
+    if (form) {
+        form.requestSubmit();
+    }
+};
+
+
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
+
     e.preventDefault();
+
     const feedback = document.querySelector(".contact-feedback");
 
-feedback.innerHTML = "";
-feedback.style.color = "";
-feedback.style.fontWeight = "";
-   const message = document.getElementById("contact-message").value.trim();
+    feedback.innerHTML = "";
+    feedback.style.color = "";
+    feedback.style.fontWeight = "";
 
-if (message.length < 20) {
+    const message = document.getElementById("contact-message").value.trim();
 
-    feedback.style.color = "#B45309";
-    feedback.style.fontWeight = "600";
+    if (message.length < 20) {
 
-    feedback.innerHTML =
-    '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Please describe your offer in at least 20 characters.';
+        feedback.style.color = "#B45309";
+        feedback.style.fontWeight = "600";
 
-    return;
-}
-    const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
+        feedback.innerHTML =
+        '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Please describe your offer in at least 20 characters.';
+
+        return;
+    }
+
 
     const turnstileBox = document.querySelector(".cf-turnstile");
 
-if (turnstileBox && turnstileBox.style.display === "none") {
-    turnstileBox.style.display = "";
-    feedback.style.color = "#64748B";
-    feedback.style.fontWeight = "500";
-    feedback.innerHTML =
-        '<i class="mdi mdi-shield-check-outline" style="margin-right:8px;"></i>Please complete the security check below.';
-    return;
-}
+    /*
+     * First click:
+     * Show Turnstile and wait for verification.
+     */
+    if (!turnstileVerifiedToken) {
+
+        if (turnstileBox && turnstileBox.style.display === "none") {
+            turnstileBox.style.display = "";
+        }
+
+        turnstileWaitingForVerification = true;
+
+        return;
+    }
+
+
+    const token = turnstileVerifiedToken;
+
 
     if (!token) {
 
-    feedback.style.color = "#B45309";
-    feedback.style.fontWeight = "600";
+        feedback.style.color = "#B45309";
+        feedback.style.fontWeight = "600";
 
-    feedback.innerHTML =
-    '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Please complete the security check.';
+        feedback.innerHTML =
+        '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Please complete the security check.';
 
-    return;
-}
+        return;
+    }
+
 
     const btn = document.getElementById("contact-submit");
+
     btn.disabled = true;
+
     btn.innerHTML = `
 <span class="spinner-border spinner-border-sm me-2"></span>
 Sending...
 `;
+
     btn.style.cursor = "not-allowed";
 
-const sourceDomain =
-    new URLSearchParams(window.location.search).get("source") || "go7.in";
 
-try {
-    const res = await fetch("https://api.go7.in/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            name: document.getElementById("contact-name").value,
-            email: document.getElementById("contact-email").value,
-            subject: document.getElementById("contact-subject").value,
-            message: document.getElementById("contact-message").value,
-            source_domain: sourceDomain,
-            token: token
-        })
-    });
+    const sourceDomain =
+        new URLSearchParams(window.location.search).get("source") || "go7.in";
 
-    const data = await res.json();
 
-if (!res.ok && res.status !== 429) {
-    throw new Error(data.error || "Request failed");
-}
+    try {
 
-if (data.success) {
+        const res = await fetch("https://api.go7.in/", {
+            method: "POST",
 
-    feedback.style.display = "block";
-    feedback.style.visibility = "visible";
-    feedback.style.opacity = "1";
-    feedback.style.color = "#00d084";
-    document.getElementById("contact-form").reset();
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-if (typeof turnstile !== "undefined") {
-    turnstile.reset();
-}
+            body: JSON.stringify({
+                name: document.getElementById("contact-name").value,
+                email: document.getElementById("contact-email").value,
+                subject: document.getElementById("contact-subject").value,
+                message: document.getElementById("contact-message").value,
+                source_domain: sourceDomain,
+                token: token
+            })
+        });
 
-document.getElementById("contact-name").closest(".row").style.display = "none";
-document.getElementById("contact-subject").closest(".row").style.display = "none";
-document.getElementById("contact-message").closest(".row").style.display = "none";
 
-document.getElementById("contact-fields").style.display = "none";
+        const data = await res.json();
 
-let seconds = 10;
 
-const updateMessage = () => {
+        if (!res.ok && res.status !== 429) {
+            throw new Error(data.error || "Request failed");
+        }
 
-    feedback.innerHTML = `
+
+        if (data.success) {
+
+            feedback.style.display = "block";
+            feedback.style.visibility = "visible";
+            feedback.style.opacity = "1";
+            feedback.style.color = "#00d084";
+
+            document.getElementById("contact-form").reset();
+
+
+            turnstileVerifiedToken = null;
+            turnstileWaitingForVerification = false;
+
+
+            if (typeof turnstile !== "undefined") {
+                turnstile.reset();
+            }
+
+
+            document.getElementById("contact-name")
+                .closest(".row").style.display = "none";
+
+            document.getElementById("contact-subject")
+                .closest(".row").style.display = "none";
+
+            document.getElementById("contact-message")
+                .closest(".row").style.display = "none";
+
+            document.getElementById("contact-fields")
+                .style.display = "none";
+
+
+            let seconds = 10;
+
+
+            const updateMessage = () => {
+
+                feedback.innerHTML = `
 <div style="line-height:1.7;">
 
 <strong style="display:block;color:#22c55e;font-size:17px;font-weight:700;">
@@ -119,51 +175,74 @@ second${seconds !== 1 ? "s" : ""}...
 </div>
 `;
 
-};
+            };
 
-updateMessage();
 
-const countdown = setInterval(() => {
+            updateMessage();
 
-    seconds--;
 
-updateMessage();
+            const countdown = setInterval(() => {
 
-if (seconds <= 0) {
-    clearInterval(countdown);
+                seconds--;
 
-    setTimeout(() => {
-    window.location.href = "/";
-}, 300);
-}
+                updateMessage();
 
-}, 1000);
 
-} else {
+                if (seconds <= 0) {
 
-    feedback.style.display = "block";
-    feedback.style.visibility = "visible";
-    feedback.style.opacity = "1";
-    feedback.style.color = "#B45309";
-    feedback.style.fontWeight = "600";
+                    clearInterval(countdown);
 
-if (data.retryAfter) {
+                    setTimeout(() => {
+                        window.location.href = "/";
+                    }, 300);
+                }
 
-const turnstileBox = document.querySelector(".cf-turnstile");
-if (turnstileBox) {
-    turnstileBox.style.display = "none";
-}
-btn.style.display = "none";
+            }, 1000);
 
-    let remaining = Math.max(0, Number(data.retryAfter) || 0);
 
-   const updateCountdown = () => {
+        } else {
 
-    const h = String(Math.floor(remaining / 3600)).padStart(2, "0");
-const m = String(Math.floor((remaining % 3600) / 60)).padStart(2, "0");
-const s = String(remaining % 60).padStart(2, "0");
+            feedback.style.display = "block";
+            feedback.style.visibility = "visible";
+            feedback.style.opacity = "1";
+            feedback.style.color = "#B45309";
+            feedback.style.fontWeight = "600";
 
-feedback.innerHTML = `
+
+            if (data.retryAfter) {
+
+                const turnstileBox =
+                    document.querySelector(".cf-turnstile");
+
+
+                if (turnstileBox) {
+                    turnstileBox.style.display = "none";
+                }
+
+
+                btn.style.display = "none";
+
+
+                let remaining =
+                    Math.max(0, Number(data.retryAfter) || 0);
+
+
+                const updateCountdown = () => {
+
+                    const h =
+                        String(Math.floor(remaining / 3600))
+                        .padStart(2, "0");
+
+                    const m =
+                        String(Math.floor((remaining % 3600) / 60))
+                        .padStart(2, "0");
+
+                    const s =
+                        String(remaining % 60)
+                        .padStart(2, "0");
+
+
+                    feedback.innerHTML = `
 <div style="line-height:1.7">
 
 <strong style="display:block;color:#B45309;font-size:15px;font-weight:600;">
@@ -222,80 +301,122 @@ text-align:center;
 
 </div>
 `;
-};
 
-    updateCountdown();
+                };
 
-    const timer = setInterval(() => {
 
-        remaining--;
+                updateCountdown();
 
-if (remaining < 0) {
-    
-clearInterval(timer);
 
-feedback.innerHTML = `
+                const timer = setInterval(() => {
+
+                    remaining--;
+
+
+                    if (remaining < 0) {
+
+                        clearInterval(timer);
+
+
+                        feedback.innerHTML = `
 <strong style="color:#10A6BA;font-size:16px;">
 ✓ You can now submit your inquiry again.
 </strong>
 `;
 
-if (turnstileBox) {
-    turnstileBox.style.display = "";
-}
-btn.style.display = "";
 
-btn.disabled = false;
-btn.innerHTML = "Send Inquiry";
-btn.style.cursor = "pointer";
+                        if (turnstileBox) {
+                            turnstileBox.style.display = "";
+                        }
 
-if (typeof turnstile !== "undefined") {
-    turnstile.reset();
-}
 
-            return;
+                        btn.style.display = "";
+
+                        btn.disabled = false;
+                        btn.innerHTML = "Send Inquiry";
+                        btn.style.cursor = "pointer";
+
+
+                        turnstileVerifiedToken = null;
+                        turnstileWaitingForVerification = false;
+
+
+                        if (typeof turnstile !== "undefined") {
+                            turnstile.reset();
+                        }
+
+
+                        return;
+                    }
+
+
+                    updateCountdown();
+
+                }, 1000);
+
+
+            } else {
+
+                feedback.innerHTML =
+                    '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>' +
+                    (data.error || data.message || "Unknown Error");
+
+
+                turnstileVerifiedToken = null;
+                turnstileWaitingForVerification = false;
+
+
+                if (typeof turnstile !== "undefined") {
+                    turnstile.reset();
+                }
+
+
+                btn.disabled = false;
+                btn.innerHTML = "Send Inquiry";
+                btn.style.cursor = "pointer";
+            }
         }
 
-        updateCountdown();
 
-    }, 1000);
+    } catch (err) {
 
-} else {
+        console.error(err);
 
-    feedback.innerHTML =
-        '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>' +
-        (data.error || data.message || "Unknown Error");
 
-    btn.disabled = false;
-    btn.innerHTML = "Send Inquiry";
-    btn.style.cursor = "pointer";
-}
-}
+        turnstileVerifiedToken = null;
+        turnstileWaitingForVerification = false;
 
-   } catch (err) {
-    console.error(err);
 
-if (typeof turnstile !== "undefined") {
-    turnstile.reset();
-}
+        if (typeof turnstile !== "undefined") {
+            turnstile.reset();
+        }
 
-    feedback.style.display = "block";
-    feedback.style.visibility = "visible";
-    feedback.style.opacity = "1";
-    feedback.style.color = "#B45309";
-    feedback.style.fontWeight = "600";
 
-    feedback.innerHTML =
-'<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Unable to send your inquiry. Please check your connection and try again.';
-    const turnstileBox = document.querySelector(".cf-turnstile");
+        feedback.style.display = "block";
+        feedback.style.visibility = "visible";
+        feedback.style.opacity = "1";
+        feedback.style.color = "#B45309";
+        feedback.style.fontWeight = "600";
 
-if (turnstileBox) {
-    turnstileBox.style.display = "";
-}
 
-btn.style.display = "";
-    btn.disabled = false;
-    btn.innerHTML = "Send Inquiry";
-    btn.style.cursor = "pointer";
-}
+        feedback.innerHTML =
+        '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Unable to send your inquiry. Please check your connection and try again.';
+
+
+        const turnstileBox =
+            document.querySelector(".cf-turnstile");
+
+
+        if (turnstileBox) {
+            turnstileBox.style.display = "";
+        }
+
+
+        btn.style.display = "";
+
+        btn.disabled = false;
+        btn.innerHTML = "Send Inquiry";
+        btn.style.cursor = "pointer";
+    }
+
 });
