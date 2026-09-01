@@ -19,6 +19,17 @@ if (message.length < 20) {
 }
     const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
 
+    const turnstileBox = document.querySelector(".cf-turnstile");
+
+if (turnstileBox && turnstileBox.style.display === "none") {
+    turnstileBox.style.display = "";
+    feedback.style.color = "#64748B";
+    feedback.style.fontWeight = "500";
+    feedback.innerHTML =
+        '<i class="mdi mdi-shield-check-outline" style="margin-right:8px;"></i>Please complete the security check below.';
+    return;
+}
+
     if (!token) {
 
     feedback.style.color = "#B45309";
