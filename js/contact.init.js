@@ -9,12 +9,6 @@ window.onTurnstileSuccess = function(token) {
 };
 
 
-document.getElementById("contact-form");
-
-    if (form) {
-        form.requestSubmit();
-    }
-};
 
 
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
