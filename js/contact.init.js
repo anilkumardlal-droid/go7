@@ -32,6 +32,18 @@ document.getElementById("contact-form").addEventListener("submit", async functio
         return;
     }
 
+    const privacyConsent = document.getElementById("privacy-consent");
+
+if (!privacyConsent || !privacyConsent.checked) {
+
+    feedback.style.color = "#B45309";
+    feedback.style.fontWeight = "600";
+
+    feedback.innerHTML =
+        '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Please read and accept the Privacy Policy before submitting your inquiry.';
+
+    return;
+}
     /*
      * First click:
      * Show and render Turnstile.
@@ -81,6 +93,19 @@ async function submitInquiry() {
 
         feedback.innerHTML =
         '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Please complete the security check.';
+
+        return;
+    }
+
+        const privacyConsent = document.getElementById("privacy-consent");
+
+    if (!privacyConsent || !privacyConsent.checked) {
+
+        feedback.style.color = "#B45309";
+        feedback.style.fontWeight = "600";
+
+        feedback.innerHTML =
+            '<i class="mdi mdi-alert-outline" style="margin-right:8px;"></i>Please read and accept the Privacy Policy before submitting your inquiry.';
 
         return;
     }
