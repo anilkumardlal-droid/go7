@@ -1,10 +1,9 @@
 let turnstileVerifiedToken = null;
-let turnstileWaitingForVerification = false;
+let turnstileWidgetId = null;
 
 window.onTurnstileSuccess = function(token) {
 
     turnstileVerifiedToken = token;
-    turnstileWaitingForVerification = false;
 
     const form = document.getElementById("contact-form");
 
@@ -38,22 +37,36 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     }
 
 
-    const turnstileBox = document.querySelector(".cf-turnstile");
-
     /*
-     * First click:
-     * Show Turnstile and wait for verification.
-     */
-    if (!turnstileVerifiedToken) {
+ * First click:
+ * Show and render Turnstile.
+ */
+if (!turnstileVerifiedToken) {
 
-        if (turnstileBox && turnstileBox.style.display === "none") {
-            turnstileBox.style.display = "";
-        }
+    const turnstileBox =
+        document.getElementById("turnstile-widget");
 
-        turnstileWaitingForVerification = true;
+    if (
+        turnstileBox &&
+        turnstileWidgetId === null &&
+        typeof turnstile !== "undefined"
+    ) {
 
-        return;
+        turnstileBox.style.display = "block";
+
+        turnstileWidgetId = turnstile.render(
+            "#turnstile-widget",
+            {
+                sitekey: "0x4AAAAAADnxzvJGSfHstKEu",
+                theme: "light",
+                appearance: "always",
+                callback: "onTurnstileSuccess"
+            }
+        );
     }
+
+    return;
+}
 
 
     const token = turnstileVerifiedToken;
