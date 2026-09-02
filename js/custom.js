@@ -57,3 +57,29 @@
         "Interested in " + domain + "? Submit your inquiry or offer.";
 
 })();
+
+(function () { 
+ 
+    if (window.innerWidth <= 767) { 
+ 
+        window.addEventListener("load", function () { 
+ 
+            setTimeout(function () { 
+ 
+                const contactForm = 
+                    document.getElementById("contact-form"); 
+ 
+                if (!contactForm) return; 
+ 
+                contactForm.scrollIntoView({ 
+                    behavior: "smooth", 
+                    block: "start" 
+                }); 
+ 
+            }, 7000); 
+ 
+        }, { once: true }); 
+ 
+    } 
+ 
+})();
