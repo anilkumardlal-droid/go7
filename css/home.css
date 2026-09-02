@@ -185,6 +185,49 @@
     min-height:110px;
 }
 
+/* =================================
+   Privacy Policy Skeleton
+================================= */
+
+.go7-content-loading .privacy-consent{
+    position:relative;
+    overflow:hidden;
+
+    color:transparent !important;
+    background:#F1F3F6 !important;
+
+    border-radius:6px;
+    user-select:none;
+}
+
+.go7-content-loading .privacy-consent input{
+    visibility:hidden !important;
+}
+
+.go7-content-loading .privacy-consent span,
+.go7-content-loading .privacy-consent a{
+    color:transparent !important;
+}
+
+.go7-content-loading .privacy-consent::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    transform:translateX(-100%);
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.75),
+        transparent
+    );
+
+    animation:go7Skeleton 1.4s linear infinite;
+
+    pointer-events:none;
+}
+
 
 /* =================================
    Cloudflare Turnstile Skeleton
