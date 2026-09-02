@@ -101,7 +101,7 @@ Sending...
 
     try {
 
-        const res = await fetch("https://api.go7.in/", {
+        const res = await fetch("https://api.go7.in/api/inquiries", {
             method: "POST",
 
             headers: {
