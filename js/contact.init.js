@@ -9,8 +9,6 @@ window.onTurnstileSuccess = function(token) {
 };
 
 
-
-
 document.getElementById("contact-form").addEventListener("submit", async function(e) {
 
     e.preventDefault();
@@ -57,7 +55,7 @@ document.getElementById("contact-form").addEventListener("submit", async functio
                     sitekey: "0x4AAAAAADnxzvJGSfHstKEu",
                     theme: "light",
                     appearance: "always",
-                    callback: "onTurnstileSuccess"
+                    callback: window.onTurnstileSuccess
                 }
             );
         }
@@ -433,4 +431,4 @@ text-align:center;
         btn.style.cursor = "pointer";
     }
 
-});
+}
