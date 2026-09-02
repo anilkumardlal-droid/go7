@@ -5,7 +5,11 @@ window.onTurnstileSuccess = function(token) {
 
     turnstileVerifiedToken = token;
 
-    const form = document.getElementById("contact-form");
+    submitInquiry();
+};
+
+
+document.getElementById("contact-form");
 
     if (form) {
         form.requestSubmit();
@@ -36,41 +40,47 @@ document.getElementById("contact-form").addEventListener("submit", async functio
         return;
     }
 
-
     /*
- * First click:
- * Show and render Turnstile.
- */
-if (!turnstileVerifiedToken) {
+     * First click:
+     * Show and render Turnstile.
+     */
+    if (!turnstileVerifiedToken) {
 
-    const turnstileBox =
-        document.getElementById("turnstile-widget");
+        const turnstileBox =
+            document.getElementById("turnstile-widget");
 
-    if (
-        turnstileBox &&
-        turnstileWidgetId === null &&
-        typeof turnstile !== "undefined"
-    ) {
+        if (
+            turnstileBox &&
+            turnstileWidgetId === null &&
+            typeof turnstile !== "undefined"
+        ) {
 
-        turnstileBox.style.display = "block";
+            turnstileBox.style.display = "block";
 
-        turnstileWidgetId = turnstile.render(
-            "#turnstile-widget",
-            {
-                sitekey: "0x4AAAAAADnxzvJGSfHstKEu",
-                theme: "light",
-                appearance: "always",
-                callback: "onTurnstileSuccess"
-            }
-        );
+            turnstileWidgetId = turnstile.render(
+                "#turnstile-widget",
+                {
+                    sitekey: "0x4AAAAAADnxzvJGSfHstKEu",
+                    theme: "light",
+                    appearance: "always",
+                    callback: "onTurnstileSuccess"
+                }
+            );
+        }
+
+        return;
     }
 
-    return;
-}
+    await submitInquiry();
 
+});
+
+
+async function submitInquiry() {
+
+    const feedback = document.querySelector(".contact-feedback");
 
     const token = turnstileVerifiedToken;
-
 
     if (!token) {
 
@@ -83,7 +93,6 @@ if (!turnstileVerifiedToken) {
         return;
     }
 
-
     const btn = document.getElementById("contact-submit");
 
     btn.disabled = true;
@@ -95,10 +104,8 @@ Sending...
 
     btn.style.cursor = "not-allowed";
 
-
     const sourceDomain =
         new URLSearchParams(window.location.search).get("source") || "go7.in";
-
 
     try {
 
@@ -139,7 +146,7 @@ Sending...
 
 
             turnstileVerifiedToken = null;
-            turnstileWaitingForVerification = false;
+            turnstileWidgetId = null;
 
 
             if (typeof turnstile !== "undefined") {
@@ -225,7 +232,7 @@ second${seconds !== 1 ? "s" : ""}...
             if (data.retryAfter) {
 
                 const turnstileBox =
-                    document.querySelector(".cf-turnstile");
+                    document.getElementById("turnstile-widget");
 
 
                 if (turnstileBox) {
@@ -351,7 +358,7 @@ text-align:center;
 
 
                         turnstileVerifiedToken = null;
-                        turnstileWaitingForVerification = false;
+                        turnstileWidgetId = null;
 
 
                         if (typeof turnstile !== "undefined") {
@@ -376,7 +383,7 @@ text-align:center;
 
 
                 turnstileVerifiedToken = null;
-                turnstileWaitingForVerification = false;
+                turnstileWidgetId = null;
 
 
                 if (typeof turnstile !== "undefined") {
@@ -397,7 +404,7 @@ text-align:center;
 
 
         turnstileVerifiedToken = null;
-        turnstileWaitingForVerification = false;
+        turnstileWidgetId = null;
 
 
         if (typeof turnstile !== "undefined") {
@@ -417,7 +424,7 @@ text-align:center;
 
 
         const turnstileBox =
-            document.querySelector(".cf-turnstile");
+            document.getElementById("turnstile-widget");
 
 
         if (turnstileBox) {
