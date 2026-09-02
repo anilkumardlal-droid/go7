@@ -24,10 +24,31 @@ body{
 }
 .header > .container,
 .footer > .container{
-  width:1120px;
+  width:1140px;
   max-width:calc(100% - 30px);
   margin-left:auto;
   margin-right:auto;
+}
+
+.privacy-nav{
+  min-height:90px;
+  padding-top:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.privacy-logo{
+  display:flex;
+  align-items:center;
+  margin:0;
+  padding:0;
+  max-width:calc(100% - 90px);
+}
+.privacy-logo img{
+  display:block;
+  max-width:100%;
+  width:auto;
+  height:44px;
 }
 
 /* Floating SVG Back control */
@@ -299,7 +320,8 @@ body{
     max-width:calc(100% - 30px);
   }
   .privacy-nav{
-    min-height:60px;
+    min-height:70px;
+    padding-top:8px;
   }
   .privacy-logo{
     max-width:calc(100% - 70px);
