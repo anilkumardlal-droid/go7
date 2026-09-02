@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Privacy Policy & Domain Transaction Information</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Privacy Policy and information about domain inquiries, payments and transfers for visitors arriving through domains redirected to this website.">
+<meta name="author" content="Anil Srivastav">
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.min.css" rel="stylesheet" type="text/css">
+<link href="css/home.css" rel="stylesheet" type="text/css">
+<style>
+body{
+  background:#fcfcfc;
+  font-family:"Nunito",sans-serif;
+  color:#333;
+}
+.header{
+  background:transparent;
+  border-bottom:0;
+}
+.header > .container,
+.footer > .container{
+  width:1120px;
+  max-width:calc(100% - 30px);
+  margin-left:auto;
+  margin-right:auto;
+}
+.privacy-nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.privacy-logo{
+  display:flex;
+  align-items:center;
+  margin:0;
+  padding:0;
+  max-width:calc(100% - 90px);
+}
+.privacy-logo img{
+  display:block;
+  max-width:100%;
+  width:auto;
+  height:44px;
+}
+
+/* Floating SVG Back control */
+.privacy-back{
+  position:fixed;
+  right:24px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1050;
+  width:52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  border:1px solid #dfe5ea;
+  border-radius:50%;
+  background:rgba(255,255,255,.97);
+  color:#4d5963;
+  text-decoration:none;
+  box-shadow:0 8px 24px rgba(25,35,45,.13);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,color .25s ease;
+}
+.privacy-back-icon{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#f4f7fa;
+}
+.privacy-back-icon svg{
+  width:21px;
+  height:21px;
+  display:block;
+}
+.privacy-back:hover{
+  color:#007bff;
+  border-color:#cfe2f5;
+  box-shadow:0 10px 28px rgba(0,123,255,.18);
+  transform:translateY(-50%) translateX(-3px);
+  text-decoration:none;
+}
+.privacy-back:hover .privacy-back-icon{
+  background:#eaf4ff;
+}
+
+/* Main premium content */
+.privacy-page{
+  padding:62px 0 85px;
+  background:#fcfcfc;
+}
+.privacy-card{
+  width:1120px;
+  max-width:100%;
+  margin:0 auto;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.privacy-hero{
+  position:relative;
+  padding:42px 55px 38px;
+  margin-bottom:52px;
+  overflow:hidden;
+  border:1px solid #e8edf1;
+  border-radius:18px;
+  background:linear-gradient(135deg,#fff 0%,#f9fbfd 100%);
+  box-shadow:0 8px 28px rgba(30,45,60,.055);
+}
+.privacy-hero:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:5px;
+  height:100%;
+  background:#007bff;
+}
+.privacy-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-bottom:10px;
+  color:#007bff;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+.privacy-eyebrow svg{
+  width:15px;
+  height:15px;
+}
+.privacy-title{
+  margin:0 0 14px;
+  font-size:38px;
+  line-height:1.2;
+  font-weight:800;
+  letter-spacing:-.4px;
+}
+.privacy-intro{
+  max-width:930px;
+  margin:0;
+  color:#66717b;
+  font-size:16.5px;
+  line-height:1.9;
+}
+.privacy-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:23px;
+}
+.privacy-meta span{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 12px;
+  border:1px solid #e4e9ed;
+  border-radius:20px;
+  background:#fff;
+  color:#66717b;
+  font-size:12px;
+  font-weight:700;
+}
+
+.privacy-section{
+  position:relative;
+  margin-top:46px;
+  padding-left:54px;
+}
+.privacy-section:before{
+  content:"";
+  position:absolute;
+  left:21px;
+  top:3px;
+  bottom:0;
+  width:1px;
+  background:#e8edf1;
+}
+.privacy-section h2{
+  position:relative;
+  margin:0 0 16px;
+  color:#202a33;
+  font-size:24px;
+  line-height:1.4;
+  font-weight:800;
+}
+.privacy-section h2 .privacy-number{
+  position:absolute;
+  left:-54px;
+  top:-2px;
+  width:43px;
+  height:43px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  border:1px solid #222;
+  border-radius:12px;
+  background:#222;
+  color:#fff;
+  font-size:16px;
+  font-style:normal;
+  font-weight:800;
+  line-height:1;
+  box-shadow:0 4px 12px rgba(25,25,25,.12);
+}
+.privacy-section p,
+.privacy-section li{
+  color:#616b74;
+  font-size:15.5px;
+  line-height:1.95;
+}
+.privacy-section p{
+  margin-bottom:15px;
+}
+.privacy-section ul,
+.privacy-section ol{
+  padding-left:24px;
+  margin-bottom:15px;
+}
+.privacy-section li{
+  margin-bottom:6px;
+}
+.privacy-box{
+  margin-top:23px;
+  padding:22px 24px;
+  border:1px solid #dfe8ef;
+  border-left:4px solid #007bff;
+  border-radius:12px;
+  background:#f8fbfd;
+  color:#5f6972;
+  box-shadow:0 5px 16px rgba(30,50,70,.035);
+}
+.privacy-box strong{
+  color:#202a33;
+}
+.process-step{
+  position:relative;
+  margin-top:14px;
+  padding:18px 20px 18px 22px;
+  border:1px solid #e5eaee;
+  border-radius:12px;
+  background:#fff;
+  color:#626c75;
+  font-size:15px;
+  line-height:1.9;
+  box-shadow:0 4px 14px rgba(30,45,60,.035);
+}
+.process-step:before{
+  content:"";
+  position:absolute;
+  left:-7px;
+  top:24px;
+  width:12px;
+  height:12px;
+  border:3px solid #fff;
+  border-radius:50%;
+  background:#007bff;
+  box-shadow:0 0 0 1px #dce7ef;
+}
+.process-step strong{
+  color:#202a33;
+}
+.privacy-contact{
+  margin-top:52px;
+  padding:30px 32px;
+  border:1px solid #dce8f0;
+  border-radius:16px;
+  background:linear-gradient(135deg,#f5faff,#fff);
+  box-shadow:0 8px 24px rgba(30,50,70,.055);
+}
+.privacy-contact h3{
+  margin-bottom:9px;
+  font-weight:800;
+}
+.footer{
+  border-top:0;
+  background:transparent;
+}
+.footer .container .row,
+.footer .container [class*="col-"]{
+  display:flex;
+  justify-content:center;
+  text-align:center;
+}
+.footer .container .float-end{
+  float:none !important;
+  width:100%;
+  text-align:center;
+}
+.footer p{
+  color:#78828b;
+  text-align:center;
+}
+
+@media(max-width:767px){
+  .header > .container,
+  .footer > .container{
+    width:100%;
+    max-width:calc(100% - 30px);
+  }
+  .privacy-nav{
+    min-height:60px;
+  }
+  .privacy-logo{
+    max-width:calc(100% - 70px);
+  }
+  .privacy-logo img{
+    height:38px;
+  }
+  .privacy-back{
+    right:10px;
+    width:46px;
+    height:46px;
+  }
+  .privacy-back-icon{
+    width:34px;
+    height:34px;
+  }
+  .privacy-back-icon svg{
+    width:19px;
+    height:19px;
+  }
+  .privacy-page{
+    padding:30px 0 55px;
+  }
+  .privacy-hero{
+    padding:30px 24px 27px;
+    margin-bottom:38px;
+    border-radius:15px;
+  }
+  .privacy-title{
+    font-size:29px;
+  }
+  .privacy-intro{
+    font-size:15px;
+    line-height:1.85;
+  }
+  .privacy-meta{
+    gap:7px;
+  }
+  .privacy-meta span{
+    font-size:11px;
+    padding:6px 10px;
+  }
+  .privacy-section{
+    margin-top:38px;
+    padding-left:0;
+  }
+  .privacy-section:before{
+    display:none;
+  }
+  .privacy-section h2{
+    padding-left:50px;
+    min-height:43px;
+    font-size:20px;
+  }
+  .privacy-section h2 .privacy-number{
+    left:0;
+    top:-3px;
+    width:40px;
+    height:40px;
+    border-radius:10px;
+    font-size:15px;
+  }
+  .privacy-section p,
+  .privacy-section li{
+    font-size:15px;
+    line-height:1.85;
+  }
+  .privacy-box{
+    padding:18px 17px;
+    border-radius:10px;
+  }
+  .process-step{
+    padding:16px 16px 16px 19px;
+    font-size:14.5px;
+  }
+  .privacy-contact{
+    padding:24px 20px;
+    border-radius:13px;
+  }
+}
+
+@media(max-width:767px){
+  .footer .container .row,
+  .footer .container [class*="col-"]{
+    justify-content:center;
+    text-align:center;
+  }
+  .footer .container .float-end{
+    width:100%;
+    float:none !important;
+    text-align:center;
+  }
+}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="container">
+<nav class="navbar navbar-expand-md navbar-light p-0 privacy-nav">
+<a class="navbar-brand privacy-logo" href="index.html" aria-label="GO7.IN Home">
+<img src="images/logo-go7domain.png" alt="GO7.IN" height="44">
+</a>
+<a class="privacy-back" href="index.html" aria-label="Back to Home" title="Back to Home">
+<span class="privacy-back-icon">
+<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+<path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+</a>
+</nav>
+</div>
+</div>
+
+<div class="contain-box go7-content-loading" id="go7Content">
+<div class="privacy-page"><div class="container"><div class="row justify-content-center"><div class="col-lg-10">
+<div class="privacy-card">
+<div class="privacy-hero">
+<div class="privacy-eyebrow">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-2.9 8.7-7 10-4.1-1.3-7-5.4-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"></path><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+Privacy &amp; Domain Transactions
+</div>
+<h1 class="text-primary privacy-title">Privacy Policy</h1>
+<p class="text-muted privacy-intro">Your privacy, security and trust are important to us. This policy explains what information may be collected when you visit this website, including when you arrive through another domain name that has been permanently redirected here using a 301 redirect, how that information is used, and how domain inquiries, negotiations, payments and transfers are handled.</p>
+<div class="privacy-meta">
+<span>Privacy</span>
+<span>301 Redirects</span>
+<span>Domain Inquiries</span>
+<span>Secure Transactions</span>
+</div>
+</div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">1</i> About This Website</h2>
+<p>This website is operated as a central place where visitors can learn about domain names that may be available for sale and can contact us if they are interested in purchasing a particular domain. The purpose of the website is straightforward: a visitor can arrive here, identify the domain that brought them to the website, review the available information, and send an inquiry to begin a genuine conversation about that domain.</p>
+<p>The website may be reached through multiple domain names. Some domains may be used as the primary website address, while other domains owned or controlled by us may be configured to permanently redirect visitors here. Because the same website can receive visitors from different domains, we use the source-domain information to keep the inquiry connected with the domain the visitor originally intended to visit.</p>
+<p>This is important in a multi-domain setup. If someone enters a domain directly, follows a link, or reaches the website through a 301 redirect, the inquiry should still clearly identify the domain being discussed. The purpose of recording the source domain is therefore practical and administrative, not to create a different privacy policy for different visitors.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">2</i> Domains Using 301 Redirects</h2>
+<p>A 301 redirect is a standard HTTP method used to permanently send a visitor from one web address to another. In our setup, a domain that is intended to be offered for sale may be configured to redirect visitors to this website. The visitor may therefore type one domain into the browser, but after the redirect the browser will display the destination website.</p>
+<p>Importantly, a 301 redirect does not change which domain the visitor may be interested in purchasing. For example, if a visitor enters <strong>example.in</strong> and that domain redirects to this website, the visitor may still be contacting us specifically about <strong>example.in</strong>. The destination website is simply being used as the place where the inquiry and communication are handled.</p>
+<p>To reduce confusion, the original domain can be passed to the website as source information. When an inquiry is submitted, that source information can be stored with the inquiry so that we know which domain the visitor was referring to. This is especially useful when several domains are being marketed through the same website.</p>
+<div class="privacy-box"><strong>Simple example:</strong> Domain A → 301 Redirect → This Website → Inquiry for Domain A. The website is the common communication point, while Domain A remains the subject of the inquiry.</div></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">3</i> Information We May Collect</h2>
+<p>When you voluntarily submit an inquiry, we may collect information necessary to communicate with you and process the inquiry, such as:</p>
+<ul><li>Your name.</li><li>Your email address.</li><li>The subject and message of your inquiry.</li><li>The domain associated with your visit or inquiry (Source Domain).</li><li>Inquiry identification and submission date/time information.</li><li>Basic technical and security information such as IP address, country, city, region, device type, browser and timezone.</li></ul>
+<p>We do not ask you to provide unnecessary sensitive personal information in the inquiry form. Please do not submit passwords, payment-card numbers, authentication codes or other confidential credentials through the contact form.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">4</i> How Inquiry Information Is Used</h2>
+<p>Information submitted through the inquiry form is used primarily to understand your request, identify the domain you are asking about, communicate with you, discuss availability and price, and, where applicable, proceed with a domain transaction.</p>
+<p>Technical information may also be used for security, abuse prevention, troubleshooting, rate limiting and maintaining the reliability of the website.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">5</i> Security and Anti-Spam Protection</h2>
+<p>The contact form uses security controls designed to reduce automated abuse, spam and fraudulent submissions. A security verification service may process technical information required to determine whether a submission appears to come from a genuine visitor.</p>
+<p>Requests may also be subject to reasonable rate limits and automated checks. These measures are intended to protect the website, its owner and genuine visitors from abuse.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">6</i> Information Sharing</h2>
+<p>We do not sell your personal information to advertisers or unrelated parties. Information may be processed by service providers that are necessary to operate the website, protect it from abuse, store inquiry records, or deliver email communications.</p>
+<p>Information may also be disclosed when reasonably necessary to comply with applicable law, respond to a lawful request, protect the website or prevent fraud, abuse or unauthorized activity.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">7</i> Cookies and Technical Information</h2>
+<p>The website may use essential browser storage, cookies or similar technical mechanisms where necessary for functionality, security, session management, or website operation. Basic server-side information may also be available through hosting, security and infrastructure services.</p>
+<p>The exact information available can depend on your browser, device and the security services used to deliver the website.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">8</i> How You Can Trust a Domain Transaction</h2>
+<p>Buying a domain name is a real transfer of a digital asset, so both the buyer and seller should take reasonable steps to make the transaction clear and verifiable. Trust should not depend only on a website, an email address, or a verbal promise. The safest approach is to keep the important details written down and confirm them before money is sent.</p>
+<p>Before paying, a buyer should independently check the exact domain name, confirm who they are communicating with, confirm the agreed amount, and understand how the domain will be transferred. If anything changes at the last minute—especially the payment account, payment amount, or transfer instructions—the buyer should pause and verify the change before proceeding.</p>
+<p>We also recommend keeping the complete email conversation and any written confirmation relating to the domain. These records can make it much easier for both parties to understand what was agreed if there is ever a misunderstanding.</p>
+<ul><li>Confirm the exact spelling and extension of the domain.</li><li>Confirm the final purchase price in writing before payment.</li><li>Confirm whether any additional transaction or transfer fees apply.</li><li>Agree on the payment method and payment recipient before sending funds.</li><li>Keep written records of important messages and confirmations.</li><li>Verify the receiving registrar or account details before transfer.</li><li>Do not proceed if payment instructions suddenly change without verification.</li><li>Never share passwords, OTPs, recovery codes or unnecessary account credentials.</li></ul>
+<div class="privacy-box"><strong>Important security rule:</strong> A legitimate domain transaction should not require you to disclose your password or one-time authentication code to another person. If someone asks for such information, stop the transaction and verify the request independently.</div></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">9</i> How a Domain Sale Can Work</h2>
+<p>Every domain transaction can have slightly different circumstances, but the general process is intended to be simple and transparent. The following describes how a normal transaction may proceed from the first inquiry through completion.</p>
+<div class="process-step"><strong>Step 1 — Visitor arrives:</strong> A visitor reaches the website either directly or through a domain that has been configured with a permanent 301 redirect. If the visitor came through another domain, the source-domain information may be retained so the inquiry can be associated with the correct domain.</div>
+<div class="process-step"><strong>Step 2 — Inquiry is submitted:</strong> The visitor enters their name, email address and message and submits the contact form. The inquiry is received for review and communication.</div>
+<div class="process-step"><strong>Step 3 — Domain is identified:</strong> The source domain and inquiry details are reviewed so that the intended domain is clear. If there is any uncertainty, the domain can be confirmed with the buyer before discussing payment.</div>
+<div class="process-step"><strong>Step 4 — Availability and price discussion:</strong> We communicate with the interested buyer about whether the domain is available, the asking price or offer, and any relevant conditions. A conversation or preliminary figure should not be treated as final unless the final terms are confirmed.</div>
+<div class="process-step"><strong>Step 5 — Terms are confirmed:</strong> Before payment, the buyer and seller should have a clear written understanding of the exact domain, final amount, payment method, transfer procedure and any other important conditions.</div>
+<div class="process-step"><strong>Step 6 — Payment:</strong> The buyer makes payment using the payment method agreed for that particular transaction. Depending on the circumstances, this may be a direct payment arrangement or another mutually agreed transaction method.</div>
+<div class="process-step"><strong>Step 7 — Payment verification:</strong> The transaction status is checked. The transfer should not be treated as complete merely because the buyer has sent a screenshot or initiated a payment; the applicable payment conditions should be satisfied and verified.</div>
+<div class="process-step"><strong>Step 8 — Domain transfer:</strong> Once the agreed conditions are satisfied, the domain transfer is initiated through the relevant registrar or standard domain-transfer process. The buyer should provide accurate receiving-account information and complete any required authorization steps.</div>
+<div class="process-step"><strong>Step 9 — Completion and records:</strong> After the transfer process has been completed or the agreed transaction has otherwise been concluded, both sides should retain their relevant communication and transaction records.</div></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">10</i> Pricing and Negotiation</h2>
+<p>There is no requirement for every domain to have the same price. The value of a domain can depend on factors such as its length, memorability, extension, commercial usefulness, demand and the circumstances of the particular transaction. For that reason, pricing can vary from one domain to another.</p>
+<p>An asking price, an indicative price, a visitor's initial offer, or a number mentioned during an early conversation should not be understood as a final transaction price unless the final amount is expressly confirmed between the buyer and seller.</p>
+<p>Visitors are welcome to submit serious and reasonable offers. Negotiation may take place by email or another agreed communication channel. Once both sides agree, the final domain, purchase amount, payment method, transfer procedure and other material conditions should be recorded clearly before payment is made.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">11</i> Payment and Transaction Details</h2>
+<p>Payment is handled only after the important transaction details have been discussed and agreed. There is no single payment method that must be used for every domain sale. The appropriate method can depend on the buyer, seller, transaction value, practical requirements and any mutually agreed third-party service.</p>
+<p>Before sending money, the buyer should have a written confirmation of at least the following: the exact domain name being purchased, the final agreed price, the payment recipient, the payment method, and the basic domain-transfer procedure. If there are any additional fees, those should also be understood before payment.</p>
+<p>The buyer should verify payment instructions carefully. If an email suddenly provides a different bank account, payment address, wallet, recipient name or amount from what was previously confirmed, do not assume the new information is genuine. Pause and request confirmation through a trusted communication channel.</p>
+<p>A screenshot showing that a payment was initiated may not by itself mean that the payment has been received or cleared. Where necessary, payment status may be verified before the domain transfer is completed.</p>
+<p>Once the applicable payment conditions have been satisfied, the domain transfer can proceed according to the agreed procedure. The final completion of the transaction should be understood from the written terms and the actual transfer/payment status, rather than from an informal assumption.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">12</i> Secure Escrow or Third-Party Transaction Services</h2>
+<p>Where mutually agreed or appropriate, a recognized third-party escrow or transaction service may be used. If such a service is selected, its own terms, privacy policy, fees and verification requirements will apply to that part of the transaction.</p>
+<p>We do not claim that every transaction will use the same payment or escrow provider. The method should be agreed before payment.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">13</i> Domain Transfer</h2>
+<p>After the agreed payment and transaction conditions have been satisfied, the domain is transferred using the normal procedure supported by the relevant registrar and registry. The exact steps can vary depending on the domain extension, registrar and account setup.</p>
+<p>A transfer may require the buyer to provide a correct registrar account, receiving account information, authorization details, or other information required by the registrar. The buyer is responsible for providing accurate receiving details and completing any actions that the registrar requires on their side.</p>
+<p>Before the transfer is initiated, the buyer should carefully check the spelling of the domain and the destination account. A domain sent to an incorrect account can create avoidable complications. Once a transfer has been initiated or completed, registrar or registry rules may determine whether and how the action can be reversed.</p>
+<p>The transfer process should therefore be treated as the final operational stage of the transaction, after the commercial terms and payment arrangements have already been confirmed.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">14</i> Transaction Records</h2>
+<p>Relevant emails, inquiry information, payment confirmations and transaction communications may be retained for legitimate business, accounting, dispute resolution, security or legal purposes, subject to applicable requirements.</p>
+<p>Keeping written records helps both parties understand what domain was discussed, what price was agreed and what transaction procedure was selected.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">15</i> Fraud Prevention</h2>
+<p>Please be cautious of anyone asking you to pay to an unexpected account, requesting passwords or authentication codes, changing payment details at the last moment, or creating unusual urgency.</p>
+<p>If payment instructions appear different from previously confirmed details, verify them through a trusted communication channel before sending funds.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">16</i> Data Security</h2>
+<p>Reasonable technical and organizational measures are used to protect inquiry information against unauthorized access, misuse or loss. However, no internet transmission or storage system can be guaranteed to be completely secure.</p>
+<p>Visitors should therefore avoid submitting confidential credentials, financial account passwords, authentication codes or other highly sensitive information through ordinary website forms or email.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">17</i> Data Retention</h2>
+<p>Inquiry and transaction-related information may be retained for as long as reasonably necessary for communication, business records, security, dispute handling, accounting or legal obligations. Retention periods can depend on the type of information and circumstances of the interaction.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">18</i> Your Privacy Choices</h2>
+<p>You may contact us to ask about personal information associated with an inquiry, request correction of inaccurate information, or raise a privacy-related concern. Requests may need to be reasonably verified before information is disclosed or changed.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">19</i> Third-Party Services</h2>
+<p>Website hosting, security, email delivery, database, domain registration, payment or escrow processes may involve third-party providers. These providers may process information necessary to provide their respective services and may have their own terms and privacy policies.</p>
+<p>For example, security verification may be provided by Cloudflare and email delivery may involve an email service provider. Their processing is governed by their applicable policies and terms.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">20</i> Changes to This Policy</h2>
+<p>This Privacy Policy may be updated when the website, domain-sale process, security practices or applicable requirements change. The latest version published on this page will apply to future interactions after it is posted.</p></div>
+
+<div class="privacy-section"><h2 class="text-primary"><i class="privacy-number">21</i> Questions About Privacy or a Domain Transaction</h2>
+<p>If you are not sure which domain your inquiry relates to, how a 301 redirect works, how your information is being used, how the price was determined, which payment method is being proposed, or how the transfer will take place, please ask before proceeding. There is no benefit in making a payment while an important part of the transaction remains unclear.</p>
+<p>For a domain purchase, it is especially important that the exact domain name, final amount, payment recipient and transfer process are clear before money is sent. For privacy questions, you can also contact us if you want to ask about information associated with an inquiry or raise a concern about how it has been handled.</p></div>
+
+<div class="privacy-contact">
+<h3 class="text-primary">Contact Us</h3>
+<p class="mb-2">For privacy questions, domain inquiries and transaction-related communication, please contact:</p>
+<p class="mb-0"><strong>Email:</strong> <a href="mailto:info@go7.in">info@go7.in</a></p>
+</div>
+
+<div class="text-center mt-5"><p class="text-muted small mb-0">Please read and understand the agreed domain, payment and transfer terms before completing any transaction.</p></div>
+</div></div></div></div></div></div></div>
+
+<div class="footer"><div class="container"><div class="row"><div class="col-lg-12"><div class="float-end pull-none">
+<p class="mb-1 mt-4">© <script>document.write(new Date().getFullYear())</script> GO7.IN • Premium .IN Domain</p>
+</div></div></div></div></div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
