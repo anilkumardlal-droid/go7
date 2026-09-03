@@ -522,3 +522,15 @@ body{
     padding: 0 14px !important;
   }
 }
+
+.contact-info {
+    background-image:radial-gradient(
+        105.38% 105.38% at 50% 0,
+        #fff 0%,
+        #fcfcfc 40%,
+        #f5f8ff 50%,
+        #fcfcfc 100%
+    ) !important;
+
+    box-shadow:0 12px 35px rgba(15,23,42,.08) !important;
+}
