@@ -198,7 +198,7 @@ Sending...
 
 <p style="margin:14px 0 0;color:#64748B;">
 Thank you for your interest in <strong>${sourceDomain.toUpperCase()}</strong>.<br>
-We will review your inquiry and respond within 24 hours.
+Your inquiry will be reviewed, and a response will be provided within 24 hours.
 </p>
 
 <p style="margin:14px 0 0;color:#64748B;">
