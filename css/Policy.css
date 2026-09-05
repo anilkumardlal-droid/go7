@@ -416,3 +416,22 @@ html {
         font-size: 20px;
     }
 }
+
+/* Privacy Page - Full Page Skeleton */
+#go7Content.go7-content-loading {
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+#go7Content.go7-content-loading .privacy-page,
+#go7Content.go7-content-loading .privacy-card,
+#go7Content.go7-content-loading .privacy-hero,
+#go7Content.go7-content-loading .privacy-section,
+#go7Content.go7-content-loading .privacy-contact {
+    position: relative;
+}
+
+#go7Content.go7-content-loading .privacy-page {
+    min-height: 100vh;
+}
