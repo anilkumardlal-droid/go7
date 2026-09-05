@@ -417,21 +417,195 @@ html {
     }
 }
 
-/* Privacy Page - Full Page Skeleton */
+
+/* =========================================
+   PRIVACY PAGE - FULL HOME-STYLE SKELETON
+   ========================================= */
+
 #go7Content.go7-content-loading {
     min-height: 100vh !important;
     height: auto !important;
     overflow: visible !important;
 }
 
-#go7Content.go7-content-loading .privacy-page,
-#go7Content.go7-content-loading .privacy-card,
-#go7Content.go7-content-loading .privacy-hero,
-#go7Content.go7-content-loading .privacy-section,
-#go7Content.go7-content-loading .privacy-contact {
+/* Privacy hero */
+#go7Content.go7-content-loading .privacy-hero {
     position: relative;
+    overflow: hidden;
+    background: #E8ECF1 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
 }
 
-#go7Content.go7-content-loading .privacy-page {
-    min-height: 100vh;
+#go7Content.go7-content-loading .privacy-eyebrow,
+#go7Content.go7-content-loading .privacy-title,
+#go7Content.go7-content-loading .privacy-intro,
+#go7Content.go7-content-loading .privacy-meta span {
+    color: transparent !important;
+    background: #E8ECF1 !important;
+    border-color: transparent !important;
+}
+
+/* Section headings */
+#go7Content.go7-content-loading .privacy-section h2 {
+    color: transparent !important;
+}
+
+#go7Content.go7-content-loading .privacy-section h2:not(.privacy-number) {
+    background: #E8ECF1 !important;
+    border-radius: 6px;
+}
+
+/* Number badge */
+#go7Content.go7-content-loading .privacy-section h2 .privacy-number {
+    visibility: visible !important;
+    color: transparent !important;
+    background: #E8ECF1 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Paragraph skeleton lines */
+#go7Content.go7-content-loading .privacy-section p,
+#go7Content.go7-content-loading .privacy-hero .privacy-intro {
+    color: transparent !important;
+    background-color: transparent !important;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        #E8ECF1 0,
+        #E8ECF1 13px,
+        transparent 13px,
+        transparent 21px
+    ) !important;
+    border-radius: 4px;
+}
+
+/* List skeleton */
+#go7Content.go7-content-loading .privacy-section li {
+    color: transparent !important;
+    background: #E8ECF1 !important;
+    border-radius: 4px;
+}
+
+/* Transaction process cards */
+#go7Content.go7-content-loading .process-step {
+    color: transparent !important;
+    background: #E8ECF1 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+#go7Content.go7-content-loading .process-step strong {
+    color: transparent !important;
+}
+
+/* Privacy information boxes */
+#go7Content.go7-content-loading .privacy-box {
+    color: transparent !important;
+    background: #E8ECF1 !important;
+    border-color: transparent !important;
+    border-left-color: transparent !important;
+    box-shadow: none !important;
+}
+
+#go7Content.go7-content-loading .privacy-box strong {
+    color: transparent !important;
+}
+
+/* Contact box */
+#go7Content.go7-content-loading .privacy-contact {
+    background: #E8ECF1 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+#go7Content.go7-content-loading .privacy-contact h3,
+#go7Content.go7-content-loading .privacy-contact p,
+#go7Content.go7-content-loading .privacy-contact a {
+    color: transparent !important;
+}
+
+/* Shimmer */
+#go7Content.go7-content-loading .privacy-hero::after,
+#go7Content.go7-content-loading .privacy-section h2::after,
+#go7Content.go7-content-loading .privacy-section p::after,
+#go7Content.go7-content-loading .privacy-section li::after,
+#go7Content.go7-content-loading .process-step::after,
+#go7Content.go7-content-loading .privacy-box::after,
+#go7Content.go7-content-loading .privacy-contact::after,
+#go7Content.go7-content-loading .privacy-meta span::after,
+#go7Content.go7-content-loading .privacy-eyebrow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.75),
+        transparent
+    );
+    animation: policySkeleton 1.4s linear infinite;
+    pointer-events: none;
+}
+
+/* Position shimmer correctly */
+#go7Content.go7-content-loading .privacy-section h2,
+#go7Content.go7-content-loading .privacy-section p,
+#go7Content.go7-content-loading .privacy-section li,
+#go7Content.go7-content-loading .process-step,
+#go7Content.go7-content-loading .privacy-box,
+#go7Content.go7-content-loading .privacy-contact,
+#go7Content.go7-content-loading .privacy-meta span,
+#go7Content.go7-content-loading .privacy-eyebrow {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hide real text while loading */
+#go7Content.go7-content-loading .privacy-section i,
+#go7Content.go7-content-loading .privacy-section a,
+#go7Content.go7-content-loading .privacy-contact a {
+    color: transparent !important;
+    visibility: hidden !important;
+}
+
+/* Bottom note */
+#go7Content.go7-content-loading .text-center.mt-5 p {
+    color: transparent !important;
+    background: #E8ECF1 !important;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+#go7Content.go7-content-loading .text-center.mt-5 p::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.75),
+        transparent
+    );
+    animation: policySkeleton 1.4s linear infinite;
+}
+
+/* Animation */
+@keyframes policySkeleton {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    #go7Content.go7-content-loading {
+        min-height: 100vh !important;
+        overflow: visible !important;
+    }
+
 }
