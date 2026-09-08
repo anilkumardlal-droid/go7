@@ -339,14 +339,14 @@ second${seconds !== 1 ? "s" : ""}...
 
 
                     feedback.innerHTML = `
-<div style="line-height:1.3">
+<div style="line-height:1.7">
 
-<strong style="display:block;color:#B45309;font-size:15px;font-weight:600;">
-Access has been temporarily restricted after 3 requests.
+<strong style="display:block;color:#B45309;font-size:15px;font-weight:600;line-height:1.2;">
+    Access has been temporarily restricted after 3 requests.
 </strong>
 
-<p style="margin:14px 0 0;color:#64748B;">
-Please try again in
+<p style="margin:4px 0 0;color:#64748B;font-size:13px;line-height:1.2;">
+    Please try again in
 </p>
 
 <div style="
@@ -358,8 +358,8 @@ margin-top:16px;
 ">
 
 <div style="
-width:40px;
-padding:3px;
+width:45px;
+padding:5px;
 border:1px solid #FED7AA;
 border-radius:3px;
 background:#FFF8ED;
@@ -370,8 +370,8 @@ text-align:center;
 </div>
 
 <div style="
-width:40px;
-padding:3px;
+width:45px;
+padding:5px;
 border:1px solid #FED7AA;
 border-radius:3px;
 background:#FFF8ED;
@@ -382,8 +382,8 @@ text-align:center;
 </div>
 
 <div style="
-width:40px;
-padding:3px;
+width:45px;
+padding:5px;
 border:1px solid #FED7AA;
 border-radius:3px;
 background:#FFF8ED;
