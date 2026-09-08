@@ -358,8 +358,8 @@ margin-top:16px;
 ">
 
 <div style="
-width:45px;
-padding:5px;
+width:40px;
+padding:3px;
 border:1px solid #FED7AA;
 border-radius:3px;
 background:#FFF8ED;
@@ -370,8 +370,8 @@ text-align:center;
 </div>
 
 <div style="
-width:45px;
-padding:5px;
+width:40px;
+padding:3px;
 border:1px solid #FED7AA;
 border-radius:3px;
 background:#FFF8ED;
@@ -382,8 +382,8 @@ text-align:center;
 </div>
 
 <div style="
-width:45px;
-padding:5px;
+width:40px;
+padding:3px;
 border:1px solid #FED7AA;
 border-radius:3px;
 background:#FFF8ED;
