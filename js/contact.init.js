@@ -358,14 +358,14 @@ margin-top:16px;
 ">
 
 <div style="
-width:65px;
-padding:12px 8px;
+width:40px;
+padding:5px;
 border:1px solid #E2E8F0;
-border-radius:10px;
+border-radius:6px;
 background:#F8FAFC;
 text-align:center;
 ">
-<div style="font-size:24px;font-weight:700;color:#3850D5;">${h}</div>
+<div style="font-size:14px;font-weight:700;color:#3850D5;">${h}</div>
 <div style="font-size:11px;color:#64748B;">HRS</div>
 </div>
 
