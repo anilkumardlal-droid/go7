@@ -339,7 +339,7 @@ second${seconds !== 1 ? "s" : ""}...
 
 
                     feedback.innerHTML = `
-<div style="line-height:1.7">
+<div style="line-height:1.3">
 
 <strong style="display:block;color:#B45309;font-size:15px;font-weight:600;">
 Access has been temporarily restricted after 3 requests.
@@ -359,37 +359,37 @@ margin-top:16px;
 
 <div style="
 width:40px;
-padding:5px;
-border:1px solid #E2E8F0;
-border-radius:6px;
-background:#F8FAFC;
+padding:3px;
+border:1px solid #FED7AA;
+border-radius:3px;
+background:#FFF8ED;
 text-align:center;
 ">
-<div style="font-size:14px;font-weight:700;color:#3850D5;">${h}</div>
+<div style="font-size:16px;font-weight:600;color:#3850D5;">${h}</div>
 <div style="font-size:11px;color:#64748B;">HRS</div>
 </div>
 
 <div style="
-width:65px;
-padding:12px 8px;
-border:1px solid #E2E8F0;
-border-radius:10px;
-background:#F8FAFC;
+width:40px;
+padding:3px;
+border:1px solid #FED7AA;
+border-radius:3px;
+background:#FFF8ED;
 text-align:center;
 ">
-<div style="font-size:24px;font-weight:700;color:#3850D5;">${m}</div>
+<div style="font-size:16px;font-weight:600;color:#3850D5;">${m}</div>
 <div style="font-size:11px;color:#64748B;">MIN</div>
 </div>
 
 <div style="
-width:65px;
-padding:12px 8px;
-border:1px solid #E2E8F0;
-border-radius:10px;
-background:#F8FAFC;
+width:40px;
+padding:3px;
+border:1px solid #FED7AA;
+border-radius:3px;
+background:#FFF8ED;
 text-align:center;
 ">
-<div style="font-size:24px;font-weight:700;color:#3850D5;">${s}</div>
+<div style="font-size:16px;font-weight:600;color:#3850D5;">${s}</div>
 <div style="font-size:11px;color:#64748B;">SEC</div>
 </div>
 
