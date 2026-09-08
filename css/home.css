@@ -346,8 +346,9 @@ body{
     isolation:isolate;
 }
 
+
 /* =================================
-   Premium GO7 Pattern
+   Premium Multi-Row GO7 Pattern
    ================================= */
 
 .contain-box::before{
@@ -356,25 +357,28 @@ body{
     inset:0;
 
     background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='55' viewBox='0 0 150 55'%3E%3Ctext x='10' y='35' fill='%233850D5' fill-opacity='0.055' font-size='19' font-family='Arial,sans-serif' font-weight='600' letter-spacing='1'%3EGO7%3C/text%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='55' viewBox='0 0 150 55'%3E%3Ctext x='85' y='35' fill='%233850D5' fill-opacity='0.035' font-size='19' font-family='Arial,sans-serif' font-weight='600' letter-spacing='1'%3EGO7%3C/text%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'%3E%3Ctext x='8' y='26' fill='%233850D5' fill-opacity='0.055' font-size='17' font-family='Arial,sans-serif' font-weight='600' letter-spacing='1'%3EGO7%3C/text%3E%3C/svg%3E"),
 
-    background-repeat:repeat,repeat;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='40' viewBox='0 0 100 40'%3E%3Ctext x='58' y='26' fill='%233850D5' fill-opacity='0.035' font-size='17' font-family='Arial,sans-serif' font-weight='600' letter-spacing='1'%3EGO7%3C/text%3E%3C/svg%3E");
+
+    background-repeat:
+        repeat,
+        repeat;
 
     background-position:
         0 0,
-        75px 27px;
+        50px 20px;
 
     background-size:
-        150px 55px,
-        150px 55px;
+        100px 40px,
+        100px 40px;
 
     mask-image:linear-gradient(
         to bottom,
         rgba(0,0,0,.95) 0%,
         rgba(0,0,0,.72) 28%,
-        rgba(0,0,0,.40) 55%,
-        rgba(0,0,0,.16) 75%,
+        rgba(0,0,0,.42) 55%,
+        rgba(0,0,0,.15) 78%,
         transparent 100%
     );
 
@@ -382,8 +386,8 @@ body{
         to bottom,
         rgba(0,0,0,.95) 0%,
         rgba(0,0,0,.72) 28%,
-        rgba(0,0,0,.40) 55%,
-        rgba(0,0,0,.16) 75%,
+        rgba(0,0,0,.42) 55%,
+        rgba(0,0,0,.15) 78%,
         transparent 100%
     );
 
@@ -393,7 +397,7 @@ body{
 
 
 /* =================================
-   Premium Soft Lighting
+   Soft Premium Lighting
    ================================= */
 
 .contain-box::after{
