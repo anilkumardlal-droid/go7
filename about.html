@@ -254,18 +254,80 @@
         font-size:12px;
       }
     }
+
+    .privacy-back-icon {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+    }
+
+    .privacy-back-icon i {
+      font-size:21px;
+      line-height:1;
+    }
+
+    #backToTop {
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:44px;
+      height:44px;
+      padding:0;
+      border:0;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#3850D5;
+      color:#fff;
+      box-shadow:0 8px 22px rgba(15,23,42,.18);
+      cursor:pointer;
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(8px);
+      transition:opacity .2s ease, visibility .2s ease, transform .2s ease;
+      z-index:1050;
+    }
+
+    #backToTop.show {
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+
+    #backToTop i {
+      font-size:21px;
+      line-height:1;
+    }
+
+    @media (max-width:767px) {
+      .privacy-back-icon {
+        width:44px;
+        height:44px;
+      }
+
+      #backToTop {
+        right:15px;
+        bottom:15px;
+        width:44px;
+        height:44px;
+      }
+    }
+
   </style>
 </head>
 <body>
 
   <div class="header">
     <div class="container">
-      <nav class="navbar navbar-expand-md navbar-light p-0">
+      <nav class="navbar navbar-expand-md navbar-light p-0 privacy-nav">
         <a class="navbar-brand" href="https://www.go7.in/" aria-label="GO7.IN Home">
           <img src="/images/logo-go7domain.png" alt="GO7.IN" height="44">
         </a>
         <a class="privacy-back" href="https://www.go7.in/" aria-label="Back to Home" title="Back to Home">
-          <i class="mdi mdi-arrow-left"></i><span>Back</span>
+          <span class="privacy-back-icon"><i class="mdi mdi-arrow-left" aria-hidden="true"></i></span>
         </a>
       </nav>
     </div>
@@ -405,5 +467,35 @@
   <script src="/js/jquery.easing.min.js"></script>
   <script src="/js/app.js"></script>
   <script src="/js/custom.js"></script>
+
+  <button id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+    <i class="mdi mdi-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script>
+    (function() {
+      const button = document.getElementById("backToTop");
+      if (!button) return;
+
+      function toggleBackToTop() {
+        if (window.scrollY > 400) {
+          button.classList.add("show");
+        } else {
+          button.classList.remove("show");
+        }
+      }
+
+      window.addEventListener("scroll", toggleBackToTop, { passive: true });
+      toggleBackToTop();
+
+      button.addEventListener("click", function() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    })();
+  </script>
+
 </body>
 </html>
