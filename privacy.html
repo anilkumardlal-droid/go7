@@ -13,6 +13,275 @@
     <link href="css/style.min.css" rel="stylesheet" type="text/css">
     <link href="css/home.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="css/Policy.css">
+
+    <style id="about-button-design">
+.privacy-back {
+      position:fixed;
+      right:22px;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:1050;
+      min-width:44px;
+      width:44px;
+      height:44px;
+      padding:0;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .privacy-back i {
+      font-size:21px;
+    }
+
+    .about-wrap {
+      padding:42px 0 55px;
+      width:100%;
+      min-height:calc(100vh - 150px);
+      box-sizing:border-box;
+    }
+
+    .about-shell {
+      width:100%;
+      max-width:1050px;
+      margin:0 auto;
+      padding:0 18px;
+      box-sizing:border-box;
+    }
+
+    .about-kicker {
+      margin-bottom:8px;
+      line-height:1.2;
+    }
+
+    .about-title {
+      margin:0 0 12px !important;
+      line-height:1.2;
+    }
+
+    .about-lead {
+      margin:0;
+      line-height:1.65;
+    }
+
+    .profile-row {
+      display:grid !important;
+      grid-template-columns:150px minmax(0,1fr);
+      align-items:start !important;
+      gap:30px;
+      margin-top:30px;
+    }
+
+    .profile-photo {
+      display:block;
+      width:150px !important;
+      height:150px !important;
+      object-fit:cover;
+      border-radius:50%;
+      margin:0;
+    }
+
+    .profile-row > div { min-width:0; }
+    .profile-row h2 { margin-top:0 !important; }
+
+    .about-shell h2 {
+      margin-bottom:14px;
+      line-height:1.3;
+    }
+
+    .about-shell p {
+      margin-bottom:16px;
+      line-height:1.75;
+    }
+
+    .focus-list {
+      list-style:none !important;
+      padding:0 !important;
+      margin:20px 0 0 !important;
+    }
+
+    .focus-list li {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:11px 0;
+      line-height:1.5;
+    }
+
+    .focus-list .check {
+      color:#3850D5 !important;
+      font-size:18px !important;
+      width:20px;
+      min-width:20px;
+      line-height:1 !important;
+      flex:0 0 20px;
+    }
+
+    /* Same footer behavior/alignment as Privacy page */
+    .footer {
+      position:relative !important;
+      left:auto !important;
+      right:auto !important;
+      top:auto !important;
+      bottom:auto !important;
+      clear:both !important;
+      width:100% !important;
+      margin-top:0 !important;
+      transform:none !important;
+    }
+
+    .footer .float-end,
+    .footer .pull-none {
+      float:none !important;
+      text-align:center !important;
+      width:100%;
+    }
+
+    .footer p {
+      margin-top:16px !important;
+      margin-bottom:16px !important;
+      line-height:1.6;
+      text-align:center;
+    }
+
+    html, body {
+      height:auto !important;
+      min-height:100% !important;
+    }
+
+    @media (max-width:767px) {
+      .header > .container,
+      .footer > .container {
+        width:100%;
+        max-width:calc(100% - 30px);
+      }
+
+      .privacy-nav {
+        min-height:54px;
+      }
+
+      .privacy-logo {
+        max-width:calc(100% - 76px);
+      }
+
+      .privacy-logo img {
+        height:38px;
+        max-width:100%;
+      }
+
+      .privacy-back {
+        position:fixed;
+        right:15px;
+        top:14px;
+        transform:none;
+        min-width:44px;
+        width:44px;
+        height:44px;
+        padding:0;
+        border-radius:50%;
+        z-index:1050;
+      }
+
+      .privacy-back i {
+        font-size:21px;
+      }
+
+      .about-wrap {
+        padding:34px 0 38px;
+        min-height:calc(100vh - 120px);
+      }
+
+      .about-shell {
+        padding:0 14px;
+      }
+
+      .profile-row {
+        grid-template-columns:1fr !important;
+        justify-items:start;
+        gap:20px;
+        text-align:left !important;
+      }
+
+      .profile-photo {
+        width:135px !important;
+        height:135px !important;
+      }
+
+      .profile-row h2 {
+        text-align:left;
+      }
+
+      .about-lead {
+        font-size:15px;
+      }
+
+      .footer .container .row,
+      .footer .container [class*="col-"] {
+        justify-content:center;
+        text-align:center;
+      }
+
+      .footer .container .float-end {
+        width:100%;
+        float:none !important;
+        text-align:center;
+      }
+
+      .footer p {
+        text-align:center !important;
+        font-size:12px;
+      }
+    }
+
+    .privacy-back-icon {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:44px;
+      height:44px;
+    }
+
+    .privacy-back-icon i {
+      font-size:21px;
+      line-height:1;
+    }
+
+#backToTop {
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:44px;
+      height:44px;
+      padding:0;
+      border:0;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#3850D5;
+      color:#fff;
+      box-shadow:0 8px 22px rgba(15,23,42,.18);
+      cursor:pointer;
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(8px);
+      transition:opacity .2s ease, visibility .2s ease, transform .2s ease;
+      z-index:1050;
+    }
+
+    #backToTop.show {
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+
+    #backToTop i {
+      font-size:21px;
+      line-height:1;
+    }
+    </style>
+
   </head>
   <body>
     <div class="header">
@@ -22,11 +291,7 @@
             <img src="images/logo-go7domain.png" alt="GO7.IN" height="44">
           </a>
           <a class="privacy-back" href="https://www.go7.in/" aria-label="Back to Home" title="Back to Home">
-            <span class="privacy-back-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </span>
+            <span class="privacy-back-icon"><i class="mdi mdi-arrow-left" aria-hidden="true"></i></span>
           </a>
         </nav>
       </div>
@@ -287,8 +552,8 @@
       <script src="js/app.js"></script>
       <script src="js/custom.js"></script>
       <button id="backToTop" type="button" aria-label="Back to top" title="Back to top">
-        <span aria-hidden="true">↑</span>
-      </button>
+          <i class="mdi mdi-arrow-up" aria-hidden="true"></i>
+        </button>
       <script>
         (function() {
           const button = document.getElementById("backToTop");
