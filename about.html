@@ -12,166 +12,246 @@
   <link href="/css/style.min.css" rel="stylesheet" type="text/css">
   <link href="/css/home.css" rel="stylesheet" type="text/css">
   <style>
-    /* About page: keep the same site assets, but make the page layout independent
-       from any footer/floating rules inherited from the main homepage CSS. */
-    body {
-      min-width: 0;
+    body { min-width:0; }
+
+    .header > .container,
+    .footer > .container {
+      width:1120px;
+      max-width:calc(100% - 30px);
+      margin-left:auto;
+      margin-right:auto;
     }
 
-    .header {
-      position: relative !important;
-      width: 100% !important;
-      z-index: 10;
+    .privacy-nav {
+      min-height:54px;
     }
 
-    .header .container {
-      width: 100%;
+    .privacy-logo {
+      max-width:calc(100% - 76px);
+    }
+
+    .privacy-logo img {
+      height:44px;
+      max-width:100%;
+    }
+
+    /* Same back control as the Privacy page */
+    .privacy-back {
+      position:fixed;
+      right:22px;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:1050;
+      min-width:44px;
+      width:44px;
+      height:44px;
+      padding:0;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .privacy-back i {
+      font-size:21px;
     }
 
     .about-wrap {
-      padding: 42px 0 55px;
-      width: 100%;
+      padding:42px 0 55px;
+      width:100%;
+      min-height:calc(100vh - 150px);
+      box-sizing:border-box;
     }
 
     .about-shell {
-      width: 100%;
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 0 18px;
-      box-sizing: border-box;
+      width:100%;
+      max-width:1050px;
+      margin:0 auto;
+      padding:0 18px;
+      box-sizing:border-box;
     }
 
     .about-kicker {
-      margin-bottom: 8px;
-      line-height: 1.2;
+      margin-bottom:8px;
+      line-height:1.2;
     }
 
     .about-title {
-      margin: 0 0 12px !important;
-      line-height: 1.2;
+      margin:0 0 12px !important;
+      line-height:1.2;
     }
 
     .about-lead {
-      margin: 0;
-      line-height: 1.65;
+      margin:0;
+      line-height:1.65;
     }
 
     .profile-row {
-      display: grid !important;
-      grid-template-columns: 150px minmax(0, 1fr);
-      align-items: start !important;
-      gap: 30px;
-      margin-top: 30px;
+      display:grid !important;
+      grid-template-columns:150px minmax(0,1fr);
+      align-items:start !important;
+      gap:30px;
+      margin-top:30px;
     }
 
     .profile-photo {
-      display: block;
-      width: 150px !important;
-      height: 150px !important;
-      object-fit: cover;
-      border-radius: 50%;
-      margin: 0;
+      display:block;
+      width:150px !important;
+      height:150px !important;
+      object-fit:cover;
+      border-radius:50%;
+      margin:0;
     }
 
-    .profile-row > div {
-      min-width: 0;
-    }
-
-    .profile-row h2 {
-      margin-top: 0 !important;
-    }
+    .profile-row > div { min-width:0; }
+    .profile-row h2 { margin-top:0 !important; }
 
     .about-shell h2 {
-      margin-bottom: 14px;
-      line-height: 1.3;
+      margin-bottom:14px;
+      line-height:1.3;
     }
 
     .about-shell p {
-      margin-bottom: 16px;
-      line-height: 1.75;
+      margin-bottom:16px;
+      line-height:1.75;
     }
 
     .focus-list {
-      list-style: none !important;
-      padding: 0 !important;
-      margin: 20px 0 0 !important;
+      list-style:none !important;
+      padding:0 !important;
+      margin:20px 0 0 !important;
     }
 
     .focus-list li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 11px 0;
-      line-height: 1.5;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:11px 0;
+      line-height:1.5;
     }
 
     .focus-list .check {
-      color: #3850D5 !important;
-      font-size: 18px !important;
-      width: 20px;
-      min-width: 20px;
-      line-height: 1 !important;
-      flex: 0 0 20px;
+      color:#3850D5 !important;
+      font-size:18px !important;
+      width:20px;
+      min-width:20px;
+      line-height:1 !important;
+      flex:0 0 20px;
     }
 
-    /* Prevent inherited footer rules from placing the footer in the middle. */
+    /* Same footer behavior/alignment as Privacy page */
     .footer {
-      position: relative !important;
-      left: auto !important;
-      right: auto !important;
-      top: auto !important;
-      bottom: auto !important;
-      clear: both !important;
-      width: 100% !important;
-      margin-top: 0 !important;
-      transform: none !important;
+      position:relative !important;
+      left:auto !important;
+      right:auto !important;
+      top:auto !important;
+      bottom:auto !important;
+      clear:both !important;
+      width:100% !important;
+      margin-top:0 !important;
+      transform:none !important;
     }
 
     .footer .float-end,
     .footer .pull-none {
-      float: none !important;
-      text-align: center !important;
-      width: 100%;
+      float:none !important;
+      text-align:center !important;
+      width:100%;
     }
 
     .footer p {
-      margin-top: 16px !important;
-      margin-bottom: 16px !important;
-      line-height: 1.6;
+      margin-top:16px !important;
+      margin-bottom:16px !important;
+      line-height:1.6;
+      text-align:center;
     }
 
-    @media (max-width: 767.98px) {
+    html, body {
+      height:auto !important;
+      min-height:100% !important;
+    }
+
+    @media (max-width:767px) {
+      .header > .container,
+      .footer > .container {
+        width:100%;
+        max-width:calc(100% - 30px);
+      }
+
+      .privacy-nav {
+        min-height:54px;
+      }
+
+      .privacy-logo {
+        max-width:calc(100% - 76px);
+      }
+
+      .privacy-logo img {
+        height:38px;
+        max-width:100%;
+      }
+
+      .privacy-back {
+        position:fixed;
+        right:15px;
+        top:14px;
+        transform:none;
+        min-width:44px;
+        width:44px;
+        height:44px;
+        padding:0;
+        border-radius:50%;
+        z-index:1050;
+      }
+
+      .privacy-back i {
+        font-size:21px;
+      }
+
       .about-wrap {
-        padding: 34px 0 38px;
+        padding:34px 0 38px;
+        min-height:calc(100vh - 120px);
       }
 
       .about-shell {
-        padding: 0 14px;
+        padding:0 14px;
       }
 
       .profile-row {
-        grid-template-columns: 1fr !important;
-        justify-items: start;
-        gap: 20px;
-        text-align: left !important;
+        grid-template-columns:1fr !important;
+        justify-items:start;
+        gap:20px;
+        text-align:left !important;
       }
 
       .profile-photo {
-        width: 135px !important;
-        height: 135px !important;
+        width:135px !important;
+        height:135px !important;
       }
 
       .profile-row h2 {
-        text-align: left;
+        text-align:left;
       }
 
       .about-lead {
-        font-size: 15px;
+        font-size:15px;
+      }
+
+      .footer .container .row,
+      .footer .container [class*="col-"] {
+        justify-content:center;
+        text-align:center;
+      }
+
+      .footer .container .float-end {
+        width:100%;
+        float:none !important;
+        text-align:center;
       }
 
       .footer p {
-        text-align: center !important;
-        font-size: 12px;
+        text-align:center !important;
+        font-size:12px;
       }
     }
   </style>
@@ -185,7 +265,7 @@
           <img src="/images/logo-go7domain.png" alt="GO7.IN" height="44">
         </a>
         <a class="privacy-back" href="https://www.go7.in/" aria-label="Back to Home" title="Back to Home">
-          <span class="privacy-back-icon"><i class="mdi mdi-arrow-left"></i></span>
+          <i class="mdi mdi-arrow-left"></i><span>Back</span>
         </a>
       </nav>
     </div>
@@ -226,7 +306,7 @@
           <ul class="focus-list">
             <li><i class="mdi mdi-account-outline check" aria-hidden="true"></i><span>Direct communication with the domain owner.</span></li>
             <li><i class="mdi mdi-tag-outline check" aria-hidden="true"></i><span>Clear discussion of domain availability and pricing.</span></li>
-            <li><i class="mdi mdi-file-document-check-outline check" aria-hidden="true"></i><span>Important transaction terms confirmed before payment.</span></li>
+            <li><i class="mdi mdi-file-check-outline check" aria-hidden="true"></i><span>Important transaction terms confirmed before payment.</span></li>
             <li><i class="mdi mdi-transfer check" aria-hidden="true"></i><span>Clear coordination of the domain transfer process.</span></li>
             <li><i class="mdi mdi-shield-check-outline check" aria-hidden="true"></i><span>No need to share passwords, OTPs or authentication codes.</span></li>
           </ul>
