@@ -492,3 +492,16 @@ html{
     height:32px;
   }
 }
+
+/* =========================================
+   Privacy Page — Background Override
+   ========================================= */
+
+html,
+body,
+.contain-box,
+#go7Content,
+.privacy-page{
+  background-color:#fcfcfc !important;
+  background-image:none !important;
+}
