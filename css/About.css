@@ -1,0 +1,38 @@
+/* =========================================
+   ABOUT PAGE — REMOVE HOME SVG/BACKGROUND
+   ========================================= */
+
+html,
+body{
+  background:#fcfcfc !important;
+  background-image:none !important;
+}
+
+/* Remove home.css pseudo backgrounds */
+body::before,
+body::after,
+.contain-box::before,
+.contain-box::after,
+#go7AboutContent::before,
+#go7AboutContent::after,
+.about-page::before,
+.about-page::after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+  background-image:none !important;
+}
+
+/* About content must stay clean */
+.contain-box,
+#go7AboutContent,
+.about-page{
+  background:#fcfcfc !important;
+  background-image:none !important;
+}
+
+/* Header also stays clean */
+.header{
+  background:#fcfcfc !important;
+  background-image:none !important;
+}
