@@ -53,12 +53,13 @@ body {
     font-size: 14px;
     margin-bottom: 35px;
     background: linear-gradient(
-        90deg,
-        #15803D 0%,
-        #22C55E 30%,
-        #86EFAC 60%,
-        #16A34A 100%
-    );
+    90deg,
+    #7C3AED 0%,
+    #C026D3 25%,
+    #F472B6 50%,
+    #FB923C 75%,
+    #7C3AED 100%
+);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
