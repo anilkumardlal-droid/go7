@@ -1,0 +1,192 @@
+
+body {
+  background: #fcfcfc !important;
+}
+
+.contain-box,
+.home-center,
+.home-desc-center {
+  background-color: #fcfcfc !important;
+  background-image: none !important;
+}
+
+      .contain-box::before,
+.contain-box::after,
+.home-center::before,
+.home-center::after,
+.home-desc-center::before,
+.home-desc-center::after {
+  background-image: none !important;
+}
+      
+      /* =========================================
+         Privacy Page Layout
+         ========================================= */
+
+      body.vh-100 {
+        height: auto !important;
+        min-height: 100vh !important;
+      }
+
+      .contain-box {
+        height: auto !important;
+        min-height: 100vh !important;
+      }
+
+      .privacy-page {
+        width: 100%;
+        max-width: 1120px;
+        padding: 50px 15px 10px;
+        margin: 0 auto;
+      }
+
+      .privacy-card {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      border-radius: 8px;
+      padding: 60px 0 20px;
+      }
+
+      .privacy-card h1 {
+        margin-bottom: 10px;
+      }
+
+      .privacy-updated {
+        font-size: 14px;
+        color: #8492a6;
+        margin-bottom: 35px;
+      }
+
+      .privacy-card h4 {
+        margin-top: 30px;
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      .privacy-card h4:first-of-type {
+        margin-top: 0;
+      }
+
+      .privacy-card p {
+        line-height: 1.8;
+        margin-bottom: 15px;
+      }
+
+      .privacy-card ul {
+        padding-left: 22px;
+        margin-bottom: 18px;
+      }
+
+      .privacy-card li {
+        line-height: 1.8;
+        margin-bottom: 7px;
+      }
+
+      .privacy-contact {
+        margin-top: 35px;
+        padding-top: 25px;
+        border-top: 1px solid #e9ecef;
+      }
+
+      .privacy-back {
+        margin-top: 30px;
+      }
+
+
+      /* =========================================
+         Footer
+         Keep footer below privacy content
+         ========================================= */
+
+      .footer {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        float: none !important;
+        clear: both !important;
+      }
+
+
+
+      .process-step {
+        position: relative;
+        margin-top: 14px;
+        padding: 18px 20px 18px 22px;
+        border: 1px solid #e5eaee;
+        border-radius: 12px;
+        background: #fff;
+        color: #626c75;
+        font-size: 15px;
+        line-height: 1.9;
+        box-shadow: 0 4px 14px rgba(30, 45, 60, .035);
+      }
+
+      .privacy-tags {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 22px 0 30px;
+      }
+
+      .privacy-tag {
+        display: inline-block;
+        padding: 5px 8px;
+        border: 1px solid #dfe8ef;
+        border-left: 4px solid #007bff;
+        border-radius: 8px;
+        background: #fff;
+        }
+
+      /* =========================================
+         Back To Top
+         ========================================= */
+
+      #back-to-top {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        text-align: center;
+        border-radius: 50%;
+        z-index: 1050;
+        display: none;
+        padding: 0;
+      }
+
+      #back-to-top i {
+        font-size: 20px;
+      }
+
+
+      /* =========================================
+         Mobile
+         ========================================= */
+
+      @media (max-width: 767px) {
+
+        .privacy-page {
+          padding: 0 5px;
+        }
+
+        .privacy-card {
+         padding: 10px 8px;
+
+        .privacy-card h1 {
+          font-size: 30px;
+        }
+
+        #back-to-top {
+          right: 18px;
+          bottom: 18px;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+        }
+      }
