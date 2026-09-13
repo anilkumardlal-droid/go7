@@ -84,92 +84,103 @@
  
 })();
 
-<script>
-$(function () {
+(function () {
 
-  var privacyLink = document.getElementById('privacy-policy-link');
-  var privacyOverlay = document.getElementById('privacy-overlay');
-  var privacyBody = document.getElementById('privacy-overlay-body');
-  var privacyClose = document.getElementById('privacy-overlay-close');
-  var privacyBackdrop = document.getElementById('privacy-overlay-backdrop');
+    const privacyLink = document.getElementById("privacy-policy-link");
+    const privacyOverlay = document.getElementById("privacy-overlay");
+    const privacyClose = document.getElementById("privacy-overlay-close");
+    const privacyBackdrop = document.getElementById("privacy-overlay-backdrop");
+    const privacyBody = document.getElementById("privacy-overlay-body");
 
-  function openPrivacy() {
-
-    privacyOverlay.classList.add('is-open');
-    privacyOverlay.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('privacy-overlay-open');
-
-    fetch('/privacy', {
-      credentials: 'same-origin'
-    })
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error('Privacy Policy could not be loaded.');
-      }
-
-      return response.text();
-    })
-    .then(function (text) {
-
-      var parser = new DOMParser();
-      var doc = parser.parseFromString(text, 'text/html');
-      var source = doc.querySelector('.privacy-card');
-
-      if (!source) {
-        throw new Error('Privacy content not found.');
-      }
-
-      var wrapper = document.createElement('div');
-      wrapper.className = 'privacy-overlay-content';
-      wrapper.innerHTML = source.innerHTML;
-
-      wrapper.querySelectorAll(
-        '.privacy-back, #back-to-top, .footer'
-      ).forEach(function (el) {
-        el.remove();
-      });
-
-      privacyBody.innerHTML = '';
-      privacyBody.appendChild(wrapper);
-    })
-    .catch(function () {
-
-      privacyBody.innerHTML =
-        '<div class="privacy-overlay-content">' +
-        '<p class="text-muted">' +
-        'The Privacy Policy could not be loaded here. ' +
-        '<a href="/privacy">Open Privacy Policy</a>.' +
-        '</p>' +
-        '</div>';
-    });
-  }
-
-  function closePrivacy() {
-
-    privacyOverlay.classList.remove('is-open');
-    privacyOverlay.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('privacy-overlay-open');
-  }
-
-  privacyLink.addEventListener('click', function (event) {
-    event.preventDefault();
-    openPrivacy();
-  });
-
-  privacyClose.addEventListener('click', closePrivacy);
-
-  privacyBackdrop.addEventListener('click', closePrivacy);
-
-  document.addEventListener('keydown', function (event) {
-
-    if (
-      event.key === 'Escape' &&
-      privacyOverlay.classList.contains('is-open')
-    ) {
-      closePrivacy();
+    if (!privacyLink || !privacyOverlay || !privacyClose || !privacyBackdrop || !privacyBody) {
+        return;
     }
 
-  });
+    function openPrivacy() {
 
-});
-</script>
+        privacyOverlay.classList.add("is-open");
+        privacyOverlay.setAttribute("aria-hidden", "false");
+        document.body.classList.add("privacy-overlay-open");
+
+        if (privacyBody.dataset.loaded === "true") {
+            return;
+        }
+
+        fetch("/privacy", {
+            credentials: "same-origin"
+        })
+        .then(function (response) {
+
+            if (!response.ok) {
+                throw new Error("Privacy Policy could not be loaded.");
+            }
+
+            return response.text();
+        })
+        .then(function (html) {
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+            const privacyContent = doc.querySelector(".privacy-card");
+
+            if (!privacyContent) {
+                throw new Error("Privacy content not found.");
+            }
+
+            privacyBody.innerHTML = "";
+
+            const content = document.createElement("div");
+            content.className = "privacy-overlay-content";
+            content.innerHTML = privacyContent.innerHTML;
+
+            content.querySelectorAll(
+                ".privacy-back, #back-to-top, .footer"
+            ).forEach(function (element) {
+                element.remove();
+            });
+
+            privacyBody.appendChild(content);
+            privacyBody.dataset.loaded = "true";
+        })
+        .catch(function () {
+
+            privacyBody.innerHTML =
+                '<div class="privacy-overlay-content">' +
+                '<p class="text-muted">' +
+                'Unable to load the Privacy Policy. ' +
+                '<a href="/privacy">Open Privacy Policy</a>.' +
+                '</p>' +
+                '</div>';
+        });
+    }
+
+    function closePrivacy() {
+
+        privacyOverlay.classList.remove("is-open");
+        privacyOverlay.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("privacy-overlay-open");
+    }
+
+    privacyLink.addEventListener("click", function (event) {
+
+        event.preventDefault();
+        openPrivacy();
+
+    });
+
+    privacyClose.addEventListener("click", closePrivacy);
+
+    privacyBackdrop.addEventListener("click", closePrivacy);
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            privacyOverlay.classList.contains("is-open")
+        ) {
+            closePrivacy();
+        }
+
+    });
+
+})();
