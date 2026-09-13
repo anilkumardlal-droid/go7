@@ -59,8 +59,14 @@
       href="https://www.go7.in/privacy"
     />
 
-    <!-- Privacy page only -->
+    <!-- Privacy Page CSS -->
     <style>
+      /* Allow privacy content to grow naturally */
+      .contain-box {
+        height: auto !important;
+        min-height: 100vh !important;
+      }
+
       .privacy-page {
         padding: 50px 0 70px;
       }
@@ -116,6 +122,25 @@
         margin-top: 30px;
       }
 
+      /* Bottom to Top */
+      #back-to-top {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        text-align: center;
+        border-radius: 50%;
+        z-index: 1050;
+        display: none;
+        padding: 0;
+      }
+
+      #back-to-top i {
+        font-size: 20px;
+      }
+
       @media (max-width: 767px) {
         .privacy-page {
           padding: 30px 0 50px;
@@ -127,6 +152,14 @@
 
         .privacy-card h1 {
           font-size: 30px;
+        }
+
+        #back-to-top {
+          right: 18px;
+          bottom: 18px;
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
         }
       }
     </style>
@@ -172,6 +205,7 @@
                 <div class="privacy-card">
 
                   <div class="text-center">
+
                     <h1 class="text-primary">
                       Privacy Policy
                     </h1>
@@ -179,6 +213,7 @@
                     <p class="privacy-updated mb-0">
                       Last updated: September 13, 2026
                     </p>
+
                   </div>
 
                   <div class="mt-4">
@@ -215,7 +250,10 @@
                       <li>Your email address</li>
                       <li>Inquiry subject</li>
                       <li>Your message or offer</li>
-                      <li>Technical information required for security and abuse prevention</li>
+                      <li>
+                        Technical information required for security
+                        and abuse prevention
+                      </li>
                     </ul>
 
 
@@ -231,9 +269,16 @@
                     <ul class="text-muted">
                       <li>Responding to your inquiry or offer</li>
                       <li>Communicating with you regarding the domain</li>
-                      <li>Processing and discussing a potential domain transaction</li>
-                      <li>Preventing spam, fraud, abuse and unauthorized activity</li>
-                      <li>Maintaining the security and reliability of the website</li>
+                      <li>
+                        Processing and discussing a potential domain
+                        transaction
+                      </li>
+                      <li>
+                        Preventing spam, fraud, abuse and unauthorized activity
+                      </li>
+                      <li>
+                        Maintaining the security and reliability of the website
+                      </li>
                     </ul>
 
 
@@ -405,7 +450,10 @@
                       </p>
 
                       <p class="mb-0">
-                        <i class="mdi mdi-email-outline text-primary me-2"></i>
+                        <i
+                          class="mdi mdi-email-outline text-primary me-2"
+                        ></i>
+
                         <a href="mailto:info@go7.in">
                           info@go7.in
                         </a>
@@ -414,6 +462,7 @@
                     </div>
 
 
+                    <!-- Back to Home -->
                     <div class="text-center privacy-back">
 
                       <a
@@ -485,6 +534,18 @@
     </div>
 
 
+    <!-- Back to Top -->
+    <a
+      href="#"
+      id="back-to-top"
+      class="btn btn-primary btn-round"
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <i class="mdi mdi-chevron-up"></i>
+    </a>
+
+
     <!-- JavaScript -->
     <script src="js/jquery.min.js"></script>
 
@@ -495,6 +556,29 @@
     <script src="js/app.js"></script>
 
     <script src="js/custom.js"></script>
+
+
+    <!-- Back to Top Script -->
+    <script>
+      $(window).on("scroll", function () {
+        if ($(this).scrollTop() > 200) {
+          $("#back-to-top").fadeIn();
+        } else {
+          $("#back-to-top").fadeOut();
+        }
+      });
+
+      $("#back-to-top").on("click", function (e) {
+        e.preventDefault();
+
+        $("html, body").animate(
+          {
+            scrollTop: 0
+          },
+          600
+        );
+      });
+    </script>
 
   </body>
 </html>
