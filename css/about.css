@@ -51,15 +51,17 @@ body {
 
     .privacy-updated {
     font-size: 14px;
-    color: #8492a6;
     margin-bottom: 35px;
     background: linear-gradient(
-        to right,
-        #15803D,
-        #22C55E,
-        #86EFAC,
-        #16A34A
-    ) left bottom / 100% 1px no-repeat;
+        90deg,
+        #15803D 0%,
+        #22C55E 30%,
+        #86EFAC 60%,
+        #16A34A 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
       .privacy-card h4 {
