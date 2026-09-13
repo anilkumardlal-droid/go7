@@ -53,8 +53,13 @@ body {
     font-size: 14px;
     color: #8492a6;
     margin-bottom: 35px;
-    border-bottom: 1px solid;
-    border-image: linear-gradient(to right, #28a745, #7bd88f, #28a745) 1;
+    background: linear-gradient(
+        to right,
+        #15803D,
+        #22C55E,
+        #86EFAC,
+        #16A34A
+    ) left bottom / 100% 1px no-repeat;
 }
 
       .privacy-card h4 {
