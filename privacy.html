@@ -60,6 +60,27 @@
 
     <!-- Privacy Page CSS -->
     <style>
+
+      body {
+  background: #fcfcfc !important;
+}
+
+.contain-box,
+.home-center,
+.home-desc-center {
+  background-color: #fcfcfc !important;
+  background-image: none !important;
+}
+
+      .contain-box::before,
+.contain-box::after,
+.home-center::before,
+.home-center::after,
+.home-desc-center::before,
+.home-desc-center::after {
+  background-image: none !important;
+}
+      
       /* =========================================
          Privacy Page Layout
          ========================================= */
@@ -212,12 +233,11 @@
       @media (max-width: 767px) {
 
         .privacy-page {
-          padding: 0 8px;
+          padding: 0 5px;
         }
 
         .privacy-card {
-          padding: 30px 22px;
-        }
+         padding: 10px 8px;
 
         .privacy-card h1 {
           font-size: 30px;
@@ -296,8 +316,6 @@
                   </div>
 
                   <div class="mt-4">
-
-<h1 class="text-primary">Privacy Policy</h1>
 
 <p class="text-muted">Your privacy, security and trust are important to us. This policy explains what information may be collected when you visit this website, including when you arrive through another domain name that directs visitors to this website, how that information is used, and how domain inquiries, negotiations, payments and transfers are handled.</p>
 
