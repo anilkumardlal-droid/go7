@@ -22,7 +22,7 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="images/favicon.png" />
 
-    <!-- Existing GO7.IN CSS -->
+    <!-- css -->
     <link
       rel="stylesheet"
       type="text/css"
@@ -60,20 +60,34 @@
 
     <!-- Privacy Page CSS -->
     <style>
-      /* Allow privacy content to grow naturally */
+      /* =========================================
+         Privacy Page Layout
+         ========================================= */
+
+      body.vh-100 {
+        height: auto !important;
+        min-height: 100vh !important;
+      }
+
       .contain-box {
         height: auto !important;
         min-height: 100vh !important;
       }
 
       .privacy-page {
-        padding: 50px 0 70px;
+        width: 100%;
+        max-width: 1200px;
+        padding: 50px 15px 70px;
+        margin: 0 auto;
       }
 
       .privacy-card {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
         background: #fff;
         border-radius: 8px;
-        padding: 45px 50px;
+        padding: 45px 55px;
       }
 
       .privacy-card h1 {
@@ -121,7 +135,28 @@
         margin-top: 30px;
       }
 
-      /* Bottom to Top */
+
+      /* =========================================
+         Footer
+         Keep footer below privacy content
+         ========================================= */
+
+      .footer {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        float: none !important;
+        clear: both !important;
+      }
+
+
+      /* =========================================
+         Back To Top
+         ========================================= */
+
       #back-to-top {
         position: fixed;
         right: 24px;
@@ -140,9 +175,15 @@
         font-size: 20px;
       }
 
+
+      /* =========================================
+         Mobile
+         ========================================= */
+
       @media (max-width: 767px) {
+
         .privacy-page {
-          padding: 30px 0 50px;
+          padding: 30px 15px 50px;
         }
 
         .privacy-card {
@@ -164,11 +205,16 @@
     </style>
   </head>
 
+
   <body class="vh-100">
 
-    <!-- Header -->
+    <!-- =========================================
+         Header
+         ========================================= -->
+
     <div class="header">
       <div class="container">
+
         <nav class="navbar navbar-expand-md navbar-light p-0">
 
           <a class="navbar-brand" href="index.html">
@@ -185,24 +231,31 @@
           ></div>
 
         </nav>
+
       </div>
     </div>
 
-    <!-- Privacy Content -->
+
+    <!-- =========================================
+         Privacy Content
+         ========================================= -->
+
     <div class="contain-box" id="privacyContent">
 
       <div class="home-center">
+
         <div class="home-desc-center">
 
           <div class="container privacy-page">
 
             <div class="row justify-content-center">
 
-              <!-- Single Column -->
-              <div class="col-lg-10 col-xl-9">
+              <!-- Single Wide Column -->
+              <div class="col-12">
 
                 <div class="privacy-card">
 
+                  <!-- Title -->
                   <div class="text-center">
 
                     <h1 class="text-primary">
@@ -215,8 +268,11 @@
 
                   </div>
 
+
                   <div class="mt-4">
 
+
+                    <!-- 1 -->
                     <h4 class="text-primary">
                       1. Introduction
                     </h4>
@@ -235,6 +291,7 @@
                     </p>
 
 
+                    <!-- 2 -->
                     <h4 class="text-primary">
                       2. Information We Collect
                     </h4>
@@ -256,6 +313,7 @@
                     </ul>
 
 
+                    <!-- 3 -->
                     <h4 class="text-primary">
                       3. How We Use Your Information
                     </h4>
@@ -281,6 +339,7 @@
                     </ul>
 
 
+                    <!-- 4 -->
                     <h4 class="text-primary">
                       4. Information Security
                     </h4>
@@ -299,6 +358,7 @@
                     </p>
 
 
+                    <!-- 5 -->
                     <h4 class="text-primary">
                       5. Cloudflare Turnstile
                     </h4>
@@ -317,6 +377,7 @@
                     </p>
 
 
+                    <!-- 6 -->
                     <h4 class="text-primary">
                       6. Cookies and Similar Technologies
                     </h4>
@@ -334,6 +395,7 @@
                     </p>
 
 
+                    <!-- 7 -->
                     <h4 class="text-primary">
                       7. Sharing of Information
                     </h4>
@@ -350,6 +412,7 @@
                     </p>
 
 
+                    <!-- 8 -->
                     <h4 class="text-primary">
                       8. Data Retention
                     </h4>
@@ -362,6 +425,7 @@
                     </p>
 
 
+                    <!-- 9 -->
                     <h4 class="text-primary">
                       9. Third-Party Services
                     </h4>
@@ -374,11 +438,12 @@
 
                     <p class="text-muted">
                       Such services may process limited technical or
-                      transactional information as necessary to provide
-                      their services and may have their own privacy policies.
+                      transactional information as necessary to provide their
+                      services and may have their own privacy policies.
                     </p>
 
 
+                    <!-- 10 -->
                     <h4 class="text-primary">
                       10. External Links
                     </h4>
@@ -395,6 +460,7 @@
                     </p>
 
 
+                    <!-- 11 -->
                     <h4 class="text-primary">
                       11. Your Privacy Choices
                     </h4>
@@ -407,6 +473,7 @@
                     </p>
 
 
+                    <!-- 12 -->
                     <h4 class="text-primary">
                       12. Children's Privacy
                     </h4>
@@ -420,6 +487,7 @@
                     </p>
 
 
+                    <!-- 13 -->
                     <h4 class="text-primary">
                       13. Changes to This Privacy Policy
                     </h4>
@@ -436,6 +504,7 @@
                     </p>
 
 
+                    <!-- 14 -->
                     <div class="privacy-contact">
 
                       <h4 class="text-primary">
@@ -474,6 +543,7 @@
 
                     </div>
 
+
                   </div>
 
                 </div>
@@ -486,12 +556,16 @@
           </div>
 
         </div>
+
       </div>
 
     </div>
 
 
-    <!-- Footer -->
+    <!-- =========================================
+         Footer
+         ========================================= -->
+
     <div class="footer">
 
       <div class="container">
@@ -533,7 +607,10 @@
     </div>
 
 
-    <!-- Back to Top -->
+    <!-- =========================================
+         Back To Top
+         ========================================= -->
+
     <a
       href="#"
       id="back-to-top"
@@ -545,7 +622,10 @@
     </a>
 
 
-    <!-- JavaScript -->
+    <!-- =========================================
+         JavaScript
+         ========================================= -->
+
     <script src="js/jquery.min.js"></script>
 
     <script src="js/bootstrap.bundle.min.js"></script>
@@ -557,17 +637,21 @@
     <script src="js/custom.js"></script>
 
 
-    <!-- Back to Top Script -->
+    <!-- Back To Top Script -->
     <script>
       $(window).on("scroll", function () {
+
         if ($(this).scrollTop() > 200) {
           $("#back-to-top").fadeIn();
         } else {
           $("#back-to-top").fadeOut();
         }
+
       });
 
+
       $("#back-to-top").on("click", function (e) {
+
         e.preventDefault();
 
         $("html, body").animate(
@@ -576,6 +660,7 @@
           },
           600
         );
+
       });
     </script>
 
