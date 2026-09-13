@@ -83,3 +83,93 @@
     } 
  
 })();
+
+<script>
+$(function () {
+
+  var privacyLink = document.getElementById('privacy-policy-link');
+  var privacyOverlay = document.getElementById('privacy-overlay');
+  var privacyBody = document.getElementById('privacy-overlay-body');
+  var privacyClose = document.getElementById('privacy-overlay-close');
+  var privacyBackdrop = document.getElementById('privacy-overlay-backdrop');
+
+  function openPrivacy() {
+
+    privacyOverlay.classList.add('is-open');
+    privacyOverlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('privacy-overlay-open');
+
+    fetch('/privacy', {
+      credentials: 'same-origin'
+    })
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error('Privacy Policy could not be loaded.');
+      }
+
+      return response.text();
+    })
+    .then(function (text) {
+
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(text, 'text/html');
+      var source = doc.querySelector('.privacy-card');
+
+      if (!source) {
+        throw new Error('Privacy content not found.');
+      }
+
+      var wrapper = document.createElement('div');
+      wrapper.className = 'privacy-overlay-content';
+      wrapper.innerHTML = source.innerHTML;
+
+      wrapper.querySelectorAll(
+        '.privacy-back, #back-to-top, .footer'
+      ).forEach(function (el) {
+        el.remove();
+      });
+
+      privacyBody.innerHTML = '';
+      privacyBody.appendChild(wrapper);
+    })
+    .catch(function () {
+
+      privacyBody.innerHTML =
+        '<div class="privacy-overlay-content">' +
+        '<p class="text-muted">' +
+        'The Privacy Policy could not be loaded here. ' +
+        '<a href="/privacy">Open Privacy Policy</a>.' +
+        '</p>' +
+        '</div>';
+    });
+  }
+
+  function closePrivacy() {
+
+    privacyOverlay.classList.remove('is-open');
+    privacyOverlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('privacy-overlay-open');
+  }
+
+  privacyLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    openPrivacy();
+  });
+
+  privacyClose.addEventListener('click', closePrivacy);
+
+  privacyBackdrop.addEventListener('click', closePrivacy);
+
+  document.addEventListener('keydown', function (event) {
+
+    if (
+      event.key === 'Escape' &&
+      privacyOverlay.classList.contains('is-open')
+    ) {
+      closePrivacy();
+    }
+
+  });
+
+});
+</script>
