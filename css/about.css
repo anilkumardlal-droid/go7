@@ -49,11 +49,13 @@ body {
         margin-bottom: 10px;
       }
 
-      .privacy-updated {
-        font-size: 14px;
-        color: #8492a6;
-        margin-bottom: 35px;
-      }
+    .privacy-updated {
+    font-size: 14px;
+    color: #8492a6;
+    margin-bottom: 35px;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, #28a745, #7bd88f, #28a745) 1;
+}
 
       .privacy-card h4 {
         margin-top: 30px;
