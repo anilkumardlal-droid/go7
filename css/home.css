@@ -7,13 +7,13 @@
 #domain-name,
 #interest-title,
 #inquiry-description {
-    background: linear-gradient(
-        90deg,
-        #2563EB 0%,
-        #4F46E5 30%,
-        #7C3AED 60%,
-        #A855F7 100%
-    ) !important;
+   background: linear-gradient(
+    90deg,
+    #1E293B 0%,
+    #475569 35%,
+    #94A3B8 65%,
+    #334155 100%
+) !important;
 
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
