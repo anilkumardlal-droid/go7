@@ -43,7 +43,7 @@
             .split("/")[0];
 
         if (/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(cleaned)) {
-            domain = cleaned.toUpperCase();
+            domain = cleaned.toLowerCase();
         }
     }
 
