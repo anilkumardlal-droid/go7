@@ -13,24 +13,22 @@ var Tawk_LoadStart = new Date();
     s0.parentNode.insertBefore(s1, s0);
 })();
 
-/* GO7.IN Assistant Custom Chat Button */
+/* GO7.IN Assistant */
 (function () {
-    function createGO7Button() {
-        if (document.getElementById("go7-assistant-button")) return;
 
-        var button = document.createElement("button");
-        button.id = "go7-assistant-button";
-        button.type = "button";
-        button.setAttribute("aria-label", "Open GO7.IN Assistant");
-
-        var img = document.createElement("img");
-        img.src = "images/go7-assistant.png";
-        img.alt = "GO7.IN Assistant";
-
-        button.appendChild(img);
+    function addStyles() {
+        if (document.getElementById("go7-assistant-styles")) return;
 
         var style = document.createElement("style");
+        style.id = "go7-assistant-styles";
+
         style.textContent = `
+            /* Hide original Tawk launcher */
+            iframe[title="chat widget"] {
+                opacity: 0 !important;
+                pointer-events: none !important;
+            }
+
             #go7-assistant-button {
                 position: fixed;
                 right: 20px;
@@ -41,9 +39,9 @@ var Tawk_LoadStart = new Date();
                 border: 0;
                 background: transparent;
                 cursor: pointer;
-                z-index: 999999;
+                z-index: 2147483647;
                 border-radius: 50%;
-                transition: transform 0.2s ease;
+                transition: transform .2s ease;
             }
 
             #go7-assistant-button img {
@@ -57,10 +55,6 @@ var Tawk_LoadStart = new Date();
                 transform: scale(1.06);
             }
 
-            #go7-assistant-button:active {
-                transform: scale(0.96);
-            }
-
             @media (max-width: 600px) {
                 #go7-assistant-button {
                     right: 15px;
@@ -72,6 +66,21 @@ var Tawk_LoadStart = new Date();
         `;
 
         document.head.appendChild(style);
+    }
+
+    function addButton() {
+        if (document.getElementById("go7-assistant-button")) return;
+
+        var button = document.createElement("button");
+        button.id = "go7-assistant-button";
+        button.type = "button";
+        button.setAttribute("aria-label", "Open GO7.IN Assistant");
+
+        var img = document.createElement("img");
+        img.src = "images/go7-assistant.png";
+        img.alt = "GO7.IN Assistant";
+
+        button.appendChild(img);
         document.body.appendChild(button);
 
         button.addEventListener("click", function () {
@@ -81,24 +90,37 @@ var Tawk_LoadStart = new Date();
         });
     }
 
-    function hideTawkBubble() {
-        var style = document.getElementById("go7-hide-tawk");
+    function hideTawk() {
+        var frames = document.querySelectorAll('iframe[title="chat widget"]');
 
-        if (!style) {
-            style = document.createElement("style");
-            style.id = "go7-hide-tawk";
-            style.textContent = `
-                iframe[title="chat widget"] {
-                    opacity: 0 !important;
-                    pointer-events: none !important;
-                }
-            `;
-            document.head.appendChild(style);
-        }
+        frames.forEach(function (frame) {
+            frame.style.setProperty("opacity", "0", "important");
+            frame.style.setProperty("pointer-events", "none", "important");
+        });
     }
 
-    window.addEventListener("load", function () {
-        createGO7Button();
-        hideTawkBubble();
-    });
+    function start() {
+        addStyles();
+        addButton();
+        hideTawk();
+
+        /* Keep hiding Tawk even when it reloads */
+        var observer = new MutationObserver(function () {
+            hideTawk();
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        setInterval(hideTawk, 500);
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", start);
+    } else {
+        start();
+    }
+
 })();
