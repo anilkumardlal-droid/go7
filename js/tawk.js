@@ -3,33 +3,43 @@ var Tawk_LoadStart = new Date();
 
 (function () {
 
-    /* ================================
-       TAWK
-    ================================= */
+    var closeButton = null;
+    var positionTimer = null;
+
+    /* =========================================
+       TAWK EVENTS
+    ========================================= */
 
     Tawk_API.onLoad = function () {
         Tawk_API.hideWidget();
-        showGO7Chat();
+        showLiveButton();
     };
 
     Tawk_API.onChatMaximized = function () {
-        hideGO7Chat();
+        hideLiveButton();
+
+        setTimeout(function () {
+            createCloseButton();
+            positionCloseButton();
+        }, 100);
     };
 
     Tawk_API.onChatMinimized = function () {
+        removeCloseButton();
         Tawk_API.hideWidget();
-        showGO7Chat();
+        showLiveButton();
     };
 
     Tawk_API.onChatHidden = function () {
+        removeCloseButton();
         Tawk_API.hideWidget();
-        showGO7Chat();
+        showLiveButton();
     };
 
 
-    /* ================================
+    /* =========================================
        LOAD TAWK
-    ================================= */
+    ========================================= */
 
     var s1 = document.createElement("script");
     var s0 = document.getElementsByTagName("script")[0];
@@ -44,11 +54,11 @@ var Tawk_LoadStart = new Date();
     s0.parentNode.insertBefore(s1, s0);
 
 
-    /* ================================
-       GO7 LIVE CHAT ICON
-    ================================= */
+    /* =========================================
+       LIVE CHAT BUTTON
+    ========================================= */
 
-    function createGO7Chat() {
+    function createLiveButton() {
 
         if (document.getElementById("go7-live-chat")) {
             return;
@@ -56,12 +66,11 @@ var Tawk_LoadStart = new Date();
 
         var style = document.createElement("style");
 
+        style.id = "go7-live-chat-style";
+
         style.textContent = `
-
             #go7-live-chat {
-
                 position: fixed;
-
                 right: 20px;
                 bottom: 20px;
 
@@ -69,9 +78,7 @@ var Tawk_LoadStart = new Date();
                 height: 62px;
 
                 padding: 0;
-                margin: 0;
-
-                border: none;
+                border: 0;
                 border-radius: 50%;
 
                 background: #3850D5;
@@ -92,48 +99,33 @@ var Tawk_LoadStart = new Date();
                     box-shadow .2s ease;
             }
 
-
             #go7-live-chat:hover {
-
                 transform: translateY(-2px);
 
                 box-shadow:
                     0 9px 28px rgba(56,80,213,.38);
             }
 
-
             #go7-live-chat:active {
-
                 transform: scale(.94);
             }
 
-
-            /* CHAT ICON */
-
             #go7-live-chat svg {
-
                 width: 27px;
                 height: 27px;
 
                 fill: none;
-
-                stroke: #ffffff;
-
+                stroke: #fff;
                 stroke-width: 2;
 
                 stroke-linecap: round;
                 stroke-linejoin: round;
             }
 
-
-            /* LIVE PULSE */
-
             #go7-live-chat::before {
-
                 content: "";
 
                 position: absolute;
-
                 inset: 0;
 
                 border-radius: 50%;
@@ -145,36 +137,24 @@ var Tawk_LoadStart = new Date();
                 pointer-events: none;
             }
 
-
             @keyframes go7LivePulse {
-
                 0% {
-
                     transform: scale(1);
-
                     opacity: .65;
                 }
 
                 70% {
-
                     transform: scale(1.35);
-
                     opacity: 0;
                 }
 
                 100% {
-
                     transform: scale(1.35);
-
                     opacity: 0;
                 }
             }
 
-
-            /* ONLINE DOT */
-
-            #go7-live-chat .go7-online {
-
+            .go7-online {
                 position: absolute;
 
                 width: 12px;
@@ -185,18 +165,14 @@ var Tawk_LoadStart = new Date();
 
                 background: #22c55e;
 
-                border: 3px solid #ffffff;
+                border: 3px solid #fff;
 
                 border-radius: 50%;
-
-                z-index: 2;
 
                 animation: go7Online 1.8s infinite;
             }
 
-
             @keyframes go7Online {
-
                 0% {
                     box-shadow: 0 0 0 0 rgba(34,197,94,.45);
                 }
@@ -210,13 +186,56 @@ var Tawk_LoadStart = new Date();
                 }
             }
 
+            /* CUSTOM CLOSE BUTTON */
 
-            /* MOBILE */
+            #go7-chat-close {
+                position: fixed;
+
+                width: 34px;
+                height: 34px;
+
+                padding: 0;
+
+                border: 0;
+                border-radius: 50%;
+
+                background: #ffffff;
+
+                color: #26324a;
+
+                font-family: Arial, sans-serif;
+
+                font-size: 24px;
+                font-weight: 400;
+
+                line-height: 34px;
+
+                text-align: center;
+
+                cursor: pointer;
+
+                z-index: 2147483647;
+
+                box-shadow:
+                    0 3px 12px rgba(0,0,0,.18);
+
+                transition:
+                    transform .15s ease,
+                    background .15s ease;
+            }
+
+            #go7-chat-close:hover {
+                background: #f1f5f9;
+                transform: scale(1.08);
+            }
+
+            #go7-chat-close:active {
+                transform: scale(.94);
+            }
 
             @media (max-width: 600px) {
 
                 #go7-live-chat {
-
                     right: 15px;
                     bottom: 15px;
 
@@ -225,13 +244,18 @@ var Tawk_LoadStart = new Date();
                 }
 
                 #go7-live-chat svg {
-
                     width: 24px;
                     height: 24px;
                 }
 
-            }
+                #go7-chat-close {
+                    width: 32px;
+                    height: 32px;
 
+                    font-size: 22px;
+                    line-height: 32px;
+                }
+            }
         `;
 
         document.head.appendChild(style);
@@ -240,19 +264,14 @@ var Tawk_LoadStart = new Date();
         var button = document.createElement("button");
 
         button.id = "go7-live-chat";
-
         button.type = "button";
-
         button.setAttribute(
             "aria-label",
             "Open live chat"
         );
 
-
         button.innerHTML = `
-
             <svg viewBox="0 0 24 24">
-
                 <path d="
                     M20 11.5
                     a8 8 0 0 1-8 8
@@ -263,24 +282,15 @@ var Tawk_LoadStart = new Date();
                 "></path>
 
                 <path d="M8 12h.01"></path>
-
                 <path d="M12 12h.01"></path>
-
                 <path d="M16 12h.01"></path>
-
             </svg>
 
             <span class="go7-online"></span>
-
         `;
-
 
         document.body.appendChild(button);
 
-
-        /* ================================
-           CLICK → OPEN TAWK CHAT
-        ================================= */
 
         button.addEventListener("click", function () {
 
@@ -288,56 +298,173 @@ var Tawk_LoadStart = new Date();
                 typeof Tawk_API !== "undefined" &&
                 typeof Tawk_API.maximize === "function"
             ) {
-
                 Tawk_API.maximize();
+            }
+
+        });
+    }
+
+
+    /* =========================================
+       CUSTOM CLOSE BUTTON
+    ========================================= */
+
+    function createCloseButton() {
+
+        if (closeButton) {
+            return;
+        }
+
+        closeButton = document.createElement("button");
+
+        closeButton.id = "go7-chat-close";
+        closeButton.type = "button";
+        closeButton.setAttribute(
+            "aria-label",
+            "Close chat"
+        );
+
+        closeButton.innerHTML = "&times;";
+
+        document.body.appendChild(closeButton);
+
+
+        closeButton.addEventListener("click", function () {
+
+            if (
+                typeof Tawk_API !== "undefined" &&
+                typeof Tawk_API.minimize === "function"
+            ) {
+
+                Tawk_API.minimize();
 
             }
 
         });
 
+
+        startPositionTracking();
     }
 
 
-    function showGO7Chat() {
+    function removeCloseButton() {
+
+        if (closeButton) {
+
+            closeButton.remove();
+
+            closeButton = null;
+        }
+
+        if (positionTimer) {
+
+            clearInterval(positionTimer);
+
+            positionTimer = null;
+        }
+    }
+
+
+    /* =========================================
+       POSITION CLOSE BUTTON
+    ========================================= */
+
+    function positionCloseButton() {
+
+        if (!closeButton) {
+            return;
+        }
+
+        var iframe =
+            document.querySelector(
+                'iframe[title="chat widget"]'
+            );
+
+        if (!iframe) {
+            return;
+        }
+
+        var rect =
+            iframe.getBoundingClientRect();
+
+        if (
+            rect.width <= 100 ||
+            rect.height <= 100
+        ) {
+            return;
+        }
+
+
+        /*
+         * Tawk window ke top-right
+         */
+
+        closeButton.style.left =
+            (rect.right - 46) + "px";
+
+        closeButton.style.top =
+            (rect.top + 12) + "px";
+    }
+
+
+    function startPositionTracking() {
+
+        if (positionTimer) {
+            clearInterval(positionTimer);
+        }
+
+        positionTimer =
+            setInterval(
+                positionCloseButton,
+                200
+            );
+
+        positionCloseButton();
+    }
+
+
+    /* =========================================
+       SHOW / HIDE LIVE BUTTON
+    ========================================= */
+
+    function showLiveButton() {
 
         var button =
-            document.getElementById("go7-live-chat");
+            document.getElementById(
+                "go7-live-chat"
+            );
 
         if (button) {
-
             button.style.display = "flex";
-
         }
-
     }
 
 
-    function hideGO7Chat() {
+    function hideLiveButton() {
 
         var button =
-            document.getElementById("go7-live-chat");
+            document.getElementById(
+                "go7-live-chat"
+            );
 
         if (button) {
-
             button.style.display = "none";
-
         }
-
     }
 
 
-    /* ================================
+    /* =========================================
        START
-    ================================= */
+    ========================================= */
 
     function start() {
-
-        createGO7Chat();
-
+        createLiveButton();
     }
 
 
-    if (document.readyState === "loading") {
+    if (
+        document.readyState === "loading"
+    ) {
 
         document.addEventListener(
             "DOMContentLoaded",
