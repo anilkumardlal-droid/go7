@@ -10,16 +10,55 @@ var Tawk_LoadStart = new Date();
 
 
     /* =========================================
+       IMMEDIATELY HIDE TAWK NATIVE UI
+    ========================================= */
+
+    var earlyStyle = document.createElement("style");
+
+    earlyStyle.id = "go7-tawk-hide-native";
+
+    earlyStyle.textContent = `
+        /*
+         * Tawk native launcher hidden from the beginning.
+         * It will never appear before our custom button.
+         */
+
+        iframe[title="chat widget"] {
+            visibility: hidden !important;
+        }
+
+        #go7-chat-close {
+            visibility: hidden !important;
+        }
+
+        #go7-live-chat {
+            visibility: hidden !important;
+        }
+    `;
+
+    document.head.appendChild(earlyStyle);
+
+
+    /* =========================================
        TAWK EVENTS
     ========================================= */
 
     Tawk_API.onLoad = function () {
 
+        /*
+         * Keep native Tawk launcher hidden.
+         */
         Tawk_API.hideWidget();
 
-        // Chat icon 5 seconds baad show hoga
+        /*
+         * Custom button appears after 5 seconds.
+         */
         setTimeout(function () {
+
+            removeEarlyNativeHide();
+
             showLiveButton();
+
         }, 5000);
 
     };
@@ -29,9 +68,17 @@ var Tawk_LoadStart = new Date();
 
         hideLiveButton();
 
+        /*
+         * Allow Tawk chat window to become visible.
+         */
+        showTawkWindow();
+
         setTimeout(function () {
+
             createCloseButton();
+
             positionCloseButton();
+
         }, 100);
 
     };
@@ -42,6 +89,8 @@ var Tawk_LoadStart = new Date();
         removeCloseButton();
 
         Tawk_API.hideWidget();
+
+        hideTawkWindow();
 
         showLiveButton();
 
@@ -54,16 +103,12 @@ var Tawk_LoadStart = new Date();
 
         Tawk_API.hideWidget();
 
+        hideTawkWindow();
+
         showLiveButton();
 
     };
 
-
-    /*
-     * Visitor chat window ke andar click kare to
-     * notification sound ke liye audio unlock karne ki
-     * koshish karein.
-     */
 
     Tawk_API.onChatStarted = function () {
 
@@ -73,9 +118,8 @@ var Tawk_LoadStart = new Date();
 
 
     /*
-     * New message notification
+     * New message notification sound.
      */
-
     Tawk_API.onChatMessageVisitor = function () {
 
         playNotificationSound();
@@ -154,6 +198,8 @@ var Tawk_LoadStart = new Date();
                     transform .2s ease,
                     box-shadow .2s ease;
 
+                visibility: visible !important;
+
             }
 
 
@@ -193,7 +239,7 @@ var Tawk_LoadStart = new Date();
 
 
             /* =================================
-               OUTER LIVE PULSE
+               LIVE PULSE
             ================================= */
 
             #go7-live-chat::before {
@@ -361,10 +407,6 @@ var Tawk_LoadStart = new Date();
             }
 
 
-            /* =================================
-               MOBILE
-            ================================= */
-
             @media (max-width: 600px) {
 
                 #go7-live-chat {
@@ -409,11 +451,17 @@ var Tawk_LoadStart = new Date();
            BUTTON
         ================================= */
 
-        var button = document.createElement("button");
+        var button =
+            document.createElement("button");
 
-        button.id = "go7-live-chat";
 
-        button.type = "button";
+        button.id =
+            "go7-live-chat";
+
+
+        button.type =
+            "button";
+
 
         button.setAttribute(
             "aria-label",
@@ -476,6 +524,68 @@ var Tawk_LoadStart = new Date();
 
 
     /* =========================================
+       REMOVE EARLY HIDE
+    ========================================= */
+
+    function removeEarlyNativeHide() {
+
+        var style =
+            document.getElementById(
+                "go7-tawk-hide-native"
+            );
+
+        if (style) {
+            style.remove();
+        }
+
+    }
+
+
+    /* =========================================
+       TAWK WINDOW VISIBILITY
+    ========================================= */
+
+    function showTawkWindow() {
+
+        var iframe =
+            document.querySelector(
+                'iframe[title="chat widget"]'
+            );
+
+        if (iframe) {
+
+            iframe.style.setProperty(
+                "visibility",
+                "visible",
+                "important"
+            );
+
+        }
+
+    }
+
+
+    function hideTawkWindow() {
+
+        var iframe =
+            document.querySelector(
+                'iframe[title="chat widget"]'
+            );
+
+        if (iframe) {
+
+            iframe.style.setProperty(
+                "visibility",
+                "hidden",
+                "important"
+            );
+
+        }
+
+    }
+
+
+    /* =========================================
        AUDIO
     ========================================= */
 
@@ -517,7 +627,8 @@ var Tawk_LoadStart = new Date();
 
         } catch (e) {
 
-            // Browser audio restrictions
+            // Browser audio restriction
+
         }
 
     }
@@ -533,9 +644,11 @@ var Tawk_LoadStart = new Date();
                     window.AudioContext ||
                     window.webkitAudioContext;
 
+
                 if (!AudioContext) {
                     return;
                 }
+
 
                 audioContext =
                     new AudioContext();
@@ -556,11 +669,14 @@ var Tawk_LoadStart = new Date();
             var oscillator =
                 audioContext.createOscillator();
 
+
             var gain =
                 audioContext.createGain();
 
 
-            oscillator.type = "sine";
+            oscillator.type =
+                "sine";
+
 
             oscillator.frequency.setValueAtTime(
                 880,
@@ -608,6 +724,7 @@ var Tawk_LoadStart = new Date();
         } catch (e) {
 
             // Ignore browser audio restrictions
+
         }
 
     }
@@ -619,8 +736,16 @@ var Tawk_LoadStart = new Date();
 
     function createCloseButton() {
 
-        if (closeButton) {
-            return;
+        /*
+         * Remove any old button first.
+         */
+        var oldButton =
+            document.getElementById(
+                "go7-chat-close"
+            );
+
+        if (oldButton) {
+            oldButton.remove();
         }
 
 
@@ -675,13 +800,17 @@ var Tawk_LoadStart = new Date();
 
     function removeCloseButton() {
 
-        if (closeButton) {
+        var oldButton =
+            document.getElementById(
+                "go7-chat-close"
+            );
 
-            closeButton.remove();
-
-            closeButton = null;
-
+        if (oldButton) {
+            oldButton.remove();
         }
+
+
+        closeButton = null;
 
 
         if (positionTimer) {
@@ -783,6 +912,9 @@ var Tawk_LoadStart = new Date();
             button.style.display =
                 "flex";
 
+            button.style.visibility =
+                "visible";
+
         }
 
     }
@@ -813,7 +945,8 @@ var Tawk_LoadStart = new Date();
     function start() {
 
         /*
-         * Button 5 seconds ke baad create hoga.
+         * Custom button itself 5 seconds baad
+         * create hoga.
          */
 
         setTimeout(function () {
