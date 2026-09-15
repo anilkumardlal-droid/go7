@@ -13,114 +13,255 @@ var Tawk_LoadStart = new Date();
     s0.parentNode.insertBefore(s1, s0);
 })();
 
-/* GO7.IN Assistant */
+
+/* =========================================
+   GO7.IN REAL LIVE CHAT BUTTON
+========================================= */
+
 (function () {
 
-    function addStyles() {
-        if (document.getElementById("go7-assistant-styles")) return;
+    function createChatButton() {
+
+        if (document.getElementById("go7-live-chat")) return;
 
         var style = document.createElement("style");
-        style.id = "go7-assistant-styles";
 
         style.textContent = `
-            /* Hide original Tawk launcher */
-            iframe[title="chat widget"] {
-                opacity: 0 !important;
-                pointer-events: none !important;
-            }
-
-            #go7-assistant-button {
+            #go7-live-chat {
                 position: fixed;
-                right: 20px;
-                bottom: 20px;
-                width: 68px;
-                height: 68px;
-                padding: 0;
-                border: 0;
-                background: transparent;
-                cursor: pointer;
+                right: 22px;
+                bottom: 22px;
                 z-index: 2147483647;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 7px 16px 7px 8px;
+                border: 1px solid rgba(45, 72, 214, .15);
+                border-radius: 50px;
+                background: rgba(255,255,255,.97);
+                box-shadow:
+                    0 8px 30px rgba(0,0,0,.12),
+                    0 2px 8px rgba(45,72,214,.12);
+                cursor: pointer;
+                font-family: Arial, sans-serif;
+                transition: all .25s ease;
+            }
+
+            #go7-live-chat:hover {
+                transform: translateY(-3px);
+                box-shadow:
+                    0 12px 35px rgba(0,0,0,.16),
+                    0 4px 12px rgba(45,72,214,.18);
+            }
+
+            .go7-chat-icon {
+                position: relative;
+                width: 48px;
+                height: 48px;
                 border-radius: 50%;
-                transition: transform .2s ease;
+                background: #3850D5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-size: 23px;
+                box-shadow: 0 4px 12px rgba(56,80,213,.30);
             }
 
-            #go7-assistant-button img {
-                width: 100%;
-                height: 100%;
-                display: block;
-                object-fit: contain;
+            .go7-chat-icon::before {
+                content: "";
+                width: 11px;
+                height: 11px;
+                border-radius: 50%;
+                background: #22c55e;
+                position: absolute;
+                right: 1px;
+                top: 1px;
+                border: 3px solid #fff;
+                box-sizing: content-box;
             }
 
-            #go7-assistant-button:hover {
-                transform: scale(1.06);
+            .go7-chat-icon::after {
+                content: "";
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #22c55e;
+                right: 3px;
+                top: 3px;
+                animation: go7Pulse 1.8s infinite;
+                opacity: .7;
+            }
+
+            .go7-chat-content {
+                display: flex;
+                flex-direction: column;
+                line-height: 1.15;
+                text-align: left;
+            }
+
+            .go7-chat-title {
+                font-size: 15px;
+                font-weight: 700;
+                color: #18233a;
+            }
+
+            .go7-chat-status {
+                margin-top: 4px;
+                font-size: 12px;
+                color: #64748b;
+            }
+
+            .go7-chat-status span {
+                color: #16a34a;
+                font-weight: 600;
+            }
+
+            @keyframes go7Pulse {
+                0% {
+                    transform: scale(.8);
+                    opacity: .7;
+                }
+
+                70% {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: scale(2);
+                    opacity: 0;
+                }
             }
 
             @media (max-width: 600px) {
-                #go7-assistant-button {
+
+                #go7-live-chat {
                     right: 15px;
                     bottom: 15px;
-                    width: 60px;
-                    height: 60px;
+                    padding: 6px;
+                    width: 54px;
+                    height: 54px;
+                    justify-content: center;
+                    box-sizing: border-box;
+                }
+
+                .go7-chat-icon {
+                    width: 42px;
+                    height: 42px;
+                    font-size: 20px;
+                }
+
+                .go7-chat-content {
+                    display: none;
                 }
             }
         `;
 
         document.head.appendChild(style);
-    }
 
-    function addButton() {
-        if (document.getElementById("go7-assistant-button")) return;
 
         var button = document.createElement("button");
-        button.id = "go7-assistant-button";
+
+        button.id = "go7-live-chat";
         button.type = "button";
         button.setAttribute("aria-label", "Open GO7.IN Assistant");
 
-        var img = document.createElement("img");
-        img.src = "images/go7-assistant.png";
-        img.alt = "GO7.IN Assistant";
 
-        button.appendChild(img);
+        button.innerHTML = `
+            <div class="go7-chat-icon">
+                💬
+            </div>
+
+            <div class="go7-chat-content">
+                <div class="go7-chat-title">
+                    GO7.IN Assistant
+                </div>
+
+                <div class="go7-chat-status">
+                    <span>● Online</span> · Chat with us
+                </div>
+            </div>
+        `;
+
+
         document.body.appendChild(button);
 
+
         button.addEventListener("click", function () {
-            if (typeof Tawk_API !== "undefined" && Tawk_API.maximize) {
+
+            if (
+                typeof Tawk_API !== "undefined" &&
+                typeof Tawk_API.maximize === "function"
+            ) {
                 Tawk_API.maximize();
             }
+
         });
+
     }
 
-    function hideTawk() {
-        var frames = document.querySelectorAll('iframe[title="chat widget"]');
+
+    function hideTawkLauncher() {
+
+        var frames = document.querySelectorAll(
+            'iframe[title="chat widget"]'
+        );
 
         frames.forEach(function (frame) {
-            frame.style.setProperty("opacity", "0", "important");
-            frame.style.setProperty("pointer-events", "none", "important");
+
+            frame.style.setProperty(
+                "opacity",
+                "0",
+                "important"
+            );
+
+            frame.style.setProperty(
+                "pointer-events",
+                "none",
+                "important"
+            );
+
         });
+
     }
 
-    function start() {
-        addStyles();
-        addButton();
-        hideTawk();
 
-        /* Keep hiding Tawk even when it reloads */
+    function start() {
+
+        createChatButton();
+
+        hideTawkLauncher();
+
+
         var observer = new MutationObserver(function () {
-            hideTawk();
+            hideTawkLauncher();
         });
+
 
         observer.observe(document.body, {
             childList: true,
             subtree: true
         });
 
-        setInterval(hideTawk, 500);
+
+        setInterval(hideTawkLauncher, 1000);
+
     }
 
+
     if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", start);
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            start
+        );
+
     } else {
+
         start();
+
     }
 
 })();
