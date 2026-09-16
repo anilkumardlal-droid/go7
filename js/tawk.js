@@ -55,8 +55,6 @@ var Tawk_LoadStart = new Date();
          */
         setTimeout(function () {
 
-            removeEarlyNativeHide();
-
             showLiveButton();
 
         }, 5000);
@@ -519,24 +517,6 @@ var Tawk_LoadStart = new Date();
 
             }
         );
-
-    }
-
-
-    /* =========================================
-       REMOVE EARLY HIDE
-    ========================================= */
-
-    function removeEarlyNativeHide() {
-
-        var style =
-            document.getElementById(
-                "go7-tawk-hide-native"
-            );
-
-        if (style) {
-            style.remove();
-        }
 
     }
 
