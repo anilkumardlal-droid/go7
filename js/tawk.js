@@ -145,6 +145,42 @@ var Tawk_LoadStart = new Date();
 
 
     /* =========================================
+       LIVE CHAT SKELETON
+       Visible for the first 5 seconds
+    ========================================= */
+
+    function createChatSkeleton() {
+
+        if (document.getElementById("go7-chat-skeleton")) {
+            return;
+        }
+
+        var skeleton = document.createElement("div");
+
+        skeleton.id = "go7-chat-skeleton";
+
+        skeleton.setAttribute("aria-hidden", "true");
+
+        document.body.appendChild(skeleton);
+
+    }
+
+
+    function removeChatSkeleton() {
+
+        var skeleton =
+            document.getElementById("go7-chat-skeleton");
+
+        if (skeleton) {
+
+            skeleton.remove();
+
+        }
+
+    }
+
+
+    /* =========================================
        LIVE CHAT BUTTON
     ========================================= */
 
@@ -161,6 +197,77 @@ var Tawk_LoadStart = new Date();
 
 
         style.textContent = `
+
+            /* =================================
+               LIVE CHAT SKELETON
+            ================================= */
+
+            #go7-chat-skeleton {
+
+                position: fixed;
+
+                right: 20px;
+                bottom: 20px;
+
+                width: 62px;
+                height: 62px;
+
+                border-radius: 50%;
+
+                background: #E8ECF1;
+
+                z-index: 2147483645;
+
+                overflow: hidden;
+
+                box-shadow:
+                    0 6px 22px rgba(15,23,42,.10);
+
+                pointer-events: none;
+
+            }
+
+
+            #go7-chat-skeleton::after {
+
+                content: "";
+
+                position: absolute;
+
+                inset: 0;
+
+                transform:
+                    translateX(-100%);
+
+                background:
+                    linear-gradient(
+                        90deg,
+                        transparent,
+                        rgba(255,255,255,.80),
+                        transparent
+                    );
+
+                animation:
+                    go7ChatSkeleton 1.4s linear infinite;
+
+            }
+
+
+            @keyframes go7ChatSkeleton {
+
+                100% {
+
+                    transform:
+                        translateX(100%);
+
+                }
+
+            }
+
+
+            /* =================================
+               LIVE CHAT BUTTON
+            ================================= */
 
             #go7-live-chat {
 
@@ -203,7 +310,8 @@ var Tawk_LoadStart = new Date();
 
             #go7-live-chat:hover {
 
-                transform: translateY(-2px);
+                transform:
+                    translateY(-2px);
 
                 box-shadow:
                     0 9px 28px rgba(56,80,213,.38);
@@ -213,7 +321,8 @@ var Tawk_LoadStart = new Date();
 
             #go7-live-chat:active {
 
-                transform: scale(.94);
+                transform:
+                    scale(.94);
 
             }
 
@@ -264,7 +373,8 @@ var Tawk_LoadStart = new Date();
 
                 0% {
 
-                    transform: scale(1);
+                    transform:
+                        scale(1);
 
                     opacity: .65;
 
@@ -272,7 +382,8 @@ var Tawk_LoadStart = new Date();
 
                 70% {
 
-                    transform: scale(1.35);
+                    transform:
+                        scale(1.35);
 
                     opacity: 0;
 
@@ -280,7 +391,8 @@ var Tawk_LoadStart = new Date();
 
                 100% {
 
-                    transform: scale(1.35);
+                    transform:
+                        scale(1.35);
 
                     opacity: 0;
 
@@ -365,7 +477,8 @@ var Tawk_LoadStart = new Date();
 
                 color: #26324a;
 
-                font-family: Arial, sans-serif;
+                font-family:
+                    Arial, sans-serif;
 
                 font-size: 24px;
 
@@ -393,19 +506,32 @@ var Tawk_LoadStart = new Date();
 
                 background: #f1f5f9;
 
-                transform: scale(1.08);
+                transform:
+                    scale(1.08);
 
             }
 
 
             #go7-chat-close:active {
 
-                transform: scale(.94);
+                transform:
+                    scale(.94);
 
             }
 
 
             @media (max-width: 600px) {
+
+                #go7-chat-skeleton {
+
+                    right: 15px;
+                    bottom: 15px;
+
+                    width: 56px;
+                    height: 56px;
+
+                }
+
 
                 #go7-live-chat {
 
@@ -532,6 +658,7 @@ var Tawk_LoadStart = new Date();
                 'iframe[title="chat widget"]'
             );
 
+
         if (iframe) {
 
             iframe.style.setProperty(
@@ -551,6 +678,7 @@ var Tawk_LoadStart = new Date();
             document.querySelector(
                 'iframe[title="chat widget"]'
             );
+
 
         if (iframe) {
 
@@ -697,9 +825,11 @@ var Tawk_LoadStart = new Date();
 
             oscillator.start();
 
+
             oscillator.stop(
                 audioContext.currentTime + 0.2
             );
+
 
         } catch (e) {
 
@@ -719,10 +849,12 @@ var Tawk_LoadStart = new Date();
         /*
          * Remove any old button first.
          */
+
         var oldButton =
             document.getElementById(
                 "go7-chat-close"
             );
+
 
         if (oldButton) {
             oldButton.remove();
@@ -785,6 +917,7 @@ var Tawk_LoadStart = new Date();
                 "go7-chat-close"
             );
 
+
         if (oldButton) {
             oldButton.remove();
         }
@@ -798,6 +931,7 @@ var Tawk_LoadStart = new Date();
             clearInterval(
                 positionTimer
             );
+
 
             positionTimer = null;
 
@@ -925,13 +1059,20 @@ var Tawk_LoadStart = new Date();
     function start() {
 
         /*
-         * Custom button itself 5 seconds baad
-         * create hoga.
+         * Show Live Chat skeleton immediately.
+         * Keep it visible for exactly 5 seconds.
          */
+
+        createChatSkeleton();
+
 
         setTimeout(function () {
 
+            removeChatSkeleton();
+
             createLiveButton();
+
+            showLiveButton();
 
         }, 5000);
 
