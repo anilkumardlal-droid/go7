@@ -50,15 +50,6 @@ var Tawk_LoadStart = new Date();
          */
         Tawk_API.hideWidget();
 
-        /*
-         * Custom button appears after 5 seconds.
-         */
-        setTimeout(function () {
-
-            showLiveButton();
-
-        }, 5000);
-
     };
 
 
@@ -146,13 +137,78 @@ var Tawk_LoadStart = new Date();
 
     /* =========================================
        LIVE CHAT SKELETON
-       Visible for the first 5 seconds
+       Visible immediately for the first 5 seconds
     ========================================= */
 
     function createChatSkeleton() {
 
         if (document.getElementById("go7-chat-skeleton")) {
             return;
+        }
+
+        /*
+         * Load skeleton CSS BEFORE creating the element.
+         * This ensures the skeleton is visible immediately.
+         */
+
+        if (!document.getElementById("go7-chat-skeleton-style")) {
+
+            var skeletonStyle = document.createElement("style");
+
+            skeletonStyle.id = "go7-chat-skeleton-style";
+
+            skeletonStyle.textContent = `
+
+                #go7-chat-skeleton {
+                    position: fixed;
+                    right: 20px;
+                    bottom: 20px;
+                    width: 62px;
+                    height: 62px;
+                    border-radius: 50%;
+                    background: #E8ECF1;
+                    z-index: 2147483645;
+                    overflow: hidden;
+                    box-shadow: 0 6px 22px rgba(15,23,42,.10);
+                    pointer-events: none;
+                }
+
+                #go7-chat-skeleton::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    transform: translateX(-100%);
+                    background: linear-gradient(
+                        90deg,
+                        transparent,
+                        rgba(255,255,255,.80),
+                        transparent
+                    );
+                    animation: go7ChatSkeleton 1.4s linear infinite;
+                }
+
+                @keyframes go7ChatSkeleton {
+
+                    100% {
+                        transform: translateX(100%);
+                    }
+
+                }
+
+                @media (max-width: 600px) {
+
+                    #go7-chat-skeleton {
+                        right: 15px;
+                        bottom: 15px;
+                        width: 56px;
+                        height: 56px;
+                    }
+
+                }
+
+            `;
+
+            document.head.appendChild(skeletonStyle);
         }
 
         var skeleton = document.createElement("div");
@@ -172,9 +228,7 @@ var Tawk_LoadStart = new Date();
             document.getElementById("go7-chat-skeleton");
 
         if (skeleton) {
-
             skeleton.remove();
-
         }
 
     }
@@ -197,73 +251,6 @@ var Tawk_LoadStart = new Date();
 
 
         style.textContent = `
-
-            /* =================================
-               LIVE CHAT SKELETON
-            ================================= */
-
-            #go7-chat-skeleton {
-
-                position: fixed;
-
-                right: 20px;
-                bottom: 20px;
-
-                width: 62px;
-                height: 62px;
-
-                border-radius: 50%;
-
-                background: #E8ECF1;
-
-                z-index: 2147483645;
-
-                overflow: hidden;
-
-                box-shadow:
-                    0 6px 22px rgba(15,23,42,.10);
-
-                pointer-events: none;
-
-            }
-
-
-            #go7-chat-skeleton::after {
-
-                content: "";
-
-                position: absolute;
-
-                inset: 0;
-
-                transform:
-                    translateX(-100%);
-
-                background:
-                    linear-gradient(
-                        90deg,
-                        transparent,
-                        rgba(255,255,255,.80),
-                        transparent
-                    );
-
-                animation:
-                    go7ChatSkeleton 1.4s linear infinite;
-
-            }
-
-
-            @keyframes go7ChatSkeleton {
-
-                100% {
-
-                    transform:
-                        translateX(100%);
-
-                }
-
-            }
-
 
             /* =================================
                LIVE CHAT BUTTON
