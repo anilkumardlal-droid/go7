@@ -19,92 +19,6 @@
 
     <link rel="canonical" href="https://www.go7.in/" />
 
-    <style>
-      .go7-domain-visual {
-        position: relative;
-        height: 430px;
-        min-height: 430px;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        overflow: visible;
-      }
-
-      .go7-domain-image {
-        width: min(78%, 390px);
-        height: auto;
-        display: block;
-        opacity: 0;
-        transform: translate(-15px, 120px) scale(.78);
-        animation: go7DomainReveal 1.15s cubic-bezier(.22,.61,.36,1) .25s forwards;
-      }
-
-      @keyframes go7DomainReveal {
-        0% {
-          opacity: 0;
-          transform: translate(-15px, 120px) scale(.78);
-        }
-        65% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 1;
-          transform: translate(95px, -115px) scale(1);
-        }
-      }
-
-      @media (max-width: 991px) {
-        .go7-domain-visual {
-          height: 300px;
-          min-height: 300px;
-          margin-top: 25px;
-        }
-
-        .go7-domain-image {
-          width: min(65%, 300px);
-        }
-
-        @keyframes go7DomainReveal {
-          0% {
-            opacity: 0;
-            transform: translate(-10px, 90px) scale(.78);
-          }
-          65% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 1;
-            transform: translate(45px, -65px) scale(1);
-          }
-        }
-      }
-
-      @media (max-width: 575px) {
-        .go7-domain-visual {
-          height: 240px;
-          min-height: 240px;
-        }
-
-        .go7-domain-image {
-          width: 65%;
-        }
-
-        @keyframes go7DomainReveal {
-          0% {
-            opacity: 0;
-            transform: translate(-5px, 70px) scale(.78);
-          }
-          65% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 1;
-            transform: translate(25px, -40px) scale(1);
-          }
-        }
-      }
-    </style>
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -121,7 +35,6 @@
   </head>
 
   <body class="vh-100">
-
     <div class="header">
       <div class="container">
         <nav class="navbar navbar-expand-md navbar-light p-0">
@@ -139,10 +52,8 @@
           <div class="container">
             <div class="row justify-content-center align-items-center">
 
-              <!-- LEFT -->
               <div class="col-lg-6">
                 <div class="mt-lg-0 mt-4">
-
                   <h1 class="text-primary">Premium .IN Domain Portfolio</h1>
 
                   <h1 class="home-title display-4 fw-bold">
@@ -152,8 +63,8 @@
                   <p class="text-muted f-18 mt-3 mb-1">
                     Short. Memorable. Brandable.
                     <br>
-                    A curated portfolio of premium .IN domains for businesses,
-                    brands and startups.
+                    A curated portfolio of premium .IN domains for startups,
+                    businesses and premium online brands.
                   </p>
 
                   <div class="row mt-4">
@@ -187,17 +98,15 @@
                       Explore Domains
                     </a>
                   </div>
-
                 </div>
               </div>
 
-              <!-- RIGHT: DOMAIN IMAGE -->
-              <div class="col-lg-6">
-                <div class="go7-domain-visual">
+              <div class="col-lg-5 offset-lg-1">
+                <div class="text-center mt-lg-0 mt-4">
                   <img
                     src="images/logo-go7domain.png"
-                    alt="GO7.IN premium domain"
-                    class="go7-domain-image"
+                    alt="GO7.IN Premium .IN Domain Portfolio"
+                    class="img-fluid"
                   >
                 </div>
               </div>
@@ -232,6 +141,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
+    <!-- Main Js -->
     <script src="js/app.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/tawk.js"></script>
