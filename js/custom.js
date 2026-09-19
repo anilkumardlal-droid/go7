@@ -32,29 +32,79 @@
 
     const source = new URLSearchParams(window.location.search).get("source");
 
-    let domain = "go7.in";
+    const homepage = document.getElementById("go7Homepage");
+    const salePage = document.getElementById("sourceSalePage");
 
-    if (source) {
-        const cleaned = source
-            .trim()
-            .toLowerCase()
-            .replace(/^https?:\/\//, "")
-            .replace(/^www\./, "")
-            .split("/")[0];
+    // No ?source= → GO7.IN homepage
+    if (!source) {
 
-        if (/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(cleaned)) {
-            domain = cleaned.toLowerCase();
+        if (homepage) {
+            homepage.style.display = "";
         }
+
+        if (salePage) {
+            salePage.style.display = "none";
+        }
+
+        return;
     }
 
-    document.getElementById("domain-name").textContent =
-        "www." + domain;
+    const cleaned = source
+        .trim()
+        .toLowerCase()
+        .replace(/^https?:\/\//, "")
+        .replace(/^www\./, "")
+        .split("/")[0];
 
-    document.getElementById("interest-title").textContent =
-        "Interested in " + domain + "?";
+    // Only .IN domains are allowed
+    if (!/^[a-z0-9-]+\.in$/i.test(cleaned)) {
 
-    document.getElementById("inquiry-description").textContent =
-        "Interested in " + domain + "? Submit your inquiry or offer.";
+        if (homepage) {
+            homepage.style.display = "";
+        }
+
+        if (salePage) {
+            salePage.style.display = "none";
+        }
+
+        return;
+    }
+
+    const domain = cleaned.toUpperCase();
+
+    // Show sale page
+    if (homepage) {
+        homepage.style.display = "none";
+    }
+
+    if (salePage) {
+        salePage.style.display = "";
+    }
+
+    const domainName =
+        document.getElementById("domain-name");
+
+    const interestTitle =
+        document.getElementById("interest-title");
+
+    const inquiryDescription =
+        document.getElementById("inquiry-description");
+
+
+    if (domainName) {
+        domainName.textContent = domain;
+    }
+
+    if (interestTitle) {
+        interestTitle.textContent =
+            "Interested in " + domain + "?";
+    }
+
+    if (inquiryDescription) {
+        inquiryDescription.textContent =
+            "Interested in " + domain +
+            "? Submit your inquiry or offer.";
+    }
 
 })();
 
