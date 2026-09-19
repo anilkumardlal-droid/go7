@@ -7,7 +7,9 @@
 
   <title>GO7.IN - Premium .IN Domain Portfolio</title>
 
-  <meta name="description" content="GO7.IN is a curated portfolio of premium .IN domains.">
+  <meta name="description"
+        content="GO7.IN is a curated portfolio of premium .IN domains.">
+
   <meta name="author" content="Anil Srivastav">
 
   <link rel="shortcut icon" href="images/favicon.png">
@@ -23,48 +25,40 @@
   <style>
 
     html,
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100%;
+    body{
+      margin:0;
+      padding:0;
+      min-height:100%;
     }
 
-    body {
-      background: #ffffff;
-      color: #30343b;
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        "Helvetica Neue",
-        Arial,
-        sans-serif;
+    body{
+      background:#ffffff;
+      color:#111827;
+      font-family:-apple-system,BlinkMacSystemFont,
+        "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     }
+
 
     /* =========================
        HEADER
     ========================= */
 
-    .go7-header {
-      padding: 22px 0;
-      background: #fff;
+    .go7-header{
+      width:100%;
+      padding:26px 0 0;
+      position:relative;
+      z-index:10;
     }
 
-    .go7-header-inner {
-      display: flex;
-      align-items: center;
+    .go7-logo{
+      display:inline-flex;
+      align-items:center;
     }
 
-    .go7-logo {
-      display: inline-flex;
-      text-decoration: none !important;
-    }
-
-    .go7-logo img {
-      display: block;
-      height: 44px;
-      width: auto;
+    .go7-logo img{
+      height:44px;
+      width:auto;
+      display:block;
     }
 
 
@@ -72,18 +66,48 @@
        HERO
     ========================= */
 
-    .go7-hero {
-      min-height: calc(100vh - 145px);
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 35px 0 55px;
-      background: #fff;
+    .go7-hero{
+      min-height:calc(100vh - 110px);
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      padding:35px 0 70px;
     }
 
-    .go7-hero-row {
-      display: flex;
-      align-items: center;
+    .go7-hero:before{
+      content:"";
+      position:absolute;
+      width:600px;
+      height:600px;
+      right:-180px;
+      top:40px;
+      border-radius:50%;
+      background:radial-gradient(
+        circle,
+        rgba(37,99,235,.075) 0%,
+        rgba(219,234,254,.04) 45%,
+        rgba(255,255,255,0) 72%
+      );
+      pointer-events:none;
+    }
+
+    .go7-hero:after{
+      content:"";
+      position:absolute;
+      left:-160px;
+      bottom:-350px;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      background:#f8fafc;
+      pointer-events:none;
+    }
+
+
+    .go7-hero-inner{
+      position:relative;
+      z-index:2;
     }
 
 
@@ -91,69 +115,91 @@
        LEFT CONTENT
     ========================= */
 
-    .go7-content {
-      position: relative;
-      z-index: 5;
-      padding-right: 25px;
+    .go7-copy{
+      padding-right:25px;
     }
 
-    .welcome-text {
-      margin-bottom: 20px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 2.8px;
-      color: #7d8794;
+    .welcome-text{
+      margin:0 0 24px;
+      color:#64748b;
+      font-size:15px;
+      line-height:1.4;
+      font-weight:600;
+      letter-spacing:3px;
     }
 
-    .go7-content h1 {
-      max-width: 650px;
-      margin: 0;
-      font-size: clamp(44px, 5vw, 68px);
-      line-height: 1.08;
-      letter-spacing: -2.8px;
-      font-weight: 650;
-      color: #30343b;
+    .go7-copy h1{
+      margin:0;
+      max-width:650px;
+      color:#111827;
+      font-size:clamp(43px,5vw,70px);
+      line-height:1.05;
+      letter-spacing:-2.8px;
+      font-weight:650;
     }
 
-    .go7-tagline {
-      margin: 22px 0 0;
-      font-size: 20px;
-      line-height: 1.55;
-      color: #5f6875;
-      font-weight: 500;
+    .go7-tagline{
+      margin:22px 0 0;
+      color:#64748b;
+      font-size:21px;
+      line-height:1.5;
+      font-weight:400;
     }
 
-    .go7-description {
-      max-width: 610px;
-      margin: 16px 0 32px;
-      color: #8492a6;
-      font-size: 15px;
-      line-height: 1.75;
+    .go7-description{
+      max-width:610px;
+      margin:18px 0 32px;
+      color:#8492a6;
+      font-size:16px;
+      line-height:1.7;
     }
 
-    .go7-explore {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 50px;
-      padding: 0 24px;
-      border-radius: 7px;
-      background: #30343b;
-      color: #fff !important;
-      text-decoration: none !important;
-      font-size: 15px;
-      font-weight: 600;
-      transition: .2s ease;
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .go7-explore{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:13px;
+
+      min-width:190px;
+      height:52px;
+
+      padding:0 25px;
+
+      border-radius:8px;
+
+      background:#111827;
+      color:#ffffff !important;
+
+      text-decoration:none !important;
+
+      font-size:15px;
+      font-weight:600;
+
+      transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
     }
 
-    .go7-explore:hover {
-      background: #171a1e;
-      transform: translateY(-2px);
+    .go7-explore:hover{
+      background:#000000;
+      color:#ffffff !important;
+      transform:translateY(-2px);
+      box-shadow:0 10px 25px rgba(15,23,42,.12);
     }
 
-    .go7-explore i {
-      font-size: 17px;
+    .go7-explore i{
+      font-size:19px;
+      transition:transform .2s ease;
+    }
+
+    .go7-explore:hover i{
+      transform:translateX(4px);
     }
 
 
@@ -161,536 +207,71 @@
        RIGHT ILLUSTRATION
     ========================= */
 
-    .go7-illustration {
-      position: relative;
-      width: 100%;
-      height: 535px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .go7-visual{
+      position:relative;
+      width:100%;
+      max-width:650px;
+      margin-left:auto;
     }
 
-    .go7-bg-circle {
-      position: absolute;
-      width: 430px;
-      height: 430px;
-      border-radius: 50%;
-      background: #f5f8fc;
-      right: 3%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .go7-bg-circle-small {
-      position: absolute;
-      width: 270px;
-      height: 270px;
-      border-radius: 50%;
-      border: 1px solid #eaf0f7;
-      right: 16%;
-      top: 50%;
-      transform: translateY(-50%);
+    .go7-visual svg{
+      width:100%;
+      height:auto;
+      display:block;
+      overflow:visible;
     }
 
 
-    /* Browser */
+    /* soft floating animation */
 
-    .go7-browser {
-      position: absolute;
-      z-index: 3;
-
-      width: 390px;
-      height: 305px;
-
-      right: 12%;
-      top: 108px;
-
-      overflow: hidden;
-
-      background: #fff;
-      border: 1px solid #e6ebf2;
-      border-radius: 14px;
-
-      box-shadow:
-        0 25px 55px rgba(30, 45, 65, .10);
+    .go7-float{
+      animation:go7Float 5s ease-in-out infinite;
+      transform-origin:center;
     }
 
-    .go7-browser-top {
-      height: 43px;
-      display: flex;
-      align-items: center;
-      padding: 0 14px;
-      background: #f4f7fb;
-      border-bottom: 1px solid #edf1f5;
+    .go7-float-slow{
+      animation:go7FloatSlow 6s ease-in-out infinite;
+      transform-origin:center;
     }
 
-    .go7-browser-dot {
-      width: 9px;
-      height: 9px;
-      margin-right: 6px;
-      border-radius: 50%;
-      background: #d9e0e9;
+    @keyframes go7Float{
+      0%,100%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-7px);
+      }
     }
 
-    .go7-browser-url {
-      height: 27px;
-      flex: 1;
-      margin-left: 12px;
-      display: flex;
-      align-items: center;
-      padding: 0 13px;
-      border-radius: 6px;
-      background: #fff;
-      color: #8a95a4;
-      font-size: 11px;
-    }
+    @keyframes go7FloatSlow{
+      0%,100%{
+        transform:translateY(0);
+      }
 
-    .go7-browser-body {
-      padding: 18px 20px;
-    }
-
-    .go7-browser-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .go7-browser-heading strong {
-      font-size: 12px;
-      color: #30343b;
-    }
-
-    .go7-browser-heading span {
-      font-size: 10px;
-      color: #a1aab6;
+      50%{
+        transform:translateY(5px);
+      }
     }
 
 
-    /* Domain rows */
+    /* =========================
+       DOMAIN TAG
+    ========================= */
 
-    .go7-domain-row {
-      height: 42px;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid #f0f3f6;
+    .domain-tag{
+      animation:tagFloat 4s ease-in-out infinite;
+      transform-origin:center;
     }
 
-    .go7-domain-name {
-      width: 105px;
-      font-size: 12px;
-      font-weight: 650;
-      color: #3b4350;
-    }
-
-    .go7-domain-line {
-      flex: 1;
-      height: 5px;
-      margin-right: 12px;
-      border-radius: 10px;
-      background: #edf1f5;
-    }
-
-    .go7-sale {
-      min-width: 55px;
-      padding: 5px 7px;
-      border-radius: 5px;
-      background: #e8f7ef;
-      color: #319265;
-      text-align: center;
-      font-size: 9px;
-      font-weight: 650;
-    }
-
-
-    /* .IN tag */
-
-    .go7-tag {
-      position: absolute;
-      z-index: 5;
-
-      right: 5%;
-      top: 48px;
-
-      padding: 14px 21px;
-
-      background: #30343b;
-      color: #fff;
-
-      border-radius: 7px;
-
-      font-size: 15px;
-      font-weight: 700;
-
-      transform: rotate(-8deg);
-
-      box-shadow:
-        0 14px 30px rgba(30, 45, 65, .13);
-    }
-
-    .go7-tag small {
-      display: block;
-      margin-top: 2px;
-      font-size: 9px;
-      letter-spacing: 1.5px;
-      font-weight: 500;
-    }
-
-
-    /* Person */
-
-    .go7-person {
-      position: absolute;
-      z-index: 6;
-
-      right: 1%;
-      bottom: 38px;
-
-      width: 150px;
-      height: 270px;
-    }
-
-    .go7-head {
-      position: absolute;
-      top: 12px;
-      left: 53px;
-
-      width: 46px;
-      height: 52px;
-
-      border-radius: 48% 48% 45% 45%;
-
-      background: #f4c6a5;
-    }
-
-    .go7-hair {
-      position: absolute;
-      z-index: 2;
-
-      top: 3px;
-      left: 48px;
-
-      width: 56px;
-      height: 35px;
-
-      border-radius: 50% 55% 25% 30%;
-
-      background: #30343b;
-    }
-
-    .go7-body {
-      position: absolute;
-      top: 62px;
-      left: 39px;
-
-      width: 75px;
-      height: 112px;
-
-      border-radius: 25px 25px 15px 15px;
-
-      background: #30343b;
-    }
-
-    .go7-shirt {
-      position: absolute;
-      top: 62px;
-      left: 39px;
-
-      width: 75px;
-      height: 88px;
-
-      border-radius: 24px 24px 12px 12px;
-
-      background: #6c7480;
-    }
-
-    .go7-arm-left,
-    .go7-arm-right {
-      position: absolute;
-      top: 70px;
-
-      width: 20px;
-      height: 105px;
-
-      border-radius: 20px;
-
-      background: #f4c6a5;
-    }
-
-    .go7-arm-left {
-      left: 25px;
-      transform: rotate(16deg);
-    }
-
-    .go7-arm-right {
-      right: 18px;
-      transform: rotate(-42deg);
-    }
-
-    .go7-leg-left,
-    .go7-leg-right {
-      position: absolute;
-      top: 155px;
-
-      width: 25px;
-      height: 105px;
-
-      border-radius: 12px;
-
-      background: #30343b;
-    }
-
-    .go7-leg-left {
-      left: 48px;
-      transform: rotate(8deg);
-    }
-
-    .go7-leg-right {
-      right: 48px;
-      transform: rotate(-8deg);
-    }
-
-    .go7-shoe-left,
-    .go7-shoe-right {
-      position: absolute;
-      top: 250px;
-
-      width: 45px;
-      height: 15px;
-
-      border-radius: 15px 5px 5px 15px;
-
-      background: #fff;
-      border: 1px solid #dfe5ec;
-    }
-
-    .go7-shoe-left {
-      left: 31px;
-    }
-
-    .go7-shoe-right {
-      right: 31px;
-    }
-
-
-    /* Laptop */
-
-    .go7-laptop {
-      position: absolute;
-      z-index: 8;
-
-      top: 105px;
-      right: 2px;
-
-      width: 78px;
-      height: 52px;
-
-      border-radius: 4px;
-
-      background: #5e6875;
-
-      transform: rotate(-8deg);
-    }
-
-    .go7-laptop::after {
-      content: "";
-
-      position: absolute;
-
-      left: -7px;
-      bottom: -8px;
-
-      width: 92px;
-      height: 8px;
-
-      border-radius: 5px;
-
-      background: #30343b;
-    }
-
-
-    /* Chart card */
-
-    .go7-chart {
-      position: absolute;
-      z-index: 7;
-
-      left: 5%;
-      bottom: 70px;
-
-      width: 145px;
-      height: 120px;
-
-      padding: 18px;
-
-      background: #fff;
-
-      border: 1px solid #e7edf4;
-      border-radius: 14px;
-
-      box-shadow:
-        0 18px 40px rgba(30, 45, 65, .08);
-    }
-
-    .go7-chart-title {
-      font-size: 10px;
-      font-weight: 650;
-      color: #727d8b;
-    }
-
-    .go7-bars {
-      height: 67px;
-
-      display: flex;
-      align-items: end;
-
-      gap: 8px;
-
-      margin-top: 10px;
-    }
-
-    .go7-bar {
-      width: 15px;
-      border-radius: 4px 4px 2px 2px;
-      background: #8c96a4;
-    }
-
-    .go7-bar:nth-child(1) {
-      height: 22px;
-    }
-
-    .go7-bar:nth-child(2) {
-      height: 34px;
-    }
-
-    .go7-bar:nth-child(3) {
-      height: 47px;
-    }
-
-    .go7-bar:nth-child(4) {
-      height: 61px;
-    }
-
-
-    /* Secure transfer card */
-
-    .go7-secure {
-      position: absolute;
-      z-index: 7;
-
-      right: 28%;
-      bottom: 28px;
-
-      display: flex;
-      align-items: center;
-      gap: 10px;
-
-      padding: 13px 18px;
-
-      background: #fff;
-
-      border: 1px solid #e7edf4;
-      border-radius: 10px;
-
-      box-shadow:
-        0 15px 35px rgba(30, 45, 65, .07);
-
-      font-size: 11px;
-      font-weight: 650;
-      color: #606a77;
-    }
-
-    .go7-secure i {
-      font-size: 20px;
-      color: #59636f;
-    }
-
-
-    /* Globe */
-
-    .go7-globe {
-      position: absolute;
-      z-index: 4;
-
-      left: 4%;
-      top: 85px;
-
-      width: 62px;
-      height: 62px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 15px;
-
-      background: #fff;
-
-      border: 1px solid #e7edf4;
-
-      box-shadow:
-        0 15px 30px rgba(30, 45, 65, .06);
-
-      font-size: 28px;
-      color: #697482;
-    }
-
-
-    /* Plant */
-
-    .go7-plant {
-      position: absolute;
-      z-index: 4;
-
-      right: 1%;
-      bottom: 35px;
-
-      width: 70px;
-      height: 105px;
-    }
-
-    .go7-plant-pot {
-      position: absolute;
-      bottom: 0;
-      left: 12px;
-
-      width: 47px;
-      height: 42px;
-
-      border-radius: 5px 5px 15px 15px;
-
-      background: #dce3eb;
-    }
-
-    .go7-leaf {
-      position: absolute;
-
-      width: 25px;
-      height: 42px;
-
-      border-radius: 100% 0 100% 0;
-
-      background: #dce4ec;
-
-      transform-origin: bottom center;
-    }
-
-    .go7-leaf.one {
-      left: 23px;
-      top: 15px;
-      transform: rotate(-35deg);
-    }
-
-    .go7-leaf.two {
-      left: 38px;
-      top: 8px;
-      transform: rotate(28deg);
-    }
-
-    .go7-leaf.three {
-      left: 9px;
-      top: 34px;
-      transform: rotate(-60deg);
+    @keyframes tagFloat{
+      0%,100%{
+        transform:rotate(-8deg) translateY(0);
+      }
+
+      50%{
+        transform:rotate(-6deg) translateY(-6px);
+      }
     }
 
 
@@ -698,218 +279,134 @@
        FOOTER
     ========================= */
 
-    .go7-footer {
-      padding: 15px 0 23px;
-      background: #fff;
-      text-align: center;
+    .go7-footer{
+      position:relative;
+      z-index:5;
+      padding:0 0 22px;
     }
 
-    .go7-footer p {
-      margin: 0;
-      font-size: 13px;
-      line-height: 1.7;
-      color: #9aa3af;
+    .go7-footer p{
+      margin:0;
+      color:#94a3b8;
+      font-size:13px;
+      line-height:1.7;
     }
 
-    .go7-footer a {
-      color: #707987;
-      text-decoration: none;
+    .go7-footer a{
+      color:#64748b;
+      text-decoration:none;
     }
 
-    .go7-footer a:hover {
-      color: #30343b;
+    .go7-footer a:hover{
+      color:#111827;
     }
 
 
     /* =========================
-       RESPONSIVE
+       TABLET
     ========================= */
 
-    @media (max-width: 991px) {
+    @media(max-width:991px){
 
-      .go7-hero {
-        padding-top: 25px;
+      .go7-hero{
+        padding-top:55px;
       }
 
-      .go7-content {
-        padding-right: 0;
+      .go7-copy{
+        padding-right:0;
       }
 
-      .go7-content h1 {
-        font-size: 52px;
+      .go7-copy h1{
+        font-size:54px;
       }
 
-      .go7-illustration {
-        height: 480px;
-        margin-top: 20px;
-      }
-
-      .go7-browser {
-        right: 10%;
+      .go7-visual{
+        max-width:600px;
+        margin:45px auto 0;
       }
 
     }
 
 
-    @media (max-width: 767px) {
+    /* =========================
+       MOBILE
+    ========================= */
 
-      .go7-header {
-        padding: 18px 0;
+    @media(max-width:767px){
+
+      .go7-header{
+        padding-top:20px;
       }
 
-      .go7-logo img {
-        height: 40px;
+      .go7-logo img{
+        height:40px;
       }
 
-      .go7-hero {
-        min-height: auto;
-        padding: 30px 0 45px;
+      .go7-hero{
+        min-height:auto;
+        padding:55px 0 45px;
       }
 
-      .go7-hero-row {
-        display: block;
+      .go7-copy{
+        text-align:left;
       }
 
-      .go7-content {
-        text-align: center;
+      .welcome-text{
+        font-size:13px;
+        letter-spacing:2.5px;
+        margin-bottom:19px;
       }
 
-      .welcome-text {
-        font-size: 13px;
-        letter-spacing: 2px;
-        margin-bottom: 18px;
+      .go7-copy h1{
+        font-size:43px;
+        line-height:1.08;
+        letter-spacing:-1.8px;
       }
 
-      .go7-content h1 {
-        font-size: 42px;
-        letter-spacing: -1.8px;
+      .go7-tagline{
+        font-size:18px;
+        margin-top:18px;
       }
 
-      .go7-tagline {
-        font-size: 17px;
+      .go7-description{
+        font-size:14px;
+        margin-top:15px;
+        margin-bottom:28px;
       }
 
-      .go7-description {
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 14px;
+      .go7-explore{
+        height:49px;
       }
 
-      .go7-illustration {
-        height: 420px;
-        margin-top: 15px;
+      .go7-visual{
+        margin-top:45px;
+        max-width:570px;
       }
 
-      .go7-bg-circle {
-        width: 330px;
-        height: 330px;
-        right: 50%;
-        transform: translate(50%, -50%);
+      .go7-footer{
+        padding-bottom:18px;
       }
 
-      .go7-bg-circle-small {
-        width: 230px;
-        height: 230px;
-        right: 50%;
-        transform: translate(50%, -50%);
-      }
-
-      .go7-browser {
-        width: 310px;
-        height: 255px;
-        right: 50%;
-        top: 82px;
-        transform: translateX(50%);
-      }
-
-      .go7-browser-body {
-        padding: 12px;
-      }
-
-      .go7-domain-row {
-        height: 34px;
-      }
-
-      .go7-domain-name {
-        width: 78px;
-        font-size: 10px;
-      }
-
-      .go7-sale {
-        min-width: 47px;
-        font-size: 8px;
-      }
-
-      .go7-tag {
-        right: 4%;
-        top: 35px;
-        padding: 10px 14px;
-        font-size: 12px;
-      }
-
-      .go7-chart {
-        left: 0;
-        bottom: 38px;
-        transform: scale(.78);
-        transform-origin: bottom left;
-      }
-
-      .go7-secure {
-        right: 17%;
-        bottom: 12px;
-        transform: scale(.8);
-        transform-origin: bottom right;
-      }
-
-      .go7-globe {
-        left: 1%;
-        top: 65px;
-        transform: scale(.75);
-      }
-
-      .go7-person {
-        right: -4%;
-        bottom: 35px;
-        transform: scale(.78);
-        transform-origin: bottom right;
-      }
-
-      .go7-plant {
-        right: -2%;
-        bottom: 20px;
-        transform: scale(.75);
-        transform-origin: bottom right;
+      .go7-footer p{
+        font-size:12px;
+        padding:0 12px;
       }
 
     }
 
 
-    @media (max-width: 420px) {
+    @media(max-width:480px){
 
-      .go7-content h1 {
-        font-size: 37px;
+      .go7-copy h1{
+        font-size:38px;
       }
 
-      .go7-illustration {
-        height: 370px;
+      .go7-tagline{
+        font-size:17px;
       }
 
-      .go7-browser {
-        width: 285px;
-      }
-
-      .go7-person {
-        transform: scale(.65);
-        right: -9%;
-      }
-
-      .go7-chart {
-        transform: scale(.65);
-      }
-
-      .go7-secure {
-        transform: scale(.65);
-        right: 10%;
+      .go7-visual{
+        margin-top:35px;
       }
 
     }
@@ -922,63 +419,74 @@
 <body>
 
 
-  <!-- HEADER -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
   <header class="go7-header">
 
     <div class="container">
 
-      <div class="go7-header-inner">
+      <a class="go7-logo" href="/">
 
-        <a class="go7-logo" href="/">
-          <img
-            src="images/logo-go7domain.png"
-            alt="GO7.IN"
-          >
-        </a>
+        <img
+          src="images/logo-go7domain.png"
+          alt="GO7.IN"
+          height="44"
+        >
 
-      </div>
+      </a>
 
     </div>
 
   </header>
 
 
-  <!-- HERO -->
+
+  <!-- =========================
+       HERO
+  ========================== -->
 
   <main class="go7-hero">
 
     <div class="container">
 
-      <div class="row go7-hero-row align-items-center">
+      <div class="row align-items-center go7-hero-inner">
 
 
-        <!-- LEFT CONTENT -->
+        <!-- LEFT -->
 
         <div class="col-lg-6">
 
-          <div class="go7-content">
+          <div class="go7-copy">
 
             <div class="welcome-text">
               Welcome to
             </div>
 
+
             <h1>
               Premium .IN Domain Portfolio
             </h1>
 
+
             <p class="go7-tagline">
               Short. Memorable. Brandable.
             </p>
+
 
             <p class="go7-description">
               A curated portfolio of premium .IN domains for brands,
               businesses and investors.
             </p>
 
+
             <a href="/domains" class="go7-explore">
+
               Explore Domains
+
               <i class="mdi mdi-arrow-right"></i>
+
             </a>
 
           </div>
@@ -986,203 +494,923 @@
         </div>
 
 
+
         <!-- RIGHT ILLUSTRATION -->
 
         <div class="col-lg-6">
 
-          <div class="go7-illustration">
-
-            <div class="go7-bg-circle"></div>
-            <div class="go7-bg-circle-small"></div>
+          <div class="go7-visual">
 
 
-            <!-- Globe -->
-
-            <div class="go7-globe">
-              <i class="mdi mdi-earth"></i>
-            </div>
-
-
-            <!-- .IN Domains Tag -->
-
-            <div class="go7-tag">
-              .IN
-              <small>DOMAINS</small>
-            </div>
+            <svg
+              viewBox="0 0 760 620"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Premium .IN domain portfolio illustration"
+              role="img"
+            >
 
 
-            <!-- Browser / Domain Portfolio -->
+              <!-- ======================
+                   BACKGROUND
+              ======================= -->
 
-            <div class="go7-browser">
+              <defs>
 
-              <div class="go7-browser-top">
+                <linearGradient
+                  id="softBlue"
+                  x1="0"
+                  y1="0"
+                  x2="1"
+                  y2="1"
+                >
+                  <stop offset="0%" stop-color="#eff6ff"/>
+                  <stop offset="100%" stop-color="#dbeafe"/>
+                </linearGradient>
 
-                <span class="go7-browser-dot"></span>
-                <span class="go7-browser-dot"></span>
-                <span class="go7-browser-dot"></span>
 
-                <div class="go7-browser-url">
+                <linearGradient
+                  id="blueCard"
+                  x1="0"
+                  y1="0"
+                  x2="1"
+                  y2="1"
+                >
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#f8fbff"/>
+                </linearGradient>
+
+
+                <linearGradient
+                  id="blueButton"
+                  x1="0"
+                  y1="0"
+                  x2="1"
+                  y2="1"
+                >
+                  <stop offset="0%" stop-color="#2563eb"/>
+                  <stop offset="100%" stop-color="#1d4ed8"/>
+                </linearGradient>
+
+
+                <filter
+                  id="softShadow"
+                  x="-30%"
+                  y="-30%"
+                  width="160%"
+                  height="160%"
+                >
+
+                  <feDropShadow
+                    dx="0"
+                    dy="12"
+                    stdDeviation="15"
+                    flood-color="#2563eb"
+                    flood-opacity=".10"
+                  />
+
+                </filter>
+
+              </defs>
+
+
+
+              <!-- soft background blobs -->
+
+              <circle
+                cx="505"
+                cy="285"
+                r="225"
+                fill="#eff6ff"
+              />
+
+              <circle
+                cx="620"
+                cy="250"
+                r="125"
+                fill="#f8fbff"
+              />
+
+              <circle
+                cx="415"
+                cy="390"
+                r="120"
+                fill="#eaf3ff"
+              />
+
+
+
+              <!-- dotted pattern -->
+
+              <g
+                fill="#bfdbfe"
+                opacity=".45"
+              >
+
+                <circle cx="420" cy="105" r="4"/>
+                <circle cx="438" cy="105" r="4"/>
+                <circle cx="456" cy="105" r="4"/>
+
+                <circle cx="420" cy="123" r="4"/>
+                <circle cx="438" cy="123" r="4"/>
+                <circle cx="456" cy="123" r="4"/>
+
+                <circle cx="675" cy="205" r="4"/>
+                <circle cx="693" cy="205" r="4"/>
+                <circle cx="711" cy="205" r="4"/>
+
+                <circle cx="675" cy="223" r="4"/>
+                <circle cx="693" cy="223" r="4"/>
+                <circle cx="711" cy="223" r="4"/>
+
+              </g>
+
+
+
+              <!-- ======================
+                   GLOBE CARD
+              ======================= -->
+
+              <g class="go7-float">
+
+                <rect
+                  x="385"
+                  y="72"
+                  width="102"
+                  height="102"
+                  rx="18"
+                  fill="#f8fbff"
+                  filter="url(#softShadow)"
+                />
+
+                <circle
+                  cx="436"
+                  cy="123"
+                  r="27"
+                  fill="none"
+                  stroke="#2563eb"
+                  stroke-width="4"
+                />
+
+                <ellipse
+                  cx="436"
+                  cy="123"
+                  rx="11"
+                  ry="27"
+                  fill="none"
+                  stroke="#2563eb"
+                  stroke-width="3"
+                />
+
+                <path
+                  d="M409 123h54"
+                  fill="none"
+                  stroke="#2563eb"
+                  stroke-width="3"
+                />
+
+                <path
+                  d="M414 108c13 7 31 7 44 0"
+                  fill="none"
+                  stroke="#2563eb"
+                  stroke-width="2"
+                />
+
+                <path
+                  d="M414 138c13-7 31-7 44 0"
+                  fill="none"
+                  stroke="#2563eb"
+                  stroke-width="2"
+                />
+
+              </g>
+
+
+
+              <!-- ======================
+                   MAIN BROWSER
+              ======================= -->
+
+              <g filter="url(#softShadow)">
+
+                <rect
+                  x="425"
+                  y="150"
+                  width="292"
+                  height="320"
+                  rx="18"
+                  fill="url(#blueCard)"
+                />
+
+                <!-- browser top -->
+
+                <rect
+                  x="425"
+                  y="150"
+                  width="292"
+                  height="54"
+                  rx="18"
+                  fill="#dbeafe"
+                />
+
+                <rect
+                  x="425"
+                  y="185"
+                  width="292"
+                  height="19"
+                  fill="#dbeafe"
+                />
+
+                <!-- browser dots -->
+
+                <circle
+                  cx="448"
+                  cy="174"
+                  r="6"
+                  fill="#f87171"
+                />
+
+                <circle
+                  cx="467"
+                  cy="174"
+                  r="6"
+                  fill="#fbbf24"
+                />
+
+                <circle
+                  cx="486"
+                  cy="174"
+                  r="6"
+                  fill="#34d399"
+                />
+
+
+                <!-- address -->
+
+                <rect
+                  x="512"
+                  y="163"
+                  width="178"
+                  height="27"
+                  rx="8"
+                  fill="#ffffff"
+                />
+
+                <text
+                  x="526"
+                  y="181"
+                  font-family="Arial, sans-serif"
+                  font-size="11"
+                  font-weight="600"
+                  fill="#64748b"
+                >
                   www.go7.in
-                </div>
-
-              </div>
-
-
-              <div class="go7-browser-body">
-
-                <div class="go7-browser-heading">
-                  <strong>Premium Domains</strong>
-                  <span>.IN Portfolio</span>
-                </div>
-
-
-                <div class="go7-domain-row">
-
-                  <div class="go7-domain-name">
-                    YHX.IN
-                  </div>
-
-                  <div class="go7-domain-line"></div>
-
-                  <div class="go7-sale">
-                    For Sale
-                  </div>
-
-                </div>
-
-
-                <div class="go7-domain-row">
-
-                  <div class="go7-domain-name">
-                    IBMR.IN
-                  </div>
-
-                  <div class="go7-domain-line"></div>
-
-                  <div class="go7-sale">
-                    For Sale
-                  </div>
-
-                </div>
-
-
-                <div class="go7-domain-row">
-
-                  <div class="go7-domain-name">
-                    GOOL.IN
-                  </div>
-
-                  <div class="go7-domain-line"></div>
-
-                  <div class="go7-sale">
-                    For Sale
-                  </div>
-
-                </div>
-
-
-                <div class="go7-domain-row">
-
-                  <div class="go7-domain-name">
-                    LSZ.IN
-                  </div>
-
-                  <div class="go7-domain-line"></div>
-
-                  <div class="go7-sale">
-                    For Sale
-                  </div>
-
-                </div>
-
-
-                <div class="go7-domain-row">
-
-                  <div class="go7-domain-name">
-                    TQO.IN
-                  </div>
-
-                  <div class="go7-domain-line"></div>
-
-                  <div class="go7-sale">
-                    For Sale
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <!-- Person -->
-
-            <div class="go7-person">
-
-              <div class="go7-hair"></div>
-              <div class="go7-head"></div>
-
-              <div class="go7-body"></div>
-              <div class="go7-shirt"></div>
-
-              <div class="go7-arm-left"></div>
-              <div class="go7-arm-right"></div>
-
-              <div class="go7-leg-left"></div>
-              <div class="go7-leg-right"></div>
-
-              <div class="go7-shoe-left"></div>
-              <div class="go7-shoe-right"></div>
-
-              <div class="go7-laptop"></div>
-
-            </div>
-
-
-            <!-- Chart -->
-
-            <div class="go7-chart">
-
-              <div class="go7-chart-title">
-                Domain Portfolio
-              </div>
-
-              <div class="go7-bars">
-
-                <div class="go7-bar"></div>
-                <div class="go7-bar"></div>
-                <div class="go7-bar"></div>
-                <div class="go7-bar"></div>
-
-              </div>
-
-            </div>
-
-
-            <!-- Secure Transfer -->
-
-            <div class="go7-secure">
-
-              <i class="mdi mdi-shield-check-outline"></i>
-
-              <span>
-                Secure Transfer
-              </span>
-
-            </div>
-
-
-            <!-- Plant -->
-
-            <div class="go7-plant">
-
-              <div class="go7-leaf one"></div>
-              <div class="go7-leaf two"></div>
-              <div class="go7-leaf three"></div>
-
-              <div class="go7-plant-pot"></div>
-
-            </div>
+                </text>
+
+
+
+                <!-- DOMAIN ROWS -->
+
+                <!-- row 1 -->
+
+                <text
+                  x="450"
+                  y="235"
+                  font-family="Arial, sans-serif"
+                  font-size="15"
+                  font-weight="700"
+                  fill="#172033"
+                >
+                  YHX.IN
+                </text>
+
+                <rect
+                  x="535"
+                  y="223"
+                  width="70"
+                  height="9"
+                  rx="5"
+                  fill="#e2e8f0"
+                />
+
+                <rect
+                  x="615"
+                  y="216"
+                  width="70"
+                  height="28"
+                  rx="8"
+                  fill="#d1fae5"
+                />
+
+                <text
+                  x="627"
+                  y="235"
+                  font-family="Arial, sans-serif"
+                  font-size="11"
+                  font-weight="700"
+                  fill="#047857"
+                >
+                  For Sale
+                </text>
+
+
+
+                <!-- row 2 -->
+
+                <text
+                  x="450"
+                  y="279"
+                  font-family="Arial, sans-serif"
+                  font-size="15"
+                  font-weight="700"
+                  fill="#172033"
+                >
+                  IBMR.IN
+                </text>
+
+                <rect
+                  x="535"
+                  y="267"
+                  width="70"
+                  height="9"
+                  rx="5"
+                  fill="#e2e8f0"
+                />
+
+                <rect
+                  x="615"
+                  y="260"
+                  width="70"
+                  height="28"
+                  rx="8"
+                  fill="#d1fae5"
+                />
+
+                <text
+                  x="627"
+                  y="279"
+                  font-family="Arial, sans-serif"
+                  font-size="11"
+                  font-weight="700"
+                  fill="#047857"
+                >
+                  For Sale
+                </text>
+
+
+
+                <!-- row 3 -->
+
+                <text
+                  x="450"
+                  y="323"
+                  font-family="Arial, sans-serif"
+                  font-size="15"
+                  font-weight="700"
+                  fill="#172033"
+                >
+                  GOOL.IN
+                </text>
+
+                <rect
+                  x="535"
+                  y="311"
+                  width="70"
+                  height="9"
+                  rx="5"
+                  fill="#e2e8f0"
+                />
+
+                <rect
+                  x="615"
+                  y="304"
+                  width="70"
+                  height="28"
+                  rx="8"
+                  fill="#d1fae5"
+                />
+
+                <text
+                  x="627"
+                  y="323"
+                  font-family="Arial, sans-serif"
+                  font-size="11"
+                  font-weight="700"
+                  fill="#047857"
+                >
+                  For Sale
+                </text>
+
+
+
+                <!-- row 4 -->
+
+                <text
+                  x="450"
+                  y="367"
+                  font-family="Arial, sans-serif"
+                  font-size="15"
+                  font-weight="700"
+                  fill="#172033"
+                >
+                  LSZ.IN
+                </text>
+
+                <rect
+                  x="535"
+                  y="355"
+                  width="70"
+                  height="9"
+                  rx="5"
+                  fill="#e2e8f0"
+                />
+
+                <rect
+                  x="615"
+                  y="348"
+                  width="70"
+                  height="28"
+                  rx="8"
+                  fill="#d1fae5"
+                />
+
+                <text
+                  x="627"
+                  y="367"
+                  font-family="Arial, sans-serif"
+                  font-size="11"
+                  font-weight="700"
+                  fill="#047857"
+                >
+                  For Sale
+                </text>
+
+
+
+                <!-- row 5 -->
+
+                <text
+                  x="450"
+                  y="411"
+                  font-family="Arial, sans-serif"
+                  font-size="15"
+                  font-weight="700"
+                  fill="#172033"
+                >
+                  TQO.IN
+                </text>
+
+                <rect
+                  x="535"
+                  y="399"
+                  width="70"
+                  height="9"
+                  rx="5"
+                  fill="#e2e8f0"
+                />
+
+                <rect
+                  x="615"
+                  y="392"
+                  width="70"
+                  height="28"
+                  rx="8"
+                  fill="#d1fae5"
+                />
+
+                <text
+                  x="627"
+                  y="411"
+                  font-family="Arial, sans-serif"
+                  font-size="11"
+                  font-weight="700"
+                  fill="#047857"
+                >
+                  For Sale
+                </text>
+
+              </g>
+
+
+
+              <!-- ======================
+                   DOMAIN TAG
+              ======================= -->
+
+              <g class="domain-tag">
+
+                <path
+                  d="M590 72
+                     L703 46
+                     Q720 42 724 59
+                     L738 118
+                     Q742 136 725 141
+                     L612 167
+                     Q595 171 591 154
+                     L577 95
+                     Q573 76 590 72Z"
+                  fill="url(#blueButton)"
+                  filter="url(#softShadow)"
+                />
+
+                <circle
+                  cx="704"
+                  cy="72"
+                  r="7"
+                  fill="#ffffff"
+                  opacity=".95"
+                />
+
+                <text
+                  x="612"
+                  y="111"
+                  font-family="Arial, sans-serif"
+                  font-size="28"
+                  font-weight="800"
+                  fill="#ffffff"
+                  transform="rotate(-13 612 111)"
+                >
+                  .IN
+                </text>
+
+                <text
+                  x="605"
+                  y="137"
+                  font-family="Arial, sans-serif"
+                  font-size="12"
+                  font-weight="700"
+                  fill="#ffffff"
+                  transform="rotate(-13 605 137)"
+                >
+                  DOMAINS
+                </text>
+
+              </g>
+
+
+
+              <!-- tag shine lines -->
+
+              <g
+                stroke="#60a5fa"
+                stroke-width="4"
+                stroke-linecap="round"
+              >
+
+                <path d="M731 38l12-12"/>
+                <path d="M748 49l17-4"/>
+                <path d="M735 23l2-15"/>
+
+              </g>
+
+
+
+              <!-- ======================
+                   GROWTH CARD
+              ======================= -->
+
+              <g
+                class="go7-float-slow"
+                filter="url(#softShadow)"
+              >
+
+                <rect
+                  x="285"
+                  y="365"
+                  width="145"
+                  height="135"
+                  rx="18"
+                  fill="#ffffff"
+                />
+
+                <path
+                  d="M314 464
+                     L332 452
+                     L347 462
+                     L370 430
+                     L392 444"
+                  fill="none"
+                  stroke="#2563eb"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <path
+                  d="M386 430l10 2-4 10"
+                  fill="none"
+                  stroke="#2563eb"
+                  stroke-width="5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <rect
+                  x="313"
+                  y="469"
+                  width="17"
+                  height="18"
+                  rx="3"
+                  fill="#60a5fa"
+                />
+
+                <rect
+                  x="338"
+                  y="456"
+                  width="17"
+                  height="31"
+                  rx="3"
+                  fill="#3b82f6"
+                />
+
+                <rect
+                  x="363"
+                  y="443"
+                  width="17"
+                  height="44"
+                  rx="3"
+                  fill="#2563eb"
+                />
+
+                <rect
+                  x="388"
+                  y="424"
+                  width="17"
+                  height="63"
+                  rx="3"
+                  fill="#1d4ed8"
+                />
+
+              </g>
+
+
+
+              <!-- ======================
+                   SECURE TRANSFER
+              ======================= -->
+
+              <g
+                class="go7-float"
+                filter="url(#softShadow)"
+              >
+
+                <rect
+                  x="475"
+                  y="458"
+                  width="170"
+                  height="88"
+                  rx="17"
+                  fill="#ffffff"
+                />
+
+                <!-- shield -->
+
+                <path
+                  d="M512 480
+                     L536 488
+                     L536 510
+                     Q536 526 512 536
+                     Q488 526 488 510
+                     L488 488Z"
+                  fill="#2563eb"
+                />
+
+                <path
+                  d="M499 508
+                     L508 517
+                     L525 497"
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-width="5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <text
+                  x="552"
+                  y="500"
+                  font-family="Arial, sans-serif"
+                  font-size="14"
+                  font-weight="700"
+                  fill="#475569"
+                >
+                  Secure
+                </text>
+
+                <text
+                  x="552"
+                  y="520"
+                  font-family="Arial, sans-serif"
+                  font-size="14"
+                  font-weight="700"
+                  fill="#475569"
+                >
+                  Transfer
+                </text>
+
+              </g>
+
+
+
+              <!-- ======================
+                   PERSON
+              ======================= -->
+
+              <g>
+
+                <!-- head -->
+
+                <circle
+                  cx="680"
+                  cy="270"
+                  r="27"
+                  fill="#f7b48a"
+                />
+
+                <!-- hair -->
+
+                <path
+                  d="M654 268
+                     Q653 235 680 232
+                     Q710 231 713 263
+                     Q700 253 689 254
+                     Q676 255 666 266Z"
+                  fill="#172033"
+                />
+
+                <!-- body -->
+
+                <path
+                  d="M651 302
+                     Q679 289 705 302
+                     L720 414
+                     L648 414Z"
+                  fill="#2563eb"
+                />
+
+                <!-- shirt highlight -->
+
+                <path
+                  d="M666 305L677 391"
+                  stroke="#60a5fa"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                  opacity=".45"
+                />
+
+                <!-- left arm pointing -->
+
+                <path
+                  d="M705 310
+                     Q727 318 744 331
+                     L765 321"
+                  fill="none"
+                  stroke="#2563eb"
+                  stroke-width="18"
+                  stroke-linecap="round"
+                />
+
+                <!-- hand -->
+
+                <circle
+                  cx="765"
+                  cy="321"
+                  r="9"
+                  fill="#f7b48a"
+                />
+
+                <!-- laptop -->
+
+                <rect
+                  x="689"
+                  y="348"
+                  width="89"
+                  height="59"
+                  rx="5"
+                  fill="#1e293b"
+                />
+
+                <rect
+                  x="697"
+                  y="356"
+                  width="73"
+                  height="43"
+                  rx="3"
+                  fill="#334155"
+                />
+
+                <path
+                  d="M677 409h112l-10 10H687Z"
+                  fill="#0f172a"
+                />
+
+                <!-- legs -->
+
+                <path
+                  d="M660 413L650 520"
+                  stroke="#172033"
+                  stroke-width="24"
+                  stroke-linecap="round"
+                />
+
+                <path
+                  d="M700 413L719 517"
+                  stroke="#172033"
+                  stroke-width="24"
+                  stroke-linecap="round"
+                />
+
+                <!-- shoes -->
+
+                <path
+                  d="M639 520
+                     Q654 513 665 522
+                     L676 532
+                     L642 536
+                     Q631 531 639 520Z"
+                  fill="#ffffff"
+                  stroke="#2563eb"
+                  stroke-width="3"
+                />
+
+                <path
+                  d="M710 517
+                     Q724 511 733 520
+                     L742 531
+                     L710 535
+                     Q700 530 710 517Z"
+                  fill="#ffffff"
+                  stroke="#2563eb"
+                  stroke-width="3"
+                />
+
+              </g>
+
+
+
+              <!-- ======================
+                   PLANT
+              ======================= -->
+
+              <g class="go7-float-slow">
+
+                <!-- pot -->
+
+                <path
+                  d="M680 480
+                     L741 480
+                     L733 540
+                     Q711 552 688 540Z"
+                  fill="#dbeafe"
+                />
+
+                <!-- stem -->
+
+                <path
+                  d="M710 481V397"
+                  stroke="#60a5fa"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                />
+
+                <!-- leaves -->
+
+                <path
+                  d="M709 429
+                     Q680 414 675 386
+                     Q705 388 714 410Z"
+                  fill="#93c5fd"
+                />
+
+                <path
+                  d="M712 447
+                     Q740 427 752 401
+                     Q723 401 710 425Z"
+                  fill="#60a5fa"
+                />
+
+                <path
+                  d="M708 408
+                     Q691 382 700 356
+                     Q722 373 717 399Z"
+                  fill="#bfdbfe"
+                />
+
+              </g>
+
+
+
+              <!-- ground shadow -->
+
+              <ellipse
+                cx="570"
+                cy="552"
+                rx="245"
+                ry="18"
+                fill="#dbeafe"
+                opacity=".38"
+              />
+
+            </svg>
 
           </div>
 
@@ -1195,46 +1423,59 @@
   </main>
 
 
-  <!-- FOOTER -->
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer class="go7-footer">
 
     <div class="container">
 
-      <p>
+      <div class="text-center">
 
-        ©
-        <script>
-          document.write(new Date().getFullYear())
-        </script>
+        <p>
 
-        GO7.IN All Rights Reserved. |
+          ©
+          <script>
+            document.write(new Date().getFullYear())
+          </script>
 
-        Powered by
-        <a href="https://www.go7.in/">
-          www.go7.in
-        </a>
+          GO7.IN All Rights Reserved. |
 
-        |
+          Powered by
+          <a href="https://www.go7.in/">
+            www.go7.in
+          </a>
 
-        Owned & Operated by
+          |
 
-        <a href="https://www.go7.in/about">
-          Anil Srivastav
-        </a>
+          Owned & Operated by
 
-      </p>
+          <a href="https://www.go7.in/about">
+            Anil Srivastav
+          </a>
+
+        </p>
+
+      </div>
 
     </div>
 
   </footer>
 
 
+
+  <!-- =========================
+       JS
+  ========================== -->
+
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/tawk.js"></script>
+
 
 </body>
 </html>
