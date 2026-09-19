@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>GO7.IN - Premium .IN Domain Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="GO7.IN is a premium short and brandable .IN domain portfolio for startups, businesses and premium online brands." />
-    <meta name="keywords" content="GO7.IN, premium domain, .IN domain, domain portfolio, brandable domain" />
+    <meta name="description" content="GO7.IN is a premium .IN domain portfolio featuring short, memorable and brandable domains." />
+    <meta name="keywords" content="GO7.IN, premium .IN domains, domain portfolio, brandable domains" />
     <meta content="Anil Srivastav" name="author" />
 
     <!-- favicon -->
@@ -19,13 +19,325 @@
 
     <link rel="canonical" href="https://www.go7.in/" />
 
+    <style>
+      /* GO7.IN HERO */
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        background: #fcfcfc;
+      }
+
+      .go7-hero {
+        min-height: calc(100vh - 120px);
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .go7-hero .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .go7-hero-copy {
+        max-width: 620px;
+        padding: 30px 0;
+      }
+
+      .go7-eyebrow {
+        display: inline-block;
+        margin-bottom: 18px;
+        color: #3850d5;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+      }
+
+      .go7-hero-title {
+        margin: 0;
+        color: #17181c;
+        font-size: clamp(58px, 7vw, 94px);
+        line-height: .94;
+        letter-spacing: -.065em;
+        font-weight: 800;
+      }
+
+      .go7-hero-title .accent {
+        color: #3850d5;
+      }
+
+      .go7-hero-subtitle {
+        margin: 26px 0 0;
+        color: #202124;
+        font-size: clamp(24px, 3vw, 38px);
+        line-height: 1.08;
+        letter-spacing: -.035em;
+        font-weight: 700;
+      }
+
+      .go7-hero-text {
+        max-width: 540px;
+        margin: 18px 0 0;
+        color: #6f7785;
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .go7-hero-button {
+        margin-top: 28px;
+      }
+
+      .go7-hero-button .btn {
+        padding: 13px 26px;
+        border-radius: 8px;
+        font-weight: 600;
+      }
+
+      /* RIGHT DOMAIN VISUAL */
+      .go7-domain-stage {
+        position: relative;
+        width: min(100%, 560px);
+        height: 470px;
+        margin: 0 auto;
+      }
+
+      .go7-domain-glow {
+        position: absolute;
+        width: 430px;
+        height: 430px;
+        top: 15px;
+        right: 15px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          #eef4ff 0%,
+          #f5f8fd 54%,
+          rgba(245,248,253,0) 72%
+        );
+      }
+
+      .go7-domain-board {
+        position: absolute;
+        width: 430px;
+        min-height: 320px;
+        top: 70px;
+        right: 35px;
+        padding: 28px;
+        border: 1px solid #e4e7ed;
+        border-radius: 24px;
+        background: rgba(255,255,255,.94);
+        box-shadow: 0 22px 55px rgba(20,30,55,.10);
+        transform: rotate(-3deg);
+      }
+
+      .go7-domain-board::after {
+        content: "";
+        position: absolute;
+        width: 190px;
+        height: 190px;
+        right: -90px;
+        bottom: -85px;
+        border-radius: 50%;
+        background: #eef4ff;
+        z-index: -1;
+      }
+
+      .go7-domain-label {
+        color: #3850d5;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+
+      .go7-domain-name {
+        margin: 8px 0 22px;
+        color: #17181c;
+        font-size: 58px;
+        line-height: 1;
+        letter-spacing: -.06em;
+        font-weight: 800;
+      }
+
+      .go7-domain-name span {
+        color: #3850d5;
+      }
+
+      .go7-domain-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .go7-domain-card {
+        min-height: 78px;
+        padding: 14px 15px;
+        border: 1px solid #e8eaf0;
+        border-radius: 12px;
+        background: #f8f9fb;
+      }
+
+      .go7-domain-card strong {
+        display: block;
+        color: #202124;
+        font-size: 15px;
+        line-height: 1.2;
+      }
+
+      .go7-domain-card small {
+        display: block;
+        margin-top: 6px;
+        color: #8a919d;
+        font-size: 11px;
+      }
+
+      .go7-domain-badge {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 12px 17px;
+        border: 1px solid #e5e8ef;
+        border-radius: 12px;
+        background: #fff;
+        color: #202124;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 0 14px 32px rgba(20,30,55,.10);
+      }
+
+      .go7-domain-badge i {
+        color: #3850d5;
+        font-size: 19px;
+      }
+
+      .go7-domain-badge.top {
+        top: 35px;
+        left: 0;
+      }
+
+      .go7-domain-badge.bottom {
+        right: 0;
+        bottom: 28px;
+        background: #3850d5;
+        border-color: #3850d5;
+        color: #fff;
+      }
+
+      .go7-domain-badge.bottom i {
+        color: #fff;
+      }
+
+      .go7-domain-line {
+        position: absolute;
+        width: 105px;
+        height: 105px;
+        left: 35px;
+        bottom: 35px;
+        border: 2px solid rgba(56,80,213,.12);
+        border-radius: 50%;
+      }
+
+      .go7-domain-line::after {
+        content: "";
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        left: 24px;
+        top: 24px;
+        border: 2px solid rgba(56,80,213,.10);
+        border-radius: 50%;
+      }
+
+      @media (max-width: 991px) {
+        .go7-hero {
+          min-height: auto;
+          padding: 55px 0 70px;
+        }
+
+        .go7-hero-copy {
+          max-width: 700px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        .go7-hero-text {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .go7-domain-stage {
+          margin-top: 45px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .go7-hero {
+          padding: 35px 0 55px;
+        }
+
+        .go7-hero-title {
+          font-size: 58px;
+        }
+
+        .go7-hero-subtitle {
+          font-size: 27px;
+        }
+
+        .go7-hero-text {
+          font-size: 15px;
+        }
+
+        .go7-domain-stage {
+          height: 365px;
+        }
+
+        .go7-domain-glow {
+          width: 320px;
+          height: 320px;
+          right: -5px;
+        }
+
+        .go7-domain-board {
+          width: 310px;
+          min-height: 250px;
+          right: 0;
+          top: 50px;
+          padding: 20px;
+        }
+
+        .go7-domain-name {
+          font-size: 43px;
+        }
+
+        .go7-domain-card {
+          min-height: 65px;
+          padding: 11px;
+        }
+
+        .go7-domain-badge.top {
+          left: 0;
+          top: 20px;
+        }
+
+        .go7-domain-badge.bottom {
+          right: 0;
+          bottom: 8px;
+        }
+      }
+    </style>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "GO7.IN",
         "url": "https://www.go7.in/",
-        "description": "Premium .IN domain portfolio.",
+        "description": "Premium .IN domain portfolio featuring short, memorable and brandable domains.",
         "publisher": {
           "@type": "Person",
           "name": "Anil Srivastav"
@@ -35,87 +347,113 @@
   </head>
 
   <body class="vh-100">
+
     <div class="header">
       <div class="container">
         <nav class="navbar navbar-expand-md navbar-light p-0">
           <a class="navbar-brand" href="index.html">
             <img src="images/logo-go7domain.png" alt="GO7.IN" height="44">
           </a>
-          <div class="collapse navbar-collapse justify-content-end" id="mainMenu"></div>
+
+          <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/domains">Domains</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+            </ul>
+          </div>
         </nav>
       </div>
     </div>
 
-    <div class="contain-box go7-content-loading" id="go7Content">
-      <div class="home-center">
-        <div class="home-desc-center">
-          <div class="container">
-            <div class="row justify-content-center align-items-center">
+    <main class="go7-hero go7-content-loading" id="go7Content">
+      <div class="container">
+        <div class="row align-items-center">
 
-              <div class="col-lg-6">
-                <div class="mt-lg-0 mt-4">
-                  <h1 class="text-primary">Premium .IN Domain Portfolio</h1>
+          <div class="col-lg-6">
+            <div class="go7-hero-copy">
 
-                  <h1 class="home-title display-4 fw-bold">
-                    GO7.IN
-                  </h1>
-
-                  <p class="text-muted f-18 mt-3 mb-1">
-                    Short. Memorable. Brandable.
-                    <br>
-                    A curated portfolio of premium .IN domains for startups,
-                    businesses and premium online brands.
-                  </p>
-
-                  <div class="row mt-4">
-                    <div class="col-md-6">
-                      <p class="mb-2 f-16 fw-semibold">
-                        <i class="mdi mdi-star-circle-outline me-2 text-primary"></i>
-                        Premium .IN Domains
-                      </p>
-
-                      <p class="mb-2 f-16 fw-semibold">
-                        <i class="mdi mdi-lightbulb-outline me-2 text-primary"></i>
-                        Short &amp; Brandable
-                      </p>
-                    </div>
-
-                    <div class="col-md-6">
-                      <p class="mb-2 f-16 fw-semibold">
-                        <i class="mdi mdi-folder-star-outline me-2 text-primary"></i>
-                        Curated Portfolio
-                      </p>
-
-                      <p class="mb-2 f-16 fw-semibold">
-                        <i class="mdi mdi-account-check-outline me-2 text-primary"></i>
-                        Direct Ownership
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="mt-4">
-                    <a href="/domains" class="btn btn-primary btn-round text-uppercase">
-                      Explore Domains
-                    </a>
-                  </div>
-                </div>
+              <div class="go7-eyebrow">
+                Premium .IN Domain Portfolio
               </div>
 
-              <div class="col-lg-5 offset-lg-1">
-                <div class="text-center mt-lg-0 mt-4">
-                  <img
-                    src="images/logo-go7domain.png"
-                    alt="GO7.IN Premium .IN Domain Portfolio"
-                    class="img-fluid"
-                  >
-                </div>
+              <h1 class="go7-hero-title">
+                GO<span class="accent">7</span>.IN
+              </h1>
+
+              <h2 class="go7-hero-subtitle">
+                Short. Memorable. Brandable.
+              </h2>
+
+              <p class="go7-hero-text">
+                A curated portfolio of premium .IN domains for
+                businesses, brands and startups.
+              </p>
+
+              <div class="go7-hero-button">
+                <a href="/domains" class="btn btn-primary btn-round text-uppercase">
+                  Explore Domains
+                </a>
               </div>
 
             </div>
           </div>
+
+          <div class="col-lg-6">
+            <div class="go7-domain-stage">
+
+              <div class="go7-domain-glow"></div>
+              <div class="go7-domain-line"></div>
+
+              <div class="go7-domain-badge top">
+                <i class="mdi mdi-star-circle-outline"></i>
+                Premium .IN
+              </div>
+
+              <div class="go7-domain-board">
+                <div class="go7-domain-label">Domain Portfolio</div>
+
+                <div class="go7-domain-name">
+                  GO7<span>.IN</span>
+                </div>
+
+                <div class="go7-domain-grid">
+                  <div class="go7-domain-card">
+                    <strong>YHX.IN</strong>
+                    <small>Short &amp; Brandable</small>
+                  </div>
+
+                  <div class="go7-domain-card">
+                    <strong>IBMR.IN</strong>
+                    <small>Premium .IN</small>
+                  </div>
+
+                  <div class="go7-domain-card">
+                    <strong>BLOGUP.IN</strong>
+                    <small>Brandable Domain</small>
+                  </div>
+
+                  <div class="go7-domain-card">
+                    <strong>GOOL.IN</strong>
+                    <small>Short Domain</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="go7-domain-badge bottom">
+                <i class="mdi mdi-lightbulb-outline"></i>
+                Brandable Domains
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+    </main>
 
     <div class="footer">
       <div class="container">
@@ -123,9 +461,7 @@
           <div class="col-lg-12">
             <div class="float-end pull-none">
               <p class="mb-1 mt-4">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>
+                © <script>document.write(new Date().getFullYear())</script>
                 GO7.IN All Rights Reserved.
                 | Powered by <a href="https://www.go7.in/">www.go7.in</a>
                 | Owned &amp; Operated by
@@ -137,11 +473,9 @@
       </div>
     </div>
 
-    <!-- javascript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
-    <!-- Main Js -->
     <script src="js/app.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/tawk.js"></script>
