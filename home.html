@@ -37,12 +37,14 @@
             min-height: calc(100vh - 80px);
             display: flex;
             align-items: center;
-            padding: 45px 0 40px;
+            padding: 35px 0 30px;
             overflow: hidden;
         }
 
         .go7-home-row {
             align-items: center;
+            margin-left: -8px;
+            margin-right: -8px;
         }
 
 
@@ -53,16 +55,59 @@
         .go7-left {
             position: relative;
             z-index: 5;
+            padding-right: 10px;
         }
 
         .go7-left .go7-description {
-            max-width: 610px;
+            max-width: 680px;
+        }
+
+        .go7-left h1 {
+            font-size: clamp(50px, 5.3vw, 78px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+        }
+
+        .go7-left .go7-tagline {
+            font-size: 22px;
+            margin-top: 22px;
+        }
+
+        .go7-left .go7-description {
+            font-size: 17px;
+            line-height: 1.75;
+            margin-top: 18px;
+            margin-bottom: 34px;
         }
 
         .go7-left .go7-explore {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            gap: 10px;
+            min-width: 175px;
+            height: 52px;
+            padding: 0 25px;
+            border-radius: 10px;
+            background: #111827;
+            color: #fff !important;
+            text-decoration: none !important;
+            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+            box-shadow: 0 10px 25px rgba(17,24,39,.16);
+        }
+
+        .go7-left .go7-explore:hover {
+            background: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(17,24,39,.22);
+        }
+
+        .go7-left .go7-explore i {
+            transition: transform .25s ease;
+        }
+
+        .go7-left .go7-explore:hover i {
+            transform: translateX(4px);
         }
 
 
@@ -73,17 +118,18 @@
         .go7-right {
             position: relative;
             width: 100%;
-            min-height: 650px;
+            min-height: 720px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .go7-svg-art {
-            width: 100%;
-            max-width: 790px;
+            width: 118%;
+            max-width: none;
             height: auto;
             display: block;
+            margin-left: -9%;
         }
 
 
@@ -298,12 +344,33 @@
             }
 
             .go7-right {
-                margin-top: 20px;
+                margin-top: 10px;
+                min-height: auto;
             }
 
             .go7-svg-art {
-                max-width: 100%;
+                width: 108%;
+                max-width: none;
+                margin-left: -4%;
             }
+        }
+
+
+        @media (max-width: 576px) {
+
+            .go7-left h1 {
+                font-size: 44px;
+                letter-spacing: -2px;
+            }
+
+            .go7-left .go7-tagline {
+                font-size: 18px;
+            }
+
+            .go7-left .go7-description {
+                font-size: 14px;
+            }
+
         }
 
 
@@ -367,7 +434,7 @@
                      EASY TO EDIT
                 ================================================== -->
 
-                <div class="col-lg-5 col-md-5">
+                <div class="col-lg-7 col-md-7">
 
                     <div class="go7-left">
 
@@ -418,7 +485,7 @@
                      LARGE ANIMATED SVG
                 ================================================== -->
 
-                <div class="col-lg-7 col-md-7">
+                <div class="col-lg-5 col-md-5">
 
                     <div class="go7-right">
 
