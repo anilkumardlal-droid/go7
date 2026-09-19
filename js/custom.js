@@ -32,20 +32,9 @@
 
     const source = new URLSearchParams(window.location.search).get("source");
 
-    const homepage = document.getElementById("go7Homepage");
-    const salePage = document.getElementById("sourceSalePage");
-
-    // No ?source= → GO7.IN homepage
-    if (!source || source.trim().toLowerCase() === "go7.in") {
-
-        if (homepage) {
-            homepage.style.display = "";
-        }
-
-        if (salePage) {
-            salePage.style.display = "none";
-        }
-
+    // No source → homepage
+    if (!source) {
+        window.location.replace("home.html");
         return;
     }
 
@@ -56,30 +45,19 @@
         .replace(/^www\./, "")
         .split("/")[0];
 
+    // GO7.IN → homepage
+    if (cleaned === "go7.in") {
+        window.location.replace("home.html");
+        return;
+    }
+
     // Only .IN domains are allowed
     if (!/^[a-z0-9-]+\.in$/i.test(cleaned)) {
-
-        if (homepage) {
-            homepage.style.display = "";
-        }
-
-        if (salePage) {
-            salePage.style.display = "none";
-        }
-
+        window.location.replace("home.html");
         return;
     }
 
     const domain = cleaned.toUpperCase();
-
-    // Show sale page
-    if (homepage) {
-        homepage.style.display = "none";
-    }
-
-    if (salePage) {
-        salePage.style.display = "";
-    }
 
     const domainName =
         document.getElementById("domain-name");
@@ -89,7 +67,6 @@
 
     const inquiryDescription =
         document.getElementById("inquiry-description");
-
 
     if (domainName) {
         domainName.textContent = domain;
