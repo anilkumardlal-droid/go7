@@ -1,203 +1,1234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>GO7.IN - Premium .IN Domain Portfolio</title>
+
   <meta name="description" content="GO7.IN is a curated portfolio of premium .IN domains.">
   <meta name="author" content="Anil Srivastav">
 
   <link rel="shortcut icon" href="images/favicon.png">
+
   <link rel="stylesheet" href="css/animate.min.css">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/materialdesignicons.min.css" rel="stylesheet">
   <link href="css/style.min.css" rel="stylesheet">
   <link href="css/home.css" rel="stylesheet">
+
   <link rel="canonical" href="https://www.go7.in/">
 
   <style>
-    html,body{
-      height:100%;
-      margin:0;
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
     }
 
-    body{
-      background:#f8fafc;
-      color:#111827;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    body {
+      background: #ffffff;
+      color: #30343b;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
     }
 
-    .go7-intro{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      position:relative;
-      overflow:hidden;
-      padding:40px 24px;
+    /* =========================
+       HEADER
+    ========================= */
+
+    .go7-header {
+      padding: 22px 0;
+      background: #fff;
     }
 
-    .go7-intro:before,
-    .go7-intro:after{
-      content:"";
-      position:absolute;
-      width:430px;
-      height:430px;
-      border-radius:50%;
-      background:#eef2f7;
-      pointer-events:none;
+    .go7-header-inner {
+      display: flex;
+      align-items: center;
     }
 
-    .go7-intro:before{
-      top:-250px;
-      left:-250px;
+    .go7-logo {
+      display: inline-flex;
+      text-decoration: none !important;
     }
 
-    .go7-intro:after{
-      right:-260px;
-      bottom:-260px;
+    .go7-logo img {
+      display: block;
+      height: 44px;
+      width: auto;
     }
 
-    .go7-intro-inner{
-      position:relative;
-      z-index:1;
-      max-width:850px;
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .go7-hero {
+      min-height: calc(100vh - 145px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 35px 0 55px;
+      background: #fff;
     }
 
-    .welcome-text{
-      font-size:15px;
-      font-weight:600;
-      letter-spacing:3px;
-      color:#6b7280;
-      margin-bottom:25px;
+    .go7-hero-row {
+      display: flex;
+      align-items: center;
     }
 
-    .go7-intro h1{
-      margin:0;
-      font-size:clamp(42px,6vw,74px);
-      line-height:1.06;
-      letter-spacing:-2.8px;
-      font-weight:650;
-      color:#111827;
+
+    /* =========================
+       LEFT CONTENT
+    ========================= */
+
+    .go7-content {
+      position: relative;
+      z-index: 5;
+      padding-right: 25px;
     }
 
-    .go7-tagline{
-      margin:20px 0 0;
-      color:#6b7280;
-      font-size:19px;
-      line-height:1.6;
+    .welcome-text {
+      margin-bottom: 20px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 2.8px;
+      color: #7d8794;
     }
 
-    .go7-description{
-      max-width:620px;
-      margin:18px auto 32px;
-      color:#8492a6;
-      font-size:15px;
-      line-height:1.7;
+    .go7-content h1 {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(44px, 5vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2.8px;
+      font-weight: 650;
+      color: #30343b;
     }
 
-    .go7-explore{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      height:48px;
-      padding:0 24px;
-      border-radius:8px;
-      background:#111827;
-      color:#fff!important;
-      text-decoration:none!important;
-      font-size:15px;
-      font-weight:600;
-      transition:.2s ease;
+    .go7-tagline {
+      margin: 22px 0 0;
+      font-size: 20px;
+      line-height: 1.55;
+      color: #5f6875;
+      font-weight: 500;
     }
 
-    .go7-explore:hover{
-      background:#000;
-      transform:translateY(-1px);
+    .go7-description {
+      max-width: 610px;
+      margin: 16px 0 32px;
+      color: #8492a6;
+      font-size: 15px;
+      line-height: 1.75;
     }
 
-    .go7-explore i{
-      font-size:17px;
+    .go7-explore {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 7px;
+      background: #30343b;
+      color: #fff !important;
+      text-decoration: none !important;
+      font-size: 15px;
+      font-weight: 600;
+      transition: .2s ease;
     }
 
-    @media(max-width:576px){
-  .welcome-text{
-    font-size:13px;
-    letter-spacing:2px;
-    margin-bottom:20px;
-  }
+    .go7-explore:hover {
+      background: #171a1e;
+      transform: translateY(-2px);
+    }
 
-  .go7-intro h1{
-    font-size:42px;
-    letter-spacing:-1.8px;
-  }
+    .go7-explore i {
+      font-size: 17px;
+    }
 
-  .go7-tagline{
-    font-size:17px;
-  }
 
-  .go7-description{
-    font-size:14px;
-  }
-}
+    /* =========================
+       RIGHT ILLUSTRATION
+    ========================= */
+
+    .go7-illustration {
+      position: relative;
+      width: 100%;
+      height: 535px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .go7-bg-circle {
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      background: #f5f8fc;
+      right: 3%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .go7-bg-circle-small {
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      border: 1px solid #eaf0f7;
+      right: 16%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+
+    /* Browser */
+
+    .go7-browser {
+      position: absolute;
+      z-index: 3;
+
+      width: 390px;
+      height: 305px;
+
+      right: 12%;
+      top: 108px;
+
+      overflow: hidden;
+
+      background: #fff;
+      border: 1px solid #e6ebf2;
+      border-radius: 14px;
+
+      box-shadow:
+        0 25px 55px rgba(30, 45, 65, .10);
+    }
+
+    .go7-browser-top {
+      height: 43px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      background: #f4f7fb;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .go7-browser-dot {
+      width: 9px;
+      height: 9px;
+      margin-right: 6px;
+      border-radius: 50%;
+      background: #d9e0e9;
+    }
+
+    .go7-browser-url {
+      height: 27px;
+      flex: 1;
+      margin-left: 12px;
+      display: flex;
+      align-items: center;
+      padding: 0 13px;
+      border-radius: 6px;
+      background: #fff;
+      color: #8a95a4;
+      font-size: 11px;
+    }
+
+    .go7-browser-body {
+      padding: 18px 20px;
+    }
+
+    .go7-browser-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .go7-browser-heading strong {
+      font-size: 12px;
+      color: #30343b;
+    }
+
+    .go7-browser-heading span {
+      font-size: 10px;
+      color: #a1aab6;
+    }
+
+
+    /* Domain rows */
+
+    .go7-domain-row {
+      height: 42px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #f0f3f6;
+    }
+
+    .go7-domain-name {
+      width: 105px;
+      font-size: 12px;
+      font-weight: 650;
+      color: #3b4350;
+    }
+
+    .go7-domain-line {
+      flex: 1;
+      height: 5px;
+      margin-right: 12px;
+      border-radius: 10px;
+      background: #edf1f5;
+    }
+
+    .go7-sale {
+      min-width: 55px;
+      padding: 5px 7px;
+      border-radius: 5px;
+      background: #e8f7ef;
+      color: #319265;
+      text-align: center;
+      font-size: 9px;
+      font-weight: 650;
+    }
+
+
+    /* .IN tag */
+
+    .go7-tag {
+      position: absolute;
+      z-index: 5;
+
+      right: 5%;
+      top: 48px;
+
+      padding: 14px 21px;
+
+      background: #30343b;
+      color: #fff;
+
+      border-radius: 7px;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      transform: rotate(-8deg);
+
+      box-shadow:
+        0 14px 30px rgba(30, 45, 65, .13);
+    }
+
+    .go7-tag small {
+      display: block;
+      margin-top: 2px;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+    }
+
+
+    /* Person */
+
+    .go7-person {
+      position: absolute;
+      z-index: 6;
+
+      right: 1%;
+      bottom: 38px;
+
+      width: 150px;
+      height: 270px;
+    }
+
+    .go7-head {
+      position: absolute;
+      top: 12px;
+      left: 53px;
+
+      width: 46px;
+      height: 52px;
+
+      border-radius: 48% 48% 45% 45%;
+
+      background: #f4c6a5;
+    }
+
+    .go7-hair {
+      position: absolute;
+      z-index: 2;
+
+      top: 3px;
+      left: 48px;
+
+      width: 56px;
+      height: 35px;
+
+      border-radius: 50% 55% 25% 30%;
+
+      background: #30343b;
+    }
+
+    .go7-body {
+      position: absolute;
+      top: 62px;
+      left: 39px;
+
+      width: 75px;
+      height: 112px;
+
+      border-radius: 25px 25px 15px 15px;
+
+      background: #30343b;
+    }
+
+    .go7-shirt {
+      position: absolute;
+      top: 62px;
+      left: 39px;
+
+      width: 75px;
+      height: 88px;
+
+      border-radius: 24px 24px 12px 12px;
+
+      background: #6c7480;
+    }
+
+    .go7-arm-left,
+    .go7-arm-right {
+      position: absolute;
+      top: 70px;
+
+      width: 20px;
+      height: 105px;
+
+      border-radius: 20px;
+
+      background: #f4c6a5;
+    }
+
+    .go7-arm-left {
+      left: 25px;
+      transform: rotate(16deg);
+    }
+
+    .go7-arm-right {
+      right: 18px;
+      transform: rotate(-42deg);
+    }
+
+    .go7-leg-left,
+    .go7-leg-right {
+      position: absolute;
+      top: 155px;
+
+      width: 25px;
+      height: 105px;
+
+      border-radius: 12px;
+
+      background: #30343b;
+    }
+
+    .go7-leg-left {
+      left: 48px;
+      transform: rotate(8deg);
+    }
+
+    .go7-leg-right {
+      right: 48px;
+      transform: rotate(-8deg);
+    }
+
+    .go7-shoe-left,
+    .go7-shoe-right {
+      position: absolute;
+      top: 250px;
+
+      width: 45px;
+      height: 15px;
+
+      border-radius: 15px 5px 5px 15px;
+
+      background: #fff;
+      border: 1px solid #dfe5ec;
+    }
+
+    .go7-shoe-left {
+      left: 31px;
+    }
+
+    .go7-shoe-right {
+      right: 31px;
+    }
+
+
+    /* Laptop */
+
+    .go7-laptop {
+      position: absolute;
+      z-index: 8;
+
+      top: 105px;
+      right: 2px;
+
+      width: 78px;
+      height: 52px;
+
+      border-radius: 4px;
+
+      background: #5e6875;
+
+      transform: rotate(-8deg);
+    }
+
+    .go7-laptop::after {
+      content: "";
+
+      position: absolute;
+
+      left: -7px;
+      bottom: -8px;
+
+      width: 92px;
+      height: 8px;
+
+      border-radius: 5px;
+
+      background: #30343b;
+    }
+
+
+    /* Chart card */
+
+    .go7-chart {
+      position: absolute;
+      z-index: 7;
+
+      left: 5%;
+      bottom: 70px;
+
+      width: 145px;
+      height: 120px;
+
+      padding: 18px;
+
+      background: #fff;
+
+      border: 1px solid #e7edf4;
+      border-radius: 14px;
+
+      box-shadow:
+        0 18px 40px rgba(30, 45, 65, .08);
+    }
+
+    .go7-chart-title {
+      font-size: 10px;
+      font-weight: 650;
+      color: #727d8b;
+    }
+
+    .go7-bars {
+      height: 67px;
+
+      display: flex;
+      align-items: end;
+
+      gap: 8px;
+
+      margin-top: 10px;
+    }
+
+    .go7-bar {
+      width: 15px;
+      border-radius: 4px 4px 2px 2px;
+      background: #8c96a4;
+    }
+
+    .go7-bar:nth-child(1) {
+      height: 22px;
+    }
+
+    .go7-bar:nth-child(2) {
+      height: 34px;
+    }
+
+    .go7-bar:nth-child(3) {
+      height: 47px;
+    }
+
+    .go7-bar:nth-child(4) {
+      height: 61px;
+    }
+
+
+    /* Secure transfer card */
+
+    .go7-secure {
+      position: absolute;
+      z-index: 7;
+
+      right: 28%;
+      bottom: 28px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 13px 18px;
+
+      background: #fff;
+
+      border: 1px solid #e7edf4;
+      border-radius: 10px;
+
+      box-shadow:
+        0 15px 35px rgba(30, 45, 65, .07);
+
+      font-size: 11px;
+      font-weight: 650;
+      color: #606a77;
+    }
+
+    .go7-secure i {
+      font-size: 20px;
+      color: #59636f;
+    }
+
+
+    /* Globe */
+
+    .go7-globe {
+      position: absolute;
+      z-index: 4;
+
+      left: 4%;
+      top: 85px;
+
+      width: 62px;
+      height: 62px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 15px;
+
+      background: #fff;
+
+      border: 1px solid #e7edf4;
+
+      box-shadow:
+        0 15px 30px rgba(30, 45, 65, .06);
+
+      font-size: 28px;
+      color: #697482;
+    }
+
+
+    /* Plant */
+
+    .go7-plant {
+      position: absolute;
+      z-index: 4;
+
+      right: 1%;
+      bottom: 35px;
+
+      width: 70px;
+      height: 105px;
+    }
+
+    .go7-plant-pot {
+      position: absolute;
+      bottom: 0;
+      left: 12px;
+
+      width: 47px;
+      height: 42px;
+
+      border-radius: 5px 5px 15px 15px;
+
+      background: #dce3eb;
+    }
+
+    .go7-leaf {
+      position: absolute;
+
+      width: 25px;
+      height: 42px;
+
+      border-radius: 100% 0 100% 0;
+
+      background: #dce4ec;
+
+      transform-origin: bottom center;
+    }
+
+    .go7-leaf.one {
+      left: 23px;
+      top: 15px;
+      transform: rotate(-35deg);
+    }
+
+    .go7-leaf.two {
+      left: 38px;
+      top: 8px;
+      transform: rotate(28deg);
+    }
+
+    .go7-leaf.three {
+      left: 9px;
+      top: 34px;
+      transform: rotate(-60deg);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .go7-footer {
+      padding: 15px 0 23px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .go7-footer p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.7;
+      color: #9aa3af;
+    }
+
+    .go7-footer a {
+      color: #707987;
+      text-decoration: none;
+    }
+
+    .go7-footer a:hover {
+      color: #30343b;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 991px) {
+
+      .go7-hero {
+        padding-top: 25px;
+      }
+
+      .go7-content {
+        padding-right: 0;
+      }
+
+      .go7-content h1 {
+        font-size: 52px;
+      }
+
+      .go7-illustration {
+        height: 480px;
+        margin-top: 20px;
+      }
+
+      .go7-browser {
+        right: 10%;
+      }
+
+    }
+
+
+    @media (max-width: 767px) {
+
+      .go7-header {
+        padding: 18px 0;
+      }
+
+      .go7-logo img {
+        height: 40px;
+      }
+
+      .go7-hero {
+        min-height: auto;
+        padding: 30px 0 45px;
+      }
+
+      .go7-hero-row {
+        display: block;
+      }
+
+      .go7-content {
+        text-align: center;
+      }
+
+      .welcome-text {
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+      }
+
+      .go7-content h1 {
+        font-size: 42px;
+        letter-spacing: -1.8px;
+      }
+
+      .go7-tagline {
+        font-size: 17px;
+      }
+
+      .go7-description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+      }
+
+      .go7-illustration {
+        height: 420px;
+        margin-top: 15px;
+      }
+
+      .go7-bg-circle {
+        width: 330px;
+        height: 330px;
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+
+      .go7-bg-circle-small {
+        width: 230px;
+        height: 230px;
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+
+      .go7-browser {
+        width: 310px;
+        height: 255px;
+        right: 50%;
+        top: 82px;
+        transform: translateX(50%);
+      }
+
+      .go7-browser-body {
+        padding: 12px;
+      }
+
+      .go7-domain-row {
+        height: 34px;
+      }
+
+      .go7-domain-name {
+        width: 78px;
+        font-size: 10px;
+      }
+
+      .go7-sale {
+        min-width: 47px;
+        font-size: 8px;
+      }
+
+      .go7-tag {
+        right: 4%;
+        top: 35px;
+        padding: 10px 14px;
+        font-size: 12px;
+      }
+
+      .go7-chart {
+        left: 0;
+        bottom: 38px;
+        transform: scale(.78);
+        transform-origin: bottom left;
+      }
+
+      .go7-secure {
+        right: 17%;
+        bottom: 12px;
+        transform: scale(.8);
+        transform-origin: bottom right;
+      }
+
+      .go7-globe {
+        left: 1%;
+        top: 65px;
+        transform: scale(.75);
+      }
+
+      .go7-person {
+        right: -4%;
+        bottom: 35px;
+        transform: scale(.78);
+        transform-origin: bottom right;
+      }
+
+      .go7-plant {
+        right: -2%;
+        bottom: 20px;
+        transform: scale(.75);
+        transform-origin: bottom right;
+      }
+
+    }
+
+
+    @media (max-width: 420px) {
+
+      .go7-content h1 {
+        font-size: 37px;
+      }
+
+      .go7-illustration {
+        height: 370px;
+      }
+
+      .go7-browser {
+        width: 285px;
+      }
+
+      .go7-person {
+        transform: scale(.65);
+        right: -9%;
+      }
+
+      .go7-chart {
+        transform: scale(.65);
+      }
+
+      .go7-secure {
+        transform: scale(.65);
+        right: 10%;
+      }
+
+    }
+
   </style>
+
 </head>
 
-<body class="vh-100">
 
-  <div class="header">
+<body>
+
+
+  <!-- HEADER -->
+
+  <header class="go7-header">
+
     <div class="container">
-      <nav class="navbar navbar-expand-md navbar-light p-0">
-        <a class="navbar-brand" href="home.html">
-          <img src="images/logo-go7domain.png" alt="GO7.IN" height="44">
+
+      <div class="go7-header-inner">
+
+        <a class="go7-logo" href="/">
+          <img
+            src="images/logo-go7domain.png"
+            alt="GO7.IN"
+          >
         </a>
-        <div class="collapse navbar-collapse justify-content-end" id="mainMenu"></div>
-      </nav>
-    </div>
-  </div>
 
-  <main class="go7-intro">
-    <div class="go7-intro-inner">
-
-      <div>Welcome to</div>
-
-      <h1>Premium .IN Domain Portfolio</h1>
-
-      <p class="go7-tagline">
-        Short. Memorable. Brandable.
-      </p>
-
-      <p class="go7-description">
-        A curated portfolio of premium .IN domains for brands,
-        businesses and investors.
-      </p>
-
-      <a href="/domains" class="go7-explore">
-        Explore Domains
-        <i class="mdi mdi-arrow-right"></i>
-      </a>
+      </div>
 
     </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <main class="go7-hero">
+
+    <div class="container">
+
+      <div class="row go7-hero-row align-items-center">
+
+
+        <!-- LEFT CONTENT -->
+
+        <div class="col-lg-6">
+
+          <div class="go7-content">
+
+            <div class="welcome-text">
+              Welcome to
+            </div>
+
+            <h1>
+              Premium .IN Domain Portfolio
+            </h1>
+
+            <p class="go7-tagline">
+              Short. Memorable. Brandable.
+            </p>
+
+            <p class="go7-description">
+              A curated portfolio of premium .IN domains for brands,
+              businesses and investors.
+            </p>
+
+            <a href="/domains" class="go7-explore">
+              Explore Domains
+              <i class="mdi mdi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT ILLUSTRATION -->
+
+        <div class="col-lg-6">
+
+          <div class="go7-illustration">
+
+            <div class="go7-bg-circle"></div>
+            <div class="go7-bg-circle-small"></div>
+
+
+            <!-- Globe -->
+
+            <div class="go7-globe">
+              <i class="mdi mdi-earth"></i>
+            </div>
+
+
+            <!-- .IN Domains Tag -->
+
+            <div class="go7-tag">
+              .IN
+              <small>DOMAINS</small>
+            </div>
+
+
+            <!-- Browser / Domain Portfolio -->
+
+            <div class="go7-browser">
+
+              <div class="go7-browser-top">
+
+                <span class="go7-browser-dot"></span>
+                <span class="go7-browser-dot"></span>
+                <span class="go7-browser-dot"></span>
+
+                <div class="go7-browser-url">
+                  www.go7.in
+                </div>
+
+              </div>
+
+
+              <div class="go7-browser-body">
+
+                <div class="go7-browser-heading">
+                  <strong>Premium Domains</strong>
+                  <span>.IN Portfolio</span>
+                </div>
+
+
+                <div class="go7-domain-row">
+
+                  <div class="go7-domain-name">
+                    YHX.IN
+                  </div>
+
+                  <div class="go7-domain-line"></div>
+
+                  <div class="go7-sale">
+                    For Sale
+                  </div>
+
+                </div>
+
+
+                <div class="go7-domain-row">
+
+                  <div class="go7-domain-name">
+                    IBMR.IN
+                  </div>
+
+                  <div class="go7-domain-line"></div>
+
+                  <div class="go7-sale">
+                    For Sale
+                  </div>
+
+                </div>
+
+
+                <div class="go7-domain-row">
+
+                  <div class="go7-domain-name">
+                    GOOL.IN
+                  </div>
+
+                  <div class="go7-domain-line"></div>
+
+                  <div class="go7-sale">
+                    For Sale
+                  </div>
+
+                </div>
+
+
+                <div class="go7-domain-row">
+
+                  <div class="go7-domain-name">
+                    LSZ.IN
+                  </div>
+
+                  <div class="go7-domain-line"></div>
+
+                  <div class="go7-sale">
+                    For Sale
+                  </div>
+
+                </div>
+
+
+                <div class="go7-domain-row">
+
+                  <div class="go7-domain-name">
+                    TQO.IN
+                  </div>
+
+                  <div class="go7-domain-line"></div>
+
+                  <div class="go7-sale">
+                    For Sale
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- Person -->
+
+            <div class="go7-person">
+
+              <div class="go7-hair"></div>
+              <div class="go7-head"></div>
+
+              <div class="go7-body"></div>
+              <div class="go7-shirt"></div>
+
+              <div class="go7-arm-left"></div>
+              <div class="go7-arm-right"></div>
+
+              <div class="go7-leg-left"></div>
+              <div class="go7-leg-right"></div>
+
+              <div class="go7-shoe-left"></div>
+              <div class="go7-shoe-right"></div>
+
+              <div class="go7-laptop"></div>
+
+            </div>
+
+
+            <!-- Chart -->
+
+            <div class="go7-chart">
+
+              <div class="go7-chart-title">
+                Domain Portfolio
+              </div>
+
+              <div class="go7-bars">
+
+                <div class="go7-bar"></div>
+                <div class="go7-bar"></div>
+                <div class="go7-bar"></div>
+                <div class="go7-bar"></div>
+
+              </div>
+
+            </div>
+
+
+            <!-- Secure Transfer -->
+
+            <div class="go7-secure">
+
+              <i class="mdi mdi-shield-check-outline"></i>
+
+              <span>
+                Secure Transfer
+              </span>
+
+            </div>
+
+
+            <!-- Plant -->
+
+            <div class="go7-plant">
+
+              <div class="go7-leaf one"></div>
+              <div class="go7-leaf two"></div>
+              <div class="go7-leaf three"></div>
+
+              <div class="go7-plant-pot"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </main>
 
-  <div class="footer">
+
+  <!-- FOOTER -->
+
+  <footer class="go7-footer">
+
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="text-center">
-            <p class="mb-1 mt-4">
-              © <script>document.write(new Date().getFullYear())</script>
-              GO7.IN All Rights Reserved. |
-              Powered by <a href="https://www.go7.in/">www.go7.in</a> |
-              Owned & Operated by
-              <a href="https://www.go7.in/about">Anil Srivastav</a>
-            </p>
-          </div>
-        </div>
-      </div>
+
+      <p>
+
+        ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+
+        GO7.IN All Rights Reserved. |
+
+        Powered by
+        <a href="https://www.go7.in/">
+          www.go7.in
+        </a>
+
+        |
+
+        Owned & Operated by
+
+        <a href="https://www.go7.in/about">
+          Anil Srivastav
+        </a>
+
+      </p>
+
     </div>
-  </div>
+
+  </footer>
+
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
