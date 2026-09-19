@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GO7.IN - Premium .IN Domain Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GO7.IN is a premium .IN domain portfolio featuring short, memorable and brandable domains." />
+    <meta name="keywords" content="GO7.IN, .IN domain portfolio, premium domains, brandable domains" />
+    <meta content="Anil Srivastav" name="author" />
+
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/home.css" rel="stylesheet" type="text/css" />
+    <link rel="canonical" href="https://www.go7.in/" />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body.vh-100 {
+        min-height: 100vh;
+        min-height: 100svh;
+        background: #fcfcfc;
+      }
+
+      .contain-box.go7-home {
+        min-height: calc(100vh - 120px);
+        min-height: calc(100svh - 120px);
+      }
+
+      .go7-home .home-desc-center {
+        min-height: calc(100vh - 120px);
+        min-height: calc(100svh - 120px);
+        display: flex;
+        align-items: center;
+      }
+
+      .go7-home-content {
+        max-width: 620px;
+      }
+
+      .go7-home-content .home-title {
+        margin-bottom: 0;
+      }
+
+      .go7-home-description {
+        max-width: 560px;
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .go7-home-button {
+        margin-top: 26px;
+      }
+
+      .go7-home-space {
+        min-height: 360px;
+      }
+
+      @media (max-width: 991px) {
+        .contain-box.go7-home,
+        .go7-home .home-desc-center {
+          min-height: auto;
+        }
+
+        .go7-home .home-desc-center {
+          padding-top: 55px;
+          padding-bottom: 65px;
+        }
+
+        .go7-home-content {
+          max-width: 700px;
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .go7-home-description {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .go7-home-space {
+          min-height: 80px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .go7-home .home-desc-center {
+          padding-top: 35px;
+          padding-bottom: 45px;
+        }
+
+        .go7-home-content .home-title {
+          font-size: 48px;
+        }
+
+        .go7-home-description {
+          font-size: 16px;
+        }
+
+        .go7-home-button {
+          margin-top: 22px;
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "GO7.IN",
+        "url": "https://www.go7.in/",
+        "description": "Premium .IN domain portfolio.",
+        "publisher": {
+          "@type": "Person",
+          "name": "Anil Srivastav"
+        }
+      }
+    </script>
+  </head>
+
+  <body class="vh-100">
+
+    <div class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light p-0">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo-go7domain.png" alt="GO7.IN" height="44">
+          </a>
+          <div class="collapse navbar-collapse justify-content-end" id="mainMenu"></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="contain-box go7-home go7-content-loading" id="go7Content">
+      <div class="home-center">
+        <div class="home-desc-center">
+          <div class="container">
+            <div class="row align-items-center">
+
+              <div class="col-lg-6">
+                <div class="go7-home-content mt-lg-0 mt-4">
+
+                  <h1 class="text-primary">Premium .IN Domain Portfolio</h1>
+
+                  <h1 class="home-title display-4 fw-bold">
+                    GO7.IN
+                  </h1>
+
+                  <p class="text-muted f-18 mt-3 mb-1 go7-home-description">
+                    Short. Memorable. Brandable.
+                    <br>
+                    A curated portfolio of premium .IN domains for businesses, brands and startups.
+                  </p>
+
+                  <div class="go7-home-button">
+                    <a href="/domains" class="btn btn-primary btn-round text-uppercase">
+                      Explore Domains
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="go7-home-space"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="float-end pull-none">
+              <p class="mb-1 mt-4">
+                © <script>document.write(new Date().getFullYear())</script>
+                GO7.IN All Rights Reserved.
+                | Powered by <a href="https://www.go7.in/">www.go7.in</a>
+                | Owned & Operated by <a href="https://www.go7.in/about">Anil Srivastav</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/tawk.js"></script>
+  </body>
+</html>
