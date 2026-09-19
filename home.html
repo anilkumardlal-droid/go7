@@ -1,1525 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-
-    <title>GO7.IN - Premium .IN Domain Portfolio</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="GO7.IN is a curated portfolio of premium .IN domains.">
-
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Original CSS -->
-    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
-    <link href="css/style.min.css" rel="stylesheet" type="text/css">
-    <link href="css/home.css" rel="stylesheet" type="text/css">
-
-
-    <!-- GO7 Hero Layout + SVG Effects
-         NOTE:
-         No font-family / font-color CSS is added here.
-         Fonts remain controlled by home.css / style.min.css.
-    -->
-    <style>
-
-        /* ================================
-           HERO LAYOUT
-        ================================= */
-
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .go7-home {
-            flex: 1 0 auto;
-            min-height: 0;
-            display: flex;
-            align-items: center;
-            padding: 25px 0 20px;
-            overflow: hidden;
-        }
-
-        .go7-home-row {
-            align-items: stretch;
-            margin-left: -8px;
-            margin-right: -8px;
-            min-height: calc(100vh - 150px);
-        }
-
-
-        /* ================================
-           LEFT SIDE
-        ================================= */
-
-        .go7-left {
-            position: relative;
-            z-index: 5;
-            padding-right: 10px;
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .go7-left .go7-description {
-            max-width: 680px;
-        }
-
-        .go7-left h1 {
-            font-size: clamp(44px, 4vw, 58px);
-            line-height: 1.06;
-            letter-spacing: -2.2px;
-        }
-
-        .go7-left .go7-tagline {
-            font-size: 22px;
-            margin-top: 22px;
-        }
-
-        .go7-left .go7-description {
-            font-size: 17px;
-            line-height: 1.75;
-            margin-top: 18px;
-            margin-bottom: 34px;
-        }
-
-        .go7-left .go7-explore {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            min-width: 175px;
-            height: 52px;
-            padding: 0 25px;
-            border-radius: 10px;
-            background: #111827;
-            color: #fff !important;
-            text-decoration: none !important;
-            transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-            box-shadow: 0 10px 25px rgba(17,24,39,.16);
-        }
-
-        .go7-left .go7-explore:hover {
-            background: #000;
-            transform: translateY(-3px);
-            box-shadow: 0 14px 30px rgba(17,24,39,.22);
-        }
-
-        /* ================================
-           RIGHT SIDE
-        ================================= */
-
-        .go7-right {
-            position: relative;
-            width: 100%;
-            min-height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: visible;
-        }
-
-        .go7-svg-art {
-            height: 82vh;
-            width: auto;
-            max-width: none;
-            min-height: 620px;
-            display: block;
-            margin-left: -8%;
-        }
-
-
-        .footer {
-            flex: 0 0 auto;
-        }
-
-        .go7-left .go7-explore i {
-            transition: transform .25s ease;
-        }
-
-        .go7-left .go7-explore:hover i {
-            transform: translateX(5px);
-        }
-
-
-        /* ================================
-           SVG ANIMATIONS
-        ================================= */
-
-        .go7-float {
-            animation: go7Float 5s ease-in-out infinite;
-            transform-box: fill-box;
-            transform-origin: center;
-        }
-
-        .go7-float-slow {
-            animation: go7FloatSlow 7s ease-in-out infinite;
-            transform-box: fill-box;
-            transform-origin: center;
-        }
-
-        .go7-tag-float {
-            animation: go7TagFloat 4s ease-in-out infinite;
-            transform-box: fill-box;
-            transform-origin: center;
-        }
-
-        .go7-pulse {
-            animation: go7Pulse 2.5s ease-in-out infinite;
-            transform-box: fill-box;
-            transform-origin: center;
-        }
-
-        .go7-dots {
-            animation: go7Dots 5s ease-in-out infinite;
-        }
-
-        .go7-bar-1 {
-            animation: go7Bar1 2.5s ease-in-out infinite alternate;
-            transform-box: fill-box;
-            transform-origin: bottom;
-        }
-
-        .go7-bar-2 {
-            animation: go7Bar2 2.5s ease-in-out infinite alternate;
-            transform-box: fill-box;
-            transform-origin: bottom;
-        }
-
-        .go7-bar-3 {
-            animation: go7Bar3 2.5s ease-in-out infinite alternate;
-            transform-box: fill-box;
-            transform-origin: bottom;
-        }
-
-        .go7-bar-4 {
-            animation: go7Bar4 2.5s ease-in-out infinite alternate;
-            transform-box: fill-box;
-            transform-origin: bottom;
-        }
-
-
-        @keyframes go7Float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-9px);
-            }
-        }
-
-
-        @keyframes go7FloatSlow {
-
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-            }
-
-            50% {
-                transform: translateY(-7px) scale(1.015);
-            }
-        }
-
-
-        @keyframes go7TagFloat {
-
-            0%,
-            100% {
-                transform: rotate(-10deg) translateY(0);
-            }
-
-            50% {
-                transform: rotate(-7deg) translateY(-10px);
-            }
-        }
-
-
-        @keyframes go7Pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: .78;
-                transform: scale(1.04);
-            }
-        }
-
-
-        @keyframes go7Dots {
-
-            0%,
-            100% {
-                opacity: .45;
-                transform: translateY(0);
-            }
-
-            50% {
-                opacity: 1;
-                transform: translateY(-5px);
-            }
-        }
-
-
-        @keyframes go7Bar1 {
-
-            from {
-                transform: scaleY(.82);
-            }
-
-            to {
-                transform: scaleY(1);
-            }
-        }
-
-
-        @keyframes go7Bar2 {
-
-            from {
-                transform: scaleY(.76);
-            }
-
-            to {
-                transform: scaleY(1);
-            }
-        }
-
-
-        @keyframes go7Bar3 {
-
-            from {
-                transform: scaleY(.70);
-            }
-
-            to {
-                transform: scaleY(1);
-            }
-        }
-
-
-        @keyframes go7Bar4 {
-
-            from {
-                transform: scaleY(.65);
-            }
-
-            to {
-                transform: scaleY(1);
-            }
-        }
-
-
-        /* ================================
-           MOBILE
-        ================================= */
-
-        @media (max-width: 991px) {
-
-            .go7-home {
-                padding: 35px 0 30px;
-            }
-
-            .go7-home-row {
-                min-height: auto;
-            }
-
-            .go7-right {
-                min-height: auto;
-                margin-top: 25px;
-            }
-
-            .go7-svg-art {
-                height: auto;
-                width: 115%;
-                min-height: 0;
-                max-width: none;
-                margin-left: -7.5%;
-            }
-        }
-
-
-        @media (max-width: 767px) {
-
-            .go7-home {
-                padding: 35px 20px 45px;
-            }
-
-            .go7-left {
-                text-align: center;
-            }
-
-            .go7-left .go7-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .go7-right {
-                margin-top: 10px;
-                min-height: auto;
-            }
-
-            .go7-svg-art {
-                height: auto;
-                width: 108%;
-                min-height: 0;
-                max-width: none;
-                margin-left: -4%;
-            }
-        }
-
-
-        @media (max-width: 576px) {
-
-            .go7-left h1 {
-                font-size: 42px;
-                letter-spacing: -1.8px;
-            }
-
-            .go7-left .go7-tagline {
-                font-size: 18px;
-            }
-
-            .go7-left .go7-description {
-                font-size: 14px;
-            }
-
-        }
-
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .go7-svg-art * {
-                animation: none !important;
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-
-    <!-- =====================================================
-         HEADER
-         Original template header
-    ====================================================== -->
-
-    <div class="header">
-
-        <div class="container">
-
-            <nav class="navbar navbar-expand-md navbar-light p-0">
-
-                <a class="navbar-brand" href="/">
-                    <img src="images/logo-go7domain.png"
-                         alt="GO7.IN"
-                         height="44">
-                </a>
-
-                <div class="collapse navbar-collapse justify-content-end"
-                     id="mainMenu">
-                </div>
-
-            </nav>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         HERO SECTION
-    ====================================================== -->
-
-    <section class="go7-home">
-
-        <div class="container">
-
-            <div class="row go7-home-row">
-
-
-                <!-- =================================================
-                     LEFT SIDE
-                     EASY TO EDIT
-                ================================================== -->
-
-                <div class="col-lg-6 col-md-6">
-
-                    <div class="go7-left">
-
-
-                        <!-- Welcome -->
-                        <div class="welcome-text">
-                            Welcome to
-                        </div>
-
-
-                        <!-- Main Heading -->
-                        <h1>
-                            Premium .IN Domain Portfolio
-                        </h1>
-
-
-                        <!-- Tagline -->
-                        <p class="go7-tagline">
-                            Short. Memorable. Brandable.
-                        </p>
-
-
-                        <!-- Description -->
-                        <p class="go7-description">
-                            A curated portfolio of premium .IN domains
-                            for brands, businesses and investors.
-                        </p>
-
-
-                        <!-- Button -->
-                        <a href="/domains" class="go7-explore">
-
-                            Explore Domains
-
-                            <i class="mdi mdi-arrow-right"></i>
-
-                        </a>
-
-
-                    </div>
-
-                </div>
-
-
-                <!-- =================================================
-                     RIGHT SIDE
-                     EASY TO EDIT
-                     LARGE ANIMATED SVG
-                ================================================== -->
-
-                <div class="col-lg-6 col-md-6">
-
-                    <div class="go7-right">
-
-
-                        <svg
-                            class="go7-svg-art"
-                            viewBox="0 0 900 700"
-                            xmlns="http://www.w3.org/2000/svg"
-                            role="img"
-                            aria-label="Premium .IN domain portfolio illustration">
-
-
-                            <!-- =================================================
-                                 SVG DEFINITIONS
-                            ================================================== -->
-
-                            <defs>
-
-                                <!-- Main shadow -->
-                                <filter
-                                    id="go7Shadow"
-                                    x="-40%"
-                                    y="-40%"
-                                    width="180%"
-                                    height="180%">
-
-                                    <feDropShadow
-                                        dx="0"
-                                        dy="12"
-                                        stdDeviation="14"
-                                        flood-color="#6f9ed2"
-                                        flood-opacity=".18">
-                                    </feDropShadow>
-
-                                </filter>
-
-
-                                <!-- Card shadow -->
-                                <filter
-                                    id="go7CardShadow"
-                                    x="-40%"
-                                    y="-40%"
-                                    width="180%"
-                                    height="180%">
-
-                                    <feDropShadow
-                                        dx="0"
-                                        dy="10"
-                                        stdDeviation="12"
-                                        flood-color="#527aa8"
-                                        flood-opacity=".16">
-                                    </feDropShadow>
-
-                                </filter>
-
-
-                                <!-- Soft glow -->
-                                <filter
-                                    id="go7Glow"
-                                    x="-50%"
-                                    y="-50%"
-                                    width="200%"
-                                    height="200%">
-
-                                    <feGaussianBlur
-                                        stdDeviation="16">
-                                    </feGaussianBlur>
-
-                                </filter>
-
-
-                                <!-- Blue gradient -->
-                                <linearGradient
-                                    id="go7BlueGradient"
-                                    x1="0"
-                                    y1="0"
-                                    x2="1"
-                                    y2="1">
-
-                                    <stop
-                                        offset="0%"
-                                        stop-color="#edf7ff" />
-
-                                    <stop
-                                        offset="100%"
-                                        stop-color="#dcecff" />
-
-                                </linearGradient>
-
-                            </defs>
-
-
-                            <!-- =================================================
-                                 BACKGROUND
-                            ================================================== -->
-
-                            <circle
-                                cx="610"
-                                cy="335"
-                                r="275"
-                                fill="url(#go7BlueGradient)" />
-
-                            <circle
-                                cx="730"
-                                cy="145"
-                                r="110"
-                                fill="#f4f9ff" />
-
-                            <circle
-                                cx="495"
-                                cy="530"
-                                r="115"
-                                fill="#f5faff" />
-
-
-                            <!-- =================================================
-                                 MOVING DECORATIVE DOTS
-                            ================================================== -->
-
-                            <g class="go7-dots"
-                               fill="#d5e8fb">
-
-                                <circle cx="535" cy="72" r="5" />
-                                <circle cx="560" cy="72" r="5" />
-                                <circle cx="585" cy="72" r="5" />
-
-                                <circle cx="535" cy="97" r="5" />
-                                <circle cx="560" cy="97" r="5" />
-                                <circle cx="585" cy="97" r="5" />
-
-                                <circle cx="785" cy="175" r="5" />
-                                <circle cx="810" cy="175" r="5" />
-                                <circle cx="835" cy="175" r="5" />
-
-                                <circle cx="785" cy="200" r="5" />
-                                <circle cx="810" cy="200" r="5" />
-                                <circle cx="835" cy="200" r="5" />
-
-                            </g>
-
-
-                            <!-- =================================================
-                                 GLOBE CARD
-                            ================================================== -->
-
-                            <g class="go7-float-slow">
-
-                                <rect
-                                    x="390"
-                                    y="70"
-                                    width="120"
-                                    height="120"
-                                    rx="22"
-                                    fill="#e7f3ff"
-                                    filter="url(#go7Shadow)" />
-
-                                <circle
-                                    cx="450"
-                                    cy="130"
-                                    r="34"
-                                    fill="none"
-                                    stroke="#1769e8"
-                                    stroke-width="6" />
-
-                                <ellipse
-                                    cx="450"
-                                    cy="130"
-                                    rx="15"
-                                    ry="34"
-                                    fill="none"
-                                    stroke="#1769e8"
-                                    stroke-width="4" />
-
-                                <path
-                                    d="M416 130 H484"
-                                    fill="none"
-                                    stroke="#1769e8"
-                                    stroke-width="4" />
-
-                                <path
-                                    d="M423 112 H477"
-                                    fill="none"
-                                    stroke="#1769e8"
-                                    stroke-width="3" />
-
-                                <path
-                                    d="M423 148 H477"
-                                    fill="none"
-                                    stroke="#1769e8"
-                                    stroke-width="3" />
-
-                            </g>
-
-
-                            <!-- =================================================
-                                 MAIN BROWSER
-                            ================================================== -->
-
-                            <g class="go7-float">
-
-                                <!-- Browser -->
-                                <rect
-                                    x="470"
-                                    y="155"
-                                    width="370"
-                                    height="390"
-                                    rx="24"
-                                    fill="#ffffff"
-                                    stroke="#dce8f5"
-                                    stroke-width="3"
-                                    filter="url(#go7CardShadow)" />
-
-
-                                <!-- Browser header -->
-                                <path
-                                    d="
-                                    M470 180
-                                    Q470 155 495 155
-                                    H815
-                                    Q840 155 840 180
-                                    V212
-                                    H470
-                                    Z"
-                                    fill="#dcecff" />
-
-
-                                <!-- Browser dots -->
-                                <circle
-                                    cx="498"
-                                    cy="180"
-                                    r="8"
-                                    fill="#ef5350" />
-
-                                <circle
-                                    cx="522"
-                                    cy="180"
-                                    r="8"
-                                    fill="#ffb51b" />
-
-                                <circle
-                                    cx="546"
-                                    cy="180"
-                                    r="8"
-                                    fill="#20c878" />
-
-
-                                <!-- Address bar -->
-                                <rect
-                                    x="580"
-                                    y="166"
-                                    width="225"
-                                    height="28"
-                                    rx="9"
-                                    fill="#ffffff" />
-
-                                <text
-                                    x="601"
-                                    y="186"
-                                    font-family="Arial, sans-serif"
-                                    font-size="15"
-                                    font-weight="600"
-                                    fill="#64748b">
-                                    www.go7.in
-                                </text>
-
-
-                                <!-- =================================================
-                                     DOMAIN ROW 1
-                                ================================================== -->
-
-                                <text
-                                    x="505"
-                                    y="252"
-                                    font-family="Arial, sans-serif"
-                                    font-size="17"
-                                    font-weight="700"
-                                    fill="#111827">
-                                    YHX.IN
-                                </text>
-
-                                <rect
-                                    x="595"
-                                    y="239"
-                                    width="92"
-                                    height="14"
-                                    rx="7"
-                                    fill="#e7edf5" />
-
-                                <g class="go7-pulse">
-
-                                    <rect
-                                        x="705"
-                                        y="231"
-                                        width="96"
-                                        height="35"
-                                        rx="8"
-                                        fill="#c9f7df" />
-
-                                    <text
-                                        x="722"
-                                        y="254"
-                                        font-family="Arial, sans-serif"
-                                        font-size="13"
-                                        font-weight="700"
-                                        fill="#087443">
-                                        For Sale
-                                    </text>
-
-                                </g>
-
-
-                                <!-- =================================================
-                                     DOMAIN ROW 2
-                                ================================================== -->
-
-                                <line
-                                    x1="495"
-                                    y1="276"
-                                    x2="815"
-                                    y2="276"
-                                    stroke="#edf2f7" />
-
-                                <text
-                                    x="505"
-                                    y="303"
-                                    font-family="Arial, sans-serif"
-                                    font-size="17"
-                                    font-weight="700"
-                                    fill="#111827">
-                                    IBMR.IN
-                                </text>
-
-                                <rect
-                                    x="595"
-                                    y="290"
-                                    width="92"
-                                    height="14"
-                                    rx="7"
-                                    fill="#e7edf5" />
-
-                                <g class="go7-pulse">
-
-                                    <rect
-                                        x="705"
-                                        y="282"
-                                        width="96"
-                                        height="35"
-                                        rx="8"
-                                        fill="#c9f7df" />
-
-                                    <text
-                                        x="722"
-                                        y="305"
-                                        font-family="Arial, sans-serif"
-                                        font-size="13"
-                                        font-weight="700"
-                                        fill="#087443">
-                                        For Sale
-                                    </text>
-
-                                </g>
-
-
-                                <!-- =================================================
-                                     DOMAIN ROW 3
-                                ================================================== -->
-
-                                <line
-                                    x1="495"
-                                    y1="328"
-                                    x2="815"
-                                    y2="328"
-                                    stroke="#edf2f7" />
-
-                                <text
-                                    x="505"
-                                    y="355"
-                                    font-family="Arial, sans-serif"
-                                    font-size="17"
-                                    font-weight="700"
-                                    fill="#111827">
-                                    GOOL.IN
-                                </text>
-
-                                <rect
-                                    x="595"
-                                    y="342"
-                                    width="92"
-                                    height="14"
-                                    rx="7"
-                                    fill="#e7edf5" />
-
-                                <g class="go7-pulse">
-
-                                    <rect
-                                        x="705"
-                                        y="334"
-                                        width="96"
-                                        height="35"
-                                        rx="8"
-                                        fill="#c9f7df" />
-
-                                    <text
-                                        x="722"
-                                        y="357"
-                                        font-family="Arial, sans-serif"
-                                        font-size="13"
-                                        font-weight="700"
-                                        fill="#087443">
-                                        For Sale
-                                    </text>
-
-                                </g>
-
-
-                                <!-- =================================================
-                                     DOMAIN ROW 4
-                                ================================================== -->
-
-                                <line
-                                    x1="495"
-                                    y1="380"
-                                    x2="815"
-                                    y2="380"
-                                    stroke="#edf2f7" />
-
-                                <text
-                                    x="505"
-                                    y="407"
-                                    font-family="Arial, sans-serif"
-                                    font-size="17"
-                                    font-weight="700"
-                                    fill="#111827">
-                                    LSZ.IN
-                                </text>
-
-                                <rect
-                                    x="595"
-                                    y="394"
-                                    width="92"
-                                    height="14"
-                                    rx="7"
-                                    fill="#e7edf5" />
-
-                                <g class="go7-pulse">
-
-                                    <rect
-                                        x="705"
-                                        y="386"
-                                        width="96"
-                                        height="35"
-                                        rx="8"
-                                        fill="#c9f7df" />
-
-                                    <text
-                                        x="722"
-                                        y="409"
-                                        font-family="Arial, sans-serif"
-                                        font-size="13"
-                                        font-weight="700"
-                                        fill="#087443">
-                                        For Sale
-                                    </text>
-
-                                </g>
-
-
-                                <!-- =================================================
-                                     DOMAIN ROW 5
-                                ================================================== -->
-
-                                <line
-                                    x1="495"
-                                    y1="432"
-                                    x2="815"
-                                    y2="432"
-                                    stroke="#edf2f7" />
-
-                                <text
-                                    x="505"
-                                    y="459"
-                                    font-family="Arial, sans-serif"
-                                    font-size="17"
-                                    font-weight="700"
-                                    fill="#111827">
-                                    TQO.IN
-                                </text>
-
-                                <rect
-                                    x="595"
-                                    y="446"
-                                    width="92"
-                                    height="14"
-                                    rx="7"
-                                    fill="#e7edf5" />
-
-                                <g class="go7-pulse">
-
-                                    <rect
-                                        x="705"
-                                        y="438"
-                                        width="96"
-                                        height="35"
-                                        rx="8"
-                                        fill="#c9f7df" />
-
-                                    <text
-                                        x="722"
-                                        y="461"
-                                        font-family="Arial, sans-serif"
-                                        font-size="13"
-                                        font-weight="700"
-                                        fill="#087443">
-                                        For Sale
-                                    </text>
-
-                                </g>
-
-                            </g>
-
-
-                            <!-- =================================================
-                                 .IN DOMAINS TAG
-                            ================================================== -->
-
-                            <g
-                                class="go7-tag-float"
-                                filter="url(#go7Shadow)"
-                                transform="rotate(-10 765 105)">
-
-                                <path
-                                    d="
-                                    M690 62
-                                    Q690 48 704 48
-                                    H827
-                                    L850 72
-                                    V138
-                                    Q850 152 836 152
-                                    H704
-                                    Q690 152 690 138
-                                    Z"
-                                    fill="#1769e8" />
-
-                                <circle
-                                    cx="824"
-                                    cy="100"
-                                    r="7"
-                                    fill="#ffffff" />
-
-                                <text
-                                    x="725"
-                                    y="98"
-                                    font-family="Arial, sans-serif"
-                                    font-size="27"
-                                    font-weight="800"
-                                    fill="#ffffff">
-                                    .IN
-                                </text>
-
-                                <text
-                                    x="719"
-                                    y="126"
-                                    font-family="Arial, sans-serif"
-                                    font-size="16"
-                                    font-weight="700"
-                                    fill="#ffffff">
-                                    DOMAINS
-                                </text>
-
-                            </g>
-
-
-                            <!-- =================================================
-                                 CHART CARD
-                            ================================================== -->
-
-                            <g
-                                class="go7-float-slow"
-                                filter="url(#go7Shadow)">
-
-                                <rect
-                                    x="305"
-                                    y="430"
-                                    width="180"
-                                    height="145"
-                                    rx="20"
-                                    fill="#ffffff"
-                                    stroke="#e2ebf5"
-                                    stroke-width="2" />
-
-
-                                <!-- Bars -->
-                                <g fill="#1769e8">
-
-                                    <rect
-                                        class="go7-bar-1"
-                                        x="335"
-                                        y="515"
-                                        width="23"
-                                        height="32"
-                                        rx="4" />
-
-                                    <rect
-                                        class="go7-bar-2"
-                                        x="370"
-                                        y="493"
-                                        width="23"
-                                        height="54"
-                                        rx="4" />
-
-                                    <rect
-                                        class="go7-bar-3"
-                                        x="405"
-                                        y="468"
-                                        width="23"
-                                        height="79"
-                                        rx="4" />
-
-                                    <rect
-                                        class="go7-bar-4"
-                                        x="440"
-                                        y="448"
-                                        width="23"
-                                        height="99"
-                                        rx="4" />
-
-                                </g>
-
-
-                                <!-- Growth arrow -->
-                                <path
-                                    d="
-                                    M340 500
-                                    C375 488
-                                    410 466
-                                    452 438"
-                                    fill="none"
-                                    stroke="#1769e8"
-                                    stroke-width="6"
-                                    stroke-linecap="round" />
-
-                                <path
-                                    d="
-                                    M442 438
-                                    L455 438
-                                    L452 451"
-                                    fill="none"
-                                    stroke="#1769e8"
-                                    stroke-width="6"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round" />
-
-                            </g>
-
-
-                            <!-- =================================================
-                                 SECURE TRANSFER CARD
-                            ================================================== -->
-
-                            <g
-                                class="go7-float-slow"
-                                filter="url(#go7Shadow)">
-
-                                <rect
-                                    x="555"
-                                    y="535"
-                                    width="175"
-                                    height="105"
-                                    rx="20"
-                                    fill="#ffffff"
-                                    stroke="#e2ebf5"
-                                    stroke-width="2" />
-
-
-                                <!-- Shield -->
-                                <path
-                                    d="
-                                    M582 566
-                                    L610 578
-                                    V603
-                                    Q610 620 582 628
-                                    Q554 620 554 603
-                                    V578
-                                    Z"
-                                    fill="#1769e8" />
-
-                                <path
-                                    d="
-                                    M568 594
-                                    L578 604
-                                    L595 584"
-                                    fill="none"
-                                    stroke="#ffffff"
-                                    stroke-width="5"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round" />
-
-
-                                <text
-                                    x="625"
-                                    y="588"
-                                    font-family="Arial, sans-serif"
-                                    font-size="16"
-                                    font-weight="700"
-                                    fill="#475569">
-                                    Secure
-                                </text>
-
-                                <text
-                                    x="625"
-                                    y="612"
-                                    font-family="Arial, sans-serif"
-                                    font-size="16"
-                                    font-weight="700"
-                                    fill="#475569">
-                                    Transfer
-                                </text>
-
-                            </g>
-
-
-                            <!-- =================================================
-                                 PERSON
-                            ================================================== -->
-
-                            <g class="go7-float">
-
-                                <!-- Head -->
-                                <circle
-                                    cx="785"
-                                    cy="275"
-                                    r="29"
-                                    fill="#ffd0b5" />
-
-
-                                <!-- Hair -->
-                                <path
-                                    d="
-                                    M756 269
-                                    Q752 238 779 235
-                                    Q808 230 817 255
-                                    Q817 269 807 274
-                                    Q802 254 785 253
-                                    Q770 253 756 269
-                                    Z"
-                                    fill="#172033" />
-
-
-                                <!-- Body -->
-                                <path
-                                    d="
-                                    M752 305
-                                    Q782 288 813 307
-                                    L838 438
-                                    H735
-                                    Z"
-                                    fill="#1769e8" />
-
-
-                                <!-- Arm -->
-                                <path
-                                    d="
-                                    M760 325
-                                    Q720 338 697 312
-                                    L687 326
-                                    Q717 365 765 350
-                                    Z"
-                                    fill="#1769e8" />
-
-
-                                <!-- Hand -->
-                                <circle
-                                    cx="688"
-                                    cy="320"
-                                    r="9"
-                                    fill="#ffd0b5" />
-
-
-                                <!-- Laptop -->
-                                <rect
-                                    x="790"
-                                    y="345"
-                                    width="100"
-                                    height="68"
-                                    rx="8"
-                                    fill="#27364d"
-                                    transform="rotate(-2 790 345)" />
-
-                                <path
-                                    d="
-                                    M780 415
-                                    H895
-                                    L884 425
-                                    H793
-                                    Z"
-                                    fill="#1c293d" />
-
-                                <circle
-                                    cx="840"
-                                    cy="380"
-                                    r="8"
-                                    fill="#3d4c63" />
-
-
-                                <!-- Pants -->
-                                <path
-                                    d="
-                                    M748 433
-                                    H792
-                                    L785 570
-                                    H747
-                                    Z"
-                                    fill="#162237" />
-
-                                <path
-                                    d="
-                                    M792 433
-                                    H829
-                                    L842 570
-                                    H805
-                                    Z"
-                                    fill="#162237" />
-
-
-                                <!-- Shoes -->
-                                <path
-                                    d="
-                                    M742 563
-                                    H786
-                                    Q797 563 800 575
-                                    H738
-                                    Q735 568 742 563
-                                    Z"
-                                    fill="#ffffff"
-                                    stroke="#1769e8"
-                                    stroke-width="3" />
-
-                                <path
-                                    d="
-                                    M806 563
-                                    H842
-                                    Q853 563 857 575
-                                    H804
-                                    Q801 568 806 563
-                                    Z"
-                                    fill="#ffffff"
-                                    stroke="#1769e8"
-                                    stroke-width="3" />
-
-                            </g>
-
-
-                            <!-- =================================================
-                                 PLANT
-                            ================================================== -->
-
-                            <g class="go7-float-slow">
-
-                                <path
-                                    d="
-                                    M815 540
-                                    Q825 480 866 447"
-                                    fill="none"
-                                    stroke="#70aef8"
-                                    stroke-width="6"
-                                    stroke-linecap="round" />
-
-                                <path
-                                    d="
-                                    M846 505
-                                    Q875 470 904 472
-                                    Q893 504 852 520
-                                    Z"
-                                    fill="#79adf5" />
-
-                                <path
-                                    d="
-                                    M852 470
-                                    Q874 432 902 430
-                                    Q893 465 856 485
-                                    Z"
-                                    fill="#8bbafa" />
-
-                                <path
-                                    d="
-                                    M832 535
-                                    Q803 500 805 474
-                                    Q835 490 846 527
-                                    Z"
-                                    fill="#79adf5" />
-
-                                <path
-                                    d="
-                                    M816 535
-                                    Q840 515 865 520"
-                                    fill="none"
-                                    stroke="#70aef8"
-                                    stroke-width="6"
-                                    stroke-linecap="round" />
-
-
-                                <!-- Pot -->
-                                <path
-                                    d="
-                                    M805 540
-                                    H874
-                                    L862 625
-                                    H817
-                                    Z"
-                                    fill="#a9cdf8" />
-
-                                <rect
-                                    x="797"
-                                    y="532"
-                                    width="85"
-                                    height="20"
-                                    rx="7"
-                                    fill="#8dbcf5" />
-
-                            </g>
-
-
-                            <!-- =================================================
-                                 GROUND SHADOW
-                            ================================================== -->
-
-                            <ellipse
-                                cx="650"
-                                cy="650"
-                                rx="260"
-                                ry="18"
-                                fill="#eaf2fb" />
-
-                        </svg>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FOOTER
-         Original template structure
-         No custom footer CSS
-    ====================================================== -->
-
-    <div class="footer">
-
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-lg-12">
-
-                    <div class="text-center">
-
-                        <p class="mb-1 mt-4">
-
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-
-                            GO7.IN All Rights Reserved. |
-
-                            Powered by
-                            <a href="https://www.go7.in/">
-                                www.go7.in
-                            </a>
-
-                            |
-
-                            Owned & Operated by
-                            <a href="https://www.go7.in/about">
-                                Anil Srivastav
-                            </a>
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         ORIGINAL SCRIPTS
-    ====================================================== -->
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/tawk.js"></script>
-
-</body>
-
+abhi jo tune diya hai is me bana taki header logo aur footer font same rahe  
+ 
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>GO7.IN - Premium .IN Domain Portfolio</title>  
+  <meta name="description" content="GO7.IN is a curated portfolio of premium .IN domains.">  
+  <meta name="author" content="Anil Srivastav">  
+  
+  <link rel="shortcut icon" href="images/favicon.png">  
+  <link rel="stylesheet" href="css/animate.min.css">  
+  <link href="css/bootstrap.min.css" rel="stylesheet">  
+  <link href="css/materialdesignicons.min.css" rel="stylesheet">  
+  <link href="css/style.min.css" rel="stylesheet">  
+  <link href="css/home.css" rel="stylesheet">  
+  <link rel="canonical" href="https://www.go7.in/"> 
+ 
+  <style> 
+    html,body{ 
+      height:100%; 
+      margin:0; 
+    } 
+ 
+    body{ 
+      background:#f8fafc; 
+      color:#111827; 
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; 
+    } 
+ 
+    .go7-intro{ 
+      min-height:100vh; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      text-align:center; 
+      position:relative; 
+      overflow:hidden; 
+      padding:40px 24px; 
+    } 
+ 
+    .go7-intro:before, 
+    .go7-intro:after{ 
+      content:""; 
+      position:absolute; 
+      width:430px; 
+      height:430px; 
+      border-radius:50%; 
+      background:#eef2f7; 
+      pointer-events:none; 
+    } 
+ 
+    .go7-intro:before{ 
+      top:-250px; 
+      left:-250px; 
+    } 
+ 
+    .go7-intro:after{ 
+      right:-260px; 
+      bottom:-260px; 
+    } 
+ 
+    .go7-intro-inner{ 
+      position:relative; 
+      z-index:1; 
+      max-width:850px; 
+    } 
+ 
+    .welcome-text{ 
+      font-size:15px; 
+      font-weight:600; 
+      letter-spacing:3px; 
+      color:#6b7280; 
+      margin-bottom:25px; 
+    } 
+ 
+    .go7-intro h1{ 
+      margin:0; 
+      font-size:clamp(42px,6vw,74px); 
+      line-height:1.06; 
+      letter-spacing:-2.8px; 
+      font-weight:650; 
+      color:#111827; 
+    } 
+ 
+    .go7-tagline{ 
+      margin:20px 0 0; 
+      color:#6b7280; 
+      font-size:19px; 
+      line-height:1.6; 
+    } 
+ 
+    .go7-description{ 
+      max-width:620px; 
+      margin:18px auto 32px; 
+      color:#8492a6; 
+      font-size:15px; 
+      line-height:1.7; 
+    } 
+ 
+    .go7-explore{ 
+      display:inline-flex; 
+      align-items:center; 
+      gap:8px; 
+      height:48px; 
+      padding:0 24px; 
+      border-radius:8px; 
+      background:#111827; 
+      color:#fff!important; 
+      text-decoration:none!important; 
+      font-size:15px; 
+      font-weight:600; 
+      transition:.2s ease; 
+    } 
+ 
+    .go7-explore:hover{ 
+      background:#000; 
+      transform:translateY(-1px); 
+    } 
+ 
+    .go7-explore i{ 
+      font-size:17px; 
+    } 
+ 
+    @media(max-width:576px){ 
+  .welcome-text{ 
+    font-size:13px; 
+    letter-spacing:2px; 
+    margin-bottom:20px; 
+  } 
+ 
+  .go7-intro h1{ 
+    font-size:42px; 
+    letter-spacing:-1.8px; 
+  } 
+ 
+  .go7-tagline{ 
+    font-size:17px; 
+  } 
+ 
+  .go7-description{ 
+    font-size:14px; 
+  } 
+} 
+  </style> 
+</head> 
+ 
+<body class="vh-100"> 
+ 
+  <div class="header"> 
+    <div class="container"> 
+      <nav class="navbar navbar-expand-md navbar-light p-0"> 
+        <a class="navbar-brand" href="home.html"> 
+          <img src="images/logo-go7domain.png" alt="GO7.IN" height="44"> 
+        </a> 
+        <div class="collapse navbar-collapse justify-content-end" id="mainMenu"></div> 
+      </nav> 
+    </div> 
+  </div> 
+ 
+  <main class="go7-intro"> 
+    <div class="go7-intro-inner"> 
+ 
+      <div>Welcome to</div> 
+ 
+      <h1>Premium .IN Domain Portfolio</h1> 
+ 
+      <p class="go7-tagline"> 
+        Short. Memorable. Brandable. 
+      </p> 
+ 
+      <p class="go7-description"> 
+        A curated portfolio of premium .IN domains for brands, 
+        businesses and investors. 
+      </p> 
+ 
+      <a href="/domains" class="go7-explore"> 
+        Explore Domains 
+        <i class="mdi mdi-arrow-right"></i> 
+      </a> 
+ 
+    </div> 
+  </main> 
+ 
+  <div class="footer"> 
+    <div class="container"> 
+      <div class="row"> 
+        <div class="col-lg-12"> 
+          <div class="text-center"> 
+            <p class="mb-1 mt-4"> 
+              © <script>document.write(new Date().getFullYear())</script> 
+              GO7.IN All Rights Reserved. | 
+              Powered by <a href="https://www.go7.in/">www.go7.in</a> | 
+              Owned & Operated by 
+              <a href="https://www.go7.in/about">Anil Srivastav</a> 
+            </p> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+ 
+  <script src="js/jquery.min.js"></script> 
+  <script src="js/bootstrap.bundle.min.js"></script> 
+  <script src="js/jquery.easing.min.js"></script> 
+  <script src="js/app.js"></script> 
+  <script src="js/tawk.js"></script> 
+ 
+</body> 
 </html>
