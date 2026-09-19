@@ -30,13 +30,26 @@
 
 (function () {
 
-    const source = new URLSearchParams(window.location.search).get("source");
+    // custom.js should control ONLY the main domain page
+    const path = window.location.pathname;
 
-    // No source → homepage
-    if (!source) {
-        window.location.replace("home.html");
+    if (
+        path !== "/" &&
+        path !== "/index.html"
+    ) {
         return;
     }
+
+    const source =
+        new URLSearchParams(window.location.search).get("source");
+
+
+    // No source → GO7.IN homepage
+    if (!source) {
+        window.location.replace("/home.html");
+        return;
+    }
+
 
     const cleaned = source
         .trim()
@@ -45,19 +58,23 @@
         .replace(/^www\./, "")
         .split("/")[0];
 
-    // GO7.IN → homepage
+
+    // GO7.IN → GO7.IN homepage
     if (cleaned === "go7.in") {
-        window.location.replace("home.html");
+        window.location.replace("/home.html");
         return;
     }
+
 
     // Only .IN domains are allowed
     if (!/^[a-z0-9-]+\.in$/i.test(cleaned)) {
-        window.location.replace("home.html");
+        window.location.replace("/home.html");
         return;
     }
 
+
     const domain = cleaned.toUpperCase();
+
 
     const domainName =
         document.getElementById("domain-name");
@@ -68,14 +85,17 @@
     const inquiryDescription =
         document.getElementById("inquiry-description");
 
+
     if (domainName) {
         domainName.textContent = domain;
     }
+
 
     if (interestTitle) {
         interestTitle.textContent =
             "Interested in " + domain + "?";
     }
+
 
     if (inquiryDescription) {
         inquiryDescription.textContent =
