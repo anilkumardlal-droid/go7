@@ -33,11 +33,18 @@
            HERO LAYOUT
         ================================= */
 
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
         .go7-home {
-            min-height: calc(100vh - 80px);
+            flex: 1 0 auto;
+            min-height: 0;
             display: flex;
             align-items: center;
-            padding: 35px 0 30px;
+            padding: 25px 0 20px;
             overflow: hidden;
         }
 
@@ -63,9 +70,9 @@
         }
 
         .go7-left h1 {
-            font-size: clamp(50px, 5.3vw, 78px);
-            line-height: 1.02;
-            letter-spacing: -3px;
+            font-size: clamp(44px, 4vw, 58px);
+            line-height: 1.06;
+            letter-spacing: -2.2px;
         }
 
         .go7-left .go7-tagline {
@@ -102,15 +109,6 @@
             box-shadow: 0 14px 30px rgba(17,24,39,.22);
         }
 
-        .go7-left .go7-explore i {
-            transition: transform .25s ease;
-        }
-
-        .go7-left .go7-explore:hover i {
-            transform: translateX(4px);
-        }
-
-
         /* ================================
            RIGHT SIDE
         ================================= */
@@ -118,18 +116,31 @@
         .go7-right {
             position: relative;
             width: 100%;
-            min-height: 720px;
+            min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .go7-svg-art {
-            width: 118%;
+            width: 135%;
             max-width: none;
             height: auto;
             display: block;
-            margin-left: -9%;
+            margin-left: -17%;
+        }
+
+
+        .footer {
+            flex: 0 0 auto;
+        }
+
+        .go7-left .go7-explore i {
+            transition: transform .25s ease;
+        }
+
+        .go7-left .go7-explore:hover i {
+            transform: translateX(5px);
         }
 
 
@@ -314,16 +325,18 @@
         @media (max-width: 991px) {
 
             .go7-home {
-                padding: 40px 0;
+                padding: 35px 0 30px;
             }
 
             .go7-right {
                 min-height: auto;
-                margin-top: 30px;
+                margin-top: 25px;
             }
 
             .go7-svg-art {
-                max-width: 700px;
+                width: 115%;
+                max-width: none;
+                margin-left: -7.5%;
             }
         }
 
@@ -359,8 +372,8 @@
         @media (max-width: 576px) {
 
             .go7-left h1 {
-                font-size: 44px;
-                letter-spacing: -2px;
+                font-size: 42px;
+                letter-spacing: -1.8px;
             }
 
             .go7-left .go7-tagline {
@@ -387,7 +400,7 @@
 </head>
 
 
-<body class="vh-100">
+<body>
 
 
     <!-- =====================================================
