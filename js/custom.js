@@ -36,7 +36,7 @@
     const salePage = document.getElementById("sourceSalePage");
 
     // No ?source= → GO7.IN homepage
-    if (!source) {
+    if (!source || source.trim().toLowerCase() === "go7.in") {
 
         if (homepage) {
             homepage.style.display = "";
