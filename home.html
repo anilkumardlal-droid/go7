@@ -17,7 +17,164 @@
  
   
 </head> 
+ <style> 
+   html,
+body{
+  width:100%;
+  min-height:100%;
+  margin:0;
+}
+
+body{
+  min-height:100vh;
+  min-height:100dvh;
+  background:#f8fafc;
+  color:#111827;
+  display:flex;
+  flex-direction:column;
+}
+.go7-intro{
+  flex:1 1 auto;
+  min-height:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  padding:40px 24px;
+}
+    .go7-intro:before, 
+    .go7-intro:after{ 
+      content:""; 
+      position:absolute; 
+      width:430px; 
+      height:430px; 
+      border-radius:50%; 
+      background:#eef2f7; 
+      pointer-events:none; 
+    } 
  
+    .go7-intro:before{ 
+      top:-250px; 
+      left:-250px; 
+    } 
+ 
+    .go7-intro:after{ 
+      right:-260px; 
+      bottom:-260px; 
+    } 
+ 
+    .go7-intro-inner{ 
+      position:relative; 
+      z-index:1; 
+      max-width:850px; 
+    } 
+ 
+    .welcome-text{ 
+      font-size:15px; 
+      font-weight:600; 
+      letter-spacing:3px; 
+      color:#6b7280; 
+      margin-bottom:25px; 
+    } 
+ 
+    .go7-intro h1{ 
+      margin:0; 
+      font-size:clamp(42px,6vw,74px); 
+      line-height:1.06; 
+      letter-spacing:-2.8px; 
+      font-weight:650; 
+      color:#111827; 
+    } 
+ 
+    .go7-tagline{ 
+      margin:20px 0 0; 
+      color:#1e3547; 
+      font-size:19px; 
+      line-height:1.6; 
+    } 
+ 
+    .go7-description{ 
+      max-width:620px; 
+      margin:18px auto 32px; 
+      color:#1e3547; 
+      font-size:15px; 
+      line-height:1.7; 
+    } 
+ 
+    .go7-explore{ 
+      display:inline-flex; 
+      align-items:center; 
+      gap:8px; 
+      height:48px; 
+      padding:0 24px; 
+      border-radius:8px; 
+      background:#111827; 
+      color:#fff!important; 
+      text-decoration:none!important; 
+      font-size:15px; 
+      font-weight:600; 
+      transition:.2s ease; 
+    } 
+ 
+    .go7-explore:hover{ 
+      background:#000; 
+      transform:translateY(-1px); 
+    } 
+ 
+    .go7-explore i{ 
+      font-size:17px; 
+    } 
+ 
+@media(max-width:576px){
+
+  .go7-intro{
+    flex:1 1 auto;
+    min-height:0;
+    padding:30px 20px;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .go7-intro-inner{
+    width:100%;
+    max-width:340px;
+  }
+
+  .welcome-text{
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:16px;
+  }
+
+  .go7-intro h1{
+    font-size:40px;
+    line-height:1.08;
+    letter-spacing:-1.6px;
+  }
+
+  .go7-tagline{
+    margin-top:22px;
+    font-size:17px;
+    line-height:1.55;
+  }
+
+  .go7-description{
+    max-width:320px;
+    margin:16px auto 28px;
+    font-size:14px;
+    line-height:1.65;
+  }
+
+  .go7-explore{
+    height:48px;
+    padding:0 22px;
+    font-size:14px;
+  }
+
+}
+  </style> 
 <body> 
  
   <div class="header"> 
