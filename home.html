@@ -34,48 +34,14 @@
     }
 
     .go7-page {
-      min-height: 100vh;
-      min-height: 100dvh;
+      height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
       position: relative;
       overflow: hidden;
     }
 
-
-    /* =========================
-       HEADER
-       ========================= */
-
-    .header {
-      position: relative;
-      z-index: 10;
-      background: rgba(250, 251, 252, 0.88);
-      border-bottom: 1px solid rgba(17, 24, 39, 0.055);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    .header .container {
-      max-width: 1120px;
-    }
-
-    .navbar {
-      min-height: 74px;
-    }
-
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar-brand img {
-      display: block;
-      width: auto;
-      height: 42px;
-    }
 
 
     /* =========================
@@ -524,35 +490,6 @@
       }
     }
 
-    /* =========================
-       FOOTER
-       ========================= */
-
-    .footer {
-      position: relative;
-      z-index: 5;
-      border-top: 1px solid rgba(17, 24, 39, 0.055);
-      background: rgba(250, 251, 252, 0.80);
-    }
-
-    .footer p {
-      margin: 0;
-      padding: 18px 0;
-      color: #94a3b8;
-      font-size: 11px;
-      line-height: 1.7;
-      letter-spacing: 0.1px;
-    }
-
-    .footer a {
-      color: #64748b;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer a:hover {
-      color: #111827;
-    }
 
 
     /* =========================
@@ -615,8 +552,10 @@
       }
 
       .go7-page {
+        height: auto;
         min-height: 100vh;
         min-height: 100dvh;
+        overflow: visible;
       }
 
       .go7-intro {
@@ -675,11 +614,6 @@
 
       .go7-trust-item + .go7-trust-item {
         border-left: 0;
-      }
-
-      .footer p {
-        padding: 15px 20px;
-        font-size: 10px;
       }
 
     }
