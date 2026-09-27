@@ -32,7 +32,7 @@
 
     const source = new URLSearchParams(window.location.search).get("source");
 
-    let domain = "go7.in";
+    let domain = "";
 
     if (source) {
         const cleaned = source
