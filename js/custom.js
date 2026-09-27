@@ -28,7 +28,9 @@
 
 })();
 
-(function () {
+
+
+    (function () {
 
     const source = new URLSearchParams(window.location.search).get("source");
 
@@ -42,8 +44,14 @@
             .replace(/^www\./, "")
             .split("/")[0];
 
+        // GO7.IN is the platform, not a domain for sale
+        if (cleaned === "go7.in") {
+            window.location.replace("https://www.go7.in/");
+            return;
+        }
+
         if (/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(cleaned)) {
-            domain = cleaned.toLowerCase();
+            domain = cleaned;
         }
     }
 
@@ -57,7 +65,6 @@
         "Interested in " + domain + "? Submit your inquiry or offer.";
 
 })();
-
 (function () { 
  
     if (window.innerWidth <= 767) { 
