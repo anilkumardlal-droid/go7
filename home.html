@@ -39,12 +39,12 @@
     <link href="css/home2-custom.css" rel="stylesheet" media="screen">
 
 <style>
-.sis-hero { position: relative; min-height: 100vh; height: 100vh; overflow: hidden; }
-.sis-hero .hero-slider-layout,
-.sis-hero .swiper,
-.sis-hero .swiper-wrapper,
-.sis-hero .swiper-slide { height: 100%; min-height: 100vh; }
-.sis-hero .sis-hero-footer-strip { position: absolute; left: 0; right: 0; bottom: 0; z-index: 10; }
+.sis-hero.hero-slider { min-height: 100vh; height: 100vh; }
+.sis-hero.hero-slider .hero-slider-layout,
+.sis-hero.hero-slider .swiper,
+.sis-hero.hero-slider .swiper-wrapper,
+.sis-hero.hero-slider .swiper-slide,
+.sis-hero.hero-slider .hero-slide { min-height: 100vh; height: 100%; }
 </style>
 </head>
 <body>
@@ -60,109 +60,152 @@
         </div>
     </div>
     <!-- Preloader End -->
-<!-- Hero Section Start -->
-    <section class="sis-hero hero-slider sisf-slider sisf-e-home-slider">
+    <!-- Hero Section Start -->
+    <div class="sis-hero hero-slider sisf-slider sisf-e-home-slider">
         <div class="hero-slider-layout">
             <div class="swiper">
                 <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="hero-slide">
-                                <div class="hero-slider-image">
-                                    <img src="images/slider-image-1.jpg" alt="Arctiq">
-                                </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="hero-content text-center">
-                                                <div class="sis-section-title mb-0">
-                                                    <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional HVAC Services</span>
-                                                    <h1 class="text-white sis-text-anime-style-2">Professional HVAC Services for <br> <span class="sisf-e-colored">Modern Living</span></h1>
-                                                    <div class="sisf-m-text" data-aos="fade-up" data-aos-delay="100">
-                                                        <p class="text-white">Our certified HVAC specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
+                    <div class="swiper-slide">
+                        <div class="hero-slide flex-column justify-content-between">
+                            <div class="hero-slider-image">
+                                <img src="images/slider-image-1.jpg" alt="Arctiq">
+                            </div>
+                            <!-- Content Start -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Hero Content Start -->
+                                        <div class="hero-content text-center">
+                                            <!-- Hero Title Start -->
+                                            <div class="sis-section-title mb-0">
+                                                <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional HVAC Services</span>
+                                                <h1 class="text-white sis-text-anime-style-2">Professional HVAC Services for <br> <span class="sisf-e-colored">Modern Living</span></h1>
+                                                <div class="sisf-m-text" data-aos="fade-up" data-aos-delay="100">
+                                                    <p class="text-white">Our certified HVAC specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
+                                                </div>
+                                                <div class="button-group d-flex align-items-center justify-content-center flex-wrap gap-3">
+                                                    <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="300">
+                                                        <a href="service.html" class="sis-btn-default"><span>Book Service Now</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
-                                                    <div class="button-group d-flex align-items-center justify-content-center flex-wrap gap-3">
-                                                        <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="300"><a href="service.html" class="sis-btn-default"><span>Book Service Now</span><i class="fa-solid fa-arrow-right-long"></i></a></div>
-                                                        <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="500"><a href="projects.html" class="sis-btn-default hero-btn"><span class="bg-white text-dark">Explore Our Work</span><i class="fa-solid fa-arrow-right-long"></i></a></div>
+                                                    <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="500">
+                                                        <a href="projects.html" class="sis-btn-default hero-btn"><span class="bg-white text-dark">Explore Our Work</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- Hero Title End -->
                                         </div>
+                                        <!-- Hero Content End -->
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="hero-slide">
-                                <div class="hero-slider-image">
-                                    <img src="images/slider-image-2.jpg" alt="Arctiq">
+                            <!-- Content End -->
+                            <!-- Content Start -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        
+                                    </div>
                                 </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="hero-content text-center">
-                                                <div class="sis-section-title mb-0">
-                                                    <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional HVAC Services</span>
-                                                    <h1 class="text-white sis-text-anime-style-2">Professional HVAC Services for <br> <span class="sisf-e-colored">Modern Living</span></h1>
-                                                    <div class="sisf-m-text" data-aos="fade-up" data-aos-delay="100">
-                                                        <p class="text-white">Our certified HVAC specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
+                            </div>
+                            <!-- Content End -->
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero-slide flex-column justify-content-between">
+                            <div class="hero-slider-image">
+                                <img src="images/slider-image-2.jpg" alt="Arctiq">
+                            </div>
+                            <!-- Content Start -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Hero Content Start -->
+                                        <div class="hero-content text-center">
+                                            <!-- Hero Title Start -->
+                                            <div class="sis-section-title mb-0">
+                                                <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional HVAC Services</span>
+                                                <h1 class="text-white sis-text-anime-style-2">Professional HVAC Services for <br> <span class="sisf-e-colored">Modern Living</span></h1>
+                                                <div class="sisf-m-text" data-aos="fade-up" data-aos-delay="100">
+                                                    <p class="text-white">Our certified HVAC specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
+                                                </div>
+                                                <div class="button-group d-flex align-items-center justify-content-center flex-wrap gap-3">
+                                                    <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="300">
+                                                        <a href="service.html" class="sis-btn-default"><span>Book Service Now</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
-                                                    <div class="button-group d-flex align-items-center justify-content-center flex-wrap gap-3">
-                                                        <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="300"><a href="service.html" class="sis-btn-default"><span>Book Service Now</span><i class="fa-solid fa-arrow-right-long"></i></a></div>
-                                                        <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="500"><a href="projects.html" class="sis-btn-default hero-btn"><span class="bg-white text-dark">Explore Our Work</span><i class="fa-solid fa-arrow-right-long"></i></a></div>
+                                                    <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="500">
+                                                        <a href="projects.html" class="sis-btn-default hero-btn"><span class="bg-white text-dark">Explore Our Work</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- Hero Title End -->
                                         </div>
+                                        <!-- Hero Content End -->
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="hero-slide">
-                                <div class="hero-slider-image">
-                                    <img src="images/slider-image-3.jpg" alt="Arctiq">
+                            <!-- Content End -->
+                            <!-- Content Start -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        
+                                    </div>
                                 </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="hero-content text-center">
-                                                <div class="sis-section-title mb-0">
-                                                    <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional HVAC Services</span>
-                                                    <h1 class="text-white sis-text-anime-style-2">Professional HVAC Services for <br> <span class="sisf-e-colored">Modern Living</span></h1>
-                                                    <div class="sisf-m-text" data-aos="fade-up" data-aos-delay="100">
-                                                        <p class="text-white">Our certified HVAC specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
+                            </div>
+                            <!-- Content End -->
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero-slide flex-column justify-content-between">
+                            <div class="hero-slider-image">
+                                <img src="images/slider-image-3.jpg" alt="Arctiq">
+                            </div>
+                            <!-- Content Start -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Hero Content Start -->
+                                        <div class="hero-content text-center">
+                                            <!-- Hero Title Start -->
+                                            <div class="sis-section-title mb-0">
+                                                <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional HVAC Services</span>
+                                                <h1 class="text-white sis-text-anime-style-2">Professional HVAC Services for <br> <span class="sisf-e-colored">Modern Living</span></h1>
+                                                <div class="sisf-m-text" data-aos="fade-up" data-aos-delay="100">
+                                                    <p class="text-white">Our certified HVAC specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
+                                                </div>
+                                                <div class="button-group d-flex align-items-center justify-content-center flex-wrap gap-3">
+                                                    <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="300">
+                                                        <a href="service.html" class="sis-btn-default"><span>Book Service Now</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
-                                                    <div class="button-group d-flex align-items-center justify-content-center flex-wrap gap-3">
-                                                        <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="300"><a href="service.html" class="sis-btn-default"><span>Book Service Now</span><i class="fa-solid fa-arrow-right-long"></i></a></div>
-                                                        <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="500"><a href="projects.html" class="sis-btn-default hero-btn"><span class="bg-white text-dark">Explore Our Work</span><i class="fa-solid fa-arrow-right-long"></i></a></div>
+                                                    <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="500">
+                                                        <a href="projects.html" class="sis-btn-default hero-btn"><span class="bg-white text-dark">Explore Our Work</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!-- Hero Title End -->
                                         </div>
+                                        <!-- Hero Content End -->
                                     </div>
                                 </div>
                             </div>
+                            <!-- Content End -->
+                            <!-- Content Start -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Content End -->
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="sis-hero-footer-strip">
-            <div class="sis-scroll-container sisf-page">
-                <div class="sis-scroll-content">
-                    <div class="sis-footer-content"><span>Certified Excellence * Proven Performance *</span></div>
-                    <div class="sis-footer-content"><span>Certified Excellence * Proven Performance *</span></div>
-                    <div class="sis-footer-content"><span>Certified Excellence * Proven Performance *</span></div>
-                    <div class="sis-footer-content"><span>Certified Excellence * Proven Performance *</span></div>
-                </div>
-                <div class="sis-scroll-content ms-4">
-                    <div class="sis-footer-content"><span>Certified Excellence * Proven Performance *</span></div>
-                    <div class="sis-footer-content"><span>Certified Excellence * Proven Performance *</span></div>
-                    <div class="sis-footer-content"><span>Certified Excellence * Proven Performance *</span></div>
-                    <div class="sis-footer-content"><span>Certified Excellence * Proven Performance *</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+
+        <div class="sis-footer-content"><span>Certified Excellence * Proven Performance *</span></div>
     <!-- Hero Section End -->
     <!-- Footer Start -->
     <footer class="main-footer">
@@ -193,50 +236,19 @@
         </div>
     </footer>
     <!-- Footer End -->
-    <!-- Cursor Start -->
-    <div class="sisf-cursor sisf-js-cursor">
-        <div class="sisf-cursor-wrapper">
-            <div class="sisf-cursor--follower sisf-js-follower"></div>
-            <div class="sisf-cursor--label sisf-js-label"></div>
-            <div class="sisf-cursor--drap sisf-js-drap"></div>
-            <div class="sisf-cursor--icon sisf-js-icon"></div>
-        </div>
-    </div>
-    <!-- Cursor End -->
-    <!-- Back to Top Button Start -->
-    <div class="sis-back-to-top-button">
-        <button class="sis-back-to-top" id="backToTop">
-            <span class="mt-1"><i class="fa fa-chevron-up"></i></span>
-        </button>
-    </div>
-    <!-- Back to Top Button End -->
-    <!-- Jquery Library File -->
-    <script src="js/home2-jquery-3.7.1.min.js"></script>
-    <!-- Bootstrap js File -->
-    <script src="js/home2-bootstrap.min.js"></script>
-    <!-- Validator js file -->
-    <script src="js/validator.min.js"></script>
-    <!-- SlickNav js File -->
-    <script src="js/home2-jquery.slicknav.js"></script>
-    <!-- Swiper js File -->
-    <script src="js/home2-swiper-bundle.min.js"></script>
-    <!-- Animation On Scroll Js File -->
-    <script src="js/home2-aos.js"></script>
-    <!-- Counter js File -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <!-- Magnific js File -->
-    <script src="js/home2-jquery.magnific-popup.min.js"></script>
-    <!-- Gsap Js File -->
-    <script src="js/home2-gsap.min.js"></script>
-    <!-- Cursor Js File -->
-    <script src="js/magiccursor.js"></script>
-    <!-- Text Effect js file -->
-    <script src="js/home2-ScrollTrigger.min.js"></script>
-    <script src="js/home2-SplitText.js"></script>
-    <!-- Main Custom js file -->
-    <script src="js/home2-script.js"></script>
+<script src="js/home2-jquery-3.7.1.min.js"></script>
+<script src="js/home2-bootstrap.min.js"></script>
+<script src="js/validator.min.js"></script>
+<script src="js/home2-jquery.slicknav.js"></script>
+<script src="js/home2-swiper-bundle.min.js"></script>
+<script src="js/home2-aos.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/home2-jquery.magnific-popup.min.js"></script>
+<script src="js/home2-gsap.min.js"></script>
+<script src="js/magiccursor.js"></script>
+<script src="js/home2-ScrollTrigger.min.js"></script>
+<script src="js/home2-SplitText.js"></script>
+<script src="js/home2-script.js"></script>
 </body>
-
-<!-- Mirrored from https://arctiq-html.wpthemeverse.com/home-slider.html by HTTrack Website Copier/3.x [XR&CO], Mon, 05 Oct 2026 16:15:40 GMT -->
 </html>
