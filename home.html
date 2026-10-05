@@ -11,8 +11,23 @@
     <link rel="stylesheet" href="css/home2-aos.css">
     <link href="css/home2-all.min.css" rel="stylesheet">
     <link href="css/home2-custom.css" rel="stylesheet">
+
+
 </head>
 <body>
+    <!-- GO7.IN Preloader Start -->
+    <div class="go7-preloader" id="go7Preloader" aria-label="Loading GO7.IN">
+        <div class="go7-loader">
+            <div class="go7-loader-brand">GO7.IN</div>
+            <div class="go7-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="go7-progress-bar" id="go7ProgressBar"></div>
+            </div>
+            <div class="go7-progress-meta">
+                <span id="go7ProgressValue">0%</span>
+                <span>100%</span>
+            </div>
+        </div>
+    </div>
     <!-- Hero Section Start -->
     <div class="sis-hero hero-slider sisf-slider sisf-e-home-slider">
         <div class="hero-slider-layout">
@@ -224,5 +239,56 @@
     <script src="js/home2-ScrollTrigger.min.js"></script>
     <script src="js/home2-SplitText.js"></script>
     <script src="js/home2-script.js"></script>
+
+    <script>
+        (function () {
+            var preloader = document.getElementById('go7Preloader');
+            var progressBar = document.getElementById('go7ProgressBar');
+            var progressValue = document.getElementById('go7ProgressValue');
+            var progressTrack = document.querySelector('.go7-progress-track');
+            var progress = 0;
+            var started = Date.now();
+            var minimumTime = 900;
+
+            function updateProgress(value) {
+                progress = Math.min(100, value);
+                progressBar.style.width = progress + '%';
+                progressValue.textContent = Math.round(progress) + '%';
+                progressTrack.setAttribute('aria-valuenow', Math.round(progress));
+            }
+
+            function finish() {
+                updateProgress(100);
+                var remaining = Math.max(0, minimumTime - (Date.now() - started));
+                setTimeout(function () {
+                    preloader.classList.add('is-loaded');
+                    setTimeout(function () {
+                        preloader.remove();
+                    }, 500);
+                }, remaining);
+            }
+
+            function run() {
+                var timer = setInterval(function () {
+                    if (progress < 90) {
+                        updateProgress(progress + Math.max(1, (90 - progress) * 0.08));
+                    } else {
+                        clearInterval(timer);
+                        if (document.readyState === 'complete') {
+                            finish();
+                        } else {
+                            window.addEventListener('load', finish, { once: true });
+                        }
+                    }
+                }, 35);
+            }
+
+            if (document.readyState === 'complete') {
+                run();
+            } else {
+                run();
+            }
+        })();
+    </script>
 </body>
 </html>
