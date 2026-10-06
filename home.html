@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Slider</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/mousecursor.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link href="css/all.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/home2-bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/home2-swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/home2-mousecursor.css">
+    <link rel="stylesheet" href="css/home2-aos.css">
+    <link href="css/home2-all.min.css" rel="stylesheet">
+    <link href="css/home2-custom.css" rel="stylesheet">
 
     <style>
         html, body {
@@ -24,6 +24,64 @@
             overflow-x: hidden;
         }
 
+        /* GO7.IN page loader */
+        .go7-preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .45s ease, visibility .45s ease;
+        }
+
+        .go7-preloader.is-loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .go7-loader {
+            width: min(280px, 72vw);
+            text-align: center;
+        }
+
+        .go7-loader-brand {
+            margin-bottom: 18px;
+            font-size: 28px;
+            line-height: 1;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #111111;
+        }
+
+        .go7-progress-track {
+            width: 100%;
+            height: 2px;
+            overflow: hidden;
+            background: #e9e9e9;
+        }
+
+        .go7-progress-bar {
+            width: 0;
+            height: 100%;
+            background: #111111;
+            transition: width .08s linear;
+        }
+
+        .go7-progress-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 9px;
+            font-size: 10px;
+            line-height: 1;
+            letter-spacing: .08em;
+            color: #777777;
+        }
+
         /* Hero only — everything else has been removed */
         .sis-hero {
             width: 100%;
@@ -32,17 +90,19 @@
     </style>
 </head>
 <body>
-<div class="go7-preloader" id="go7Preloader" aria-label="Loading GO7.IN">
-  <div class="go7-loader">
-    <div class="go7-loader-brand">GO7.IN</div>
-    <div class="go7-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-      <div class="go7-progress-bar" id="go7ProgressBar"></div>
+    <!-- GO7.IN Preloader Start -->
+    <div class="go7-preloader" id="go7Preloader" aria-label="Loading GO7.IN">
+        <div class="go7-loader">
+            <div class="go7-loader-brand">GO7.IN</div>
+            <div class="go7-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="go7-progress-bar" id="go7ProgressBar"></div>
+            </div>
+            <div class="go7-progress-meta">
+                <span id="go7ProgressValue">0%</span>
+                <span>100%</span>
+            </div>
+        </div>
     </div>
-    <div class="go7-progress-meta"><span id="go7ProgressValue">0%</span><span>100%</span></div>
-  </div>
-</div>
-
-
     <!-- Hero Section Start -->
     <div class="sis-hero hero-slider sisf-slider sisf-e-home-slider">
         <div class="hero-slider-layout">
@@ -51,7 +111,7 @@
                     <div class="swiper-slide">
                         <div class="hero-slide flex-column justify-content-between">
                             <div class="hero-slider-image">
-                                <img src="images/slider-image-1.jpg" alt="Arctiq">
+                                <img src="images/slider-image-1.jpg" alt="GO7.IN Premium .IN Domains">
                             </div>
                             <!-- Content Start -->
                             <div class="container">
@@ -61,17 +121,17 @@
                                         <div class="hero-content text-center">
                                             <!-- Hero Title Start -->
                                             <div class="sis-section-title mb-0">
-                                                <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional HVAC Services</span>
-                                                <h1 class="text-white sis-text-anime-style-2">Professional HVAC Services for <br> <span class="sisf-e-colored">Modern Living</span></h1>
+                                                <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional Premium .IN Domains Services</span>
+                                                <h1 class="text-white sis-text-anime-style-2">Premium <span class="sisf-e-colored">.IN Domains</span><br>for Modern Brands</h1>
                                                 <div class="sisf-m-text" data-aos="fade-up" data-aos-delay="100">
-                                                    <p class="text-white">Our certified HVAC specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
+                                                    <p class="text-white">Our certified Premium .IN Domains specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
                                                 </div>
                                                 <div class="button-group d-flex align-items-center justify-content-center flex-wrap gap-3">
                                                     <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="300">
-                                                        <a href="service.html" class="sis-btn-default"><span>Book Service Now</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                                                        <a href="https://www.go7.in/?source=yhx.in" class="sis-btn-default"><span>View Domains</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
                                                     <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="500">
-                                                        <a href="projects.html" class="sis-btn-default hero-btn"><span class="bg-white text-dark">Explore Our Work</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                                                        <a href="https://www.go7.in/about" class="sis-btn-default hero-btn"><span class="bg-white text-dark">About GO7.IN</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -90,7 +150,7 @@
                                             <div class="sisf-sis-listing-items" data-aos="fade-up" data-aos-delay="100">
                                                 <p class="mb-0">
                                                     <span class="sisf-e-colored"><i class="fa-solid pe-3 fa-check-circle"></i></span>
-                                                    <span class="text-white">Certified HVAC Technicians with Years of Experience</span>
+                                                    <span class="text-white">Certified Premium .IN Domains Technicians with Years of Experience</span>
                                                 </p>
                                             </div>
                                             <div class="sisf-sis-listing-items" data-aos="fade-up" data-aos-delay="300">
@@ -115,7 +175,7 @@
                     <div class="swiper-slide">
                         <div class="hero-slide flex-column justify-content-between">
                             <div class="hero-slider-image">
-                                <img src="images/slider-image-2.jpg" alt="Arctiq">
+                                <img src="images/slider-image-2.jpg" alt="GO7.IN Premium .IN Domains">
                             </div>
                             <!-- Content Start -->
                             <div class="container">
@@ -125,17 +185,17 @@
                                         <div class="hero-content text-center">
                                             <!-- Hero Title Start -->
                                             <div class="sis-section-title mb-0">
-                                                <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional HVAC Services</span>
-                                                <h1 class="text-white sis-text-anime-style-2">Professional HVAC Services for <br> <span class="sisf-e-colored">Modern Living</span></h1>
+                                                <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional Premium .IN Domains Services</span>
+                                                <h1 class="text-white sis-text-anime-style-2">Short &amp; <span class="sisf-e-colored">Brandable .IN</span><br>Domain Names</h1>
                                                 <div class="sisf-m-text" data-aos="fade-up" data-aos-delay="100">
-                                                    <p class="text-white">Our certified HVAC specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
+                                                    <p class="text-white">Our certified Premium .IN Domains specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
                                                 </div>
                                                 <div class="button-group d-flex align-items-center justify-content-center flex-wrap gap-3">
                                                     <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="300">
-                                                        <a href="service.html" class="sis-btn-default"><span>Book Service Now</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                                                        <a href="https://www.go7.in/?source=lsz.in" class="sis-btn-default"><span>View Domains</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
                                                     <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="500">
-                                                        <a href="projects.html" class="sis-btn-default hero-btn"><span class="bg-white text-dark">Explore Our Work</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                                                        <a href="https://www.go7.in/about" class="sis-btn-default hero-btn"><span class="bg-white text-dark">About GO7.IN</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -154,7 +214,7 @@
                                             <div class="sisf-sis-listing-items" data-aos="fade-up" data-aos-delay="100">
                                                 <p class="mb-0">
                                                     <span class="sisf-e-colored"><i class="fa-solid pe-3 fa-check-circle"></i></span>
-                                                    <span class="text-white">Certified HVAC Technicians with Years of Experience</span>
+                                                    <span class="text-white">Certified Premium .IN Domains Technicians with Years of Experience</span>
                                                 </p>
                                             </div>
                                             <div class="sisf-sis-listing-items" data-aos="fade-up" data-aos-delay="300">
@@ -179,7 +239,7 @@
                     <div class="swiper-slide">
                         <div class="hero-slide flex-column justify-content-between">
                             <div class="hero-slider-image">
-                                <img src="images/slider-image-3.jpg" alt="Arctiq">
+                                <img src="images/slider-image-3.jpg" alt="GO7.IN Premium .IN Domains">
                             </div>
                             <!-- Content Start -->
                             <div class="container">
@@ -189,17 +249,17 @@
                                         <div class="hero-content text-center">
                                             <!-- Hero Title Start -->
                                             <div class="sis-section-title mb-0">
-                                                <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional HVAC Services</span>
-                                                <h1 class="text-white sis-text-anime-style-2">Professional HVAC Services for <br> <span class="sisf-e-colored">Modern Living</span></h1>
+                                                <span class="sisf-subtitle text-white sis-text-anime-style-2">Professional Premium .IN Domains Services</span>
+                                                <h1 class="text-white sis-text-anime-style-2">Own a <span class="sisf-e-colored">Premium .IN</span><br>Domain Today</h1>
                                                 <div class="sisf-m-text" data-aos="fade-up" data-aos-delay="100">
-                                                    <p class="text-white">Our certified HVAC specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
+                                                    <p class="text-white">Our certified Premium .IN Domains specialists combine advanced technology, expert craftsmanship, and dependable <br> service to ensure lasting comfort, improved energy efficiency, and optimal indoor air quality.</p>
                                                 </div>
                                                 <div class="button-group d-flex align-items-center justify-content-center flex-wrap gap-3">
                                                     <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="300">
-                                                        <a href="service.html" class="sis-btn-default"><span>Book Service Now</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                                                        <a href="https://www.go7.in/?source=blogup.in" class="sis-btn-default"><span>View Domains</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
                                                     <div class="sisf-m-button" data-aos="fade-up" data-aos-delay="500">
-                                                        <a href="projects.html" class="sis-btn-default hero-btn"><span class="bg-white text-dark">Explore Our Work</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                                                        <a href="https://www.go7.in/about" class="sis-btn-default hero-btn"><span class="bg-white text-dark">About GO7.IN</span><i class="fa-solid fa-arrow-right-long"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -218,7 +278,7 @@
                                             <div class="sisf-sis-listing-items" data-aos="fade-up" data-aos-delay="100">
                                                 <p class="mb-0">
                                                     <span class="sisf-e-colored"><i class="fa-solid pe-3 fa-check-circle"></i></span>
-                                                    <span class="text-white">Certified HVAC Technicians with Years of Experience</span>
+                                                    <span class="text-white">Certified Premium .IN Domains Technicians with Years of Experience</span>
                                                 </p>
                                             </div>
                                             <div class="sisf-sis-listing-items" data-aos="fade-up" data-aos-delay="300">
@@ -246,47 +306,64 @@
     </div>
     <!-- Hero Section End -->
 
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/gsap.min.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <script src="js/SplitText.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/home2-jquery-3.7.1.min.js"></script>
+    <script src="js/home2-bootstrap.min.js"></script>
+    <script src="js/home2-swiper-bundle.min.js"></script>
+    <script src="js/home2-aos.js"></script>
+    <script src="js/home2-gsap.min.js"></script>
+    <script src="js/home2-ScrollTrigger.min.js"></script>
+    <script src="js/home2-SplitText.js"></script>
+    <script src="js/home2-script.js"></script>
 
-<script>
-(function () {
-  const loader = document.getElementById('go7Preloader');
-  const bar = document.getElementById('go7ProgressBar');
-  const value = document.getElementById('go7ProgressValue');
-  if (!loader || !bar || !value) return;
-  const start = performance.now();
-  const minimumTime = 900;
-  let progress = 0;
-  function setProgress(n) {
-    progress = Math.max(progress, Math.min(100, n));
-    bar.style.width = progress + '%';
-    value.textContent = Math.round(progress) + '%';
-    bar.parentElement.setAttribute('aria-valuenow', Math.round(progress));
-  }
-  function tick() {
-    if (progress < 90) setProgress(progress + Math.max(0.5, (90 - progress) * 0.035));
-    if (progress < 90) requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-  window.addEventListener('load', function () {
-    const wait = Math.max(0, minimumTime - (performance.now() - start));
-    setTimeout(function () {
-      setProgress(100);
-      setTimeout(function () {
-        loader.classList.add('is-loaded');
-        setTimeout(function () { loader.remove(); }, 500);
-      }, 180);
-    }, wait);
-  });
-})();
-</script>
+    <script>
+        (function () {
+            var preloader = document.getElementById('go7Preloader');
+            var progressBar = document.getElementById('go7ProgressBar');
+            var progressValue = document.getElementById('go7ProgressValue');
+            var progressTrack = document.querySelector('.go7-progress-track');
+            var progress = 0;
+            var started = Date.now();
+            var minimumTime = 900;
 
+            function updateProgress(value) {
+                progress = Math.min(100, value);
+                progressBar.style.width = progress + '%';
+                progressValue.textContent = Math.round(progress) + '%';
+                progressTrack.setAttribute('aria-valuenow', Math.round(progress));
+            }
+
+            function finish() {
+                updateProgress(100);
+                var remaining = Math.max(0, minimumTime - (Date.now() - started));
+                setTimeout(function () {
+                    preloader.classList.add('is-loaded');
+                    setTimeout(function () {
+                        preloader.remove();
+                    }, 500);
+                }, remaining);
+            }
+
+            function run() {
+                var timer = setInterval(function () {
+                    if (progress < 90) {
+                        updateProgress(progress + Math.max(1, (90 - progress) * 0.08));
+                    } else {
+                        clearInterval(timer);
+                        if (document.readyState === 'complete') {
+                            finish();
+                        } else {
+                            window.addEventListener('load', finish, { once: true });
+                        }
+                    }
+                }, 35);
+            }
+
+            if (document.readyState === 'complete') {
+                run();
+            } else {
+                run();
+            }
+        })();
+    </script>
 </body>
 </html>
