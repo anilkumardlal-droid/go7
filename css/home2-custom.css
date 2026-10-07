@@ -1,1 +1,8 @@
-
+@media (min-width: 901px) {
+    main {
+        grid-template-columns: 55% 45%;
+    }
+  .benefits {
+  margin-bottom: 34px;
+}
+}
