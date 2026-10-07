@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GO7.IN Logo</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#f7f9fc;font-family:Arial,Helvetica,sans-serif;padding:clamp(20px,5vw,70px)}
+.logo-wrap{position:relative;width:100%;max-width:1100px;display:flex;align-items:center;justify-content:center}
+.logo{position:relative;z-index:2;width:100%;text-align:center}
+.word{position:relative;display:flex;align-items:center;justify-content:center;font-size:clamp(74px,13vw,165px);line-height:.78;font-weight:900;color:transparent;-webkit-text-stroke:3px #3850d5}
+.ch{display:inline-block;opacity:0;transform:translateY(18px) scale(.94);animation:charCycle 7.2s linear infinite}
+.ch:nth-child(1){animation-delay:0s}
+.ch:nth-child(2){animation-delay:.18s}
+.ch:nth-child(3){animation-delay:.36s}
+.ch:nth-child(4){animation-delay:.54s}
+.ch:nth-child(5){animation-delay:.72s}
+.ch:nth-child(6){animation-delay:.90s}
+.word:after{content:"";position:absolute;left:-5%;top:50%;width:110%;height:3px;border-radius:99px;background:linear-gradient(90deg,transparent,#3850d5,#fff,#3850d5,transparent);opacity:0;transform:translateY(-50%) scaleX(.2);animation:sweep 7.2s linear infinite}
+.tag{margin-top:26px;color:#111820;font-size:clamp(11px,1.55vw,19px);font-weight:500;text-transform:uppercase;animation:fade 5s ease-in-out infinite}
+
+
+
+
+@keyframes charCycle{
+  0%,4%{opacity:0;transform:translateY(18px) scale(.94)}
+  7%{opacity:1;transform:translateY(0) scale(1)}
+  16%,70%{opacity:1;transform:translateY(0) scale(1)}
+  71%,100%{opacity:0;transform:translateY(-8px) scale(1.02)}
+}
+@keyframes sweep{
+  0%,16%{opacity:0;transform:translate(-25%,-50%) scaleX(.15)}
+  24%{opacity:.85}
+  38%{opacity:0;transform:translate(25%,-50%) scaleX(1)}
+  70%,100%{opacity:0}
+}45%{opacity:.85}62%{opacity:0;transform:translate(25%,-50%) scaleX(1)}100%{opacity:0}}
+@keyframes fade{0%,100%{opacity:.72}50%{opacity:1}}
+25%{transform:translate(35px,-14px)}50%{transform:translate(70px,4px)}75%{transform:translate(35px,18px)}100%{transform:translate(0)}}
+25%{transform:translate(-30px,15px)}50%{transform:translate(-65px,-3px)}75%{transform:translate(-30px,-17px)}100%{transform:translate(0)}}
+50%{opacity:1;transform:scale(1.35)}}
+@media(max-width:600px){.stage{width:94vw}.word{-webkit-text-stroke:2px #3850d5;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.ch,.word:after,.tag,.ch{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="logo-wrap" aria-label="GO7.IN Premium .IN Domains">
+<div class="logo">
+<div class="word"><span class="ch">G</span><span class="ch">O</span><span class="ch">7</span><span class="ch">.</span><span class="ch">I</span><span class="ch">N</span></div>
+<div class="tag">Premium .IN Domains</div>
+</div>
+</div>
+</body>
+</html>
