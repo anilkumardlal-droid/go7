@@ -5,3 +5,283 @@
   min-height: 100vh !important;
   box-sizing: border-box !important;
 }
+
+
+/* GO7.IN hero layout + premium image slider. Main theme stays in stylec6e7.css. */
+
+/* Remove the three old car-template/domain widgets if any markup remains. */
+.hero .range,
+.hero .fincard,
+.hero .gauge {
+  display: none !important;
+}
+
+/* Desktop hero fills the viewport. */
+@media (min-width: 768px) {
+  .hero {
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 620px;
+    box-sizing: border-box;
+  }
+}
+
+.domain-slider {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: clamp(20px, 3.2vh, 34px);
+  transform: translateX(-50%);
+  width: min(620px, calc(100% - 48px));
+  color: #fff;
+  font-family: inherit;
+}
+
+.domain-slider__track {
+  position: relative;
+  height: clamp(138px, 18vh, 190px);
+  overflow: hidden;
+  border-radius: 14px;
+  background: #20242b;
+  isolation: isolate;
+}
+
+.domain-slide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.02);
+  transition: opacity .75s ease, transform 5s ease, visibility .75s;
+  pointer-events: none;
+}
+
+.domain-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.domain-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(12,16,24,.82) 0%, rgba(12,16,24,.46) 57%, rgba(12,16,24,.08) 100%);
+}
+
+.domain-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1);
+  transition: transform 5s ease;
+}
+
+.domain-slide.is-active img {
+  transform: scale(1.07);
+}
+
+.domain-slide__caption {
+  position: absolute;
+  z-index: 2;
+  left: clamp(18px, 3vw, 30px);
+  right: 48px;
+  bottom: clamp(18px, 2.5vh, 26px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.domain-slide__eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  line-height: 1.4;
+  color: rgba(255,255,255,.8);
+}
+
+.domain-slide__title {
+  font-size: clamp(20px, 2.4vw, 29px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.6px;
+  text-wrap: balance;
+}
+
+.domain-slide__arrow {
+  position: absolute;
+  right: -18px;
+  bottom: 0;
+  font-size: 23px;
+  font-weight: 300;
+  transition: transform .25s ease;
+}
+
+.domain-slide:hover .domain-slide__arrow {
+  transform: translate(3px, -3px);
+}
+
+.domain-slider__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 2px 0;
+}
+
+.domain-slider__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.25px;
+  color: #727783;
+  white-space: nowrap;
+}
+
+.domain-slider__live-dot {
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3850d5;
+  box-shadow: 0 0 0 4px rgba(56,80,213,.12);
+}
+
+.domain-slider__controls {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+}
+
+.domain-slider__dotbtn {
+  width: 19px;
+  height: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: #c9ccd4;
+  cursor: pointer;
+  transition: width .25s ease, background .25s ease;
+}
+
+.domain-slider__dotbtn.is-active {
+  width: 30px;
+  background: #3850d5;
+}
+
+.domain-slider__dotbtn:focus-visible {
+  outline: 2px solid #3850d5;
+  outline-offset: 4px;
+}
+
+.domain-slider__count {
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #727783;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Mobile: stack the slider after the headline and CTA. */
+@media (max-width: 767px) {
+  .hero {
+    height: auto !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    padding: 125px var(--gut, 20px) 24px !important;
+    overflow: hidden;
+  }
+
+  .hero .hero__social {
+    display: none !important;
+  }
+
+  .hero .hero__copy {
+    position: relative !important;
+    inset: auto !important;
+  }
+
+  .hero .hero__copy::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .domain-slider {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    margin: 28px auto 0;
+  }
+
+  .domain-slider__track {
+    height: clamp(150px, 43vw, 205px);
+    border-radius: 12px;
+  }
+
+  .domain-slide__caption {
+    left: 18px;
+    right: 38px;
+    bottom: 19px;
+    gap: 6px;
+  }
+
+  .domain-slide__eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  .domain-slide__title {
+    font-size: clamp(19px, 5.3vw, 25px);
+  }
+
+  .domain-slider__footer {
+    gap: 8px;
+  }
+
+  .domain-slider__status {
+    font-size: 8px;
+    letter-spacing: .8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .domain-slider__status {
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .domain-slider__dotbtn {
+    width: 14px;
+  }
+
+  .domain-slider__dotbtn.is-active {
+    width: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .domain-slide,
+  .domain-slide img,
+  .domain-slide__arrow,
+  .domain-slider__dotbtn {
+    transition: none !important;
+  }
+}
