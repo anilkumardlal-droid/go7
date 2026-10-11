@@ -348,3 +348,32 @@
     padding: 90px var(--gut, 20px) 24px !important;
   }
 }
+
+
+
+/* GO7.IN Slider Images - Responsive Default Size */
+.domain-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Desktop: slider maximum 760 × 240 px */
+@media (min-width: 768px) {
+  .domain-slider {
+    width: min(760px, calc(100% - 48px)) !important;
+  }
+
+  .domain-slider__track {
+    height: 240px !important;
+  }
+}
+
+/* Mobile: responsive slider height */
+@media (max-width: 767px) {
+  .domain-slider__track {
+    height: clamp(130px, calc(52vw - 50px), 180px) !important;
+  }
+}
