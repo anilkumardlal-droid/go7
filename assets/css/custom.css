@@ -1,0 +1,7 @@
+```css
+/* Hero Section - Full Screen Height */
+.hero {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+```
