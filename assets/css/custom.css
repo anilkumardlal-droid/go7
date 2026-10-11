@@ -325,3 +325,14 @@
   }
 }
 
+/* GO7.IN - Final Mobile Slider Height */
+
+@media (max-width: 767px) {
+  .domain-slider__track {
+    height: clamp(130px, calc(52vw - 50px), 180px) !important;
+  }
+
+  .domain-slider {
+    margin-top: 12px !important;
+  }
+}
