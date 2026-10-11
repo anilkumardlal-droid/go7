@@ -342,3 +342,9 @@
     margin-bottom: 52px !important;
   }
 }
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 90px var(--gut, 20px) 24px !important;
+  }
+}
