@@ -377,3 +377,19 @@
     height: clamp(130px, calc(52vw - 50px), 180px) !important;
   }
 }
+
+.domain-slide::after {
+  background: none !important;
+  content: none !important;
+  display: none !important;
+}
+
+.domain-slide .domain-slide__text,
+.domain-slide .domain-slide__content,
+.domain-slide h1,
+.domain-slide h2,
+.domain-slide h3,
+.domain-slide p,
+.domain-slide span {
+  display: none !important;
+}
