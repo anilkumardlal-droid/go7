@@ -1,12 +1,11 @@
-/* GO7.IN Hero - Full Screen */
-html,
-body {
-  margin: 0;
-  min-height: 100%;
+/* GO7.IN CSS Load Test */
+html {
+  outline: 5px solid red !important;
 }
 
 .hero {
+  height: 100vh !important;
+  height: 100dvh !important;
   min-height: 100vh !important;
-  min-height: 100dvh !important;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
