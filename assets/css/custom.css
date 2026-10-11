@@ -285,3 +285,15 @@
     transition: none !important;
   }
 }
+
+
+
+/* Remove car background from hero */
+.hero {
+  background-image: none !important;
+}
+
+[data-theme="dark"] .hero {
+  background-image: none !important;
+}
+
