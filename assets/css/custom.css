@@ -297,3 +297,31 @@
   background-image: none !important;
 }
 
+/* GO7.IN - Bigger Domain Slider + Less Gap */
+
+/* Make slider larger on desktop */
+.domain-slider {
+  width: min(760px, calc(100% - 48px)) !important;
+  bottom: 22px !important;
+}
+
+.domain-slider__track {
+  height: clamp(180px, 23vh, 240px) !important;
+}
+
+/* Reduce gap between hero text and slider on mobile */
+@media (max-width: 767px) {
+  .domain-slider {
+    width: 100% !important;
+    margin: 12px auto 0 !important;
+  }
+
+  .domain-slider__track {
+    height: clamp(180px, 52vw, 230px) !important;
+  }
+
+  .hero {
+    padding-bottom: 20px !important;
+  }
+}
+
