@@ -1,8 +1,4 @@
-/* GO7.IN CSS Load Test */
-html {
-  outline: 5px solid red !important;
-}
-
+/* GO7.IN Hero - Full Screen */
 .hero {
   height: 100vh !important;
   height: 100dvh !important;
