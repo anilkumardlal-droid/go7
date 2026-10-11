@@ -336,3 +336,9 @@
     margin-top: 12px !important;
   }
 }
+
+@media (max-width: 767px) {
+  .hero .hero__copy {
+    margin-bottom: 52px !important;
+  }
+}
