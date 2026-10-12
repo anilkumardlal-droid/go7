@@ -387,3 +387,102 @@
 .domain-slide span {
   display: none !important;
 }
+
+
+/* =========================================
+   GO7.IN SLIDER — FINAL CSS
+   Smooth transition + no zoom + transparent
+========================================= */
+
+/* Slider background and container */
+.domain-slider {
+  overflow: hidden;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Slider track */
+.domain-slider__track {
+  position: relative;
+  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* All slides: hidden by default */
+.domain-slider .domain-slide {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(20px);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition:
+    opacity 600ms ease,
+    transform 600ms ease,
+    visibility 600ms ease;
+}
+
+/* Active slide */
+.domain-slider .domain-slide.is-active {
+  position: relative;
+  inset: auto;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* Images: disable zoom and animation */
+.domain-slider .domain-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  scale: 1 !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Disable hover zoom */
+.domain-slider .domain-slide:hover img,
+.domain-slider .domain-slide.is-active:hover img {
+  transform: none !important;
+  scale: 1 !important;
+}
+
+/* Transparent caption background */
+.domain-slider .domain-slide__caption {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Transparent footer */
+.domain-slider .domain-slider__footer {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Respect reduced-motion setting */
+@media (prefers-reduced-motion: reduce) {
+  .domain-slider .domain-slide {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
