@@ -1,10 +1,10 @@
 ```css
 /* ==================================================
-   GO7.IN — PREMIUM HERO + CINEMATIC DOMAIN SLIDER
-   4 slides | No zoom | Transparent | Responsive
+   GO7.IN — PREMIUM CINEMATIC DOMAIN SLIDER
+   4 slides | Mask reveal | No zoom | Responsive
 ================================================== */
 
-/* ================= HERO LAYOUT ================= */
+/* HERO */
 
 .hero {
   height: 100vh !important;
@@ -32,7 +32,7 @@
   }
 }
 
-/* ================= SLIDER CONTAINER ================= */
+/* SLIDER CONTAINER */
 
 .domain-slider {
   position: absolute;
@@ -61,15 +61,7 @@
   box-shadow: none !important;
 }
 
-/* ================= CINEMATIC TRANSITION ================= */
-
-/*
-  Incoming slide:
-  - cinematic reveal
-  - blur-to-sharp
-  - subtle horizontal movement
-  - no zoom
-*/
+/* SLIDES — MASK REVEAL */
 
 .domain-slider .domain-slide {
   position: absolute;
@@ -84,26 +76,24 @@
   pointer-events: none;
 
   clip-path: inset(0 0 0 100%);
-  filter: blur(8px);
-  transform: translateX(18px);
+  filter: blur(5px);
+  transform: translateX(10px);
 
-  color: inherit;
-  text-decoration: none;
   background: transparent !important;
   border: 0 !important;
-  border-radius: 0 !important;
   box-shadow: none !important;
+  text-decoration: none;
 
   transition:
-    clip-path 850ms cubic-bezier(.22, 1, .36, 1),
+    clip-path 1000ms cubic-bezier(.76, 0, .24, 1),
     opacity 700ms ease,
-    filter 850ms cubic-bezier(.22, 1, .36, 1),
-    transform 850ms cubic-bezier(.22, 1, .36, 1),
-    visibility 850ms;
+    filter 850ms ease,
+    transform 1000ms cubic-bezier(.22, 1, .36, 1),
+    visibility 1000ms;
   will-change: clip-path, opacity, filter, transform;
 }
 
-/* Active slide — revealed and crisp */
+/* ACTIVE SLIDE */
 
 .domain-slider .domain-slide.is-active {
   position: absolute;
@@ -119,21 +109,20 @@
   transform: translateX(0);
 }
 
-/* No dark overlays */
+/* REMOVE OVERLAYS */
 
 .domain-slider .domain-slide::before,
 .domain-slider .domain-slide::after {
-  content: none !important;
   display: none !important;
+  content: none !important;
 }
 
-/* ================= IMAGE SETTINGS ================= */
+/* IMAGE — ORIGINAL SIZE, NO ZOOM */
 
 .domain-slider .domain-slide img {
   display: block;
   width: 100%;
   height: 100%;
-
   object-fit: contain;
   object-position: center;
 
@@ -148,22 +137,13 @@
   transition: none !important;
 }
 
-/* Explicitly disable hover zoom */
-
 .domain-slider .domain-slide:hover img,
 .domain-slider .domain-slide.is-active:hover img {
   transform: none !important;
   scale: 1 !important;
 }
 
-/* Images and captions are not clickable */
-
-.domain-slider .domain-slide,
-.domain-slider .domain-slide img {
-  pointer-events: none !important;
-}
-
-/* Hide text captions while preserving slider images */
+/* HIDE SLIDE CAPTIONS */
 
 .domain-slider .domain-slide__caption,
 .domain-slider .domain-slide__text,
@@ -176,7 +156,7 @@
   display: none !important;
 }
 
-/* ================= SLIDER FOOTER ================= */
+/* FOOTER */
 
 .domain-slider__footer {
   display: flex;
@@ -184,7 +164,6 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px 2px 0;
-
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
@@ -195,7 +174,6 @@
   align-items: center;
   gap: 8px;
   min-width: 0;
-
   color: #727783;
   font-size: 9px;
   font-weight: 600;
@@ -220,15 +198,12 @@
 }
 
 .domain-slider__dotbtn {
-  display: block;
   width: 19px;
   height: 4px;
   padding: 0;
-
   border: 0;
   border-radius: 5px;
   background: #c9ccd4;
-
   cursor: pointer;
   transition:
     width 300ms cubic-bezier(.22, 1, .36, 1),
@@ -255,7 +230,7 @@
   white-space: nowrap;
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* MOBILE */
 
 @media (max-width: 767px) {
   .hero {
@@ -304,17 +279,15 @@
     letter-spacing: .8px;
   }
 
-  /* Slightly softer transition on mobile */
-
   .domain-slider .domain-slide {
-    filter: blur(5px);
-    transform: translateX(12px);
+    filter: blur(3px);
+    transform: translateX(6px);
     transition:
-      clip-path 700ms cubic-bezier(.22, 1, .36, 1),
+      clip-path 800ms cubic-bezier(.76, 0, .24, 1),
       opacity 600ms ease,
-      filter 700ms ease,
-      transform 700ms cubic-bezier(.22, 1, .36, 1),
-      visibility 700ms;
+      filter 650ms ease,
+      transform 800ms cubic-bezier(.22, 1, .36, 1),
+      visibility 800ms;
   }
 
   .domain-slider .domain-slide.is-active {
@@ -323,7 +296,7 @@
   }
 }
 
-/* Extra-small screens */
+/* SMALL SCREENS */
 
 @media (max-width: 360px) {
   .domain-slider__status {
@@ -344,7 +317,7 @@
   }
 }
 
-/* ================= ACCESSIBILITY ================= */
+/* REDUCED MOTION ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
   .domain-slider .domain-slide,
