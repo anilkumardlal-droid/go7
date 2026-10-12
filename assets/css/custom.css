@@ -347,4 +347,28 @@
 .hero__acc {
     color: #3850d5 !important;
 }
+
+
+/* Primary button */
+.hero .btn--acc {
+    background: #3850d5 !important;
+    color: #fff !important;
+}
+
+.hero .btn--acc:hover {
+    background: #2d40b5 !important;
+    color: #fff !important;
+}
+
+/* Outline button */
+.hero .btn--line {
+    border-color: #3850d5 !important;
+    color: #3850d5 !important;
+}
+
+.hero .btn--line:hover {
+    background: #f2f3f7 !important;
+    color: #3850d5 !important;
+}
+
 ```
