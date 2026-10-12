@@ -1,7 +1,10 @@
 ```css
-/* =========================================
-   GO7.IN HERO — FULL SCREEN
-========================================= */
+/* ==================================================
+   GO7.IN — PREMIUM HERO + CINEMATIC DOMAIN SLIDER
+   4 slides | No zoom | Transparent | Responsive
+================================================== */
+
+/* ================= HERO LAYOUT ================= */
 
 .hero {
   height: 100vh !important;
@@ -25,13 +28,11 @@
   .hero {
     height: 100vh !important;
     height: 100dvh !important;
-    min-height: 620px;
+    min-height: 620px !important;
   }
 }
 
-/* =========================================
-   GO7.IN DOMAIN SLIDER — MAIN CONTAINER
-========================================= */
+/* ================= SLIDER CONTAINER ================= */
 
 .domain-slider {
   position: absolute;
@@ -42,9 +43,9 @@
   width: min(760px, calc(100% - 48px));
   color: #fff;
   font-family: inherit;
-  overflow: hidden;
   background: transparent !important;
-  border: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
   box-shadow: none !important;
 }
 
@@ -53,17 +54,22 @@
   width: 100%;
   height: 240px;
   overflow: hidden;
-  border: none !important;
-  border-radius: 0;
-  background: transparent !important;
-  box-shadow: none !important;
   isolation: isolate;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
-/* =========================================
-   SLIDES — SMOOTH FADE + SLIDE TRANSITION
-   No zoom, no image links, no overlay
-========================================= */
+/* ================= CINEMATIC TRANSITION ================= */
+
+/*
+  Incoming slide:
+  - cinematic reveal
+  - blur-to-sharp
+  - subtle horizontal movement
+  - no zoom
+*/
 
 .domain-slider .domain-slide {
   position: absolute;
@@ -72,59 +78,93 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  color: inherit;
-  text-decoration: none;
+
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateX(24px);
+
+  clip-path: inset(0 0 0 100%);
+  filter: blur(8px);
+  transform: translateX(18px);
+
+  color: inherit;
+  text-decoration: none;
   background: transparent !important;
-  border: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
   box-shadow: none !important;
+
   transition:
-    opacity 650ms ease,
-    transform 650ms ease,
-    visibility 650ms ease;
+    clip-path 850ms cubic-bezier(.22, 1, .36, 1),
+    opacity 700ms ease,
+    filter 850ms cubic-bezier(.22, 1, .36, 1),
+    transform 850ms cubic-bezier(.22, 1, .36, 1),
+    visibility 850ms;
+  will-change: clip-path, opacity, filter, transform;
 }
 
+/* Active slide — revealed and crisp */
+
 .domain-slider .domain-slide.is-active {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
   opacity: 1;
   visibility: visible;
   pointer-events: none;
+
+  clip-path: inset(0 0 0 0);
+  filter: blur(0);
   transform: translateX(0);
-  z-index: 1;
 }
 
-/* Remove any previous dark image overlay */
+/* No dark overlays */
+
+.domain-slider .domain-slide::before,
 .domain-slider .domain-slide::after {
-  display: none !important;
   content: none !important;
+  display: none !important;
 }
 
-/* Images remain at their original scale */
+/* ================= IMAGE SETTINGS ================= */
+
 .domain-slider .domain-slide img {
   display: block;
   width: 100%;
   height: 100%;
+
   object-fit: contain;
   object-position: center;
+
   background: transparent !important;
-  border: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
   box-shadow: none !important;
+
   transform: none !important;
   scale: 1 !important;
   animation: none !important;
   transition: none !important;
 }
 
-/* Disable hover zoom */
+/* Explicitly disable hover zoom */
+
 .domain-slider .domain-slide:hover img,
 .domain-slider .domain-slide.is-active:hover img {
   transform: none !important;
   scale: 1 !important;
 }
 
-/* Hide slider captions, retaining images only */
+/* Images and captions are not clickable */
+
+.domain-slider .domain-slide,
+.domain-slider .domain-slide img {
+  pointer-events: none !important;
+}
+
+/* Hide text captions while preserving slider images */
+
 .domain-slider .domain-slide__caption,
 .domain-slider .domain-slide__text,
 .domain-slider .domain-slide__content,
@@ -136,9 +176,7 @@
   display: none !important;
 }
 
-/* =========================================
-   SLIDER FOOTER — STATUS, DOTS, COUNTER
-========================================= */
+/* ================= SLIDER FOOTER ================= */
 
 .domain-slider__footer {
   display: flex;
@@ -146,8 +184,9 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px 2px 0;
+
   background: transparent !important;
-  border: none !important;
+  border: 0 !important;
   box-shadow: none !important;
 }
 
@@ -156,6 +195,7 @@
   align-items: center;
   gap: 8px;
   min-width: 0;
+
   color: #727783;
   font-size: 9px;
   font-weight: 600;
@@ -180,14 +220,19 @@
 }
 
 .domain-slider__dotbtn {
+  display: block;
   width: 19px;
   height: 4px;
   padding: 0;
+
   border: 0;
   border-radius: 5px;
   background: #c9ccd4;
+
   cursor: pointer;
-  transition: width 250ms ease, background 250ms ease;
+  transition:
+    width 300ms cubic-bezier(.22, 1, .36, 1),
+    background-color 300ms ease;
 }
 
 .domain-slider__dotbtn.is-active {
@@ -210,9 +255,7 @@
   white-space: nowrap;
 }
 
-/* =========================================
-   MOBILE RESPONSIVE
-========================================= */
+/* ================= MOBILE RESPONSIVE ================= */
 
 @media (max-width: 767px) {
   .hero {
@@ -249,18 +292,38 @@
 
   .domain-slider__track {
     height: clamp(130px, calc(52vw - 50px), 180px);
-    border-radius: 0;
   }
 
   .domain-slider__footer {
     gap: 8px;
+    padding-top: 10px;
   }
 
   .domain-slider__status {
     font-size: 8px;
     letter-spacing: .8px;
   }
+
+  /* Slightly softer transition on mobile */
+
+  .domain-slider .domain-slide {
+    filter: blur(5px);
+    transform: translateX(12px);
+    transition:
+      clip-path 700ms cubic-bezier(.22, 1, .36, 1),
+      opacity 600ms ease,
+      filter 700ms ease,
+      transform 700ms cubic-bezier(.22, 1, .36, 1),
+      visibility 700ms;
+  }
+
+  .domain-slider .domain-slide.is-active {
+    filter: blur(0);
+    transform: translateX(0);
+  }
 }
+
+/* Extra-small screens */
 
 @media (max-width: 360px) {
   .domain-slider__status {
@@ -275,19 +338,22 @@
   .domain-slider__dotbtn.is-active {
     width: 23px;
   }
+
+  .domain-slider__controls {
+    gap: 5px;
+  }
 }
 
-/* =========================================
-   ACCESSIBILITY — REDUCED MOTION
-========================================= */
+/* ================= ACCESSIBILITY ================= */
 
 @media (prefers-reduced-motion: reduce) {
   .domain-slider .domain-slide,
   .domain-slider .domain-slide img,
   .domain-slider__dotbtn {
     transition: none !important;
-    transform: none !important;
     animation: none !important;
+    transform: none !important;
+    filter: none !important;
   }
 }
 ```
