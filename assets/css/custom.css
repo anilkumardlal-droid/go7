@@ -378,12 +378,6 @@
   }
 }
 
-.domain-slide::after {
-  background: none !important;
-  content: none !important;
-  display: none !important;
-}
-
 .domain-slide .domain-slide__text,
 .domain-slide .domain-slide__content,
 .domain-slide h1,
