@@ -329,4 +329,14 @@
     filter: none !important;
   }
 }
+
+.domain-slider__track {
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+.domain-slider .domain-slide,
+.domain-slider .domain-slide img {
+  border-radius: 12px !important;
+}
 ```
