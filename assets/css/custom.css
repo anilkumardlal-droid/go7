@@ -339,4 +339,12 @@
 .domain-slider .domain-slide img {
   border-radius: 12px !important;
 }
+
+.hero__swash path {
+    stroke: #3850d5 !important;
+}
+
+.hero__acc {
+    color: #3850d5 !important;
+}
 ```
