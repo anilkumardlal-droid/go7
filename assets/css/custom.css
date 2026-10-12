@@ -1,135 +1,144 @@
-/* GO7.IN Hero - Full Screen */
+```css
+/* =========================================
+   GO7.IN HERO — FULL SCREEN
+========================================= */
+
 .hero {
   height: 100vh !important;
   height: 100dvh !important;
   min-height: 100vh !important;
   box-sizing: border-box !important;
+  background-image: none !important;
 }
 
-
-/* GO7.IN hero layout + premium image slider. Main theme stays in stylec6e7.css. */
-
-/* Remove the three old car-template/domain widgets if any markup remains. */
 .hero .range,
 .hero .fincard,
 .hero .gauge {
   display: none !important;
 }
 
-/* Desktop hero fills the viewport. */
+[data-theme="dark"] .hero {
+  background-image: none !important;
+}
+
 @media (min-width: 768px) {
   .hero {
     height: 100vh !important;
     height: 100dvh !important;
     min-height: 620px;
-    box-sizing: border-box;
   }
 }
+
+/* =========================================
+   GO7.IN DOMAIN SLIDER — MAIN CONTAINER
+========================================= */
 
 .domain-slider {
   position: absolute;
   z-index: 5;
   left: 50%;
-  bottom: clamp(20px, 3.2vh, 34px);
+  bottom: 22px;
   transform: translateX(-50%);
-  width: min(620px, calc(100% - 48px));
+  width: min(760px, calc(100% - 48px));
   color: #fff;
   font-family: inherit;
+  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .domain-slider__track {
   position: relative;
-  height: clamp(138px, 18vh, 190px);
+  width: 100%;
+  height: 240px;
   overflow: hidden;
-  border-radius: 14px;
-  background: #20242b;
+  border: none !important;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none !important;
   isolation: isolate;
 }
 
-.domain-slide {
+/* =========================================
+   SLIDES — SMOOTH FADE + SLIDE TRANSITION
+   No zoom, no image links, no overlay
+========================================= */
+
+.domain-slider .domain-slide {
   position: absolute;
   inset: 0;
-  display: block;
-  overflow: hidden;
-  color: #fff;
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1.02);
-  transition: opacity .75s ease, transform 5s ease, visibility .75s;
-  pointer-events: none;
-}
-
-.domain-slide.is-active {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  z-index: 1;
-  pointer-events: auto;
-}
-
-.domain-slide::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(90deg, rgba(12,16,24,.82) 0%, rgba(12,16,24,.46) 57%, rgba(12,16,24,.08) 100%);
-}
-
-.domain-slide img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(24px);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition:
+    opacity 650ms ease,
+    transform 650ms ease,
+    visibility 650ms ease;
+}
+
+.domain-slider .domain-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+  transform: translateX(0);
+  z-index: 1;
+}
+
+/* Remove any previous dark image overlay */
+.domain-slider .domain-slide::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Images remain at their original scale */
+.domain-slider .domain-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   object-position: center;
-  transform: scale(1);
-  transition: transform 5s ease;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  scale: 1 !important;
+  animation: none !important;
+  transition: none !important;
 }
 
-.domain-slide.is-active img {
-  transform: scale(1.07);
+/* Disable hover zoom */
+.domain-slider .domain-slide:hover img,
+.domain-slider .domain-slide.is-active:hover img {
+  transform: none !important;
+  scale: 1 !important;
 }
 
-.domain-slide__caption {
-  position: absolute;
-  z-index: 2;
-  left: clamp(18px, 3vw, 30px);
-  right: 48px;
-  bottom: clamp(18px, 2.5vh, 26px);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 7px;
+/* Hide slider captions, retaining images only */
+.domain-slider .domain-slide__caption,
+.domain-slider .domain-slide__text,
+.domain-slider .domain-slide__content,
+.domain-slider .domain-slide h1,
+.domain-slider .domain-slide h2,
+.domain-slider .domain-slide h3,
+.domain-slider .domain-slide p,
+.domain-slider .domain-slide span {
+  display: none !important;
 }
 
-.domain-slide__eyebrow {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.8px;
-  line-height: 1.4;
-  color: rgba(255,255,255,.8);
-}
-
-.domain-slide__title {
-  font-size: clamp(20px, 2.4vw, 29px);
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -.6px;
-  text-wrap: balance;
-}
-
-.domain-slide__arrow {
-  position: absolute;
-  right: -18px;
-  bottom: 0;
-  font-size: 23px;
-  font-weight: 300;
-  transition: transform .25s ease;
-}
-
-.domain-slide:hover .domain-slide__arrow {
-  transform: translate(3px, -3px);
-}
+/* =========================================
+   SLIDER FOOTER — STATUS, DOTS, COUNTER
+========================================= */
 
 .domain-slider__footer {
   display: flex;
@@ -137,6 +146,9 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px 2px 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .domain-slider__status {
@@ -144,10 +156,10 @@
   align-items: center;
   gap: 8px;
   min-width: 0;
+  color: #727783;
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 1.25px;
-  color: #727783;
   white-space: nowrap;
 }
 
@@ -157,7 +169,7 @@
   height: 6px;
   border-radius: 50%;
   background: #3850d5;
-  box-shadow: 0 0 0 4px rgba(56,80,213,.12);
+  box-shadow: 0 0 0 4px rgba(56, 80, 213, .12);
 }
 
 .domain-slider__controls {
@@ -175,7 +187,7 @@
   border-radius: 5px;
   background: #c9ccd4;
   cursor: pointer;
-  transition: width .25s ease, background .25s ease;
+  transition: width 250ms ease, background 250ms ease;
 }
 
 .domain-slider__dotbtn.is-active {
@@ -190,21 +202,24 @@
 
 .domain-slider__count {
   flex: 0 0 auto;
+  color: #727783;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 1px;
-  color: #727783;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
-/* Mobile: stack the slider after the headline and CTA. */
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
 @media (max-width: 767px) {
   .hero {
     height: auto !important;
     min-height: 100vh !important;
     min-height: 100dvh !important;
-    padding: 125px var(--gut, 20px) 24px !important;
+    padding: 90px var(--gut, 20px) 24px !important;
     overflow: hidden;
   }
 
@@ -215,6 +230,7 @@
   .hero .hero__copy {
     position: relative !important;
     inset: auto !important;
+    margin-bottom: 52px !important;
   }
 
   .hero .hero__copy::after {
@@ -227,29 +243,13 @@
     left: auto;
     bottom: auto;
     transform: none;
-    width: 100%;
-    margin: 28px auto 0;
+    width: 100% !important;
+    margin: 12px auto 0 !important;
   }
 
   .domain-slider__track {
-    height: clamp(150px, 43vw, 205px);
-    border-radius: 12px;
-  }
-
-  .domain-slide__caption {
-    left: 18px;
-    right: 38px;
-    bottom: 19px;
-    gap: 6px;
-  }
-
-  .domain-slide__eyebrow {
-    font-size: 9px;
-    letter-spacing: 1.2px;
-  }
-
-  .domain-slide__title {
-    font-size: clamp(19px, 5.3vw, 25px);
+    height: clamp(130px, calc(52vw - 50px), 180px);
+    border-radius: 0;
   }
 
   .domain-slider__footer {
@@ -277,212 +277,17 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .domain-slide,
-  .domain-slide img,
-  .domain-slide__arrow,
-  .domain-slider__dotbtn {
-    transition: none !important;
-  }
-}
-
-
-
-/* Remove car background from hero */
-.hero {
-  background-image: none !important;
-}
-
-[data-theme="dark"] .hero {
-  background-image: none !important;
-}
-
-/* GO7.IN - Bigger Domain Slider + Less Gap */
-
-/* Make slider larger on desktop */
-.domain-slider {
-  width: min(760px, calc(100% - 48px)) !important;
-  bottom: 22px !important;
-}
-
-.domain-slider__track {
-  height: clamp(180px, 23vh, 240px) !important;
-}
-
-/* Reduce gap between hero text and slider on mobile */
-@media (max-width: 767px) {
-  .domain-slider {
-    width: 100% !important;
-    margin: 12px auto 0 !important;
-  }
-
-  .domain-slider__track {
-    height: clamp(180px, 52vw, 230px) !important;
-  }
-
-  .hero {
-    padding-bottom: 20px !important;
-  }
-}
-
-/* GO7.IN - Final Mobile Slider Height */
-
-@media (max-width: 767px) {
-  .domain-slider__track {
-    height: clamp(130px, calc(52vw - 50px), 180px) !important;
-  }
-
-  .domain-slider {
-    margin-top: 12px !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero .hero__copy {
-    margin-bottom: 52px !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero {
-    padding: 90px var(--gut, 20px) 24px !important;
-  }
-}
-
-
-
-/* GO7.IN Slider Images - Responsive Default Size */
-.domain-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Desktop: slider maximum 760 × 240 px */
-@media (min-width: 768px) {
-  .domain-slider {
-    width: min(760px, calc(100% - 48px)) !important;
-  }
-
-  .domain-slider__track {
-    height: 240px !important;
-  }
-}
-
-/* Mobile: responsive slider height */
-@media (max-width: 767px) {
-  .domain-slider__track {
-    height: clamp(130px, calc(52vw - 50px), 180px) !important;
-  }
-}
-
-.domain-slide .domain-slide__text,
-.domain-slide .domain-slide__content,
-.domain-slide h1,
-.domain-slide h2,
-.domain-slide h3,
-.domain-slide p,
-.domain-slide span {
-  display: none !important;
-}
-
-
 /* =========================================
-   GO7.IN SLIDER — FINAL CSS
-   Smooth transition + no zoom + transparent
+   ACCESSIBILITY — REDUCED MOTION
 ========================================= */
 
-/* Slider background and container */
-.domain-slider {
-  overflow: hidden;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Slider track */
-.domain-slider__track {
-  position: relative;
-  overflow: hidden;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* All slides: hidden by default */
-.domain-slider .domain-slide {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateX(20px);
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  transition:
-    opacity 600ms ease,
-    transform 600ms ease,
-    visibility 600ms ease;
-}
-
-/* Active slide */
-.domain-slider .domain-slide.is-active {
-  position: relative;
-  inset: auto;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(0);
-}
-
-/* Images: disable zoom and animation */
-.domain-slider .domain-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  transform: none !important;
-  scale: 1 !important;
-  animation: none !important;
-  transition: none !important;
-}
-
-/* Disable hover zoom */
-.domain-slider .domain-slide:hover img,
-.domain-slider .domain-slide.is-active:hover img {
-  transform: none !important;
-  scale: 1 !important;
-}
-
-/* Transparent caption background */
-.domain-slider .domain-slide__caption {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-/* Transparent footer */
-.domain-slider .domain-slider__footer {
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Respect reduced-motion setting */
 @media (prefers-reduced-motion: reduce) {
-  .domain-slider .domain-slide {
+  .domain-slider .domain-slide,
+  .domain-slider .domain-slide img,
+  .domain-slider__dotbtn {
     transition: none !important;
     transform: none !important;
+    animation: none !important;
   }
 }
-
+```
