@@ -1,8 +1,5 @@
 ```css
-/* =========================================
-   GO7.IN — BBH Bartle Font
-   ========================================= */
-
+/* GO7.IN — BBH Bartle Font */
 @font-face {
     font-family: "BBH Bartle";
     src: url("../fonts/BBHBartle-Regular.ttf") format("truetype");
@@ -11,22 +8,19 @@
     font-display: swap;
 }
 
-/* Default text */
-body {
+/* Apply font to the complete website */
+html,
+body,
+body *,
+body *::before,
+body *::after {
     font-family: "BBH Bartle", sans-serif !important;
-    font-weight: 300;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-    font-family: "BBH Bartle", sans-serif !important;
-    font-weight: 400;
-}
-
-/* Paragraphs */
-p {
-    font-family: "BBH Bartle", sans-serif !important;
-    font-weight: 300;
+/* Use regular weight */
+.fw-bold,
+.fw-semibold {
+    font-weight: 400 !important;
 }
 ```
 
