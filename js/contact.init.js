@@ -286,12 +286,12 @@ second${seconds !== 1 ? "s" : ""}...
 
                 if (seconds <= 0) {
 
-                    clearInterval(countdown);
+    clearInterval(countdown);
 
-                    setTimeout(() => {
-                        window.location.href = "/";
-                    }, 300);
-                }
+    setTimeout(() => {
+        window.location.href = "https://www.go7.in/";
+    }, 300);
+}
 
             }, 1000);
 
