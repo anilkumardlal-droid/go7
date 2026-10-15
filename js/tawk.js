@@ -321,7 +321,7 @@ var Tawk_LoadStart = new Date();
 
                 fill: none;
 
-                stroke: #fff;
+                stroke: #000;
 
                 stroke-width: 2;
 
