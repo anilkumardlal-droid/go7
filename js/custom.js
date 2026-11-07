@@ -29,7 +29,7 @@
 // DOMAIN DISPLAY
 (function () {
 
-    const source = new URLSearchParams(window.location.search).get("source");
+    const source = new URLSearchParams(window.location.search).get("inquiry-domain");
 
     let domain = "go7.in";
 
