@@ -60,3 +60,8 @@ i[class*=" mdi-"],
     -webkit-text-fill-color: transparent !important;
     color: transparent !important;
 }
+
+
+.fw-semibold {
+    font-weight: 400 !important;
+}
