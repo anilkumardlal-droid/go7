@@ -72,11 +72,10 @@ i[class*=" mdi-"],
 #domain-name {
     background: linear-gradient(
         90deg,
-        #2563EB,
-        #7C3AED,
-        #DB2777,
-        #F59E0B,
-        #2563EB
+        #00C6FF 0%,
+        #7B2FF7 30%,
+        #FF2E93 65%,
+        #FF9F1C 100%
     ) !important;
 
     background-size: 300% 100% !important;
@@ -88,10 +87,6 @@ i[class*=" mdi-"],
 }
 
 @keyframes go7DomainGradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
