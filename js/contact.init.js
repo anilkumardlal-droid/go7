@@ -128,7 +128,7 @@ Sending...
     btn.style.cursor = "not-allowed";
 
     const sourceDomain =
-        new URLSearchParams(window.location.search).get("source") || "go7.in";
+        new URLSearchParams(window.location.search).get("inquiry-domain") || "go7.in";
 
     try {
 
