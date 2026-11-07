@@ -1,3 +1,4 @@
+
 (function () {
 
     const content = document.getElementById("go7Content");
@@ -5,12 +6,9 @@
     if (!content) return;
 
     const startTime = Date.now();
-
-    // Skeleton कम से कम 3 सेकंड दिखेगा
     const minimumTime = 3000;
 
     function showContent() {
-
         const elapsed = Date.now() - startTime;
         const remaining = Math.max(0, minimumTime - elapsed);
 
@@ -19,7 +17,6 @@
         }, remaining);
     }
 
-    // Actual page पूरी तरह load होने का इंतजार
     if (document.readyState === "complete") {
         showContent();
     } else {
@@ -29,12 +26,12 @@
 })();
 
 
-
-    (function () {
+// DOMAIN DISPLAY
+(function () {
 
     const source = new URLSearchParams(window.location.search).get("source");
 
-    let domain = "";
+    let domain = "go7.in";
 
     if (source) {
         const cleaned = source
@@ -42,51 +39,61 @@
             .toLowerCase()
             .replace(/^https?:\/\//, "")
             .replace(/^www\./, "")
-            .split("/")[0];
+            .split(/[/?#]/)[0];
 
-        // GO7.IN is the platform, not a domain for sale
-        if (cleaned === "go7.in") {
-            window.location.replace("https://www.go7.in/");
-            return;
-        }
-
-        if (/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(cleaned)) {
+        if (/^[a-z0-9-]+(\.[a-z0-9-]+)+$/i.test(cleaned)) {
             domain = cleaned;
         }
     }
 
-    document.getElementById("domain-name").textContent =
-        "www." + domain;
+    // GO7 shows without www; other domains show with www
+    const displayDomain = domain === "go7.in"
+        ? "go7.in"
+        : "www." + domain;
 
-    document.getElementById("interest-title").textContent =
-        "Interested in " + domain + "?";
+    const domainName = document.getElementById("domain-name");
+    const interestTitle = document.getElementById("interest-title");
+    const inquiryDescription = document.getElementById("inquiry-description");
 
-    document.getElementById("inquiry-description").textContent =
-        "Interested in " + domain + "? Submit your inquiry or offer.";
+    if (domainName) {
+        domainName.textContent = displayDomain;
+    }
+
+    if (interestTitle) {
+        interestTitle.textContent = "Interested in " + domain + "?";
+    }
+
+    if (inquiryDescription) {
+        inquiryDescription.textContent =
+            "Interested in " + domain + "? Submit your inquiry or offer.";
+    }
 
 })();
-(function () { 
- 
-    if (window.innerWidth <= 767) { 
- 
-        window.addEventListener("load", function () { 
- 
-            setTimeout(function () { 
- 
-                const contactForm = 
-                    document.getElementById("contact-form"); 
- 
-                if (!contactForm) return; 
- 
-                contactForm.scrollIntoView({ 
-                    behavior: "smooth", 
-                    block: "start" 
-                }); 
- 
-            }, 9000); 
- 
-        }, { once: true }); 
- 
-    } 
- 
+
+
+// MOBILE AUTO SCROLL
+(function () {
+
+    if (window.innerWidth <= 767) {
+
+        window.addEventListener("load", function () {
+
+            setTimeout(function () {
+
+                const contactForm =
+                    document.getElementById("contact-form");
+
+                if (!contactForm) return;
+
+                contactForm.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }, 9000);
+
+        }, { once: true });
+
+    }
+
 })();
