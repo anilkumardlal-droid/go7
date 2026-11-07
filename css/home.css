@@ -69,24 +69,32 @@ i[class*=" mdi-"],
     font-weight: 500 !important;
    }
 
+
 #domain-name {
     background: linear-gradient(
         90deg,
-        #00C6FF 0%,
-        #7B2FF7 30%,
-        #FF2E93 65%,
-        #FF9F1C 100%
+        #00C6FF,
+        #7B2FF7,
+        #FF2E93,
+        #FF9F1C,
+        #00C6FF
     ) !important;
 
-    background-size: 300% 100% !important;
+    background-size: 400% 100% !important;
+    background-position: 0% 50% !important;
+
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 
-    animation: go7DomainGradient 6s ease infinite !important;
+    animation: go7DomainMove 5s linear infinite !important;
 }
 
-@keyframes go7DomainGradient {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+@keyframes go7DomainMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 400% 50%;
+    }
 }
