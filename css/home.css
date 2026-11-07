@@ -70,7 +70,10 @@ i[class*=" mdi-"],
    }
 
 
+```css
 #domain-name {
+    display: inline-block;
+
     background: linear-gradient(
         90deg,
         #00C6FF,
@@ -78,23 +81,24 @@ i[class*=" mdi-"],
         #FF2E93,
         #FF9F1C,
         #00C6FF
-    ) !important;
+    );
 
-    background-size: 400% 100% !important;
-    background-position: 0% 50% !important;
+    background-size: 250% 100%;
+    background-position: 0% 50%;
 
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-    animation: go7DomainMove 5s linear infinite !important;
+    animation: go7DomainMove 4s ease-in-out infinite alternate;
 }
 
 @keyframes go7DomainMove {
-    0% {
+    from {
         background-position: 0% 50%;
     }
-    100% {
-        background-position: 400% 50%;
+    to {
+        background-position: 100% 50%;
     }
 }
+```
