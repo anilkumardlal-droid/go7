@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,77 +6,64 @@
 
 <title>404 - Page Not Found</title>
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-
-/* BBH Bartle Font */
-@font-face {
-    font-family: "BBH Bartle";
-    src: url("/assets/fonts/BBHBartle-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
 body {
     background: #FCFCFC;
     color: #0D0D0D;
-    font-family: "BBH Bartle", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
 }
 
-/* Main */
 main {
     padding: 38px 32px;
 }
 
-/* 404 */
 h1 {
-    font-family: "BBH Bartle", sans-serif;
+    font-family: "IBM Plex Mono", monospace;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 15px;
 }
 
-/* Heading */
 h2 {
-    font-family: "BBH Bartle", sans-serif;
-    font-size: 40px;
-    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.02em;
     margin-bottom: 16px;
 }
 
-/* Paragraph */
 p {
     width: 100%;
     color: #666666;
-    font-family: "BBH Bartle", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 10px;
     line-height: 1.5;
 }
 
-/* Countdown */
 #countdown {
     color: #0D0D0D;
-    font-weight: 400;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
-
     main {
         padding: 32px 20px;
     }
@@ -89,18 +75,14 @@ p {
     p {
         font-size: 14px;
     }
-
 }
-
 </style>
 
 <script>
-
 let seconds = 10;
 let countdownTimer;
 
 function updateCountdown() {
-
     const countdown = document.getElementById("countdown");
 
     if (!countdown) return;
@@ -114,25 +96,18 @@ function updateCountdown() {
     }
 
     seconds--;
-
 }
 
 window.addEventListener("load", function () {
-
     updateCountdown();
-
     countdownTimer = setInterval(updateCountdown, 1000);
-
 });
-
 </script>
 
 </head>
 
 <body>
-
 <main>
-
     <h1>404</h1>
 
     <h2>Page Not Found</h2>
@@ -145,9 +120,6 @@ window.addEventListener("load", function () {
         Redirecting to the homepage in
         <span id="countdown">10</span> seconds.
     </p>
-
 </main>
-
 </body>
 </html>
-```
