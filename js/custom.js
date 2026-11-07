@@ -47,10 +47,8 @@
     }
 
     // GO7 shows without www; other domains show with www
-    const displayDomain = domain === "go7.in"
-        ? "go7.in"
-        : "www." + domain;
-
+    const displayDomain = "www." + domain;
+    
     const domainName = document.getElementById("domain-name");
     const interestTitle = document.getElementById("interest-title");
     const inquiryDescription = document.getElementById("inquiry-description");
